@@ -59,26 +59,26 @@ header {
   .primary-menu.is-active {
     display: block; }
   @media (min-width: 768px) {
-    .primary-menu .is-menu-item {
+    .primary-menu .menu-item {
       display: inline-block;
       position: relative;
       text-align: left; } }
-  .primary-menu .is-menu-item:hover .submenu, .primary-menu .is-menu-item:focus .submenu {
+  .primary-menu .menu-item:hover .sub-menu, .primary-menu .menu-item:focus .sub-menu {
     height: auto; }
-  .primary-menu .is-menu-item a {
+  .primary-menu .menu-item a {
     display: block;
     padding: .75rem 1rem; }
-  .primary-menu .submenu {
+  .primary-menu .sub-menu {
     background-color: #303030;
     height: 0;
     min-width: 100%;
     overflow: hidden; }
     @media (min-width: 768px) {
-      .primary-menu .submenu {
+      .primary-menu .sub-menu {
         position: absolute; }
-        .primary-menu .submenu .is-menu-item {
+        .primary-menu .sub-menu .menu-item {
           display: block; } }
-    .primary-menu .submenu.hover {
+    .primary-menu .sub-menu.hover {
       height: auto; }
 
 /*# sourceMappingURL=menu.css.map */

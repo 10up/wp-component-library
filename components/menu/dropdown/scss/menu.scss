@@ -87,7 +87,7 @@ header {
     display: block;
   }
 
-  .is-menu-item {
+  .menu-item {
     @media (min-width: $med) {
       display: inline-block;
       position: relative;
@@ -96,7 +96,7 @@ header {
 
     &:hover,
     &:focus {
-      .submenu {
+      .sub-menu {
         height: auto;
       }
     }
@@ -107,7 +107,7 @@ header {
     }
   }
 
-  .submenu {
+  .sub-menu {
     background-color: $dark-gray;
     height: 0;
     min-width: 100%;
@@ -115,7 +115,7 @@ header {
 
     @media (min-width: $med) {
       position: absolute;
-      .is-menu-item {
+      .menu-item {
         display: block;
       }
     }
