@@ -1,0 +1,127 @@
+//GLOBALS @todo: Move this to a top level import
+$sm:  480px;
+$med: 768px;
+$lg:  1024px;
+
+$tenup-blue: #6ab7b7;
+$tenup-red:  #df2b26;
+$dark-gray:  #303030;
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $tenup-blue;
+}
+
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+//GLOBALS @todo: Move this to a top level import
+
+
+.site-header {
+  align-items: center;
+  background: $dark-gray;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  position: relative;
+}
+
+.site-heading {
+  line-height: 0;
+  padding-right: 1rem;
+}
+
+.site-link {
+  display: inline-block;
+  line-height: 0;
+  img {
+    max-height: 48px;
+  }
+}
+
+.site-navigation {
+  flex: 1 0 auto;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+
+.site-menu-toggle {
+  float: right;
+
+  @media (min-width: $med) {
+    display: none;
+  }
+}
+
+.primary-menu {
+  background: $dark-gray;
+  display: none;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  height: 100vh;
+  right: 0;
+
+  @media (min-width: $med) {
+    display: block;
+    float: right;
+    height: auto;
+    position: relative;
+    top: 0;
+  }
+
+  &.is-active {
+    display: block;
+  }
+
+  .is-menu-item {
+    @media (min-width: $med) {
+      display: inline-block;
+      position: relative;
+      text-align: left;
+    }
+
+    &:hover,
+    &:focus {
+      .submenu {
+        height: auto;
+      }
+    }
+
+    a {
+      display: block;
+      padding: .75rem 1rem;
+    }
+  }
+
+  .submenu {
+    background-color: $dark-gray;
+    height: 0;
+    min-width: 100%;
+    overflow: hidden;
+
+    @media (min-width: $med) {
+      position: absolute;
+      .is-menu-item {
+        display: block;
+      }
+    }
+
+    &.hover {
+      height: auto;
+    }
+  }
+}
