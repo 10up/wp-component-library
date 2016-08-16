@@ -1,3 +1,16 @@
+var subMenuItem = document.querySelectorAll('.sub-menu .menu-item'),
+    subMenu     = document.querySelectorAll('.sub-menu');
+
+document.addEventListener('focus', focusToggle, true);
+
+function focusToggle( e ) {
+  if ( e.target.classList.contains('is-sub-menu-item' ) || e.target.classList.contains('menu-level-') ) {
+    subMenu[0].classList.add('hover');
+  } else {
+    subMenu[0].classList.remove('hover');
+  }
+}
+
 var menuToggle = document.querySelector('.site-menu-toggle'),
     menu       = document.querySelector('.primary-menu');
 
