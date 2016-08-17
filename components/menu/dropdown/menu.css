@@ -43,21 +43,27 @@ header {
 
 .primary-menu {
   background: #303030;
-  display: none;
   margin: 0;
+  overflow: hidden;
   position: absolute;
   top: 100%;
   height: 100vh;
-  right: 0; }
+  right: 0;
+  transform: translateX(100%);
+  width: 0; }
   @media (min-width: 768px) {
     .primary-menu {
       display: block;
       float: right;
       height: auto;
+      overflow: visible;
       position: relative;
-      top: 0; } }
+      top: 0;
+      transform: translateX(0);
+      width: auto; } }
   .primary-menu.is-active {
-    display: block; }
+    width: auto;
+    transform: translateX(0); }
   @media (min-width: 768px) {
     .primary-menu .menu-item {
       display: inline-block;
