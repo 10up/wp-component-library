@@ -11,16 +11,24 @@ function focusToggle( e ) {
   }
 }
 
-function offCanvas( toggler, primary, wrap, direction ) {
+/**
+ * Adds helper function for devs to plug in basic values to assist in off canvas functionality.
+ * @param {Element} toggler         //The class name of the element that toggles the off canvas menu.
+ * @param {Element} primaryMenu     //The class name of the element that is the primary menu.
+ * @param {Element} primaryMenuWrap //The wrapper that contains the primary menu.
+ * @param {String} direction        //The direction that the off canvas menu should fly in from.
+ */
+function offCanvas( toggler, primaryMenu, primaryMenuWrap, direction ) {
   var body       = document.body,
       menuToggle = document.querySelector( toggler ),
-      menu       = document.querySelector( primary ),
-      wrap       = document.querySelector( wrap ),
+      menu       = document.querySelector( primaryMenu ),
+      wrap       = document.querySelector( primaryMenuWrap ),
       dir        = direction;
 
   menuToggle.onclick = function() {
     menu.classList.toggle('is-active');
     body.classList.toggle('is-active-off-canvas');
+
     if( body.classList.contains( 'is-active-off-canvas' ) ) {
       var menuWidth = menu.offsetWidth,
           bodyDir   = dir,
