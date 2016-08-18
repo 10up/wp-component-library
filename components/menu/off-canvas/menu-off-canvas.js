@@ -47,4 +47,4 @@ function offCanvas( toggler, primaryMenu, primaryMenuWrap, direction ) {
   }
 }
 
-offCanvas( '.site-menu-toggle', '.primary-menu', '.site-header', 'left' );
+offCanvas( '.site-menu-toggle', '.primary-menu', '.site-header', 'right' );
