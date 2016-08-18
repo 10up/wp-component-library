@@ -77,7 +77,6 @@ main {
   position: absolute;
   top: 100%;
   height: 100vh;
-  transform: translateX(100%);
   width: 0;
 
   .left & {
@@ -90,7 +89,6 @@ main {
 
   &.is-active {
     width: auto;
-    transform: translateX(0);
   }
 
   .menu-item {

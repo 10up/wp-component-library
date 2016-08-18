@@ -52,15 +52,13 @@ main {
   position: absolute;
   top: 100%;
   height: 100vh;
-  transform: translateX(100%);
   width: 0; }
   .left .primary-menu {
     left: 0; }
   .right .primary-menu {
     right: 0; }
   .primary-menu.is-active {
-    width: auto;
-    transform: translateX(0); }
+    width: auto; }
   .primary-menu .menu-item:hover .sub-menu, .primary-menu .menu-item:focus .sub-menu {
     height: auto; }
   .primary-menu .menu-item a {
