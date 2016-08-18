@@ -1,0 +1,128 @@
+//GLOBALS @todo: Move this to a top level import
+$sm:  480px;
+$med: 768px;
+$lg:  1024px;
+
+$tenup-blue: #6ab7b7;
+$tenup-red:  #df2b26;
+$dark-gray:  #303030;
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $tenup-blue;
+}
+
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+main {
+  padding: 0 30px;
+}
+//GLOBALS @todo: Move this to a top level import
+
+.is-active-off-canvas {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.site-header {
+  align-items: center;
+  background: $dark-gray;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  position: relative;
+}
+
+.site-heading {
+  line-height: 0;
+  padding-right: 1rem;
+}
+
+.site-link {
+  display: inline-block;
+  line-height: 0;
+  img {
+    max-height: 48px;
+  }
+}
+
+.site-navigation {
+  flex: 1 0 auto;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+
+.site-menu-toggle {
+  float: right;
+}
+
+.primary-menu {
+  background: $dark-gray;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  width: 0;
+
+  .left & {
+    left: 0;
+  }
+
+  .right & {
+    right: 0;
+  }
+
+  &.is-active {
+    width: auto;
+    transform: translateX(0);
+  }
+
+  .menu-item {
+
+    &:hover,
+    &:focus {
+      .sub-menu {
+        height: auto;
+      }
+    }
+
+    a {
+      display: block;
+      padding: .75rem 1rem;
+    }
+  }
+
+  .sub-menu {
+    background-color: $dark-gray;
+    height: 0;
+    min-width: 100%;
+    overflow: hidden;
+
+    @media (min-width: $med) {
+      position: absolute;
+      .menu-item {
+        display: block;
+      }
+    }
+
+    &.hover {
+      height: auto;
+    }
+  }
+}
