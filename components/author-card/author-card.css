@@ -11,4 +11,30 @@ header {
   max-width: 1280px;
   margin: 0 auto; }
 
+.author-card {
+  align-items: center;
+  border-bottom: 1px solid #303030;
+  border-top: 1px solid #303030;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px auto;
+  max-width: 650px;
+  padding: 15px; }
+  @media (min-width: 768px) {
+    .author-card {
+      flex-wrap: nowrap; } }
+  .author-card-title {
+    margin: 0; }
+  .author-card-pic {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px; }
+    @media (min-width: 768px) {
+      .author-card-pic {
+        flex: 1 0 25%; } }
+    .author-card-pic img {
+      border-radius: 50%;
+      border: 3px solid #df2b26; }
+
 /*# sourceMappingURL=author-card.css.map */

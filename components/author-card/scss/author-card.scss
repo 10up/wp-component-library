@@ -24,3 +24,38 @@ header {
   margin: 0 auto;
 }
 //GLOBALS @todo: Move this to a top level import
+
+.author-card {
+  align-items: center;
+  border-bottom: 1px solid $dark-gray;
+  border-top: 1px solid $dark-gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px auto;
+  max-width: 650px;
+  padding: 15px;
+
+  @media (min-width: $med) {
+    flex-wrap: nowrap;
+  }
+
+  &-title {
+    margin: 0;
+  }
+
+  &-pic {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+
+    @media (min-width: $med) {
+      flex: 1 0 25%;
+    }
+
+    img {
+      border-radius: 50%;
+      border: 3px solid $tenup-red;
+    }
+  }
+}
