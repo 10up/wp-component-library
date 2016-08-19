@@ -1,0 +1,26 @@
+//GLOBALS @todo: Move this to a top level import
+$sm:  480px;
+$med: 768px;
+$lg:  1024px;
+
+$tenup-blue: #6ab7b7;
+$tenup-red:  #df2b26;
+$dark-gray:  #303030;
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $tenup-blue;
+}
+
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+//GLOBALS @todo: Move this to a top level import

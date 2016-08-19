@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AASA,IAAK;EACH,MAAM,EAAE,CAAC;;AAGX,GAAI;EACF,SAAS,EAAE,IAAI;;AAGjB,CAAE;EACA,KAAK,EAbM,OAAO;;AAgBpB,MAAO;EACL,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,MAAM",
+"sources": ["scss/author-card.scss"],
+"names": [],
+"file": "author-card.css"
+}
