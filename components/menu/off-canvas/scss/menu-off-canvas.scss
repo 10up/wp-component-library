@@ -107,13 +107,6 @@ main {
     min-width: 100%;
     overflow: hidden;
 
-    @media (min-width: $med) {
-      position: absolute;
-      .menu-item {
-        display: block;
-      }
-    }
-
     &.hover {
       height: auto;
     }

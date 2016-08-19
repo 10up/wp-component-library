@@ -65,11 +65,6 @@ main {
     height: 0;
     min-width: 100%;
     overflow: hidden; }
-    @media (min-width: 768px) {
-      .primary-menu .sub-menu {
-        position: absolute; }
-        .primary-menu .sub-menu .menu-item {
-          display: block; } }
     .primary-menu .sub-menu.hover {
       height: auto; }
 

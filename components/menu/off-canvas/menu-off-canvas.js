@@ -4,7 +4,7 @@ var subMenuItem = document.querySelectorAll( '.sub-menu .menu-item' ),
 document.addEventListener( 'focus', focusToggle, true );
 
 function focusToggle( e ) {
-  if ( e.target.classList.contains( 'is-sub-menu-item' ) || e.target.classList.contains( 'menu-level-' ) ) {
+  if ( e.target.classList.contains( 'menu-level-1' ) ) {
     subMenu[0].classList.add( 'hover' );
   } else {
     subMenu[0].classList.remove( 'hover' );
