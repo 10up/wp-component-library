@@ -69,6 +69,20 @@ header {
       display: inline-block;
       position: relative;
       text-align: left; } }
+  .primary-menu .menu-item.menu-item-has-children > a {
+    padding-right: 20px;
+    position: relative;
+    color: #6ab7b7; }
+    .primary-menu .menu-item.menu-item-has-children > a:after {
+      content: "";
+      color: #6ab7b7;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 10px);
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
+      background-size: cover;
+      width: 20px;
+      height: 20px; }
   .primary-menu .menu-item:hover .sub-menu, .primary-menu .menu-item:focus .sub-menu {
     height: auto; }
   .primary-menu .menu-item a {
