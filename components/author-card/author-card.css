@@ -24,7 +24,6 @@ header {
     .author-card {
       flex-wrap: nowrap; } }
   .author-card-author {
-    font-size: 2em;
     margin: 0; }
   .author-card-pic {
     padding-bottom: 15px;
