@@ -26,7 +26,6 @@ header {
 //GLOBALS @todo: Move this to a top level import
 
 .author-card {
-  align-items: center;
   border-bottom: 1px solid $dark-gray;
   border-top: 1px solid $dark-gray;
   display: flex;
@@ -40,14 +39,14 @@ header {
     flex-wrap: nowrap;
   }
 
-  &-title {
+  &-author {
+    font-size: 2em;
     margin: 0;
   }
 
   &-pic {
-    display: flex;
-    justify-content: center;
     padding-bottom: 15px;
+    text-align: center;
 
     @media (min-width: $med) {
       flex: 1 0 25%;
@@ -55,7 +54,6 @@ header {
 
     img {
       border-radius: 50%;
-      border: 3px solid $tenup-red;
     }
   }
 }
