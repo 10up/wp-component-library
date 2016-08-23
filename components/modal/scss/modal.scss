@@ -128,14 +128,11 @@ $modal__close--offset:              28px !default;
   }
 }
 
-
-
 // CSS for when there is no JavaScript
 .no-js .no-js-hide-modal,
 .no-js button[data-action='modal-open'] {
   display: none;
 }
-
 
 .no-js .no-js-hide-modal:target {
   display: block;
