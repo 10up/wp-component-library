@@ -1,0 +1,189 @@
+/*
+  Accessible Modal Dialog
+*/
+
+// breakpoints
+$bp-mini:           25em !default;        // 400px
+$bp-tiny:           30em !default;        // 480px
+$bp-small:          41.25em !default;     // 660px
+$bp-portrait:       47.9375em !default;   // 767px
+$bp-medium:         53.75em !default;     // 860px
+$bp-large:          59.375em !default;    // 950px
+$bp-1024:           64em !default;        // 1024px
+$bp-wide:           75em !default;        // 1200px
+$bp-xlarge:        100em !default;        // 1600px
+
+// imports
+@import 'flexbox-mixins';
+
+// namespace, if you want it (update the HTML too though)
+$ns: '';
+
+$modal-overlay--bg:                 rgba(0, 0, 0, .666) !default;
+$modal-overlay--padding:            1.5em !default;
+
+$modal--bg:                         #fff !default;
+
+$modal--bs:                         0 1px 0 rgba(255, 255, 255, 0.2) inset,
+                                    0 0 12px rgba(0, 0, 0, 0.5) !default;
+
+$modal--max-width:                  800px !default;
+$modal--min-width:                  300px !default;
+$modal--padding:                    32px !default;
+
+$modal--base-border:                1px solid #ccc !default;
+
+$modal--small--max-width:           400px !default;
+
+$modal--z-index:                    99 !default;
+
+$modal__intro__title--size:         inherit !default;
+$modal__intro__text--size:          .825em !default;
+
+$modal__content--margin:            20px !default;
+
+$modal__close--size:                2em !default;
+$modal__close--padding:             4px !default;
+$modal__close--offset:              28px !default;
+
+$base-margin: 10px;
+
+// ---------------------------------------------------------------------
+
+// to prevent the document from scrolling in the background,
+// we need these rules in place when a modal is open
+.modal-is-open,
+.modal-is-open body {
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+//
+.js .#{$ns}modal-overlay,
+.js .#{$ns}a11y-modal {
+  @include flexbox();
+  box-sizing: border-box;
+  background: $modal-overlay--bg;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: auto;
+  padding: $modal-overlay--padding;
+  position: fixed;
+  top: 0;
+  transition: opacity .2s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+  z-index: -1;
+
+  &[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+    z-index: $modal--z-index;
+
+    .#{$ns}modal {
+      transform: scale(1) translateY(0px);
+    }
+  }
+}
+
+// the actual modal content block
+.#{$ns}modal {
+  background: $modal--bg;
+  margin: auto;
+  max-height: 90%;
+  max-width: $modal--max-width;
+  min-width: $modal--min-width;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: $modal--padding;
+  position: relative;
+  transform: scale(0.8) translateY(-30px);
+  transition: transform .3s ease-in-out;
+  width: 100%;
+
+  &--sm {
+    max-width: $modal--small--max-width;
+  }
+
+  &--full-width {
+    max-width: 100%;
+  }
+
+  &--content-scroll {
+    overflow: hidden;
+
+    .#{$ns}modal__content {
+      border: $modal--base-border;
+      height: 300px;
+      overflow: auto;
+      transition: height .2s ease-in-out;
+
+      @media screen and ( min-height: $bp-small ) {
+        height: 400px;
+      }
+
+      @media screen and ( min-height: $bp-portrait ) {
+        height: 500px;
+      }
+
+      @media screen and ( min-height: $bp-medium ) {
+        height: 600px;
+      }
+
+      @media screen and ( min-height: $bp-1024 ) {
+        height: 700px;
+      }
+    }
+  }
+
+  &__intro {
+
+    &__title {
+
+    }
+
+    *:not(.modal__intro__title) {
+      font-size: $modal__intro__text--size;
+    }
+  }
+
+}
+
+
+
+.#{$ns}modal__content {
+  margin-top: $modal__content--margin;
+}
+
+
+
+.#{$ns}modal__outro {
+  margin-top: $base-margin;
+
+  &__close {
+    font-size: $modal__close--size;
+    line-height: 1;
+    padding: $modal__close--padding;
+    position: absolute;
+    right: $modal__close--offset;
+    text-decoration: none;
+    top: $modal__close--offset;
+    cursor: pointer;
+  }
+}
+
+
+
+// CSS for when there is no JavaScript
+.no-js .no-js-hide-modal,
+.no-js button[data-action='modal-open'] {
+  display: none;
+}
+
+
+.no-js .no-js-hide-modal:target {
+  display: block;
+}
