@@ -19,15 +19,16 @@ header {
   white-space: nowrap;
   overflow: auto;
   position: relative; }
-  .tab-list:after {
-    content: "☰";
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 2;
-    pointer-events: none; }
-  .tab-list.m-is-active a {
-    position: relative; }
+  @media (max-width: 768px) {
+    .tab-list:after {
+      content: "☰";
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 2;
+      pointer-events: none; }
+    .tab-list.m-is-active a {
+      position: relative; } }
 
 .tab-item {
   display: block; }
