@@ -30,7 +30,7 @@
   genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
 
   // initialize all the modals
-  A11yModal.init = function ( el ) {
+  A11yModal.init = function ( el, callback ) {
 
       var id = el.id;
       var $self = doc.getElementById(id);
@@ -410,11 +410,20 @@
         }
       }, false);
 
+      // accept callback functions, because why not?
+      if (typeof callback === 'function') {
+          callback.call(this);
+      }
+
   }; // end: a11yModal: function
 
   // execute the function on all modal instances
   for (var i = 0; i < modallisting.length; i = i + 1) {
-    A11yModal.init( modallisting[i] );
+
+    A11yModal.init( modallisting[i], function() {
+      console.log(i + ') This is your callback function, if you want it.');
+    });
+
   }
 
 } )( this, this.document );
