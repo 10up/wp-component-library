@@ -1,37 +1,36 @@
 ;(function ( w, doc ) {
 
-  'use strict';
+  // Enable strict mode
+  "use strict";
 
+  // Local object for method references
   var A11yModal = {};
 
-  A11yModal.NS = "A11yModal";
+  // Namespace
+  A11yModal.ns = "A11yModal";
 
-  // setup global class variables
+  // Setup global class variables
   var modalTrigger      = '[data-action="modal-open"]';
-
   var modal             = '.a11y-modal';
-
   var modalDoc          = '.modal';
   var modalTitle        = '[data-modal-title]';
   var modalClose        = '[data-modal-close]';
+  var bodyElements      = 'a11y-hide-if-modal-open';
+  var genModalClose     = doc.createElement('button');
+  var html              = doc.documentElement;
+  var modallisting      = doc.querySelectorAll(modal);
 
-  var genModalClose = document.createElement('button');
+  // use this defualt title if the attr isn't set
+  var safetyModalTitle  = "Dialog Window";
 
+  // build out the fallback button
   genModalClose.setAttribute('type', 'button');
   genModalClose.setAttribute('data-modal-close', 'true');
   genModalClose.classList.add('modal__outro__close');
   genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
 
-  var html             = doc.documentElement;
-
-  var bodyElements      = 'a11y-hide-if-modal-open';
-
-  // use this defualt title if the attr isn't set
-  var safetyModalTitle  = "Dialog Window";
-
-  var a11yModal = function ( el ) {
-
-    //for (var z = 0; z < el.length; z = z + 1) {
+  // initialize all the modals
+  A11yModal.init = function ( el ) {
 
       var id = el.id;
       var $self = doc.getElementById(id);
@@ -44,9 +43,9 @@
           // are applied to what would be considered the
           // modal container, or 'overlay'
 
-          //var $this = $self;
           var $findTitle = $self.querySelector(modalTitle);
           var $findHeading = $self.querySelector('[data-modal-title]');
+          var modalDocVar = $self.querySelectorAll(modalDoc);
           var $thisLabel;
 
           // first check to see what sort of dialog this should be
@@ -56,8 +55,7 @@
           // a normal dialog. So set the role to just 'dialog'
           if ( $self.getAttribute('data-modal-alert') === 'true' ) {
             $self.setAttribute('role', 'alertdialog');
-          }
-          else {
+          } else {
             $self.setAttribute('role', 'dialog');
           }
 
@@ -92,10 +90,7 @@
 
                 $thisLabel = $findHeading.setAttribute('id');
 
-              } //if
-
-              // if it doesn't, then generate one
-              else {
+              } else { // if it doesn't, then generate one
 
                 $thisLabel = $self.setAttribute('id') + '_title';
 
@@ -111,7 +106,6 @@
 
         // setup each modal content area (the component that
         // contains the actual content)
-        var modalDocVar = $self.querySelectorAll(modalDoc);
 
         for (var j = 0; j < modalDocVar.length; j = j + 1) {
 
@@ -146,29 +140,29 @@
 
         } // end for loop
 
-      },
+      };
 
       // setup modal triggers
       // the following applies needed aria-attributes
       // to the modal triggers, as well as doing a
       // final check to ensure that the modal window
       // has appropriate labeling
-      setupA11yModalTriggers = function () {
+      var setupA11yModalTriggers = function () {
 
         var modalTriggerEl = doc.querySelectorAll(modalTrigger);
         var modalTriggerCount = modalTriggerEl.length;
 
         for (var m = 0; m < modalTriggerCount; m = m + 1) {
 
-          var $this = modalTriggerEl[m];
-          var $grabTarget;
-          var $modalTarget;
+          var modalObj = modalTriggerEl[m];
+          var grabTarget;
+          var modalTarget;
 
           // if the trigger is a link, we need to give it a
           // button role.
-          if ( $this.getAttribute('href') ) {
+          if ( modalObj.getAttribute('href') ) {
 
-            $this.setAttribute('role', 'button');
+            modalObj.setAttribute('role', 'button');
 
           }
 
@@ -182,28 +176,26 @@
           // JavaScript, we don't want partial ARIA hooks, as that can
           // create confusion for ATs that would expect certain
           // functionality that wouldn't be available due to lack of JS.
-          if ( !$this.getAttribute('aria-controls') ) {
+          if ( !modalObj.getAttribute('aria-controls') ) {
 
             // make sure that the trigger actually triggers something.
             // if it there's no data-modal-open attribute set, then
             // pull the target from the href
-            if ( $this.getAttribute('data-modal-open') ) {
+            if ( modalObj.getAttribute('data-modal-open') ) {
 
-              $grabTarget = $this.getAttribute('data-modal-open');
-              $this.setAttribute('aria-controls', $grabTarget );
+              grabTarget = modalObj.getAttribute('data-modal-open');
+              modalObj.setAttribute('aria-controls', grabTarget );
 
             }
             // if there's no data-modal-open, pull the target from
             // from the href
-            else if ( $this.attr('href') ) {
+            else if ( modalObj.attr('href') ) {
 
-              $grabTarget = $this.getAttribute('href').split('#')[1];
-              $this.setAttribute('aria-controls', $grabTarget );
+              grabTarget = modalObj.getAttribute('href').split('#')[1];
+              modalObj.setAttribute('aria-controls', grabTarget );
 
             }
-            // if neither of the above are set, then this just
-            // won't work and you're clearly expecting this to
-            // open by magic.
+            // if neither of the above are set, then this just won't work
             else {
               console.log("No target set. A target is set by setting the value of an aria-controls attribute, which if absent, can be generated by the trigger's href URI, or a data-modal-open attribute to the value of the modal window ID you are attempting to open.");
               return false;
@@ -213,25 +205,24 @@
 
           // now that the aria-controls is set, point to the modal's target
           // so we can run the next if
-          $modalTarget = doc.querySelector('#' + $this.getAttribute('aria-controls') );
+          modalTarget = doc.querySelector('#' + modalObj.getAttribute('aria-controls') );
 
           // finally a last check to see if the trigger is meant to launch
           // an alert dialog modal. If the alertdialog role wasn't set during
           // the initial setup function, then look to see if the 'data-modal-alert'
           // attribute is present on the trigger, and if so, apply the alertdialog
           // role to the modal on trigger activation.
-          if ( $this.getAttribute('data-modal-alert') === 'true' && $modalTarget.getAttribute('role') !== 'alertdialog' ) {
-            $modalTarget.setAttribute('role', 'alertdialog');
+          if ( modalObj.getAttribute('data-modal-alert') === 'true' && modalTarget.getAttribute('role') !== 'alertdialog' ) {
+            modalTarget.setAttribute('role', 'alertdialog');
           }
 
         } // for loop
-      },
-
+      };
 
       // Place modal window(s) as the first child(ren)
       // of the body element so tabbing backwards can
       // move focus into the browser's address bar
-      organizeDOM = function () {
+      var organizeDOM = function () {
 
         var body = doc.body;
         var modalEl = doc.querySelectorAll(modal);
@@ -251,29 +242,29 @@
         // to target during open/close
         body.querySelector('*:not(.a11y-modal)').classList.add(bodyElements);
 
-      },
+      };
 
-      openA11yModal = function ( e ) {
+      var openA11yModal = function ( e ) {
 
         // setup vars
-        var $this = e.target;
-        var $modalTarget = doc.getElementById( $this.getAttribute('aria-controls') );
+        var openTarget = e.target;
+        var modalTarget = doc.getElementById( openTarget.getAttribute('aria-controls') );
 
         // Check to see if the modal has either an aria-label or labelledby attribute
         // if not, that means that the modal didn't have a manually set aria-label,
         // nor does the modal have any sort of heading element to draw a title from.
         // In this instance, pull the safetyModalTitle var in as an aria-label
-        if ( !$modalTarget.getAttribute('aria-labelledby') && !$modalTarget.getAttribute('aria-label') ) {
+        if ( !modalTarget.getAttribute('aria-labelledby') && !modalTarget.getAttribute('aria-label') ) {
 
           // Last ditch effort to allow control over what the aria-label will be.
           // If the data-set-modal-title attribute is set to the modal trigger,
           // its value will be set as the modal's aria-label
-          if ( $this.getAttribute('data-set-modal-title') ) {
-            safetyModalTitle = $this.getAttribute('data-set-modal-title');
+          if ( openTarget.getAttribute('data-set-modal-title') ) {
+            safetyModalTitle = openTarget.getAttribute('data-set-modal-title');
           }
 
           // set an aria-label to the modal
-          $modalTarget.setAttribute('aria-label', safetyModalTitle );
+          modalTarget.setAttribute('aria-label', safetyModalTitle );
 
         } // if
 
@@ -288,7 +279,7 @@
         // set that modal be visible, controlled by the
         // aria-hidden attribute and CSS
         // then shift focus to it
-        $modalTarget.setAttribute('aria-hidden', 'false');
+        modalTarget.setAttribute('aria-hidden', 'false');
 
         // add a class to the HTML, to allow for a CSS hook
         // to help restrict document scroll while the modal
@@ -301,13 +292,13 @@
         doc.querySelector('.' + bodyElements).setAttribute('aria-hidden', 'true');
 
         // finally, apply focus to the newly opened modal window
-        $modalTarget.querySelector(modalDoc).focus();
+        modalTarget.querySelector(modalDoc).focus();
 
-      },
+      };
 
       // Bind to both the button click and the escape key to
       // close the modal window  but only if isModalOpen is set to true
-      closeA11yModal = function ( e ) {
+      var closeA11yModal = function ( e ) {
 
         e.preventDefault();
 
@@ -324,10 +315,10 @@
 
         returnFocus.focus();
 
-      },
+      };
 
       // keyboard controls specific to the modal dialog windows
-      keytrollsA11yModalTrigger = function ( e ) {
+      var keytrollsA11yModalTrigger = function ( e ) {
 
         var keyCode = e.keyCode || e.which;
 
@@ -342,9 +333,9 @@
 
         } // switch
 
-      },
+      };
 
-      isDescendant = function ( parent, child ) {
+      var isDescendant = function ( parent, child ) {
 
       	// get the parent node
       	var node = child.parentNode;
@@ -358,12 +349,12 @@
       	}
 
       	return false;
-      },
+      };
 
       // trap focus within the modal window, because otherwise
       // users can tab to obscured elements, and that's just
       // bad UX.
-      trapFocus = function () {
+      var trapFocus = function () {
         var $trapArea = $self.querySelector(modalDoc),
             $trapAreaClose = $self.querySelector(modalClose);
 
@@ -419,16 +410,11 @@
         }
       }, false);
 
-    //} // for each modal
-
   }; // end: a11yModal: function
 
-var modallisting = document.querySelectorAll(modal);
-
-for (var i = 0; i < modallisting.length; i = i + 1) {
-  a11yModal( modallisting[i] );
-}
-
-
+  // execute the function on all modal instances
+  for (var i = 0; i < modallisting.length; i = i + 1) {
+    A11yModal.init( modallisting[i] );
+  }
 
 } )( this, this.document );
