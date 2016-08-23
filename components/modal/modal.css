@@ -24,7 +24,7 @@
   left: 0;
   opacity: 0;
   overflow: auto;
-  padding: 1.5em;
+  padding: 1.5625em;
   position: fixed;
   top: 0;
   transition: opacity .2s ease-in-out;
@@ -41,58 +41,46 @@
       transform: scale(1) translateY(0px); }
 
 .modal {
+  box-sizing: border-box;
   background: #fff;
   margin: auto;
   max-height: 90%;
-  max-width: 800px;
-  min-width: 300px;
+  max-width: 50em;
+  min-width: 16.875em;
   overflow: auto;
   overflow-x: hidden;
-  padding: 32px;
+  padding: 2em;
   position: relative;
   transform: scale(0.8) translateY(-30px);
   transition: transform .3s ease-in-out;
   width: 100%; }
-  .modal--sm {
-    max-width: 400px; }
   .modal--full-width {
     max-width: 100%; }
   .modal--content-scroll {
     overflow: hidden; }
     .modal--content-scroll .modal__content {
-      border: 1px solid #ccc;
       height: 300px;
       overflow: auto;
       transition: height .2s ease-in-out; }
-      @media screen and (min-height: 41.25em) {
+      @media screen and (min-height: 40.625em) {
         .modal--content-scroll .modal__content {
           height: 400px; } }
-      @media screen and (min-height: 47.9375em) {
-        .modal--content-scroll .modal__content {
-          height: 500px; } }
-      @media screen and (min-height: 53.75em) {
+      @media screen and (min-height: 53.125em) {
         .modal--content-scroll .modal__content {
           height: 600px; } }
-      @media screen and (min-height: 64em) {
+      @media screen and (min-height: 62.5em) {
         .modal--content-scroll .modal__content {
           height: 700px; } }
-  .modal__intro *:not(.modal__intro__title) {
-    font-size: 0.825em; }
 
-.modal__content {
-  margin-top: 20px; }
-
-.modal__outro {
-  margin-top: 10px; }
-  .modal__outro__close {
-    font-size: 2em;
-    line-height: 1;
-    padding: 4px;
-    position: absolute;
-    right: 28px;
-    text-decoration: none;
-    top: 28px;
-    cursor: pointer; }
+.modal__outro__close {
+  font-size: 2em;
+  line-height: 1;
+  padding: 4px;
+  position: absolute;
+  right: 28px;
+  text-decoration: none;
+  top: 28px;
+  cursor: pointer; }
 
 .no-js .no-js-hide-modal,
 .no-js button[data-action='modal-open'] {

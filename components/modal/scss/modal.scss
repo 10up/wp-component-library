@@ -3,15 +3,9 @@
 */
 
 // breakpoints
-$bp-mini:           25em !default;        // 400px
-$bp-tiny:           30em !default;        // 480px
-$bp-small:          41.25em !default;     // 660px
-$bp-portrait:       47.9375em !default;   // 767px
-$bp-medium:         53.75em !default;     // 860px
-$bp-large:          59.375em !default;    // 950px
-$bp-1024:           64em !default;        // 1024px
-$bp-wide:           75em !default;        // 1200px
-$bp-xlarge:        100em !default;        // 1600px
+$bp-small:          40.625em !default;      // 650px
+$bp-medium:         53.125em !default;      // 850px
+$bp-large:          62.5em !default;        // 1000px
 
 // imports
 @import 'flexbox-mixins';
@@ -19,34 +13,21 @@ $bp-xlarge:        100em !default;        // 1600px
 // namespace, if you want it (update the HTML too though)
 $ns: '';
 
+// general colors 'n' stuff
 $modal-overlay--bg:                 rgba(0, 0, 0, .666) !default;
-$modal-overlay--padding:            1.5em !default;
+$modal-overlay--padding:            1.5625em !default; // 25px
 
 $modal--bg:                         #fff !default;
 
-$modal--bs:                         0 1px 0 rgba(255, 255, 255, 0.2) inset,
-                                    0 0 12px rgba(0, 0, 0, 0.5) !default;
-
-$modal--max-width:                  800px !default;
-$modal--min-width:                  300px !default;
-$modal--padding:                    32px !default;
-
-$modal--base-border:                1px solid #ccc !default;
-
-$modal--small--max-width:           400px !default;
+$modal--max-width:                  50em !default; // 800px
+$modal--min-width:                  16.875em !default; // 270px
+$modal--padding:                    2em !default; // 32px
 
 $modal--z-index:                    99 !default;
-
-$modal__intro__title--size:         inherit !default;
-$modal__intro__text--size:          .825em !default;
-
-$modal__content--margin:            20px !default;
 
 $modal__close--size:                2em !default;
 $modal__close--padding:             4px !default;
 $modal__close--offset:              28px !default;
-
-$base-margin: 10px;
 
 // ---------------------------------------------------------------------
 
@@ -91,6 +72,7 @@ $base-margin: 10px;
 
 // the actual modal content block
 .#{$ns}modal {
+  box-sizing: border-box;
   background: $modal--bg;
   margin: auto;
   max-height: 90%;
@@ -104,10 +86,6 @@ $base-margin: 10px;
   transition: transform .3s ease-in-out;
   width: 100%;
 
-  &--sm {
-    max-width: $modal--small--max-width;
-  }
-
   &--full-width {
     max-width: 100%;
   }
@@ -116,7 +94,6 @@ $base-margin: 10px;
     overflow: hidden;
 
     .#{$ns}modal__content {
-      border: $modal--base-border;
       height: 300px;
       overflow: auto;
       transition: height .2s ease-in-out;
@@ -125,43 +102,19 @@ $base-margin: 10px;
         height: 400px;
       }
 
-      @media screen and ( min-height: $bp-portrait ) {
-        height: 500px;
-      }
-
       @media screen and ( min-height: $bp-medium ) {
         height: 600px;
       }
 
-      @media screen and ( min-height: $bp-1024 ) {
+      @media screen and ( min-height: $bp-large ) {
         height: 700px;
       }
     }
   }
 
-  &__intro {
-
-    &__title {
-
-    }
-
-    *:not(.modal__intro__title) {
-      font-size: $modal__intro__text--size;
-    }
-  }
-
 }
-
-
-
-.#{$ns}modal__content {
-  margin-top: $modal__content--margin;
-}
-
-
 
 .#{$ns}modal__outro {
-  margin-top: $base-margin;
 
   &__close {
     font-size: $modal__close--size;
