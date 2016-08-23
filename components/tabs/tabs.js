@@ -36,6 +36,13 @@ forEach(tabs, function(index, value) {
     function tabHandle(event) {
       event.preventDefault();
 
+      // Handle opening and closing of the tabs on mobile devices
+      if(tab.parentNode.classList.contains('is-active')) {
+        tab.parentNode.parentNode.classList.toggle('m-is-active');
+      } else {
+        tab.parentNode.parentNode.classList.remove('m-is-active');
+      }
+
       // Change state of previously selected activeTab item
       forEach(activeTab, function(index, value) {
         if(value.classList.contains('is-active')) {
