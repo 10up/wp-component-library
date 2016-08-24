@@ -37,6 +37,12 @@ $w-80:          80% !default;
 $w-100:         100% !default;
 
 // Grid classes
+//
+// These classes can also be extended for use without a class-based grid system
+// Example:
+//    .main-content { @extend .w-66; }
+//    .sidebar-content { @extend .w-33; }
+//
 
 .grid-layout {
   @include clearfix;
@@ -49,46 +55,57 @@ $w-100:         100% !default;
   box-sizing: border-box;
 }
 
+.w-10,
 .w-sm-10 {
   width: $w-10;
 }
 
+.w-20,
 .w-sm-20 {
   width: $w-20;
 }
 
+.w-25,
 .w-sm-25 {
   width: $w-25;
 }
 
+.w-33,
 .w-sm-33 {
   width: $w-33;
 }
 
+.w-40,
 .w-sm-40 {
   width: $w-40;
 }
 
+.w-50,
 .w-sm-50 {
   width: $w-50;
 }
 
+.w-60,
 .w-sm-60 {
   width: $w-60;
 }
 
+.w-66,
 .w-sm-66 {
   width: $w-66;
 }
 
+.w-75,
 .w-sm-75 {
   width: $w-75;
 }
 
+.w-80,
 .w-sm-80 {
   width: $w-80;
 }
 
+.w-100,
 .w-sm-100 {
   width: $w-100;
 }

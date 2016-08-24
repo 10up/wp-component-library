@@ -13,36 +13,47 @@
   padding: 1em;
   box-sizing: border-box; }
 
+.w-10,
 .w-sm-10 {
   width: 10%; }
 
+.w-20,
 .w-sm-20 {
   width: 20%; }
 
+.w-25,
 .w-sm-25 {
   width: 25%; }
 
+.w-33,
 .w-sm-33 {
   width: 33.33333%; }
 
+.w-40,
 .w-sm-40 {
   width: 40%; }
 
+.w-50,
 .w-sm-50 {
   width: 50%; }
 
+.w-60,
 .w-sm-60 {
   width: 60%; }
 
+.w-66,
 .w-sm-66 {
   width: 66.66667%; }
 
+.w-75,
 .w-sm-75 {
   width: 75%; }
 
+.w-80,
 .w-sm-80 {
   width: 80%; }
 
+.w-100,
 .w-sm-100 {
   width: 100%; }
 
