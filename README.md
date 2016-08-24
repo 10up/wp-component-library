@@ -35,4 +35,4 @@ This is an component library created by [10up](http://10up.com). We use this on 
 
 ## License
 
-TBD
+MIT
