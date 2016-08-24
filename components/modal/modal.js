@@ -35,7 +35,7 @@
     a11y_modal.init = function ( el, callback ) {
 
         var id = el.id;
-        var $self = doc.getElementById( id );
+        var self = doc.getElementById( id );
 
         // setup modals properly
         var setup_a11y_modal = function () {
@@ -45,12 +45,12 @@
             // are applied to what would be considered the
             // modal container, or 'overlay'
 
-            var $findTitle = $self.querySelector( modalTitle );
-            var $findHeading = $self.querySelector( '[data-modal-title]' );
-            var modalDocVar = $self.querySelectorAll( modalDoc );
+            var findTitle = self.querySelector( modalTitle );
+            var findHeading = self.querySelector( '[data-modal-title]' );
+            var modalDocVar = self.querySelectorAll( modalDoc );
             var modalDocVarCount = modalDocVar.length;
             var modalObj;
-            var $thisLabel;
+            var thisLabel;
             var j;
 
             // first check to see what sort of dialog this should be
@@ -59,31 +59,31 @@
             // to 'alertdialog'. If it's not set, it's mean to be
             // a normal dialog. So set the role to just 'dialog'
 
-            if ( $self.getAttribute( 'data-modal-alert' ) === 'true' ) {
-              $self.setAttribute( 'role', 'alertdialog' );
+            if ( self.getAttribute( 'data-modal-alert' ) === 'true' ) {
+              self.setAttribute( 'role', 'alertdialog' );
             } else {
-              $self.setAttribute( 'role', 'dialog' );
+              self.setAttribute( 'role', 'dialog' );
             }
 
             // we will need to set focus to the modal content
             // container for focus trapping reasons, so we
             // need this to have a tabindex
 
-            $self.setAttribute( 'tabindex', '-1' );
-            $self.querySelector( modalDoc ).setAttribute( 'tabindex', '-1' );
+            self.setAttribute( 'tabindex', '-1' );
+            self.querySelector( modalDoc ).setAttribute( 'tabindex', '-1' );
 
             // check to see if an aria-label was set on the modal
             // if not, then start running checks to apply an aria-labelledby
 
-            if ( !$self.getAttribute( 'aria-label' ) ) {
+            if ( !self.getAttribute( 'aria-label' ) ) {
 
               // if the modal window has a child modalTitle set,
               // then add an aria-labelledby attribute to the dialog,
               // pointing to that element.
 
-              if ( $findTitle ) {
+              if ( findTitle ) {
 
-                $thisLabel = $findTitle.getAttribute( 'id' );
+                thisLabel = findTitle.getAttribute( 'id' );
 
               } //if
 
@@ -92,26 +92,26 @@
               // present at all, and then make THAT the source for the
               // aria-labelledby
 
-              else if ( $findHeading ) {
+              else if ( findHeading ) {
 
                 // does the heading we found have an id already?
                 // let's check
 
-                if ( $findHeading.setAttribute( 'id' ) ) {
+                if ( findHeading.setAttribute( 'id' ) ) {
 
-                  $thisLabel = $findHeading.setAttribute( 'id' );
+                  thisLabel = findHeading.setAttribute( 'id' );
 
                 } else { // if it doesn't, then generate one
 
-                  $thisLabel = $self.setAttribute( 'id' ) + '_title';
+                  thisLabel = self.setAttribute( 'id' ) + '_title';
 
-                  $findHeading.setAttribute( 'id', $thisLabel );
+                  findHeading.setAttribute( 'id', thisLabel );
 
                 } // else
 
               } // else/if
 
-              $self.setAttribute( 'aria-labelledby', $thisLabel );
+              self.setAttribute( 'aria-labelledby', thisLabel );
 
             } // if
 
@@ -339,13 +339,13 @@
 
           e.preventDefault();
 
-          var returnFocus = doc.querySelectorAll( '[aria-controls="' + $self.getAttribute( 'id' ) + '"]');
+          var returnFocus = doc.querySelectorAll( '[aria-controls="' + self.getAttribute( 'id' ) + '"]');
           var returnFocusCount = returnFocus.length;
 
           returnFocus = returnFocus[returnFocusCount - 1];
 
           html.classList.remove( 'modal-is-open' );
-          $self.setAttribute( 'aria-hidden', 'true' );
+          self.setAttribute( 'aria-hidden', 'true' );
 
           // remove the aria-hidden that was applied during modal open
 
@@ -383,7 +383,7 @@
 
           // I'm open to better solutions for trapping focus within the modal with it's open
           var all_nodes = doc.querySelectorAll( "*" );
-          var trapArea = $self.querySelector( modalDoc );
+          var trapArea = self.querySelector( modalDoc );
           var nodeCount =  all_nodes.length;
           var j;
 
@@ -415,8 +415,8 @@
 
         // close the modal is the overlay is clicked
 
-        $self.addEventListener( "click", function( e ) {
-          if ( e.target === $self.querySelector( modalDoc ).parentNode ) {
+        self.addEventListener( "click", function( e ) {
+          if ( e.target === self.querySelector( modalDoc ).parentNode ) {
             e.stopPropagation();
             close_a11y_modal( e );
           }
@@ -424,7 +424,7 @@
 
         // close the modal on ESC
 
-        $self.addEventListener("keydown", function( e ) {
+        self.addEventListener("keydown", function( e ) {
             if( e.keyCode == 27 && html.classList.contains( 'modal-is-open' ) ) {
               close_a11y_modal( e );
             }
@@ -432,7 +432,7 @@
 
         // close the modal if you click the close button
 
-        $self.querySelector( modalClose ).addEventListener('click', function( e ) {
+        self.querySelector( modalClose ).addEventListener('click', function( e ) {
           close_a11y_modal( e );
         }, false );
 
