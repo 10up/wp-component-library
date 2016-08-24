@@ -2,7 +2,7 @@
 =====================
 
 ## Description
-This is the reposiroty for the 10up Component Library.
+This is the repository for the 10up Component Library.
 
 ## Dependencies
 
