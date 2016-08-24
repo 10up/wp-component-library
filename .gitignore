@@ -1,53 +1,44 @@
-# Sass
-.sass-cache
-.sass-cache/
-.sass-cache/*
-*.map
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
 
-# NPM
-node_modules/
-
-# Jekyll
-_site/
-
-# Editors
-*.esproj
-*.tmproj
-*.tmproject
-tmtags
-.*.sw[a-z]
-*.un~
-Session.vim
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
 *.swp
+*.zip
+*.vi
+*~
 
-# Mac OSX
+# OS or Editor folders
 .DS_Store
 ._*
-.Spotlight-V100
-.Trashes
-
-# Windows
 Thumbs.db
-Desktop.ini
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
 
-# SVN
-.svn/
+# Komodo
+*.komodoproject
+.komodotools
 
-# Wordpress
-.htaccess
-wp-*.php
-xmlrpc.php
-wp-admin/
-wp-includes/
-wp-content/uploads/
-wp-content/blogs.dir/
-wp-content/upgrade/*
-wp-content/backup-db/*
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/cache/*
-wp-content/cache/supercache/*
-sitemap.xml
-sitemap.xml.gz
-readme.html
-license.txt
+# grunt-html-validation
+validation-status.json
+validation-report.json
+
+# Folders to ignore
+node_modules
+bower_components
+.sass-cache
+_local.yaml

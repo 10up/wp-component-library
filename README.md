@@ -1,38 +1,23 @@
-10up Component Library
-=====================
+# 10up Engineering Best Practices
 
-## Description
-This is the reposiroty for the 10up Component Library.
+These are the official best practices for 10up. This guide dictates how we, as a company, engineer websites. The purpose behind them is to improve the quality of the experiences we build as well as to standardize in order to facilitate more effective collaboration.
 
-## Dependencies
+<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png" width="850"></a>
 
-1. [.editorconfig](http://editorconfig.org/) Plugin - The .editorconfig file ensures that everyone contributing to the project will use the same indentation.
 
-## Structure
+**[Start reading ☞](https://10up.github.io/Engineering-Best-Practices/)**
+
+## Contributions
+
+We don't know everything! We welcome pull requests and spirited debates :)
+
+## Running Locally
+
 ```
-components/
-├── component-name/
-│   ├── component-name.css
-│   ├── component-name.js
-│   ├── component-name.html
-
-.editorconfig
-.gitignore
-README.md
+bundle install
+bundle exec jekyll serve
 ```
-
-## Contributing
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b compnent/my-new-component`
-3. Commit your changes: `git commit -am 'Added some great feature!'`
-4. Push to the branch: `git push origin compnent/my-new-component`
-5. Submit a pull request
-
-## Credits
-
-This is an component library created by [10up](http://10up). We use this on all of our projects and we welcome you to  do the same!
 
 ## License
 
-TBD
+Released under MIT by, and copyright 2014 by 10up.
