@@ -1,3 +1,9 @@
+/*
+  Name: Accessible Modal Plugin
+  Contributors: Tim Wright (tim@10up.com, @csskarma)
+  License: MIT, https://opensource.org/licenses/MIT
+*/
+
 ;(function (w, doc) {
 
     // Enable strict mode
@@ -7,9 +13,9 @@
     var a11y_modal = {};
 
     // Namespace
-    a11y_modal.ns = "a11y_modal";
+    a11y_modal.ns = "Accessible Modal Dialog";
 
-    // Setup global class variables
+    // Caching and setting up some variables
     var modalTrigger = '[data-action="modal-open"]';
     var modal = '.a11y-modal';
     var modalDoc = '.modal';
