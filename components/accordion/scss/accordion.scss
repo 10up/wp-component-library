@@ -42,11 +42,13 @@ button {
   padding: 10px 0 10px 30px;
   position: relative;
   width: 100%;
+
   &:before {
     content: "+";
     position: absolute;
     left: 5px;
   }
+
   &.is-active {
     &:before {
       content: "-";
