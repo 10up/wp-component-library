@@ -20,6 +20,7 @@
       Notes:
         - Added type=search and role=search for accessibility
         - Don't forget to fill in the action="" if you need one
+        - REPLACE example.com with final destination URL
         - The label's "for" should always match the input's "id" ("q", in this case)
         - You can use <button type="submit">Submit</button>, if you don't want to use an <input>
         - Add as maany classes as you need
@@ -32,7 +33,7 @@
 
       <link itemprop="url" href="http://www.example.com/" />
       <form method="get" action="" role="search" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
-        <meta itemprop="target" content="http://example.com/search?s={s}" />
+        <meta itemprop="target" content="http://example.com/?s={s}" />
 
         <label for="q">Search</label>
         <input itemprop="query-input" type="search" name="s" id="q" />
