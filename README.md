@@ -2,7 +2,7 @@
 =====================
 
 ## Description
-This is the reposiroty for the 10up Component Library.
+This is the repository for the 10up Component Library.
 
 ## Dependencies
 
@@ -31,8 +31,8 @@ README.md
 
 ## Credits
 
-This is an component library created by [10up](http://10up). We use this on all of our projects and we welcome you to  do the same!
+This is an component library created by [10up](http://10up.com). We use this on all of our projects and we welcome you to  do the same!
 
 ## License
 
-TBD
+MIT
