@@ -43,6 +43,7 @@ header {
 .site-link {
   display: inline-block;
   line-height: 0;
+
   img {
     max-height: 48px;
   }
@@ -100,6 +101,26 @@ header {
       text-align: left;
     }
 
+    &.menu-item-has-children {
+      > a {
+        padding-right: 20px;
+        position: relative;
+        color: $tenup-blue;
+
+        &:after {
+          content: "";
+          color: $tenup-blue;
+          position: absolute;
+          right: 0;
+          top: calc(50% - 10px);
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
+          background-size: cover;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
     &:hover,
     &:focus {
       .sub-menu {
@@ -121,6 +142,7 @@ header {
 
     @media (min-width: $med) {
       position: absolute;
+
       .menu-item {
         display: block;
       }
