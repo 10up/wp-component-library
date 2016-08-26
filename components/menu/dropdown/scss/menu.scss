@@ -43,6 +43,7 @@ header {
 .site-link {
   display: inline-block;
   line-height: 0;
+
   img {
     max-height: 48px;
   }
@@ -105,6 +106,7 @@ header {
         padding-right: 20px;
         position: relative;
         color: $tenup-blue;
+
         &:after {
           content: "";
           color: $tenup-blue;
@@ -140,6 +142,7 @@ header {
 
     @media (min-width: $med) {
       position: absolute;
+
       .menu-item {
         display: block;
       }
