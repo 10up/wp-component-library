@@ -15,8 +15,8 @@ components/
 │   ├── component-name.css
 │   ├── component-name.js
 │   ├── component-name.html
-│   ├── /scss
-│         ├── component-name.scss
+│   ├── scss/
+│       ├── component-name.scss
 
 .editorconfig
 .gitignore
