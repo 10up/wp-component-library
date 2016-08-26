@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+
+    <title>Modal Dialog</title>
+
+    <!-- meta cluster -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+
+    <link rel="stylesheet" href="modal.css" />
+
+  </head>
+  <body>
+
+      <div class="content-area">
+        <h1>Accessible Modal Window</h1>
+
+        <p>
+          Example paragraph goes here.
+          <a data-action="modal-open"
+             data-modal-open="primary_modal"
+             data-set-modal-title="Test Title"
+             href="#primary_modal">
+             Open Modal with a Link
+          </a>
+        </p>
+
+        <div id="primary_modal" class="a11y-modal no-js-hide-modal">
+
+          <div class="modal">
+
+            <div class="modal__intro">
+              <h3 id="small_modal_title" data-modal-title class="modal__intro__title">Small Modal Window</h3>
+              <p>intro text <a href="#!">test</a></p>
+            </div>
+
+            <div class="modal__content">
+              <p>Content goes here that talks about a thing that you couldn't doing the normal DOM flow for some reason. <a href="#!">test</a></p>
+            </div><!--/.modal__content-->
+
+            <!-- Outro content here -->
+            <div class="modal__outro">
+              <p>Outro message</p>
+              <a data-modal-close
+                 class="modal__outro__close"
+                 href="#x">
+                <span aria-hidden="true">⨉</span>
+              </a>
+            </div>
+
+          </div> <!-- end .modal -->
+        </div>
+
+        </div>
+      </div>
+
+      <hr />
+
+      <h2>Example Text</h2>
+      <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+
+      <button type="button" data-modal-alert="true" data-action="modal-open" aria-controls="normal_modal_b" data-set-modal-title="Test Title" data-href="#normal_modal_b">
+       Open Modal with a Button
+      </button>
+
+      <button type="button" data-modal-alert="true" data-action="modal-open" aria-controls="normal_modal_1" data-set-modal-title="Test Title" data-href="#normal_modal_1">
+       Open Modal {{this}} with a Button
+      </button>
+
+      <div id="normal_modal_b"
+           class="a11y-modal no-js-hide-modal"
+           data-modal-alert="true"
+           data-modal-stay="true">
+
+        <div class="modal">
+
+          <div class="modal__intro">
+            <h3 id="normal_modal_b"
+                data-modal-title
+                class="modal__intro__title">
+              Normal Modal Window
+            </h3>
+            <p>
+              intro text
+            </p>
+          </div>
+
+
+          <!-- main modal content here -->
+          <div class="modal__content">
+            <p>
+              Content goes here that talks about a thing that you couldn't do
+              in the normal DOM flow for some reason.
+            </p>
+          </div>
+
+
+          <!-- Outro content here -->
+          <div class="modal__outro">
+            <p>Outro message?</p>
+            <a data-modal-close
+               class="modal__outro__close"
+               href="#x">
+              <span aria-hidden="true">⨉</span>
+            </a>
+          </div>
+
+        </div> <!-- end .modal -->
+      </div><!--/.a11y-modal-->
+
+
+      <div id="normal_modal_1"
+           class="a11y-modal no-js-hide-modal"
+           data-modal-alert="true"
+           data-modal-stay="true">
+
+        <div class="modal">
+
+          <div class="modal__intro">
+            <h3 id="normal_modal_1"
+                data-modal-title
+                class="modal__intro__title">
+              Normal Modal Window 1
+            </h3>
+            <p>
+              intro text
+            </p>
+          </div>
+
+
+          <!-- main modal content here -->
+          <div class="modal__content">
+            <p>
+              Content goes here that talks about a thing that you couldn't do
+              in the normal DOM flow for some reason.
+            </p>
+          </div>
+
+
+          <!-- Outro content here -->
+          <div class="modal__outro">
+            <p>Outro message?</p>
+            <a data-modal-close
+               class="modal__outro__close"
+               href="#x">
+              <span aria-hidden="true">⨉</span>
+            </a>
+          </div>
+
+        </div> <!-- end .modal -->
+      </div><!--/.a11y-modal-->
+
+    <script src="modal.js"></script>
+    <script src="modal.hash.click.js"></script>
+
+  </body>
+</html>
