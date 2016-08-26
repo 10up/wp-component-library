@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <title>Breadcrumbs - Schema Markup</title>
+
+    <!-- meta cluster -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+
+  </head>
+  <body>
+
+    <h1>Breadcrumbs using microdata</h1>
+    <p>This microdata will produce a <a href="https://developers.google.com/search/docs/guides/enhance-site#enable-breadcrumbs">sitelinks breadcrumbs</a> in Google search results</p>
+
+    <!--
+      Microdata markup from: http://schema.org/BreadcrumbList
+      Notes:
+        - REPLACE all example.com references
+        - Set your own "name"
+        - Update or remove the "image"
+        - Note the "you are here" title on the last item
+        - Add as many classes as you need
+        - Use Google's Data Structure tool to test your HTML: https://search.google.com/structured-data/testing-tool
+    -->
+
+<nav role="navigation">
+
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList" aria-label="breadcrumb navigation">
+
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://example.com/books">
+
+        <!-- the actual display name of the breadcrumb -->
+        <span itemprop="name">Books</span>
+
+        <!-- if there's an image associated with this link -->
+        <img itemprop="image" src="http://example.com/images/icon-bookicon.png" alt="Books" />
+      </a>
+
+      <!-- the content position should increment by 1 (starting at 1) -->
+      <meta itemprop="position" content="1" />
+    </li>
+
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://example.com/books/the-book" title="You are here">
+
+        <!-- the actual display name of the breadcrumb -->
+        <span itemprop="name">Subtopic or landing page</span>
+
+        <!-- if there's an image associated with this link -->
+        <img itemprop="image" src="http://example.com/images/icon-bookicon.png" alt="Books" />
+      </a>
+
+      <!-- the content position should increment by 1 (starting at 1) -->
+      <meta itemprop="position" content="2" />
+    </li>
+
+  </ol>
+</nav>
+
+  </body>
+</html>
