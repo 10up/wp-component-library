@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <title>Blog posting - Schema Markup</title>
+
+    <!-- meta cluster -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+
+  </head>
+  <body>
+
+    <h1>Blog posting using microdata</h1>
+
+    <!--
+      Microdata markup from: https://schema.org/BlogPosting
+      Notes:
+        - REPLACE all example.com references
+        - Add as many classes as you need or HTML as you need, the attrs are the important part
+        - Use Google's Data Structure tool to test your HTML: https://search.google.com/structured-data/testing-tool
+    -->
+
+    <article itemscope itemtype="https://schema.org/BlogPosting">
+
+      <!-- flag this as the main area of the page -->
+      <div itemprop="mainEntityOfPage">
+
+        <!-- articles get headers (and footers) -->
+        <header>
+
+          <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="https://placekitten.com/g/400/150" alt="header image" />
+            <meta itemprop="url" content="https://placekitten.com/g/400/150" />
+            <meta itemprop="width" content="400" />
+            <meta itemprop="height" content="150" />
+          </div><!--/itemprop=image-->
+
+          <!-- Name of the article -->
+          <h1 itemprop="headline">Title of this Article!</h1>
+
+          <!--Author-->
+          <p><strong>Author</strong>:
+            <span itemprop="author">Jane Doe</span>
+          </p>
+
+          <!-- publication date -->
+          <p><strong>Publish Date</strong>:
+          <span itemprop="datePublished">
+            <time datetime="2016-05-01">May 1, 2016</time>
+          </span>
+          </p>
+
+          <!-- Modified date (this is recommended to have, even if it's the same as publication date)-->
+          <p><strong>Last Modified Date</strong>:
+          <span itemprop="dateModified">
+            <time datetime="2016-05-01">May 1, 2016</time>
+          </span>
+          </p>
+
+        </header>
+
+        <!-- Publisher are required, weird, but true (this code block doesn't output anything) -->
+        <div itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
+          <div itemprop="logo" itemscope='itemscope' itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://placekitten.com/g/100/100" />
+            <meta itemprop="width" content="100" />
+            <meta itemprop="height" content="100" />
+          </div>
+          <meta itemprop="name" content="Jane Corp" />
+        </div><!--/.itemprop=publisher-->
+
+        <!-- category -->
+        <p><strong>Category</strong>:
+          <span itemprop="articleSection">[the category]</span>
+        </p>
+
+        <!-- tags -->
+        <p><strong>Keywords</strong>:
+          <span itemprop="keywords">This, Is, A, List, of, Tags, or, Keywords</span>
+        </p>
+
+        <!-- word count -->
+        <p><strong>Word Count</strong>:
+          <span itemprop="wordCount">90</span>
+        </p>
+
+        <!-- copyright year -->
+        <p><strong>Copyright Year</strong>:
+          <span itemprop="copyrightYear">2016</span>
+        </p>
+
+        <!-- Main body of the article -->
+        <div itemprop="articleBody">
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non justo vestibulum, posuere libero quis, ornare est. Vestibulum vehicula sed justo id condimentum. Fusce lacinia eleifend felis ac tempus. Vestibulum pellentesque et lorem ut tincidunt. Nullam at semper erat, nec molestie augue. Nunc metus augue, luctus condimentum orci eget, consequat rutrum massa.</p>
+          <p>In rhoncus facilisis feugiat. Maecenas facilisis diam nec ex ullamcorper, eu placerat nisi mattis. Nulla aliquet dapibus ante, id consequat nisi placerat et. Aliquam tincidunt scelerisque orci, id consectetur quam. Donec vehicula faucibus tempor. Aliquam tempus tincidunt egestas.</p>
+
+        </div><!--/itemprop=articleBody-->
+
+        <footer>
+          <!-- a link to where the comment are with a comment count-->
+          <p><strong>Link to Comments</strong>:
+            <a href="#comments" itemprop="discussionUrl">Comments (<span itemprop="commentCount">5</span>)</a>
+          </p>
+        </footer>
+
+      </div><!--/itemprop=mainEntityOfPage-->
+    </article><!--/itemtype=BlogPosting-->
+
+  </body>
+</html>
