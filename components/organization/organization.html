@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <title>Organization - Schema Markup</title>
+
+    <!-- meta cluster -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+
+  </head>
+  <body>
+
+    <h1>Organization Using Microdata</h1>
+    <p>This microdata will produce an address and personel information in google search results card.</p>
+
+    <!--
+      Microdata markup from: http://schema.org/address
+      Notes:
+        - REPLACE all example.com references
+        - Set your own "name"
+        - Add as many classes as you need
+        - Change up the HTML to whatever semantics your project needs, the attrs are the important parts
+        - Use Google's Data Structure tool to test your HTML: https://search.google.com/structured-data/testing-tool
+    -->
+
+    <h2>Organization</h2>
+
+    <div itemscope itemtype="http://schema.org/Organization">
+
+      <!--same as logo.html-->
+      <a itemprop="url" href="http://www.example.com/">
+        <img itemprop="logo" src="https://placekitten.com/g/200/100" alt="Awesome logo for [Amazing Company]"/>
+      </a>
+
+      <!-- the name of the organization -->
+      <h3 itemprop="name">Amazing Company</h3>
+
+      <!-- address -->
+      <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <p><strong>Address</strong>:
+          <span itemprop="streetAddress">35 Broad St</span>,
+          <span itemprop="addressLocality">Red Bank</span>,
+          <span itemprop="addressRegion"><abbr title="New Jersey">NJ</abbr></span>
+          <span itemprop="postalCode">07701</span>
+        </p>
+      </div><!--/itemtype=PostalAddress-->
+
+      <!-- Contact information -->
+      <p><strong>Phone</strong>:
+        <a href="tel:+14251235678" itemprop="telephone">(425) 123-4567</a>
+      </p>
+
+      <p><strong>Fax</strong>:
+        <a href="fax:+14251235678" itemprop="faxNumber">(425) 987-0987</a>
+      </p>
+
+      <p><strong>Email</strong>:
+        <a href="mailto:hello@example.com" itemprop="email">hello@example.com</a>
+      </p>
+
+      <!-- Personel inforamtion -->
+      <p><strong>Founder</strong>:
+        <span itemprop="founder" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">Jayne D. Founder</span>
+        </span>
+      </p>
+
+      <p><strong>Current employees of this company</strong>:
+        <span itemprop="employee" itemscope itemtype="http://schema.org/Person">
+          <a href="mailto:elle.harrison@example.com" itemprop="email">
+            <span itemprop="name">Elle Harrison</span>
+          </a>
+        </span>,
+
+        <span itemprop="employee" itemscope itemtype="http://schema.org/Person">
+          <a href="mailto:james.wormington@example.com" itemprop="email">
+            <span itemprop="name">James Wormington</span>
+          </a>
+        </span>
+      </p>
+
+      <p><strong>Former employees (alumni) of this company</strong>:
+        <span itemprop="alumni" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">Jack Dan</span>
+        </span>,
+
+        <span itemprop="alumni" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">John Smith</span>
+        </span>
+      </p>
+
+    </div><!--/itemtype=Organization-->
+
+
+  </body>
+</html>
