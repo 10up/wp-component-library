@@ -103,9 +103,12 @@ main {
 
   .sub-menu {
     background-color: $dark-gray;
-    height: 0;
     min-width: 100%;
-    overflow: hidden;
+    display: block;
+
+    &[aria-hidden="true"] {
+      display: none;
+    }
 
     &.hover {
       height: auto;

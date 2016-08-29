@@ -62,9 +62,10 @@ main {
     padding: .75rem 1rem; }
   .primary-menu .sub-menu {
     background-color: #303030;
-    height: 0;
     min-width: 100%;
-    overflow: hidden; }
+    display: block; }
+    .primary-menu .sub-menu[aria-hidden="true"] {
+      display: none; }
     .primary-menu .sub-menu.hover {
       height: auto; }
 

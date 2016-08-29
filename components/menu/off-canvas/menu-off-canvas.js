@@ -3,10 +3,10 @@
   // Enable strict mode
   "use strict";
 
-  var subMenuItem = document.querySelectorAll( '.sub-menu .menu-item' ),
-  subMenu     = document.querySelectorAll( '.sub-menu' );
+  var subMenuItem = doc.querySelectorAll( '.sub-menu .menu-item' ),
+  subMenu     = doc.querySelectorAll( '.sub-menu' );
 
-  document.addEventListener( 'focus', focusToggle, true );
+  doc.addEventListener( 'focus', focusToggle, true );
 
   function focusToggle( e ) {
     if ( e.target.classList.contains( 'menu-level-1' ) ) {
@@ -14,6 +14,18 @@
     } else {
       subMenu[0].classList.remove( 'hover' );
     }
+  }
+
+
+  function showSubMenu( subMenuToggle, subMenu ) {
+
+    if( subMenu.getAttribute( 'aria-hidden' ) === 'true' ) {
+      subMenu.setAttribute( 'aria-hidden', 'false');
+      subMenu.querySelectorAll('a')[0].focus();
+    } else {
+       subMenu.setAttribute( 'aria-hidden', 'true');
+    }
+
   }
 
   /**
@@ -24,15 +36,27 @@
   * @param {String} direction        //The direction that the off canvas menu should fly in from.
   */
   function offCanvas( toggler, primaryMenu, primaryMenuWrap, direction ) {
-    var body       = document.body,
-    menuToggle = document.querySelector( toggler ),
-    menu       = document.querySelector( primaryMenu ),
-    wrap       = document.querySelector( primaryMenuWrap ),
+    var body   = doc.body,
+    menuToggle = doc.querySelector( toggler ),
+    menu       = doc.querySelector( primaryMenu ),
+    wrap       = doc.querySelector( primaryMenuWrap ),
+    subMenus   = menu.querySelectorAll('[aria-haspopup="true"]'),
     dir        = direction;
 
     menuToggle.onclick = function() {
+
       menu.classList.toggle( 'is-active' );
       body.classList.toggle( 'is-active-off-canvas' );
+
+      // Update the menu state within the button
+      if( this.getAttribute( 'aria-expanded') === 'false' ) {
+        this.setAttribute( 'aria-expanded', 'true' );
+      } else {
+        this.setAttribute( 'aria-expanded', 'false' );
+      }
+
+      // Set focus to the first item in the menu
+      menu.querySelectorAll('a')[0].focus();
 
       if( body.classList.contains( 'is-active-off-canvas' ) ) {
         var menuWidth = menu.offsetWidth,
@@ -50,8 +74,28 @@
 
         wrap.classList.remove( dir );
       }
-    }
-  }
+    } // end click
+
+      for ( var i = 0; i < subMenus.length; i = i + 1 ) {
+
+        var subMenuToggle = subMenus[i],
+            parent,
+            subMenu;
+
+        subMenuToggle.addEventListener( "click", function( e ) {
+
+          e.preventDefault();
+
+          parent = this.parentNode,
+          subMenu = parent.querySelectorAll('.sub-menu')[0];
+
+          showSubMenu( subMenuToggle, subMenu );
+
+        }, false );
+
+      }
+
+  } // end offCanvas
 
   offCanvas( '.site-menu-toggle', '.primary-menu', '.site-header', 'left' );
 
