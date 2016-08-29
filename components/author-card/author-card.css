@@ -1,36 +1,26 @@
-body {
-  margin: 0; }
-
-img {
-  max-width: 100%; }
-
-a {
-  color: #6ab7b7; }
-
-header {
-  max-width: 1280px;
-  margin: 0 auto; }
-
 .author-card {
-  border-bottom: 1px solid #303030;
-  border-top: 1px solid #303030;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 15px auto;
   max-width: 650px;
-  padding: 15px; }
-  @media (min-width: 768px) {
+  padding: .5em;
+  overflow: hidden;
+  margin: auto; }
+  @media screen and (min-width: 600px) {
     .author-card {
-      flex-wrap: nowrap; } }
+      padding: 1em; } }
   .author-card-author {
     margin: 0; }
+  @media screen and (min-width: 600px) {
+    .author-card-info {
+      display: inline-block;
+      width: calc(100% - 120px);
+      float: right; } }
   .author-card-pic {
-    padding-bottom: 15px;
+    padding-bottom: .5em;
     text-align: center; }
-    @media (min-width: 768px) {
+    @media screen and (min-width: 600px) {
       .author-card-pic {
-        flex: 1 0 25%; } }
+        display: inline-block;
+        max-width: 100px;
+        padding-bottom: 1em; } }
     .author-card-pic img {
       border-radius: 50%; }
 

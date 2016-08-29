@@ -1,54 +1,44 @@
 //GLOBALS @todo: Move this to a top level import
-$sm:  480px;
-$med: 768px;
-$lg:  1024px;
+$bp-small:  600px;
+$bp-medium: 800px;
+$bg-large:  1000px;
 
 $tenup-blue: #6ab7b7;
 $tenup-red:  #df2b26;
 $dark-gray:  #303030;
 
-body {
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  color: $tenup-blue;
-}
-
-header {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-//GLOBALS @todo: Move this to a top level import
-
 .author-card {
-  border-bottom: 1px solid $dark-gray;
-  border-top: 1px solid $dark-gray;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 15px auto;
   max-width: 650px;
-  padding: 15px;
+  padding: .5em;
+  overflow: hidden;
+  margin: auto;
 
-  @media (min-width: $med) {
-    flex-wrap: nowrap;
+  @media screen and (min-width: $bp-small) {
+    padding: 1em;
   }
 
   &-author {
     margin: 0;
   }
 
+  &-info {
+
+    @media screen and (min-width: $bp-small) {
+      display: inline-block;
+      width: calc(100% - 120px);
+      float: right;
+    }
+
+  }
+
   &-pic {
-    padding-bottom: 15px;
+    padding-bottom: .5em;
     text-align: center;
 
-    @media (min-width: $med) {
-      flex: 1 0 25%;
+    @media screen and (min-width: $bp-small) {
+      display: inline-block;
+      max-width: 100px;
+      padding-bottom: 1em;
     }
 
     img {
