@@ -1,6 +1,6 @@
 ---
 title: Grid
-path_slug: Grid
+path_slug: grid
 layout: component
 ---
 
