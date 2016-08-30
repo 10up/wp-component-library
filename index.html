@@ -6,10 +6,8 @@ layout: default
 	{% for component in site.component %}
 
 		<div class="component">
-	    	<h2>{{ component.title }}</h2>
-
-	    	{{ component.content }}
-
+			<img src="{{ site.baseurl }}/component/{{ component.relative_path }}/component.png">
+	    	<h2><a href="{{ site.baseurl }}{{ component.url }}">{{ component.title }}</h2>
 	    </div>
 
 	{% endfor %}
