@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <title>Search Action - Schema Markup</title>
+
+    <!-- meta cluster -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+
+  </head>
+  <body>
+
+    <h1>A search form using microdata</h1>
+    <p>This microdata will produce a <a href="https://developers.google.com/search/docs/guides/enhance-site#add-a-sitelinks-searchbox-for-your-site">sitelinks searchbox</a> in Google search results</p>
+
+    <!--
+      Microdata markup from: http://schema.org/SearchAction
+      Notes:
+        - Added type=search and role=search for accessibility
+        - Don't forget to fill in the action="" if you need one
+        - REPLACE example.com with final destination URL
+        - The label's "for" should always match the input's "id" ("q", in this case)
+        - You can use <button type="submit">Submit</button>, if you don't want to use an <input>
+        - Add as maany classes as you need
+        - The result of this should be a search box appearing in Google search results (it won't happen right away)
+        - Use Google's Structured Data Testing Tool to test your HTML: https://search.google.com/structured-data/testing-tool/u/0/
+        - If you want to opt out of the sitelinks search box, add this to the <head> : <meta name="google" content="nositelinkssearchbox" />
+    -->
+
+    <div itemscope itemtype="http://schema.org/WebSite">
+
+      <link itemprop="url" href="http://www.example.com/" />
+      <form method="get" action="" role="search" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+        <meta itemprop="target" content="http://example.com/?s={s}" />
+
+        <label for="q">Search</label>
+        <input itemprop="query-input" type="search" name="s" id="q" />
+        <input type="submit" value="Submit" />
+      </form>
+
+    </div>
+
+  </body>
+</html>

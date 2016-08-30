@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <title>Organizational Logo - Schema Markup</title>
+
+    <!-- meta cluster -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+
+  </head>
+  <body>
+
+    <h1>Organization logo using microdata</h1>
+    <p>This microdata will produce a <a href="https://developers.google.com/search/docs/data-types/logo">generate logo</a> in Google search results</p>
+
+    <!--
+      Microdata markup from: http://schema.org/Organization
+      Notes:
+        - REPLACE all example.com references
+        - Add as many classes as you need or HTML as you need, the attrs are the important part
+        - Update the ALT text on the image
+        - Use Google's Data Structure tool to test your HTML: https://search.google.com/structured-data/testing-tool
+    -->
+
+<div itemscope itemtype="http://schema.org/Organization">
+  <a itemprop="url" href="http://www.example.com/">
+    <img itemprop="logo" src="https://placekitten.com/g/80/80" srcset="https://placekitten.com/g/80/80 1x, https://placekitten.com/g/160/160 2x" alt="Awesome logo" />
+  </a>
+</div>
+
+  </body>
+</html>
