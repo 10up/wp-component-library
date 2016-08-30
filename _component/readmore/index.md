@@ -4,7 +4,7 @@ relative_path: readmore
 layout: component
 ---
 
-<iframe src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
+<iframe class="medium" src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
 
 <h3>HTML</h3>
 
