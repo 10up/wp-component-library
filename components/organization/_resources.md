@@ -1,0 +1,6 @@
+Resources
+==========
+
+- [Using schema.org markup for organization logos](https://webmasters.googleblog.com/2013/05/using-schemaorg-markup-for-organization.html)
+- [More information about schema for creative works](http://schema.org/Organization)
+- [Test your schema markup](https://search.google.com/structured-data/testing-tool)

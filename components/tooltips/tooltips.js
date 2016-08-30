@@ -1,3 +1,10 @@
+/*
+  Name: Accessible ToolTips
+  Contributors: Tim Wright (tim@10up.com, @csskarma)
+  License: MIT, https://opensource.org/licenses/MIT
+  Converted from a jQuery plugin originally written by @scottohara
+*/
+
 ;(function ( w, doc ) {
 
   // enable strict mode
