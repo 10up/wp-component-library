@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="docs-section">
+<div class="content">
 	{% for component in site.component %}
 
 		<div class="component">

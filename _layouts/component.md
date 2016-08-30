@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="docs-section">
+<div class="content">
 	<div class="component">
 		{{ content }}
 	</div>

@@ -97,57 +97,6 @@
 	}
 }
 
-// Make a CSS arrow
-//
-// $direction: top, right, bottom, left
-// $color: hex, rgb or rbga
-// $size: any valid size for border: -- px, em, rem, etc.
-//
-// @example
-// .element{
-//     @include arrow(top, #000, 50px);
-// }
-@mixin arrow($direction, $color, $size, $pseudo-element: after) {
-
-	&:#{$pseudo-element} {
-		content: ' ';
-		position: absolute;
-		display: block;
-		height: 0;
-		width: 0;
-		border: $size solid transparent;
-
-		@if $direction == 'bottom'{
-			border-top-color: $color;
-			bottom: -($size*2);
-			left: 50%;
-			margin-left: -($size/2);
-		}
-
-		@if $direction == 'top' {
-			border-bottom-color: $color;
-			top: -($size*2);
-			left: 50%;
-			margin-left: -($size/2);
-		}
-
-		@if $direction == 'right' {
-			border-left-color: $color;
-			right: -($size*2);
-			top: 50%;
-			margin-top: -($size/2);
-		}
-
-		@if $direction == 'left' {
-			border-right-color: $color;
-			left: -($size*2);
-			top: 50%;
-			margin-top: -($size/2);
-		}
-
-	}
-}
-
 // box sizing cross-browser support
 
 @mixin box-sizing($box-model) {
@@ -185,36 +134,4 @@
 	 -moz-opacity: $opacity;
 	 -khtml-opacity: $opacity;
 	 opacity: $opacity;
-}
-
-@mixin tenup-bump($color, $bg, $position) {
-  &:after {
-    content: "";
-    width: 50px;
-    height: 50px;
-    display: block;
-    -webkit-background-size: 25px;
-    background-size: 25px;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    position: absolute;
-    left: 50%;
-    margin-left: -25px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: $bg;
-    @if $position == 'top' {
-      top: -25px;
-    }
-    @if $position == 'bottom' {
-      bottom: -25px;
-    }
-    @if $color == 'white' {
-      background-image: url("../img/10up-icon-reversed.svg");
-    }
-    @if $color == 'red' {
-      background-image: url("../img/10up-icon.svg");
-    }
-  }
 }

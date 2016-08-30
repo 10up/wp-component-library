@@ -8,7 +8,7 @@
 @import "global/grid";
 
 // Base
-@import "base/normalize";
+{% include bower_components/normalize-css/normalize.css %}
 @import "base/base";
 @import "base/typography";
 @import "base/fonts";
@@ -23,8 +23,6 @@
 
 // Includes
 @import "includes/header";
-@import "includes/table-of-contents";
-@import "includes/docs-section";
+@import "includes/content";
 @import "includes/footer";
 @import "includes/footer-about";
-@import "includes/nav-dropdowns";
