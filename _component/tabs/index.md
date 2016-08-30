@@ -1,13 +1,12 @@
 ---
 title: Tabs
 relative_path: tabs
+layout: component
 ---
 
-<div class="docs-section">
-	<div class="component">
-		<iframe src="{{ site.baseurl}}/component/tabs/example.html"></iframe>
+<iframe src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
 
-		<h3>HTML</h3>
+<h3>HTML</h3>
 
 ```html
 {% include_relative component.html %}
@@ -23,5 +22,3 @@ relative_path: tabs
 ```javascript
 {% include_relative component.js %}
 ```
-	</div>
-</div>

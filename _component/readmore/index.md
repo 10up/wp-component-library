@@ -1,13 +1,12 @@
 ---
 title: Read More
 relative_path: readmore
+layout: component
 ---
 
-<div class="docs-section">
-	<div class="component">
-		<iframe src="{{ site.baseurl}}/component/readmore/example.html"></iframe>
+<iframe src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
 
-		<h3>HTML</h3>
+<h3>HTML</h3>
 
 ```html
 {% include_relative component.html %}
@@ -17,5 +16,3 @@ relative_path: readmore
 ```css
 {% include_relative scss/component.scss %}
 ```
-	</div>
-</div>

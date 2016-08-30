@@ -1,13 +1,12 @@
 ---
 title: Dropdown Menu
 relative_path: menu/dropdown
+layout: component
 ---
 
-<div class="docs-section">
-	<div class="component">
-		<iframe src="{{ site.baseurl}}/component/menu/dropdown/example.html"></iframe>
+<iframe src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
 
-		<h3>HTML</h3>
+<h3>HTML</h3>
 
 ```html
 {% include_relative component.html %}
@@ -23,5 +22,3 @@ relative_path: menu/dropdown
 ```javascript
 {% include_relative component.js %}
 ```
-	</div>
-</div>

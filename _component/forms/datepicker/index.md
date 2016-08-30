@@ -1,14 +1,12 @@
 ---
 title: Datepicker Form
 relative_path: forms/datepicker
+layout: component
 ---
 
-<div class="docs-section">
-	<div class="component">
-		<iframe src="{{ site.baseurl}}/component/forms/datepicker/example.html"></iframe>
+<iframe src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
 
-		<h3>HTML</h3>
-
+<h3>HTML</h3>
 ```html
 {% include_relative component.html %}
 ```
@@ -23,5 +21,3 @@ relative_path: forms/datepicker
 ```javascript
 {% include_relative component.js %}
 ```
-	</div>
-</div>
