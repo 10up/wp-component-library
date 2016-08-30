@@ -1,10 +1,10 @@
 ---
 title: Blog Post
 layout: component
-relative_path: blogposting
+path_slug: blogposting
 ---
 
-<iframe class="large" src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
+<iframe class="large" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
 ```html

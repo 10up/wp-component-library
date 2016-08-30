@@ -1,10 +1,10 @@
 ---
 title: Datepicker Form
-relative_path: forms/datepicker
+path_slug: forms/datepicker
 layout: component
 ---
 
-<iframe src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
+<iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
 ```html

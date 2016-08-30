@@ -1,10 +1,10 @@
 ---
 title: Breadcrumbs
 layout: component
-relative_path: breadcrumbs
+path_slug: breadcrumbs
 ---
 
-<iframe class="medium" src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
+<iframe class="medium" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
 ```html

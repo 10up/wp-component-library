@@ -1,10 +1,10 @@
 ---
 title: Accordion
 layout: component
-relative_path: accordion
+path_slug: accordion
 ---
 
-<iframe class="medium" src="{{ site.baseurl }}/component/{{ page.relative_path }}/example.html"></iframe>
+<iframe class="medium" src="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
 ```html

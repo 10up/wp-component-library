@@ -1,10 +1,10 @@
 ---
 title: Grid
-relative_path: Grid
+path_slug: Grid
 layout: component
 ---
 
-<iframe class="large" src="{{ site.baseurl}}/component/{{ page.relative_path }}/example.html"></iframe>
+<iframe class="large" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
 ```html
