@@ -34,12 +34,10 @@ button {
   .accordion-header.is-active:before {
     content: "-"; }
 
-.accordion-content {
-  height: 0;
-  overflow: hidden;
-  transition: transform 600ms ease; }
-  .accordion-content.is-active {
+.js .accordion-content {
+  display: none; }
+  .js .accordion-content.is-active {
     border-bottom: 1px solid #303030;
-    height: auto; }
+    display: block; }
 
 /*# sourceMappingURL=accordion.css.map */

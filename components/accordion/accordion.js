@@ -25,7 +25,7 @@
       head.setAttribute( 'aria-expanded', 'false' );
       head.setAttribute( 'aria-controls', 'panel' + topIndex + '-' + index );
       head.setAttribute( 'role', 'tab' );
-      head.setAttribute( 'tabindex', '0' );
+      //head.setAttribute( 'tabindex', '0' );
 
       head.onclick = accordionHandle;
 
@@ -34,8 +34,8 @@
 
         value.classList.toggle( 'is-active' );
         nextPanel.classList.toggle( 'is-active' );
-        nextPanel.querySelector( 'h2' ).setAttribute( 'tabindex', -1 );
-        nextPanel.querySelector( 'h2' ).focus();
+        nextPanel.querySelector( '.accordion-label' ).setAttribute( 'tabindex', -1 );
+        nextPanel.querySelector( '.accordion-label' ).focus();
 
         if( !nextPanel.classList.contains( 'visually-hidden' ) ) {
           head.setAttribute( 'aria-selected', 'true' );
@@ -58,7 +58,7 @@
       content.setAttribute( 'aria-hidden', 'true' );
       content.setAttribute( 'aria-labelledby', 'tab' + topIndex + '-' + index );
       content.setAttribute( 'role', 'tabpanel' );
-      content.setAttribute( 'tabindex', '-1' );
+      //content.setAttribute( 'tabindex', '-1' );
     });
 
   });

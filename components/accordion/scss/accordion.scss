@@ -56,13 +56,15 @@ button {
   }
 }
 
-.accordion-content {
-  height: 0;
-  overflow: hidden;
-  transition: transform 600ms ease;
+.js .accordion-content {
+  //height: 0;
+  //overflow: hidden;
+  //transition: transform 600ms ease;
+  display: none;
 
   &.is-active {
     border-bottom: 1px solid $dark-gray;
-    height: auto;
+    //height: auto;
+    display: block;
   }
 }
