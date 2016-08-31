@@ -2,6 +2,7 @@
 title: Dropdown Menu
 path_slug: menu/dropdown
 layout: component
+category: navigation
 ---
 
 <iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
@@ -11,10 +12,10 @@ layout: component
 ```html
 {% include_relative component.html %}
 ```
-<h3>CSS</h3>
+<h3>SCSS</h3>
 
-```css
-{% include_relative component.css %}
+```scss
+{% include_relative scss/component.scss %}
 ```
 
 <h3>JS</h3>

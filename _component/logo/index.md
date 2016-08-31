@@ -2,6 +2,7 @@
 title: Logo
 path_slug: logo
 layout: component
+category: navigation
 ---
 <iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 

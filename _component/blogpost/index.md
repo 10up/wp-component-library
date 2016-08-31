@@ -1,7 +1,8 @@
 ---
 title: Blog Post
 layout: component
-path_slug: blogposting
+path_slug: blogpost
+category: content
 ---
 
 <iframe class="large" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

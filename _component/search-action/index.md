@@ -2,6 +2,7 @@
 title: Search Action
 path_slug: search-action
 layout: component
+category: content
 ---
 
 <iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

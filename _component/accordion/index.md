@@ -2,6 +2,7 @@
 title: Accordion
 layout: component
 path_slug: accordion
+category: ui
 ---
 
 <iframe class="medium" src="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html"></iframe>
@@ -11,7 +12,7 @@ path_slug: accordion
 {% include_relative component.html %}
 ```
 <h3>SCSS</h3>
-```css
+```scss
 {% include_relative scss/component.scss %}
 ```
 

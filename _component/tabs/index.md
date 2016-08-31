@@ -2,6 +2,7 @@
 title: Tabs
 path_slug: tabs
 layout: component
+category: ui
 ---
 
 <iframe class="medium" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
@@ -11,9 +12,9 @@ layout: component
 ```html
 {% include_relative component.html %}
 ```
-<h3>CSS</h3>
+<h3>SCSS</h3>
 
-```css
+```scss
 {% include_relative scss/component.scss %}
 ```
 

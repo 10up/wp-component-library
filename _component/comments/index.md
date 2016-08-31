@@ -2,6 +2,7 @@
 title: Comments
 layout: component
 path_slug: comments
+category: content
 ---
 
 <iframe class="medium" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
