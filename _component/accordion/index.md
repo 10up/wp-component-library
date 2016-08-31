@@ -11,7 +11,7 @@ path_slug: accordion
 {% include_relative component.html %}
 ```
 <h3>SCSS</h3>
-```css
+```scss
 {% include_relative scss/component.scss %}
 ```
 

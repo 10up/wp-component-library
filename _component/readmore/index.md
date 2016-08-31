@@ -11,8 +11,8 @@ layout: component
 ```html
 {% include_relative component.html %}
 ```
-<h3>CSS</h3>
+<h3>SCSS</h3>
 
-```css
+```scss
 {% include_relative scss/component.scss %}
 ```

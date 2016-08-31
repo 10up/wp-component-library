@@ -11,7 +11,7 @@ path_slug: author-card
 {% include_relative component.html %}
 ```
 
-<h3>CSS</h3>
-```css
+<h3>SCSS</h3>
+```scss
 {% include_relative scss/component.scss %}
 ```
