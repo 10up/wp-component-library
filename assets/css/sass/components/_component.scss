@@ -15,10 +15,38 @@
 	height: 400px;
 }
 
-.component-tile {
-	text-align: center;
+.component-tile {}
+
+.tile-list {
+	border-bottom: 0;
+	margin: 20px 0 0;
+	padding: 0;
+	list-style: none;
+	line-height: 1.8;
 }
 
-.content .component-tile h3 {
-	border-bottom: 0;
+.tile-header {
+	font-weight: 300;
+	line-height: 1.5;
+
+	@media screen and (min-width: 570px) {
+		font-size: 2.6rem;
+		line-height: 1.3;
+	}
+
+}
+
+.tile-icon,
+.tile-heading {
+	display: inline-block;
+	vertical-align: top;
+
+}
+
+.tile-icon {
+	margin-right: 15px;
+}
+
+.tile-heading {
+	width: calc(100% - 75px);
 }

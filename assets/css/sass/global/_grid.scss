@@ -50,7 +50,9 @@ $w-100:         100% !default;
 }
 
 .grid-col {
-  float: left;
+  display: inline-block;
+  margin-right: -4px;
+  vertical-align: top;
   padding: $grid-gutter;
   box-sizing: border-box;
 }
