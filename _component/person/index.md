@@ -2,6 +2,7 @@
 title: Person
 path_slug: person
 layout: component
+category: content
 ---
 
 <iframe class="large" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

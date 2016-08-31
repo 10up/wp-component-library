@@ -2,6 +2,7 @@
 title: Grid
 path_slug: grid
 layout: component
+category: layout
 ---
 
 <iframe class="large" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

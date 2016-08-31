@@ -2,6 +2,7 @@
 title: Dropdown Menu
 path_slug: menu/dropdown
 layout: component
+category: navigation
 ---
 
 <iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

@@ -2,6 +2,7 @@
 title: Custom Select Form
 path_slug: forms/custom-select
 layout: component
+category: ui
 ---
 
 <iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

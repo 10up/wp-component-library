@@ -2,6 +2,7 @@
 title: Tabs
 path_slug: tabs
 layout: component
+category: ui
 ---
 
 <iframe class="medium" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

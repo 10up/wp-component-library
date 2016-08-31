@@ -2,6 +2,7 @@
 title: Modal
 path_slug: modal
 layout: component
+category: ui
 ---
 
 <iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

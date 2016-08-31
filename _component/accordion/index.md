@@ -2,6 +2,7 @@
 title: Accordion
 layout: component
 path_slug: accordion
+category: ui
 ---
 
 <iframe class="medium" src="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html"></iframe>

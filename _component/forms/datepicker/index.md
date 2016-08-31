@@ -2,6 +2,7 @@
 title: Datepicker Form
 path_slug: forms/datepicker
 layout: component
+category: ui
 ---
 
 <iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>

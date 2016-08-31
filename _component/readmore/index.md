@@ -2,6 +2,7 @@
 title: Read More
 path_slug: readmore
 layout: component
+category: content
 ---
 
 <iframe class="medium" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
