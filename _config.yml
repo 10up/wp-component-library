@@ -19,11 +19,3 @@ sass:
 collections:
   component:
     output: true
-categories:
-  ui:
-    pretty: UI Components
-  navigation:
-    pretty: Navigation Components
-  content:
-    pretty: Content Components
-
