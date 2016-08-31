@@ -1,11 +1,7 @@
-# 10up Engineering Best Practices
+# 10up Component Library
 
-These are the official best practices for 10up. This guide dictates how we, as a company, engineer websites. The purpose behind them is to improve the quality of the experiences we build as well as to standardize in order to facilitate more effective collaboration.
-
-<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png" width="850"></a>
-
-
-**[Start reading ☞](https://10up.github.io/Engineering-Best-Practices/)**
+## Description
+This is the repository for the 10up Component Library.
 
 ## Contributions
 
@@ -21,3 +17,9 @@ bundle exec jekyll serve
 ## License
 
 Released under MIT by, and copyright 2014 by 10up.
+
+This is an component library created by [10up](http://10up.com). We use this on all of our projects and we welcome you to  do the same!
+
+## License
+
+MIT

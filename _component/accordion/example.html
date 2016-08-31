@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="component.css" />
+
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+
+  </head>
+  <body>
+
+    <div class="accordion">
+
+      <button class="accordion-header" type="button">Accordion Header</button>
+      <div class="accordion-content">
+        <h2 class="accordion-label">Accordion Heading</h2>
+        <p>here the content of 1st tab <a href="#">link</a></p>
+      </div> <!-- //.accordion-content -->
+
+      <button class="accordion-header" type="button">Accordion Header</button>
+      <div class="accordion-content">
+        <h2 class="accordion-label">Accordion Heading</h2>
+        <p>here the content of 2nd tab <a href="#">link</a></p>
+      </div> <!-- //.accordion-content -->
+
+      <button class="accordion-header" type="button">Accordion Header</button>
+      <div class="accordion-content">
+        <h2 class="accordion-label">Accordion Heading</h2>
+        <p>here the content of 3rd tab <a href="#">link</a></p>
+      </div> <!-- //.accordion-content -->
+
+      <button class="accordion-header" type="button">Accordion Header</button>
+      <div class="accordion-content">
+        <h2 class="accordion-label">Accordion Heading</h2>
+        <p>here the content of 4th tab <a href="#">link</a></p>
+      </div> <!-- //.accordion-content -->
+
+    </div> <!-- //.accordion -->
+
+    <script src="component.js"></script>
+  </body>
+</html>

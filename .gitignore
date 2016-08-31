@@ -40,6 +40,5 @@ validation-report.json
 
 # Folders to ignore
 node_modules
-bower_components
 .sass-cache
 _local.yaml

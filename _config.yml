@@ -3,16 +3,15 @@ title:         Component Library
 description:   Front-end components for 10up.
 url:           https://10up.github.io/
 baseurl:       /component-library
+permalink: none
 author:
   name:    10up
   email:   sales@10up.com
   github:  10up
   twitter: 10up
-
-markdown:      kramdown
-permalink:     pretty
-highlighter:   rouge
 encoding:      utf-8
+markdown:      kramdown
+highlighter:   rouge
 kramdown:
   input: GFM
 sass:
