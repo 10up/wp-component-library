@@ -1,0 +1,85 @@
+h1, h2, h3, h4, h5, h6 {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+em {
+	font-style: normal;
+	font-weight: 600;
+}
+
+blockquote {
+	margin-bottom: 25px;
+	margin-top: 25px;
+	font-size: 32px;
+	line-height: 50px;
+	text-align: left;
+	text-indent: 16px;
+	color: rgba(140, 138, 138, 1.00);
+}
+
+h1 {
+	font-size: 3.4rem;
+	line-height: 1.4;
+	// font-family: $font-family-serif;
+	font-family: $font-family-sans;
+	font-weight: 300;
+	font-style: normal;
+	margin: 0px 0px 12px 0px;
+
+	@include breakpoint($breakpoint-alpha) {
+		font-size: 4.9rem;
+	}
+
+	@include breakpoint($breakpoint-bravo) {
+		font-size: 6.4rem;
+	}
+}
+
+h2 {
+	font-size: 2.2rem;
+	font-weight: 300;
+	line-height: 1.4;
+	text-transform: none;
+	margin: 36px 0px 12px 0px;
+
+	@include breakpoint($breakpoint-alpha) {
+		font-size: 2.8rem;
+	}
+}
+
+h3 {
+	font-size: 2.4rem;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+h4 {
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+h5 {
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+p, ul, ol {
+	text-indent: 0em;
+	font-size: 1.6rem;
+	font-weight: 300;
+	line-height: 1.7;
+	margin: 14px 0px 18px 0px;
+
+	@include breakpoint($breakpoint-bravo) {
+		font-size: 1.8rem;
+	}
+}
+
+.subhead {
+	text-align: center;
+	font-size: 24px;
+	line-height: 36px;
+	letter-spacing: 1px;
+}
+

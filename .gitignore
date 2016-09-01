@@ -8,17 +8,19 @@ _local.yaml
 # NPM
 node_modules/
 
-# Jekyll
-_site/
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
+Gemfile.lock
 
-# Editors
-*.esproj
-*.tmproj
-*.tmproject
-tmtags
-.*.sw[a-z]
-*.un~
-Session.vim
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
 *.swp
 .cache
 .project
@@ -29,20 +31,32 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+*.zip
+*.vi
+*~
 
 # Mac OSX
 .DS_Store
 ._*
 .Spotlight-V100
 .Trashes
-Thumbs.db
 
 # Windows
+=======
 Thumbs.db
-Desktop.ini
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
 
-# SVN
-.svn/
+# Komodo
+*.komodoproject
+.komodotools
 
 # Wordpress
 .htaccess
@@ -85,6 +99,10 @@ Gemfile.lock
 *.komodoproject
 .komodotools
 
+# grunt-html-validation
+validation-status.json
+validation-report.json
+=======
 # grunt-html-validation
 validation-status.json
 validation-report.json

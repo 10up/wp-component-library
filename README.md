@@ -9,6 +9,7 @@ This is the repository for the 10up Component Library.
 1. [.editorconfig](http://editorconfig.org/) Plugin - The .editorconfig file ensures that everyone contributing to the project will use the same indentation.
 
 ## Structure
+
 ```
 components/
 ├── component-name/
@@ -33,9 +34,13 @@ README.md
 4. Push to the branch: `git push origin compnent/my-new-component`
 5. Submit a pull request
 
-## Credits
+## Running Locally
 
-This is an component library created by [10up](http://10up.com). We use this on all of our projects and we welcome you to  do the same!
+```
+gem install bundle
+bundle install
+bundle exec jekyll serve
+```
 
 ## Running Locally
 
@@ -53,4 +58,4 @@ This is an component library created by [10up](http://10up.com). We use this on 
 
 ## License
 
-MIT
+Released under MIT by, and copyright 2016 by [10up](http://10up.com).
