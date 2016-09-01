@@ -1,5 +1,5 @@
 ---
-title: Grid
+title: Simple Grid
 path_slug: grid
 layout: component
 category: layout

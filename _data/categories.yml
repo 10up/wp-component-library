@@ -7,3 +7,6 @@
 - slug: content
   pretty: Content Components
 
+- slug: layout
+  pretty: Layout Components
+
