@@ -1,4 +1,1 @@
-Notes
-==========
-
 The organization component gives you all the microdata you need to properly markup a company to be displayed in a Google search results card. When modifying this component you should feel free to use any HTML that fits the structure and hierarchy of your project, while maintaining any of the schema-related HTML attributes (`itemscope`, `itemtype`, `itemprop`, etc.).

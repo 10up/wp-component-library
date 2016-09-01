@@ -1,21 +1,43 @@
-.component iframe {
-	width: 100%;
-	border: 0;
-}
+.component {
 
-.component iframe.small {
-	height: 100px;
-}
+	iframe {
+		width: 100%;
+		border: 20px solid $medium-grey;
+		padding: 0;
+		margin: 20px 0 0;
 
-.component iframe.medium {
-	height: 250px;
-}
+		&.small {
+			height: 100px;
+		}
 
-.component iframe.large {
-	height: 400px;
-}
+		&.medium {
+			height: 250px;
+		}
 
-.component-tile {}
+		&.large {
+			height: 400px;
+		}
+
+	}
+
+	h3 {
+		margin-top: 60px;
+
+		> a {
+			font-size: 14px;
+			float: right;
+			line-height: 2.5;
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+
+		}
+
+	}
+
+}
 
 .tile-list {
 	border-bottom: 0;
@@ -29,7 +51,7 @@
 	font-weight: 300;
 	line-height: 1.5;
 
-	@media screen and (min-width: 570px) {
+	@media screen and ( min-width: $breakpoint-alpha ) {
 		font-size: 2.6rem;
 		line-height: 1.3;
 	}

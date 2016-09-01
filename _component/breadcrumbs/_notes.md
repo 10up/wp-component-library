@@ -1,4 +1,1 @@
-Notes
-==========
-
 The breadcrumb component will give you the schema markup you need to output breadcrumb sitelinks in a google search result. Note the "you are here" title on the last breadcrumb item. When modifying this component you should feel free to use any HTML that fits the structure and hierarchy of your project, while maintaining any of the schema-related HTML attributes (`itemscope`, `itemtype`, `itemprop`, etc.). The associated breadcrumb images are not required.

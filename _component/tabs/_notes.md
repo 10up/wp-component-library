@@ -1,4 +1,1 @@
-Notes
-==========
-
 The Tab component is based on and extended from work done by the folks over at [SimplyAccessible](http://simplyaccessible.com/). It is a stipped down, but still accessible version of UI tabs. They are keyboard accessible and user friendly and are meant to be a starting point for you to use on a project.

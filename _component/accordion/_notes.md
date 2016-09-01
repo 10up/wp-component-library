@@ -1,4 +1,1 @@
-Notes
-==========
-
 The most important thing to remember when implementing this accordion is that the trigger (the thing you click to open a drawer) needs to be a focusable element. In this case, we're using a button and applying all the ARIA attributes with JavaScript. If JavaScript isn't enabled, each drawer will be in its natural open state.

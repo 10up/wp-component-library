@@ -1,4 +1,1 @@
-Notes
-==========
-
 The comment module will give you all the schema markup you need to make blog or article comments more machine readable. When modifying this component you should feel free to use any HTML that fits the structure and hierarchy of your project, while maintaining any of the schema-related HTML attributes (`itemscope`, `itemtype`, `itemprop`, etc.).

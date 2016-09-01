@@ -1,6 +1,3 @@
-Resources
-==========
-
 - [More information about SearchAction Microdata](http://schema.org/SearchAction)
 - [Enhance Your Site's Attributes](https://developers.google.com/search/docs/guides/enhance-site)
 - [Sitelinks Searchbox](https://moz.com/blog/sitelinks-search-box)
