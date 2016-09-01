@@ -59,3 +59,7 @@ This is an component library created by [10up](http://10up.com). We use this on 
 ## License
 
 Released under MIT by, and copyright 2016 by [10up](http://10up.com).
+
+<p align="center">
+<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png" width="850"></a>
+</p>
