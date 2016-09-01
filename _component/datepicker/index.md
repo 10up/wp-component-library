@@ -1,6 +1,6 @@
 ---
 title: Datepicker Form
-path_slug: forms/datepicker
+path_slug: datepicker
 layout: component
 category: ui
 ---
@@ -12,11 +12,6 @@ category: ui
 <h3>HTML</h3>
 ```html
 {% include_relative component.html %}
-```
-<h3>SCSS <a href="scss/component.scss">Download SCSS</a></h3>
-
-```scss
-{% include_relative scss/component.scss %}
 ```
 
 <h3>JS <a href="component.js">Download JS</a></h3>
