@@ -1,6 +1,6 @@
 ---
 title: Dropdown Menu
-path_slug: menu/dropdown
+path_slug: menu-dropdown
 layout: component
 category: navigation
 ---
