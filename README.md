@@ -37,6 +37,20 @@ README.md
 
 This is an component library created by [10up](http://10up.com). We use this on all of our projects and we welcome you to  do the same!
 
+## Running Locally
+
+```
+gem install bundle
+bundle install
+bundle exec jekyll serve
+```
+
+## License
+
+Released under MIT by, and copyright 2014 by 10up.
+
+This is an component library created by [10up](http://10up.com). We use this on all of our projects and we welcome you to  do the same!
+
 ## License
 
 MIT
