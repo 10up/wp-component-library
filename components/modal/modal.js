@@ -2,7 +2,7 @@
   Name: Accessible Modal Plugin
   Contributors: Tim Wright (tim@10up.com, @csskarma)
   License: MIT, https://opensource.org/licenses/MIT
-  Converted from a jQuery plugin originally written by @scottohara via Smashing Magazine
+  Converted from a jQuery plugin originally written by @scottohara: https://github.com/scottaohara/accessible-components
 */
 
 ;(function (w, doc) {

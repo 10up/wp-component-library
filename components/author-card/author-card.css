@@ -3,12 +3,12 @@
   padding: .5em;
   overflow: hidden;
   margin: auto; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 40.625em) {
     .author-card {
       padding: 1em; } }
   .author-card-author {
     margin: 0; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 40.625em) {
     .author-card-info {
       display: inline-block;
       width: calc(100% - 120px);
@@ -16,7 +16,7 @@
   .author-card-pic {
     padding-bottom: .5em;
     text-align: center; }
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 40.625em) {
       .author-card-pic {
         display: inline-block;
         max-width: 100px;

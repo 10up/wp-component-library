@@ -1,19 +1,16 @@
-//GLOBALS @todo: Move this to a top level import
-$bp-small:  600px;
-$bp-medium: 800px;
-$bg-large:  1000px;
+// Breakpoints
+$bp-small:          40.625em !default;      // 650px
+$bp-medium:         53.125em !default;      // 850px
+$bp-large:          62.5em !default;        // 1000px
 
-$tenup-blue: #6ab7b7;
-$tenup-red:  #df2b26;
-$dark-gray:  #303030;
-
+// Component Sass
 .author-card {
   max-width: 650px;
   padding: .5em;
   overflow: hidden;
   margin: auto;
 
-  @media screen and (min-width: $bp-small) {
+  @media screen and ( min-width: $bp-small ) {
     padding: 1em;
   }
 
@@ -23,7 +20,7 @@ $dark-gray:  #303030;
 
   &-info {
 
-    @media screen and (min-width: $bp-small) {
+    @media screen and ( min-width: $bp-small ) {
       display: inline-block;
       width: calc(100% - 120px);
       float: right;
@@ -35,7 +32,7 @@ $dark-gray:  #303030;
     padding-bottom: .5em;
     text-align: center;
 
-    @media screen and (min-width: $bp-small) {
+    @media screen and ( min-width: $bp-small ) {
       display: inline-block;
       max-width: 100px;
       padding-bottom: 1em;
@@ -45,4 +42,5 @@ $dark-gray:  #303030;
       border-radius: 50%;
     }
   }
-}
+
+} // .author-card

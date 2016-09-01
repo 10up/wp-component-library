@@ -1,31 +1,11 @@
-//GLOBALS @todo: Move this to a top level import
-$sm:  480px;
-$med: 768px;
-$lg:  1024px;
+// Breakpoints
+$bp-medium:         53.125em !default;      // 850px
 
-$tenup-blue: #6ab7b7;
-$tenup-red:  #df2b26;
+// Variables
+$blue: #6ab7b7;
 $dark-gray:  #303030;
 
-body {
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  color: $tenup-blue;
-}
-
-header {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-//GLOBALS @todo: Move this to a top level import
-
-
+// Component Sass
 .site-header {
   align-items: center;
   background: $dark-gray;
@@ -62,7 +42,7 @@ header {
 .site-menu-toggle {
   float: right;
 
-  @media (min-width: $med) {
+  @media ( min-width: $bp-medium ) {
     display: none;
   }
 }
@@ -75,27 +55,33 @@ header {
   top: 100%;
   height: 100vh;
   right: 0;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
   transform: translateX(100%);
   width: 0;
 
-  @media (min-width: $med) {
+  @media ( min-width: $bp-medium ) {
     display: block;
     float: right;
     height: auto;
     overflow: visible;
     position: relative;
     top: 0;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
     transform: translateX(0);
     width: auto;
   }
 
   &.is-active {
     width: auto;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
     transform: translateX(0);
   }
 
   .menu-item {
-    @media (min-width: $med) {
+    @media ( min-width: $bp-medium ) {
       display: inline-block;
       position: relative;
       text-align: left;
@@ -105,11 +91,11 @@ header {
       > a {
         padding-right: 20px;
         position: relative;
-        color: $tenup-blue;
+        color: $blue;
 
         &:after {
           content: "";
-          color: $tenup-blue;
+          color: $blue;
           position: absolute;
           right: 0;
           top: calc(50% - 10px);
@@ -130,7 +116,7 @@ header {
 
     a {
       display: block;
-      padding: .75rem 1rem;
+      padding: 10px 15px;
     }
   }
 
@@ -140,7 +126,7 @@ header {
     min-width: 100%;
     overflow: hidden;
 
-    @media (min-width: $med) {
+    @media ( min-width: $bp-medium ) {
       position: absolute;
 
       .menu-item {

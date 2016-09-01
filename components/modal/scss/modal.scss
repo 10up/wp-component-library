@@ -1,19 +1,15 @@
-/*
-  Accessible Modal Dialog
-*/
-
-// breakpoints
+// Breakpoints
 $bp-small:          40.625em !default;      // 650px
 $bp-medium:         53.125em !default;      // 850px
 $bp-large:          62.5em !default;        // 1000px
 
-// imports
+// Imports
 @import 'flexbox-mixins';
 
-// namespace, if you want it (update the HTML too though)
+// Bamespace, if you want it (update the HTML too though)
 $ns: '';
 
-// general colors 'n' stuff
+// Variables
 $modal-overlay--bg:                 rgba(0, 0, 0, .666) !default;
 $modal-overlay--padding:            1.5625em !default; // 25px
 
@@ -29,7 +25,7 @@ $modal__close--size:                2em !default;
 $modal__close--padding:             4px !default;
 $modal__close--offset:              28px !default;
 
-// ---------------------------------------------------------------------
+// Component Sass
 
 // to prevent the document from scrolling in the background,
 // we need these rules in place when a modal is open
@@ -45,6 +41,8 @@ $modal__close--offset:              28px !default;
 .js .#{$ns}modal-overlay,
 .js .#{$ns}a11y-modal {
   @include flexbox();
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: $modal-overlay--bg;
   height: 100%;
@@ -54,6 +52,8 @@ $modal__close--offset:              28px !default;
   padding: $modal-overlay--padding;
   position: fixed;
   top: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
   visibility: hidden;
   width: 100%;
@@ -65,6 +65,8 @@ $modal__close--offset:              28px !default;
     z-index: $modal--z-index;
 
     .#{$ns}modal {
+      -webkit-transform: scale(1) translateY(0px);
+      -moz-transform: scale(1) translateY(0px);
       transform: scale(1) translateY(0px);
     }
   }
@@ -82,7 +84,11 @@ $modal__close--offset:              28px !default;
   overflow-x: hidden;
   padding: $modal--padding;
   position: relative;
+  -webkit-transform: scale(0.8) translateY(-30px);
+  -moz-transform: scale(0.8) translateY(-30px);
   transform: scale(0.8) translateY(-30px);
+  -webkit-transition: transform .3s ease-in-out;
+  -moz-transition: transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
   width: 100%;
 
@@ -96,6 +102,8 @@ $modal__close--offset:              28px !default;
     .#{$ns}modal__content {
       height: 300px;
       overflow: auto;
+      -webkit-transition: height .2s ease-in-out;
+      -moz-transition: height .2s ease-in-out;
       transition: height .2s ease-in-out;
 
       @media screen and ( min-height: $bp-small ) {

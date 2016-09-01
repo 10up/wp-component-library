@@ -1,15 +1,9 @@
-/*
-  Simple Grid Layout
-*/
-
 // Breakpoints
-
 $bp-small:          40.625em !default;      // 650px
 $bp-medium:         53.125em !default;      // 850px
 $bp-large:          62.5em !default;        // 1000px
 
 // Mixins
-
 @mixin clearfix () {
   &:after {
     content:" ";
@@ -18,12 +12,10 @@ $bp-large:          62.5em !default;        // 1000px
   }
 }
 
-// Local variables
-
+// Variables
 $grid-gutter:   1em !default; // 16px
 
 // Width variables in case you want to use them elsewhere
-
 $w-10:          10% !default;
 $w-20:          20% !default;
 $w-25:          25% !default;
@@ -44,6 +36,7 @@ $w-100:         100% !default;
 //    .sidebar-content { @extend .w-33; }
 //
 
+// Component Sass
 .grid-layout {
   @include clearfix;
   margin-left: ($grid-gutter * -1);

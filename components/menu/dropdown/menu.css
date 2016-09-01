@@ -1,16 +1,3 @@
-body {
-  margin: 0; }
-
-img {
-  max-width: 100%; }
-
-a {
-  color: #6ab7b7; }
-
-header {
-  max-width: 1280px;
-  margin: 0 auto; }
-
 .site-header {
   align-items: center;
   background: #303030;
@@ -37,7 +24,7 @@ header {
 
 .site-menu-toggle {
   float: right; }
-  @media (min-width: 768px) {
+  @media (min-width: 53.125em) {
     .site-menu-toggle {
       display: none; } }
 
@@ -49,9 +36,11 @@ header {
   top: 100%;
   height: 100vh;
   right: 0;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
   transform: translateX(100%);
   width: 0; }
-  @media (min-width: 768px) {
+  @media (min-width: 53.125em) {
     .primary-menu {
       display: block;
       float: right;
@@ -59,12 +48,16 @@ header {
       overflow: visible;
       position: relative;
       top: 0;
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
       transform: translateX(0);
       width: auto; } }
   .primary-menu.is-active {
     width: auto;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
     transform: translateX(0); }
-  @media (min-width: 768px) {
+  @media (min-width: 53.125em) {
     .primary-menu .menu-item {
       display: inline-block;
       position: relative;
@@ -87,13 +80,13 @@ header {
     height: auto; }
   .primary-menu .menu-item a {
     display: block;
-    padding: .75rem 1rem; }
+    padding: 10px 15px; }
   .primary-menu .sub-menu {
     background-color: #303030;
     height: 0;
     min-width: 100%;
     overflow: hidden; }
-    @media (min-width: 768px) {
+    @media (min-width: 53.125em) {
       .primary-menu .sub-menu {
         position: absolute; }
         .primary-menu .sub-menu .menu-item {

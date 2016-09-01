@@ -1,29 +1,7 @@
-//GLOBALS @todo: Move this to a top level import
-$sm:  480px;
-$med: 768px;
-$lg:  1024px;
-
-$tenup-blue: #6ab7b7;
-$tenup-red:  #df2b26;
+// Variables
 $dark-gray:  #303030;
 
-body {
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  color: $tenup-blue;
-}
-
-main {
-  padding: 0 30px;
-}
-//GLOBALS @todo: Move this to a top level import
-
+// Component Sass
 .is-active-off-canvas {
   position: relative;
   overflow-x: hidden;
