@@ -4,7 +4,9 @@
 		width: 100%;
 		border: 20px solid $medium-grey;
 		padding: 0;
-		margin: 20px 0 0;
+		margin: 20px auto 0;
+		display: block;
+		transition: width linear .2s;
 
 		&.small {
 			height: 100px;
@@ -16,6 +18,18 @@
 
 		&.large {
 			height: 400px;
+		}
+
+		&.w-iframe__small {
+			width: 400px;
+		}
+
+		&.w-iframe__medium {
+			width: 700px;
+		}
+
+		&.w-iframe__large {
+			width: 1000px;
 		}
 
 	}
@@ -71,4 +85,49 @@
 
 .tile-heading {
 	width: calc(100% - 75px);
+}
+
+.menu-rwd {
+	margin-top: 10px;
+	    padding: 10px;
+    border: 1px solid #ccc;
+	overflow: hidden;
+
+	button {
+		cursor: pointer;
+		display: block;
+		width: 25%;
+		float: left;
+		background: $cta-red;
+		color: $white;
+		border: 1px solid $white;
+		padding: 10px;
+		margin: 0;
+		font-size: 1.2em;
+		-webkit-font-smoothing: antialiased;
+		text-transform: uppercase;
+
+		&:last-child {
+			background: none;
+			color: $black;
+			padding: 0 14px;
+			margin: 10px 0;
+			text-transform: none;
+
+			&:hover,
+			&:focus {
+				background: none;
+				font-weight: 700;
+			}
+
+		}
+
+		&:hover,
+		&:focus {
+			background: $cta-red-dark;
+			outline: 0;
+		}
+
+	}
+
 }
