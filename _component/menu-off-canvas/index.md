@@ -1,5 +1,5 @@
 ---
-title: Off Canvas Menu
+title: Off-Canvas Menu
 path_slug: menu-dropdown
 layout: component
 category: navigation
