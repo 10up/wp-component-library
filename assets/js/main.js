@@ -29,6 +29,7 @@
 		var button_sm;
 		var button_md;
 		var button_lrg;
+		var button_newwin;
 		var button_reset;
 		var menu;
 		var i;
@@ -56,30 +57,35 @@
 			  	button_sm = doc.createElement( 'button' );
 			  	button_md = doc.createElement( 'button' );
 			  	button_lrg = doc.createElement( 'button' );
+			  	button_newwin = doc.createElement( 'button' );
 			  	button_reset = doc.createElement( 'button' );
 
 			  	// Make it a real button
 			  	button_sm.setAttribute( 'type', 'button' );
 			  	button_md.setAttribute( 'type', 'button' );
 			  	button_lrg.setAttribute( 'type', 'button' );
+			  	button_newwin.setAttribute( 'type', 'button' );
 			  	button_reset.setAttribute( 'type', 'button' );
 
 			  	// Store on data
 			  	button_sm.setAttribute( 'data-width', 'small' );
 			  	button_md.setAttribute( 'data-width', 'medium' );
 			  	button_lrg.setAttribute( 'data-width', 'large' );
+			  	button_newwin.setAttribute( 'data-width', 'new-window' );
 			  	button_reset.setAttribute( 'data-width', 'reset' );
 
 			  	// Set the text
 			  	button_sm.innerHTML = "Small";
 			  	button_md.innerHTML = "Medium";
 			  	button_lrg.innerHTML = "Large";
+			  	button_newwin.innerHTML = "New Window";
 			  	button_reset.innerHTML = "Reset";
 
 			  	// Add them to the menu
 			  	menu.appendChild( button_sm );
 			  	menu.appendChild( button_md );
 			  	menu.appendChild( button_lrg );
+			  	menu.appendChild( button_newwin );
 			  	menu.appendChild( button_reset );
 
 			  	// Insert the menu into the wrapping element
@@ -89,7 +95,7 @@
 			  	component.insertBefore( wrapper, iframe.nextSibling );
 
 			  	// Listeners
-			  	App.bind_all_events( button_sm, button_md, button_lrg, button_reset, iframe );
+			  	App.bind_all_events( button_sm, button_md, button_lrg, button_newwin, button_reset, iframe );
 
 		  	} // for
 
@@ -97,7 +103,7 @@
 
 	}; // add_rwd_buttons
 
-	App.bind_all_events = function( button_sm, button_md, button_lrg, button_reset, iframe ) {
+	App.bind_all_events = function( button_sm, button_md, button_lrg, button_newwin, button_reset, iframe ) {
 
 		var btn;
 
@@ -114,6 +120,11 @@
 		button_lrg.addEventListener( 'click', function() {
 			btn = this;
 			App.resize_iframe( btn, iframe );
+		}, false );
+
+		button_newwin.addEventListener( 'click', function() {
+			btn = this;
+			window.open( iframe.src );
 		}, false );
 
 		button_reset.addEventListener( 'click', function() {
