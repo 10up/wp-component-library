@@ -1,16 +1,15 @@
 ---
-title: Dropdown Menu
-path_slug: menu-dropdown
+title: Simple Grid
+path_slug: grid
 layout: component
-category: navigation
+category: layout
 ---
 
 {% include_relative _notes.md %}
 
-<iframe src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
+<iframe class="large" src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
-
 ```html
 {% include_relative component.html %}
 ```
@@ -18,12 +17,6 @@ category: navigation
 
 ```scss
 {% include_relative scss/component.scss %}
-```
-
-<h3>JS <a href="component.js" target="_blank">Download JS</a></h3>
-
-```javascript
-{% include_relative component.js %}
 ```
 
 <h3>Resources</h3>
