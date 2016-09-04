@@ -8,12 +8,12 @@ layout: default
 	</header>
 
 	<div class="col">
-		<h3><a href="{{ site.baseurl }}#top">Introduction</a></h3>
+		<h3>Introduction</h3>
 		<ul>
-			<li><a href="{{ site.baseurl }}#audience">Audience</a></li>
-			<li><a href="{{ site.baseurl }}#goal">Goal</a></li>
-			<li><a href="{{ site.baseurl }}#philosophy">Philosophy</a></li>
-			<li><a href="{{ site.baseurl }}#contributing">Contributing</a></li>
+			<li><a href="{{ site.baseurl }}/#audience">Audience</a></li>
+			<li><a href="{{ site.baseurl }}/#goal">Goal</a></li>
+			<li><a href="{{ site.baseurl }}/#philosophy">Philosophy</a></li>
+			<li><a href="{{ site.baseurl }}/#contributing">Contributing</a></li>
 		</ul>
 	</div>
 
@@ -21,7 +21,6 @@ layout: default
 		<div class="col">
 			<div class="component-tile">
 				<h3 class="tile-header">
-					<img src="{{ site.baseurl }}/assets/img/icon-{{ category.slug }}.svg" alt="Icon for {{ category.pretty }}"  class="tile-icon"/>
 					<span class="tile-heading">{{ category.pretty }}</span>
 				</h3>
 

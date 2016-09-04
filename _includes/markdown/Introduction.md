@@ -1,12 +1,10 @@
 ### Audience
 
-The 10up Engineering Best Practices are not geared to teach anyone to become an engineer. Rather, they aim to illustrate how to engineer the 10up way. Therefore, these best practices are intended for capable engineers.
+The 10up Front-end Component Library is not geared to teach anyone to become an engineer. Rather, it aims to illustrate how to engineer the 10up way. Therefore, these best practices are intended for capable engineers.
 
 <h3 id="goal">Goal {% include partials/top %}</h3>
 
-As a company, we strive to provide websites and components that yield a top-notch user experience. In order to improve efficiency, we need to standardize what we use and how we use it. Standardizing our tools, frameworks, libraries, style, version control, and even languages will allow us to understand better the inner workings of someone else’s project and produce better solutions ourselves.
-
-As such, 10up engineers should follow these best practices in all their work. Our best practices are not meant to be restrictive or comprehensive; we value creativity at 10up. The aim is for this document to provide a strong guidance, not an authoritative direction. It's our hope that these best practices will not only influence 10uppers but community members as well.
+As a company, we strive to provide websites and components that yield a top-notch user experience. In order to improve efficiency and consistency, we need to standardize what we use and how we use it. Standardizing our approach to commonly-used components will allow us to understand better the inner workings of someone else’s project and produce better solutions ourselves.
 
 <h3 id="philosophy">Philosophy {% include partials/top %}</h3>
 
@@ -26,4 +24,4 @@ We are constantly challenging ourselves and learning. Knowledge gives us a compe
 
 <h3 id="contributing">Contributing {% include partials/top %}</h3>
 
-Please contribute via [pull requests on GitHub](https://github.com/10up/Engineering-Best-Practices).
+We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/component-library/).
