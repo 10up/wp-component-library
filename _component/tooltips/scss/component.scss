@@ -34,16 +34,16 @@ $bp-large:          62.5em !default;        // 1000px
 }
 
 // Namespace, if you want it (update the HTML too though)
-$ns: '';
+$ns: '' !default;
 
 // Varables
-$tip--color-white: #fff;
-$tip--color-black: #000;
-$tip--color-gray: #666;
+$tip--color-white: #fff !default;
+$tip--color-black: #000 !default;
+$tip--color-gray: #666 !default;
 
-$tip--bg: fade-out($tip--color-black, .1);
-$tip--base-size: 12px;
-$tip--arrow-size: 6px;
+$tip--bg: fade-out($tip--color-black, .1) !default;
+$tip--base-size: 12px !default;
+$tip--arrow-size: 6px !default;
 
 $tip--trigger--border-bottom: 1px dotted $tip--color-gray !default;
 
