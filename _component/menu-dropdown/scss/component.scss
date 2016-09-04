@@ -2,8 +2,8 @@
 $bp-medium:         53.125em !default;      // 850px
 
 // Variables
-$blue: #6ab7b7;
-$dark-gray:  #303030;
+$blue: #6ab7b7 !default;
+$dark-gray: #303030 !default;
 
 // Component Sass
 .site-header {
