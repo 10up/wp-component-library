@@ -1,10 +1,11 @@
 // Variables
 $white: #fff !default;
-$gray: #656565;
+$almost-white: #e5e5e5 !default;
+$gray: #656565 !default;
 
 // Component Sass
 .custom-select {
-  border: 1px solid #e5e5e5;
+  border: 1px solid $almost-white;
   border-radius: 5px;
   box-shadow: inset 0 -2px 5px rgba($white, 0.4);
   display: inline-block;
