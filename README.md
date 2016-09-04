@@ -3,9 +3,7 @@
 
 This is the repository for the 10up Component Library.
 
-<p align="center">
-<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png" width="850"></a>
-</p>
+<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
 
 **[Start browsing ☞](https://10up.github.io/component-library/)**
 
