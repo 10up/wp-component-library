@@ -4,7 +4,7 @@ The 10up Front-end Component Library is not geared to teach anyone to become an 
 
 <h3 id="goal">Goal {% include partials/top %}</h3>
 
-As a company, we strive to provide websites and components that yield a top-notch user experience. In order to improve efficiency and consistency, we need to standardize what we use and how we use it. Standardizing our approach to commonly-used components will allow us to understand better the inner workings of someone else’s project and produce better solutions ourselves.
+As a company, we strive to provide websites that yield a top-notch user experience. In order to improve efficiency and consistency, we need to standardize what we use and how we use it. Standardizing our approach to commonly-used front-end components will allow us to understand better the inner workings of someone else’s project and produce better solutions ourselves and our clients.
 
 <h3 id="philosophy">Philosophy {% include partials/top %}</h3>
 
@@ -20,7 +20,7 @@ While our solutions are complex, we want our code, tools, processes, systems, an
 
 > "We are always learning."
 
-We are constantly challenging ourselves and learning. Knowledge gives us a competitive edge. Everyone around us is growing; if we stop growing individually or collectively and stop challenging ourselves to improve, we fall behind. For that reason, this document is not set in stone and will change. Evolving these best practices through contributions is incredibly important to us.
+We are constantly challenging ourselves and learning. Knowledge gives us a competitive edge. Everyone around us is growing; if we stop growing individually or collectively and stop challenging ourselves to improve, we fall behind. For that reason, this document is not set in stone and will change. Evolving these components through contributions is incredibly important to us.
 
 <h3 id="contributing">Contributing {% include partials/top %}</h3>
 
