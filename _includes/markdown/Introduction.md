@@ -1,6 +1,6 @@
 ### Audience
 
-The 10up Front-end Component Library is not geared to teach anyone to become an engineer. Rather, it aims to illustrate how to engineer the 10up way. Therefore, these best practices are intended for capable engineers.
+The 10up Front-end Component Library is not geared to teach anyone to become an engineer. Rather, it intends to provide a base set of commonly-used front-end components for engineers to take and build upon. It also aims illustrate how to engineer the 10up way. Therefore, the components in this library are intended for capable engineers.
 
 <h3 id="goal">Goal {% include partials/top %}</h3>
 
