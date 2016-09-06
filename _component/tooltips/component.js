@@ -7,14 +7,60 @@
 
 ;(function ( w, doc ) {
 
-  // enable strict mode
+  // Enable strict mode
   'use strict';
 
   var a11yTT = {};
 
+  /*
+    Cross-browser way to deal with class management
+  */
+
+  a11yTT.hasClass = function ( el, cls ) {
+    if (el.classList) {
+      return el.classList.contains(cls);
+    } else {
+      return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    }
+  };
+
+  /*
+    Cross-browser way to add a class
+  */
+
+  a11yTT.addClass = function ( el, cls ) {
+    if ( el.classList ) {
+      el.classList.add( cls );
+    } else if( !a11yTT.hasClass( el, cls ) ) {
+      el.cls += " " + cls;
+    }
+  };
+
+  /*
+    Cross-browser way to remove a class
+  */
+
+  a11yTT.removeClass = function ( el, cls ) {
+    if ( el.classList ) {
+      el.classList.remove( cls );
+    } else if( a11yTT.hasClass( el, cls ) ) {
+      var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
+      el.cls = el.cls.replace( reg, ' ' );
+    }
+  };
+
+  /*
+	  Trim whitespace
+  */
+
   a11yTT.trim = function( string ) {
     return string.replace(/^\s+|\s+$/g,'');
   };
+
+
+  /*
+	  Start Component
+  */
 
   a11yTT.init = function () {
 
@@ -66,7 +112,7 @@
 
       // if a tip container has ttToggleClass,
       // we need to make sure the trigger is a button
-      if ( self.classList.contains( ttToggleClass ) ) {
+	  if ( a11yTT.hasClass( self, ttToggleClass ) ) {
 
         originalTrigger = self.querySelector( ttTrigger ).innerHTML;
         originalTrigger = a11yTT.trim( originalTrigger );
@@ -74,8 +120,8 @@
         newButton = doc.createElement( 'button' );
 
         newButton.setAttribute( 'type', 'button' );
-        newButton.classList.add( ttTriggerClass );
-        newButton.classList.add( ttTriggerToggleClass );
+        a11yTT.addClass( newButton, ttTriggerClass);
+        a11yTT.addClass( newButton, ttTriggerToggleClass);
         newButton.setAttribute('aria-describedby', getTipId);
         newButton.setAttribute('aria-expanded', 'false');
         newButton.textContent = originalTrigger;
@@ -99,8 +145,8 @@
       trigger.addEventListener( "blur", function( e ) {
         var parent = this.parentNode;
 
-        if ( parent.classList.contains( 'a11y-tip--hide' ) ) {
-          parent.classList.remove( 'a11y-tip--hide' );
+		if( a11yTT.hasClass( parent, 'a11y-tip--hide') ) {
+          a11yTT.removeClass( parent, 'a11y-tip--hide');
         }
       }, false );
 
@@ -115,7 +161,7 @@
 
         if ( e.which == 27 ) {
           e.preventDefault();
-          this.parentNode.classList.add( 'a11y-tip--hide' );
+          a11yTT.addClass( this, 'a11y-tip--hide' )
           return false;
         }
 
