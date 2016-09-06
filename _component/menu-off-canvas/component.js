@@ -14,8 +14,8 @@
 	*/
 
 	TenUp_Menu_Off_Canvas.hasClass = function ( el, cls ) {
-		if (el.classList) {
-		  return el.classList.contains(cls);
+		if ( el.classList ) {
+		  return el.classList.contains( cls );
 		} else {
 		  return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
 		}
