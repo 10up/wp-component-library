@@ -41,8 +41,6 @@ $modal__close--offset:              28px !default;
 .js .#{$ns}modal-overlay,
 .js .#{$ns}a11y-modal {
   @include flexbox();
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: $modal-overlay--bg;
   height: 100%;
@@ -52,8 +50,6 @@ $modal__close--offset:              28px !default;
   padding: $modal-overlay--padding;
   position: fixed;
   top: 0;
-  -webkit-transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
   visibility: hidden;
   width: 100%;
@@ -65,8 +61,6 @@ $modal__close--offset:              28px !default;
     z-index: $modal--z-index;
 
     .#{$ns}modal {
-      -webkit-transform: scale(1) translateY(0px);
-      -moz-transform: scale(1) translateY(0px);
       transform: scale(1) translateY(0px);
     }
   }
@@ -84,11 +78,7 @@ $modal__close--offset:              28px !default;
   overflow-x: hidden;
   padding: $modal--padding;
   position: relative;
-  -webkit-transform: scale(0.8) translateY(-30px);
-  -moz-transform: scale(0.8) translateY(-30px);
   transform: scale(0.8) translateY(-30px);
-  -webkit-transition: transform .3s ease-in-out;
-  -moz-transition: transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
   width: 100%;
 
@@ -102,8 +92,6 @@ $modal__close--offset:              28px !default;
     .#{$ns}modal__content {
       height: 300px;
       overflow: auto;
-      -webkit-transition: height .2s ease-in-out;
-      -moz-transition: height .2s ease-in-out;
       transition: height .2s ease-in-out;
 
       @media screen and ( min-height: $bp-small ) {
