@@ -3,8 +3,8 @@ $dark-gray:  #303030;
 
 // Component Sass
 .is-active-off-canvas {
-  position: relative;
   overflow-x: hidden;
+  position: relative;
 }
 
 .site-header {
@@ -45,11 +45,11 @@ $dark-gray:  #303030;
 
 .primary-menu {
   background: $dark-gray;
+  height: 100vh;
   margin: 0;
   overflow: hidden;
   position: absolute;
   top: 100%;
-  height: 100vh;
   width: 0;
 
   .left & {
@@ -81,8 +81,8 @@ $dark-gray:  #303030;
 
   .sub-menu {
     background-color: $dark-gray;
-    min-width: 100%;
     display: block;
+    min-width: 100%;
 
     &[aria-hidden="true"] {
       display: none;

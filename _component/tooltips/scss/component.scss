@@ -137,13 +137,13 @@ $tip--no-delay: .18s !default;
       .a11y-tip__help:after {
         opacity: 1 !important;
         pointer-events: auto !important;
-        visibility: visible !important;
         -webkit-transition: opacity $tip--no-delay ease-in-out,
                   transform $tip--no-delay ease-in-out;
         -moz-transition: opacity $tip--no-delay ease-in-out,
                   transform $tip--no-delay ease-in-out;
         transition: opacity $tip--no-delay ease-in-out,
                   transform $tip--no-delay ease-in-out;
+        visibility: visible !important;
       }
     }
 
@@ -184,13 +184,13 @@ $tip--no-delay: .18s !default;
   -webkit-transform: translate(-50%, 10px);
   -moz-transform: translate(-50%, 10px);
   transform: translate(-50%, 10px);
-  width: 100%;
-  z-index: 10;
   -webkit-transition: opacity .2s $tip--delay ease-in-out;
   -moz-transition: opacity .2s $tip--delay ease-in-out;
   transition: opacity .2s $tip--delay ease-in-out;
   transform-style: preserve-3d;
   visibility: hidden;
+  width: 100%;
+  z-index: 10;
 
   &:after {
     @include triangle( $tip--arrow-size, $tip--bg, bottom );
@@ -204,12 +204,12 @@ $tip--no-delay: .18s !default;
     -webkit-transform: translate(-50%, 10px);
     -moz-transform: translate(-50%, 10px);
     transform: translate(-50%, 10px);
-    z-index: 10;
     -webkit-transition: opacity .2s $tip--delay ease-in-out;
     -moz-transition: opacity .2s $tip--delay ease-in-out;
     transition: opacity .2s $tip--delay ease-in-out;
     transform-style: preserve-3d;
     visibility: hidden;
+    z-index: 10;
   }
 
 
@@ -219,6 +219,8 @@ $tip--no-delay: .18s !default;
       bottom: 100%;
       left: 50%;
       margin-bottom: 6px + $tip--arrow-size;
+      margin-top: 0; // cancel bottom default styling
+      top: auto; // cancel bottom default styling
       -webkit-transform-origin: center top;
       -moz-transform-origin: center top;
       transform-origin: center top;
@@ -226,14 +228,11 @@ $tip--no-delay: .18s !default;
       -moz-transform: translate(-50%, 10px);
       transform: translate(-50%, 10px);
 
-      // cancel bottom default styling
-      margin-top: 0;
-      top: auto;
-
       &:after {
         @include triangle( $tip--arrow-size, $tip--bg, top );
         left: 50%;
         margin-bottom: 6px;
+        margin-top: 0; // cancel bottom default styling
         top: 100%;
         -webkit-transform-origin: center top;
         -moz-transform-origin: center top;
@@ -241,9 +240,6 @@ $tip--no-delay: .18s !default;
         -webkit-transform: translate(-50%, -10px);
         -moz-transform: translate(-50%, -10px);
         transform: translate(-50%, -10px);
-
-        // cancel bottom default styling
-        margin-top: 0;
       }
     }
   }
@@ -256,28 +252,24 @@ $tip--no-delay: .18s !default;
 
     @if $tip--compile-left == true {
       &--left {
+	    left: auto; // cancel bottom default styling
         margin-right: 5px + $tip--arrow-size;
+        margin-top: 0;
         right: 100%;
         top: 50%;
         -webkit-transform: translate(10px, -50%);
         -moz-transform: translate(10px, -50%);
         transform: translate(10px, -50%);
 
-        // cancel bottom default styling
-        left: auto;
-        margin-top: 0;
-
         &:after {
           @include triangle( $tip--arrow-size, $tip--bg, left );
           left: 100%;
           margin-right: 5px;
+          margin-top: 0; // cancel bottom default styling
           top: 50%;
           -webkit-transform: translate(-10px, -50%);
           -moz-transform: translate(-10px, -50%);
           transform: translate(-10px, -50%);
-
-          // cancel bottom default styling
-          margin-top: 0;
         }
       }
     } // end @if left
@@ -287,27 +279,23 @@ $tip--no-delay: .18s !default;
       &--right {
         left: 100%;
         margin-left: 5px + $tip--arrow-size;
+        margin-top: 0; // cancel bottom default styling
         top: 50%;
         -webkit-transform: translate(10px, -50%);
         -moz-transform: translate(10px, -50%);
         transform: translate(10px, -50%);
 
-        // cancel bottom default styling
-        margin-top: 0;
-
         &:after {
           @include triangle( $tip--arrow-size, $tip--bg, right );
+          bottom: auto; // cancel bottom default styling
+          left: auto; // cancel bottom default styling
           margin-left: 5px;
+          margin-top: 0;  // cancel bottom default styling
           right: 100%;
           top: 50%;
           -webkit-transform: translate(10px, -50%);
           -moz-transform: translate(10px, -50%);
           transform: translate(10px, -50%);
-
-          // cancel bottom default styling
-          bottom: auto;
-          left: auto;
-          margin-top: 0;
         }
       }
     } // end @if right

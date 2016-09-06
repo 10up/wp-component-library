@@ -31,8 +31,8 @@ $modal__close--offset:              28px !default;
 // we need these rules in place when a modal is open
 .modal-is-open,
 .modal-is-open body {
-  overflow: hidden;
   height: 100%;
+  overflow: hidden;
   position: absolute;
   width: 100%;
 }
@@ -125,6 +125,7 @@ $modal__close--offset:              28px !default;
 .#{$ns}modal__outro {
 
   &__close {
+    cursor: pointer;
     font-size: $modal__close--size;
     line-height: 1;
     padding: $modal__close--padding;
@@ -132,7 +133,6 @@ $modal__close--offset:              28px !default;
     right: $modal__close--offset;
     text-decoration: none;
     top: $modal__close--offset;
-    cursor: pointer;
   }
 }
 
