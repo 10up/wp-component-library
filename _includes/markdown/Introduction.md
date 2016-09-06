@@ -1,10 +1,10 @@
 ### Audience
 
-The 10up Front-end Component Library is not geared to teach anyone to become an engineer. Rather, it intends to provide a base set of commonly-used front-end components for engineers to take and build upon. It also aims illustrate how to engineer the 10up way. Therefore, the components in this library are intended for capable engineers.
+The 10up Front-end Component Library is not geared to teach anyone to become an engineer. Rather, it intends to provide a base set of commonly-used front-end components, built with accessibility and WordPress in mind, for engineers to take and build upon. It also aims illustrate how to engineer the 10up way. As such, the components in this library are intended for capable engineers.
 
 <h3 id="goal">Goal {% include partials/top %}</h3>
 
-As a company, we strive to provide websites that yield a top-notch user experience. In order to improve efficiency and consistency, we need to standardize what we use and how we use it. Standardizing our approach to commonly-used front-end components will allow us to understand better the inner workings of someone else’s project and produce better solutions ourselves and our clients.
+As a company, we strive to provide websites that yield a top-notch user experience. In order to improve efficiency, we need to standardize what we use and how we use it. Standardizing our approach to common components will allow us to build with greater speed and consistency, better understand the inner workings of someone else’s project, and produce better solutions ourselves and our clients.
 
 <h3 id="philosophy">Philosophy {% include partials/top %}</h3>
 
