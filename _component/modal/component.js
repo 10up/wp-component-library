@@ -16,6 +16,43 @@
     // Namespace
     a11y_modal.ns = "Accessible Modal Dialog";
 
+	/*
+		Cross-browser way to deal with class management
+	*/
+
+	a11y_modal.hasClass = function ( el, cls ) {
+		if (el.classList) {
+		  return el.classList.contains(cls);
+		} else {
+		  return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+		}
+	};
+
+	/*
+		Cross-browser way to add a class
+	*/
+
+	a11y_modal.addClass = function ( el, cls ) {
+		if ( el.classList ) {
+		  el.classList.add( cls );
+		} else if( !a11y_modal.hasClass( el, cls ) ) {
+		  el.cls += " " + cls;
+		}
+	};
+
+	/*
+		Cross-browser way to remove a class
+	*/
+
+	a11y_modal.removeClass = function ( el, cls ) {
+		if ( el.classList ) {
+		  el.classList.remove( cls );
+		} else if( a11y_modal.hasClass( el, cls ) ) {
+		  var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
+		  el.cls = el.cls.replace( reg, ' ' );
+		}
+	};
+
     // Caching and setting up some variables
     var modalTrigger = '[data-action="modal-open"]';
     var modal = '.a11y-modal';
@@ -35,7 +72,7 @@
     // build out the fallback button
     genModalClose.setAttribute( 'type', 'button' );
     genModalClose.setAttribute( 'data-modal-close', 'true' );
-    genModalClose.classList.add( 'modal__outro__close' );
+    a11y_modal.addClass( genModalClose, 'modal__outro__close' );
     genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
 
     // initialize all the modals
@@ -273,8 +310,7 @@
 
           // for all direct children of the BODY element, add a class
           // to target during open/close
-
-          body.querySelector( '*:not(.a11y-modal)' ).classList.add( bodyElements );
+          a11y_modal.addClass( body.querySelector( '*:not(.a11y-modal)' ), bodyElements );
 
         };
 
@@ -325,7 +361,7 @@
           // to help restrict document scroll while the modal
           // is open
 
-          html.classList.add( 'modal-is-open' );
+          a11y_modal.addClass( html, 'modal-is-open' );
 
           // Hide main document content from screen readers by
           // applying an aria-hidden attribute to all direct
@@ -351,7 +387,7 @@
 
           returnFocus = returnFocus[returnFocusCount - 1];
 
-          html.classList.remove( 'modal-is-open' );
+          a11y_modal.removeClass( html, 'modal-is-open' );
           self.setAttribute( 'aria-hidden', 'true' );
 
           // remove the aria-hidden that was applied during modal open
@@ -394,10 +430,11 @@
           var nodeCount =  all_nodes.length;
           var j;
 
+
           for ( j = 0; j < nodeCount; j = j + 1 ) {
             all_nodes.item( j ).addEventListener( "focus", function( e ) {
 
-              if ( html.classList.contains( 'modal-is-open' ) && !trapArea.contains( e.target ) ) {
+              if ( a11y_modal.hasClass( html, 'modal-is-open' ) && !trapArea.contains( e.target ) ) {
 
                 e.stopPropagation();
                 trapArea.focus();
@@ -432,7 +469,7 @@
         // close the modal on ESC
 
         self.addEventListener("keydown", function( e ) {
-            if( e.keyCode == 27 && html.classList.contains( 'modal-is-open' ) ) {
+	        if( e.keyCode == 27 && a11y_modal.hasClass( html, 'modal-is-open' ) ) {
               close_a11y_modal( e );
             }
         }, false);
