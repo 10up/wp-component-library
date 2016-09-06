@@ -43,6 +43,19 @@
 
 	}
 
+	.example-link {
+		float: right;
+		border-bottom: 0;
+		font-size: 14px;
+		font-weight: 700;
+		margin-bottom: 10px;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
 	h3 {
 		margin-top: 60px;
 
@@ -105,7 +118,7 @@
 	button {
 		cursor: pointer;
 		display: block;
-		width: 20%;
+		width: 25%;
 		float: left;
 		background: $cta-red;
 		color: $white;
