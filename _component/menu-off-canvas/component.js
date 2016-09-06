@@ -3,16 +3,63 @@
   // Enable strict mode
   "use strict";
 
-  var subMenuItem = doc.querySelectorAll( '.sub-menu .menu-item' ),
-  subMenu     = doc.querySelectorAll( '.sub-menu' );
+	// Local object for method references
+	var TenUp_Menu_Off_Canvas = {};
+
+	// Namespace
+	TenUp_Menu_Off_Canvas.ns = "Accessible Modal Dialog";
+
+	/*
+		Cross-browser way to deal with class management
+	*/
+
+	TenUp_Menu_Off_Canvas.hasClass = function ( el, cls ) {
+		if (el.classList) {
+		  return el.classList.contains(cls);
+		} else {
+		  return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+		}
+	};
+
+	/*
+		Cross-browser way to add a class
+	*/
+
+	TenUp_Menu_Off_Canvas.addClass = function ( el, cls ) {
+		if ( el.classList ) {
+		  el.classList.add( cls );
+		} else if( !TenUp_Menu_Off_Canvas.hasClass( el, cls ) ) {
+		  el.cls += " " + cls;
+		}
+	};
+
+	/*
+		Cross-browser way to remove a class
+	*/
+
+	TenUp_Menu_Off_Canvas.removeClass = function ( el, cls ) {
+		if ( el.classList ) {
+		  el.classList.remove( cls );
+		} else if( TenUp_Menu_Off_Canvas.hasClass( el, cls ) ) {
+		  var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
+		  el.cls = el.cls.replace( reg, ' ' );
+		}
+	};
+
+	/*
+		Start Component
+	*/
+
+  var subMenuItem = doc.querySelectorAll( '.sub-menu .menu-item' );
+  var subMenu = doc.querySelectorAll( '.sub-menu' );
 
   doc.addEventListener( 'focus', focusToggle, true );
 
   function focusToggle( e ) {
-    if ( e.target.classList.contains( 'menu-level-1' ) ) {
-      subMenu[0].classList.add( 'hover' );
+	if ( TenUp_Menu_Off_Canvas.hasClass( e.target, 'menu-level-1' ) ) {
+      TenUp_Menu_Off_Canvas.addClass( subMenu[0], 'hover' );
     } else {
-      subMenu[0].classList.remove( 'hover' );
+      TenUp_Menu_Off_Canvas.removeClass( subMenu[0], 'hover' );
     }
   }
 
@@ -45,11 +92,20 @@
 
     menuToggle.onclick = function() {
 
-      menu.classList.toggle( 'is-active' );
-      body.classList.toggle( 'is-active-off-canvas' );
+	  if ( TenUp_Menu_Off_Canvas.hasClass( menu, 'is-active' ) ) {
+		  TenUp_Menu_Off_Canvas.removeClass( menu, 'is-active' )
+	  } else {
+		  TenUp_Menu_Off_Canvas.addClass( menu, 'is-active' )
+	  }
+
+	  if ( TenUp_Menu_Off_Canvas.hasClass( body, 'is-active-off-canvas' ) ) {
+		  TenUp_Menu_Off_Canvas.removeClass( body, 'is-active-off-canvas' )
+	  } else {
+		  TenUp_Menu_Off_Canvas.addClass( body, 'is-active-off-canvas' )
+	  }
 
       // Update the menu state within the button
-      if( this.getAttribute( 'aria-expanded') === 'false' ) {
+      if ( this.getAttribute( 'aria-expanded') === 'false' ) {
         this.setAttribute( 'aria-expanded', 'true' );
       } else {
         this.setAttribute( 'aria-expanded', 'false' );
@@ -58,21 +114,23 @@
       // Set focus to the first item in the menu
       menu.querySelectorAll('a')[0].focus();
 
-      if( body.classList.contains( 'is-active-off-canvas' ) ) {
+	  if ( TenUp_Menu_Off_Canvas.hasClass( body, 'is-active-off-canvas' ) ) {
+
         var menuWidth = menu.offsetWidth,
             bodyDir   = dir,
             wrapDir   = dir,
             bodyDir   = ( bodyDir === 'left' ) ? body.style.left = menuWidth + 'px' : body.style.right = menuWidth + 'px',
             wrapDir   = ( wrapDir === 'left' ) ? wrap.style.left = -menuWidth + 'px' : wrap.style.right = -menuWidth + 'px';
 
-        wrap.classList.add( dir );
+        TenUp_Menu_Off_Canvas.addClass( wrap, dir );
+
       } else {
         var bodyDir   = dir,
             wrapDir   = dir,
             bodyDir   = ( bodyDir === 'left' ) ? body.style.left = '0' : body.style.right = '0',
             wrapDir   = ( wrapDir === 'left' ) ? wrap.style.left = '0' : wrap.style.right = '0';
 
-        wrap.classList.remove( dir );
+        TenUp_Menu_Off_Canvas.removeClass( wrap, dir );
       }
     } // end click
 
