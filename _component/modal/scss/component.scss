@@ -7,7 +7,7 @@ $bp-large:          62.5em !default;        // 1000px
 @import 'flexbox-mixins';
 
 // Bamespace, if you want it (update the HTML too though)
-$ns: '';
+$ns: '' !default;
 
 // Variables
 $modal-overlay--bg:                 rgba(0, 0, 0, .666) !default;

@@ -4,8 +4,8 @@ $bp-medium:         53.125em !default;      // 850px
 $bp-large:          62.5em !default;        // 1000px
 
 // Variables
-$gray: #999;
-$white: #fff;
+$gray: #999 !default;
+$white: #fff !default;
 
 // Component Sass
 .tab-list {
