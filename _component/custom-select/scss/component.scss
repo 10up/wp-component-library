@@ -1,57 +1,104 @@
-// Variables
-$white: #fff !default;
-$almost-white: #e5e5e5 !default;
-$gray: #656565 !default;
+/** --------------------------------------------------------------------
 
-// Component Sass
-.custom-select {
-  border: 1px solid $almost-white;
-  border-radius: 5px;
-  box-shadow: inset 0 -2px 5px rgba($white, 0.4);
-  display: inline-block;
-  min-width: 100px;
-  overflow: hidden;
-  padding-right: 20px;
+  Custom Select Element Pattern
+
+--------------------------------------------------------------------- */
+
+$select--bg:                              #fff !default;
+$select--font-family:                     sans-serif !default;
+$select--color:                           #000 !default;
+$select--border:                          1px solid #ccc !default;
+$select--padding:                         0 28px 0 8px !default;
+$select--radius:                          2px !default;
+$select--height:                          36px !default;
+
+$select__arrow--bg-img:                   url('icon-arrow-down.svg') !default;
+$select__arrow--bg-size:                  13px auto !default;
+$select__arrow--width:                    28px !default;
+
+// States
+$select--focus-state:                   inset 0 0 0 1px blue !default;
+$select--focus-moz:                     0 0 0 #000 !default;
+
+$select--focus-ring--text-shadow:       0 0 0 #000 !default;
+
+$select__option--padding:               2px 4px !default;
+$select__option--hover-bs:              inset 0 0 200px blue !default;
+
+// Namespace, if you want it (update the HTML too)
+$ns: '';
+
+//------------------------------------------------------------------------
+
+// \9 IE hacks in place to work around the fact that IE easily
+// let you hide the default browser select down arrow.
+
+// Drop Down Selection
+.#{$ns}custom-select {
+  background: $select--bg;
+  border: $select--border;
+  border-radius: $select--radius;
+  height: $select--height;
+  overflow: hidden; // ie fix pt1
   position: relative;
 
   &:after {
+    background-color: transparent;
+    background-image: $select__arrow--bg-img;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $select__arrow--bg-size;
     content: '';
-    border-color: $gray transparent transparent transparent;
-    border-style: solid;
-    border-width: 6px 4px;
-    margin-top: -3px;
-    pointer-events: none;
+    height: 100%;
+    pointer-events: none; // don't block mouse clicks
     position: absolute;
-    right: 7px;
-    top: 50%;
-    width: 0;
+    right: 0;
+    speak: none;
+    top: 0;
+    width: $select__arrow--width;
   }
 
   select {
-    -webkit-appearance: none;
-    -moz-appearance: radio-container;
+    -webkit-appearance: textarea;
+       -moz-appearance: none;
     appearance: none;
-    background: transparent;
+    background: none;
     border: 0;
-    box-sizing: content-box;
-    outline: 0;
-    padding: 6px 0 6px 8px;
-    text-shadow: 1px 1px rgba($white, 0.7);
-    -webkit-user-select: none;
-    -moz-user-select: -moz-none;
-    -ms-user-select: none;
-    user-select: none;
+    color: $select--color;
+    font-family: $select--font-family;
+    height: 100%;
+    margin: 0;
+    padding: $select--padding;
     width: 100%;
+    width: 110% \9; // ie fix pt2
+    z-index: 2;
+
+    &:focus {
+      box-shadow: $select--focus-state;
+      outline: transparent;
+    }
+
+    // Remove the default select down arrow in IE10+
+    &::-ms-expand {
+      display: none;
+    }
   }
 
-  select:focus + span.custom-select-outline {
-    box-shadow: inset 0 0 5px 0 rgb(59, 153, 252);  // Using Chrome's default blue
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
+  // FireFox has their own special focusring because
+  // they really wanted to make styling this element
+  // consistently a huge pain in the...
+  // we're not actually getting rid of it,
+  // but rather by setting the color to transparent,
+  // it'll make the outline transparent too.
+  // the text-shadow then 'refills' the transparent
+  // text to make it look like it never went away.
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: $select--focus-ring--text-shadow;
   }
 
-} // .custom-select
+  option {
+    border: 0;
+    padding: $select__option--padding;
+  }
+}
