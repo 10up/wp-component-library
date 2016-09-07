@@ -8,17 +8,26 @@ $dark-gray:  #303030;
 }
 
 .site-header {
-  align-items: center;
   background: $dark-gray;
-  display: flex;
-  justify-content: space-between;
   padding: .5rem;
   position: relative;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
 }
 
 .site-heading {
   line-height: 0;
   padding-right: 1rem;
+  float: left;
 }
 
 .site-link {
@@ -31,7 +40,7 @@ $dark-gray:  #303030;
 }
 
 .site-navigation {
-  flex: 1 0 auto;
+  float: right;
 
   ul {
     list-style: none;
@@ -41,6 +50,7 @@ $dark-gray:  #303030;
 
 .site-menu-toggle {
   float: right;
+  line-height: 42px;
 }
 
 .primary-menu {
