@@ -1,5 +1,21 @@
 ;(function (w, doc) {
 
+	// Polyfill for el.matches
+	if (!Element.prototype.matches) {
+		Element.prototype.matches =
+		Element.prototype.matchesSelector ||
+		Element.prototype.mozMatchesSelector ||
+		Element.prototype.msMatchesSelector ||
+		Element.prototype.oMatchesSelector ||
+		Element.prototype.webkitMatchesSelector ||
+		function(s) {
+			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+			i = matches.length;
+			while (--i >= 0 && matches.item(i) !== this) {}
+			return i > -1;
+		};
+	}
+
     // Enable strict mode
     'use strict';
 
@@ -11,11 +27,7 @@
 	*/
 
 	TenUp_Tabs.hasClass = function ( el, cls ) {
-		if ( el.classList ) {
-		  return el.classList.contains( cls );
-		} else {
-		  return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-		}
+		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
 	};
 
 	/*
@@ -23,10 +35,10 @@
 	*/
 
 	TenUp_Tabs.addClass = function ( el, cls ) {
-		if ( el.classList ) {
-		  el.classList.add( cls );
-		} else if( !TenUp_Tabs.hasClass( el, cls ) ) {
-		  el.cls += " " + cls;
+	    if ( el.classList ) {
+	      el.classList.add(cls);
+	    } else if (!TenUp_Tabs.hasClass(el, cls)) {
+		  el.className += " " + cls;
 		}
 	};
 
@@ -39,7 +51,7 @@
 		  el.classList.remove( cls );
 		} else if( TenUp_Tabs.hasClass( el, cls ) ) {
 		  var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
-		  el.cls = el.cls.replace( reg, ' ' );
+		  el.className = el.className.replace( reg, ' ' );
 		}
 	};
 
@@ -89,9 +101,9 @@
           if ( TenUp_Tabs.hasClass( tab.parentNode, 'is-active' ) ) {
 
 	        if ( TenUp_Tabs.hasClass( tab.parentNode.parentNode, 'm-is-active' ) ) {
-		        TenUp_Tabs.removeClass( tab.parentNode.parentNode, 'm-is-active' );
+		      TenUp_Tabs.removeClass( tab.parentNode.parentNode, 'm-is-active' );
 	        } else {
-		        TenUp_Tabs.addClass( tab.parentNode.parentNode, 'm-is-active' );
+		      TenUp_Tabs.addClass( tab.parentNode.parentNode, 'm-is-active' );
 	        }
 
           } else {
@@ -100,10 +112,12 @@
 
           // Change state of previously selected activeTab item
           forEach( activeTab, function( index, value ) {
+
 	        if ( TenUp_Tabs.hasClass( value, 'is-active' ) ) {
               TenUp_Tabs.removeClass( value, 'is-active' );
               tabLinks[index].setAttribute( 'aria-selected', 'false' );
             }
+
           });
 
           // Set state of newly selected tab list item

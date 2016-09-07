@@ -7,6 +7,22 @@
 
 ;(function ( w, doc ) {
 
+	// Polyfill for el.matches
+	if (!Element.prototype.matches) {
+		Element.prototype.matches =
+		Element.prototype.matchesSelector ||
+		Element.prototype.mozMatchesSelector ||
+		Element.prototype.msMatchesSelector ||
+		Element.prototype.oMatchesSelector ||
+		Element.prototype.webkitMatchesSelector ||
+		function(s) {
+			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+			i = matches.length;
+			while (--i >= 0 && matches.item(i) !== this) {}
+			return i > -1;
+		};
+	}
+
   // Enable strict mode
   'use strict';
 
@@ -17,11 +33,7 @@
   */
 
   a11yTT.hasClass = function ( el, cls ) {
-    if ( el.classList ) {
-	  return el.classList.contains( cls );
-    } else {
-      return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-    }
+  	return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
   };
 
   /*
@@ -30,10 +42,10 @@
 
   a11yTT.addClass = function ( el, cls ) {
     if ( el.classList ) {
-      el.classList.add( cls );
-    } else if( !a11yTT.hasClass( el, cls ) ) {
-      el.cls += " " + cls;
-    }
+      el.classList.add(cls);
+    } else if (!TenUp_Menu_Off_Canvas.hasClass(el, cls)) {
+	  el.className += " " + cls;
+	}
   };
 
   /*
@@ -45,7 +57,7 @@
       el.classList.remove( cls );
     } else if( a11yTT.hasClass( el, cls ) ) {
       var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
-      el.cls = el.cls.replace( reg, ' ' );
+      el.className = el.className.replace( reg, ' ' );
     }
   };
 

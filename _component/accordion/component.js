@@ -1,5 +1,21 @@
 ;( function ( w, doc ) {
 
+	// Polyfill for el.matches
+	if (!Element.prototype.matches) {
+		Element.prototype.matches =
+		Element.prototype.matchesSelector ||
+		Element.prototype.mozMatchesSelector ||
+		Element.prototype.msMatchesSelector ||
+		Element.prototype.oMatchesSelector ||
+		Element.prototype.webkitMatchesSelector ||
+		function(s) {
+			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+			i = matches.length;
+			while (--i >= 0 && matches.item(i) !== this) {}
+			return i > -1;
+		};
+	}
+
   // Enable strict mode
   'use strict';
 
@@ -11,11 +27,7 @@
   */
 
   TenUp_Accordion.hasClass = function ( el, cls ) {
-    if ( el.classList ) {
-      return el.classList.contains( cls );
-    } else {
-      return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-    }
+    return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
   };
 
   /*
@@ -24,10 +36,10 @@
 
   TenUp_Accordion.addClass = function ( el, cls ) {
     if ( el.classList ) {
-      el.classList.add( cls );
-    } else if( !TenUp_Accordion.hasClass( el, cls ) ) {
-      el.cls += " " + cls;
-    }
+      el.classList.add(cls);
+    } else if (!TenUp_Accordion.hasClass(el, cls)) {
+	  el.className += " " + cls;
+	}
   };
 
   /*
@@ -39,7 +51,7 @@
       el.classList.remove( cls );
     } else if( TenUp_Accordion.hasClass( el, cls ) ) {
       var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
-      el.cls = el.cls.replace( reg, ' ' );
+	  el.className = el.className.replace( reg, ' ' );
     }
   };
 
@@ -69,17 +81,17 @@
       head.setAttribute( 'aria-expanded', 'false' );
       head.setAttribute( 'aria-controls', 'panel' + topIndex + '-' + index );
       head.setAttribute( 'role', 'tab' );
-      //head.setAttribute( 'tabindex', '0' );
 
       head.onclick = accordionHandle;
 
       function accordionHandle() {
+
         var nextPanel = value.nextElementSibling;
 
 		if( TenUp_Accordion.hasClass( value, 'is-active' ) ) {
 			TenUp_Accordion.removeClass( value, 'is-active' );
 		} else {
-			TenUp_Accordion.removeClass( value, 'is-active' );
+			TenUp_Accordion.addClass( value, 'is-active' );
 		}
 
 		if( TenUp_Accordion.hasClass( nextPanel, 'is-active' ) ) {
@@ -92,13 +104,17 @@
         nextPanel.querySelector( '.accordion-label' ).focus();
 
 		if( !TenUp_Accordion.hasClass( nextPanel, 'visually-hidden' ) ) {
+
           head.setAttribute( 'aria-selected', 'true' );
           head.setAttribute( 'aria-expanded', 'true' );
           nextPanel.setAttribute( 'aria-hidden', 'false' );
+
         } else {
+
           head.setAttribute( 'aria-selected', 'false' );
           head.setAttribute( 'aria-expanded', 'false' );
           nextPanel.setAttribute( 'aria-hidden', 'true' );
+
         }
       }
     });

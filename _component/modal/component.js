@@ -7,6 +7,22 @@
 
 ;(function (w, doc) {
 
+	// Polyfill for el.matches
+	if (!Element.prototype.matches) {
+		Element.prototype.matches =
+		Element.prototype.matchesSelector ||
+		Element.prototype.mozMatchesSelector ||
+		Element.prototype.msMatchesSelector ||
+		Element.prototype.oMatchesSelector ||
+		Element.prototype.webkitMatchesSelector ||
+		function(s) {
+			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+			i = matches.length;
+			while (--i >= 0 && matches.item(i) !== this) {}
+			return i > -1;
+		};
+	}
+
     // Enable strict mode
     "use strict";
 
@@ -21,11 +37,7 @@
 	*/
 
 	a11y_modal.hasClass = function ( el, cls ) {
-		if ( el.classList ) {
-		  return el.classList.contains( cls );
-		} else {
-		  return !!el.cls.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-		}
+		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
 	};
 
 	/*
@@ -33,11 +45,13 @@
 	*/
 
 	a11y_modal.addClass = function ( el, cls ) {
-		if ( el.classList ) {
-		  el.classList.add( cls );
-		} else if( !a11y_modal.hasClass( el, cls ) ) {
-		  el.cls += " " + cls;
+
+	    if ( el.classList ) {
+	      el.classList.add(cls);
+	    } else if (!a11y_modal.hasClass(el, cls)) {
+		  el.className += " " + cls;
 		}
+
 	};
 
 	/*
@@ -49,7 +63,7 @@
 		  el.classList.remove( cls );
 		} else if( a11y_modal.hasClass( el, cls ) ) {
 		  var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
-		  el.cls = el.cls.replace( reg, ' ' );
+	      el.className = el.className.replace( reg, ' ' );
 		}
 	};
 
@@ -61,7 +75,7 @@
     var modalClose = '[data-modal-close]';
     var bodyElements = 'a11y-hide-if-modal-open';
     var genModalClose = doc.createElement( 'button' );
-    var html = doc.documentElement;
+    var html = doc.body;
     var modallisting = doc.querySelectorAll( modal );
     var modallistingCount = modallisting.length;
     var i;
@@ -72,7 +86,10 @@
     // build out the fallback button
     genModalClose.setAttribute( 'type', 'button' );
     genModalClose.setAttribute( 'data-modal-close', 'true' );
+
+
     a11y_modal.addClass( genModalClose, 'modal__outro__close' );
+
     genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
 
     // initialize all the modals
@@ -253,7 +270,7 @@
               // if there's no data-modal-open, pull the target from
               // from the href
 
-              else if ( modalObj.attr( 'href' ) ) {
+              else if ( modalObj.getAttribute( 'href' ) ) {
 
                 grabTarget = modalObj.getAttribute( 'href' ).split( '#' )[1];
                 modalObj.setAttribute( 'aria-controls', grabTarget );
@@ -460,6 +477,7 @@
         // close the modal is the overlay is clicked
 
         self.addEventListener( "click", function( e ) {
+
           if ( e.target === self.querySelector( modalDoc ).parentNode ) {
             e.stopPropagation();
             close_a11y_modal( e );
@@ -469,6 +487,7 @@
         // close the modal on ESC
 
         self.addEventListener("keydown", function( e ) {
+
 	        if( e.keyCode == 27 && a11y_modal.hasClass( html, 'modal-is-open' ) ) {
               close_a11y_modal( e );
             }
@@ -483,10 +502,12 @@
         // open the modal when the trigger is clicked
 
         doc.addEventListener( "click", function( e ) {
+
           if ( e.target.matches( modalTrigger ) ) {
             e.stopPropagation();
             open_a11y_modal( e );
           }
+
         }, false );
 
         // making sure the modal triggers open with <enter> and <space> (making it act like a button, if it's a link)
