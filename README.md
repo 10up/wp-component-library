@@ -18,9 +18,12 @@ components/
 ├── component-name/
 │   ├── _notes.md
 │   ├── _resources.md
-│   ├── component-name.css
-│   ├── component-name.js
-│   ├── component-name.html
+│   ├── _support.md
+│   ├── component.css
+│   ├── component.js
+│   ├── component.html
+│   ├── example.html
+│   ├── index.md
 │   ├── scss/
 │       ├── component-name.scss
 
