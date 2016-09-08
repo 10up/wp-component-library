@@ -5,11 +5,6 @@ At 10up, we strive to provide websites that yield a top-notch user experience. I
 
 Each component in this library is built with simplicity and accessibility in mind. These components are intended to be easily adapted to any number of different projects and use cases.
 
-### Audience
-
-The 10up Component Library is not geared to teach anyone to become an engineer. Rather, it aims to provide basic code for common front-end components, as well as to illustrate how to engineer the 10up way. Therefore, these components are intended for capable engineers.
-
-
 <a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
 
 **[Start browsing ☞](https://10up.github.io/component-library/)**
