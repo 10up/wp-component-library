@@ -20,6 +20,10 @@ category: ui
 {% include_relative scss/component.scss %}
 ```
 
+<h3>Browser Compatibility</h3>
+
+{% include_relative _support.md %}
+
 <h3>Resources</h3>
 
 {% include_relative _resources.md %}
