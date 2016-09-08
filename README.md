@@ -7,7 +7,7 @@ Each component in this library is built with simplicity and accessibility in min
 
 ### Audience
 
-The 10up Component Library is not geared to teach anyone to become an engineer. Rather, it aims to illustrate how to engineer the 10up way. Therefore, these best practices are intended for capable engineers.
+The 10up Component Library is not geared to teach anyone to become an engineer. Rather, it aims to provide basic code for common front-end components, as well as to illustrate how to engineer the 10up way. Therefore, these components are intended for capable engineers.
 
 
 <a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
