@@ -2,6 +2,13 @@
 layout: default
 ---
 
+<div class="intro-text">
+	<div class="content">
+		{% capture introduction %}{% include markdown/Introduction.md %}{% endcapture %}
+		{{ introduction | markdownify }}
+	</div>
+</div>
+
 <div class="content">
 	<div class="grid-layout">
 
