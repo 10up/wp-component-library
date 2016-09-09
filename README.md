@@ -7,7 +7,7 @@ Each component in this library is built with simplicity and accessibility in min
 
 <a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
 
-**[Start browsing ☞](https://10up.github.io/component-library/)**
+**[Start browsing ☞](https://10up.github.io/wp-component-library/)**
 
 ## Dependencies
 
@@ -51,6 +51,16 @@ gem install bundle
 bundle install
 bundle exec jekyll serve
 ```
+
+Once `bundle exec jekyll serve` has run, you can view the 10up Component library in your browser by copying/pasting the server address from your command line. It will look similar to the code below.
+
+```
+Configuration file: /[your-path-to-project]/wp-component-library/_config.yml
+    Server address: http://127.0.0.1:4000/wp-component-library/
+  Server running... press ctrl-c to stop.
+```
+
+Check out Github's documentation on [local Jekyll setup](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#step-4-build-your-local-jekyll-site) for more info.
 
 ## License
 
