@@ -1,54 +1,53 @@
-body {
-  margin: 0; }
+/** --------------------------------------------------------------------
 
-img {
-  max-width: 100%; }
+  Custom Select Element Pattern
 
-a {
-  color: #6ab7b7; }
-
+--------------------------------------------------------------------- */
 .custom-select {
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
-  box-shadow: inset 0 -2px 5px rgba(255, 255, 255, 0.4);
-  display: inline-block;
-  min-width: 100px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  height: 36px;
   overflow: hidden;
-  padding-right: 20px;
   position: relative; }
   .custom-select:after {
+    background-color: transparent;
+    background-image: url("icon-arrow-down.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13px auto;
     content: '';
-    border-color: #656565 transparent transparent transparent;
-    border-style: solid;
-    border-width: 6px 4px;
-    margin-top: -3px;
+    height: 100%;
     pointer-events: none;
     position: absolute;
-    right: 7px;
-    top: 50%;
-    width: 0; }
+    right: 0;
+    speak: none;
+    top: 0;
+    width: 28px; }
   .custom-select select {
-    -webkit-appearance: none;
-    -moz-appearance: radio-container;
+    -webkit-appearance: textarea;
+    -moz-appearance: none;
     appearance: none;
-    background: transparent;
+    background: none;
     border: 0;
-    box-sizing: content-box;
-    outline: 0;
-    padding: 6px 0 6px 8px;
-    text-shadow: 1px 1px rgba(255, 255, 255, 0.7);
-    -webkit-user-select: none;
-    -moz-user-select: -moz-none;
-    -ms-user-select: none;
-    user-select: none;
-    width: 100%; }
-  .custom-select select:focus + span.custom-select-outline {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: -1;
-		box-shadow: inset 0 0 5px 0 rgb(59, 153, 252); }
+    color: #000;
+    font-family: sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0 28px 0 8px;
+    width: 100%;
+    width: 110% \9;
+    z-index: 2; }
+    .custom-select select:focus {
+      box-shadow: inset 0 0 0 1px blue;
+      outline: transparent; }
+    .custom-select select::-ms-expand {
+      display: none; }
+  .custom-select select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000; }
+  .custom-select option {
+    border: 0;
+    padding: 2px 4px; }
 
-/*# sourceMappingURL=custom-select.css.map */
+/*# sourceMappingURL=component.css.map */

@@ -1,20 +1,20 @@
 // Variables
-$dark-gray:  #303030 !default;
+$dark-gray: #303030 !default;
 
 // Component Sass
 .accordion-header {
   border-bottom: 1px solid $dark-gray;
+  cursor: pointer;
   font-size: 2em;
   padding: 10px 0 10px 30px;
   position: relative;
-  width: 100%;
   text-align: left;
-  cursor: pointer;
+  width: 100%;
 
   &:before {
     content: "+";
-    position: absolute;
     left: 5px;
+    position: absolute;
     top: 5px;
   }
 

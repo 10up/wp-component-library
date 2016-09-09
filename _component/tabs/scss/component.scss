@@ -9,21 +9,21 @@ $white: #fff !default;
 
 // Component Sass
 .tab-list {
-  margin: 0;
-  padding: 0;
   list-style: none;
-  white-space: nowrap;
+  margin: 0;
   overflow: auto;
+  padding: 0;
   position: relative;
+  white-space: nowrap;
 
   @media ( max-width: $bp-medium ) {
     &:after {
       content: "☰";
+      pointer-events: none;
       position: absolute;
       right: 10px;
       top: 10px;
       z-index: 2;
-      pointer-events: none;
     }
 
     &.m-is-active {
@@ -32,7 +32,7 @@ $white: #fff !default;
       }
     }
   }
-}
+} // .tab-list
 
 .tab-item {
   display: block;
@@ -42,15 +42,15 @@ $white: #fff !default;
   }
 
   > a {
-    display: block;
-    text-decoration: none;
     border: 1px solid $gray;
+    display: block;
+    height: 100%;
+    left: 0;
     padding: 10px 15px;
     position: absolute;
+    text-decoration: none;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
 
     @media ( min-width: $bp-medium ) {
       position: relative;
@@ -63,13 +63,15 @@ $white: #fff !default;
       background: $white;
       position: relative;
       z-index: 1;
+
       @media ( min-width: $bp-medium ) {
         border-bottom-color: $white;
       }
     }
+
   }
 
-}
+} // .tab-item
 
 .tab-group {
   border: 1px solid $gray;
@@ -77,10 +79,10 @@ $white: #fff !default;
 }
 
 .tab-content {
+  left: -999em;
   padding: 15px;
   position: absolute;
-  top: -9999px;
-  left: -9999px;
+  top: -999em;
 
   &.is-active {
     position: static;

@@ -1,8 +1,8 @@
-name:          10up Component Library
-title:         Component Library
+name:          10up WordPress Component Library
+title:         WordPress Component Library
 description:   Front-end components for 10up.
 url:           https://10up.github.io/
-baseurl:       /component-library
+baseurl:       /wp-component-library
 permalink: none
 author:
   name:    10up

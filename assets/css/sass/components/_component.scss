@@ -6,18 +6,24 @@
 		padding: 0;
 		margin: 20px auto 0;
 		display: block;
-		transition: width linear .2s;
+		max-width: calc(100vw - 45px);
+		position: relative;
+		transition: width linear .2s, transform linear .2s;
 
-		&.small {
+		@include breakpoint($breakpoint-charlie) {
+			max-width: none;
+		}
+
+		&.h-small {
 			height: 100px;
 		}
 
-		&.medium {
-			height: 250px;
+		&.h-medium {
+			height: 350px;
 		}
 
-		&.large {
-			height: 400px;
+		&.h-large {
+			height: 550px;
 		}
 
 		&.w-iframe__small {
@@ -29,9 +35,25 @@
 		}
 
 		&.w-iframe__large {
-			width: 1000px;
+			@include breakpoint($breakpoint-charlie) {
+				width: 1000px;
+				transform: translateX(-93px);
+			}
 		}
 
+	}
+
+	.example-link {
+		float: right;
+		border-bottom: 0;
+		font-size: 14px;
+		font-weight: 700;
+		margin-bottom: 10px;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
 	}
 
 	h3 {
@@ -96,7 +118,7 @@
 	button {
 		cursor: pointer;
 		display: block;
-		width: 20%;
+		width: 25%;
 		float: left;
 		background: $cta-red;
 		color: $white;

@@ -1,18 +1,21 @@
 .is-active-off-canvas {
-  position: relative;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
 
 .site-header {
-  align-items: center;
   background: #303030;
-  display: flex;
-  justify-content: space-between;
   padding: .5rem;
   position: relative; }
+  .site-header:before, .site-header:after {
+    content: " ";
+    display: table; }
+  .site-header:after {
+    clear: both; }
 
 .site-heading {
   line-height: 0;
-  padding-right: 1rem; }
+  padding-right: 1rem;
+  float: left; }
 
 .site-link {
   display: inline-block;
@@ -21,21 +24,22 @@
     max-height: 48px; }
 
 .site-navigation {
-  flex: 1 0 auto; }
+  float: right; }
   .site-navigation ul {
     list-style: none;
     padding: 0; }
 
 .site-menu-toggle {
-  float: right; }
+  float: right;
+  line-height: 42px; }
 
 .primary-menu {
   background: #303030;
+  height: 100vh;
   margin: 0;
   overflow: hidden;
   position: absolute;
   top: 100%;
-  height: 100vh;
   width: 0; }
   .left .primary-menu {
     left: 0; }
@@ -50,11 +54,11 @@
     padding: .75rem 1rem; }
   .primary-menu .sub-menu {
     background-color: #303030;
-    min-width: 100%;
-    display: block; }
+    display: block;
+    min-width: 100%; }
     .primary-menu .sub-menu[aria-hidden="true"] {
       display: none; }
     .primary-menu .sub-menu.hover {
       height: auto; }
 
-/*# sourceMappingURL=menu-off-canvas..css.map */
+/*# sourceMappingURL=component.css.map */
