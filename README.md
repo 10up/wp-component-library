@@ -52,6 +52,16 @@ bundle install
 bundle exec jekyll serve
 ```
 
+Once `bundle exec jekyll serve` has run, you can view the 10up Component library in your browser by copying/pasting the server address from your command line. It will look similar to the code below.
+
+```
+Configuration file: /[your-path-to-project]/wp-component-library/_config.yml
+    Server address: http://127.0.0.1:4000/wp-component-library/
+  Server running... press ctrl-c to stop.
+```
+
+Check out Github's documentation on [local Jekyll setup](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#step-4-build-your-local-jekyll-site) for more info.
+
 ## License
 
 Released under MIT by, and copyright 2016 by [10up](http://10up.com).
