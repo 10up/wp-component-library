@@ -1,19 +1,19 @@
 @charset "UTF-8";
 .tab-list {
-  margin: 0;
-  padding: 0;
   list-style: none;
-  white-space: nowrap;
+  margin: 0;
   overflow: auto;
-  position: relative; }
+  padding: 0;
+  position: relative;
+  white-space: nowrap; }
   @media (max-width: 53.125em) {
     .tab-list:after {
       content: "☰";
+      pointer-events: none;
       position: absolute;
       right: 10px;
       top: 10px;
-      z-index: 2;
-      pointer-events: none; }
+      z-index: 2; }
     .tab-list.m-is-active a {
       position: relative; } }
 
@@ -23,15 +23,15 @@
     .tab-item {
       display: inline-block; } }
   .tab-item > a {
-    display: block;
-    text-decoration: none;
     border: 1px solid #999;
+    display: block;
+    height: 100%;
+    left: 0;
     padding: 10px 15px;
     position: absolute;
+    text-decoration: none;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
     @media (min-width: 53.125em) {
       .tab-item > a {
         position: relative;
@@ -49,11 +49,12 @@
   margin-top: -1px; }
 
 .tab-content {
-  padding: 15px;
-  position: absolute;
-  top: -9999px;
-  left: -9999px; }
+  padding: 15px; }
+  .tab-content[aria-hidden="true"] {
+    left: -999em;
+    position: absolute;
+    top: -999em; }
   .tab-content.is-active {
     position: static; }
 
-/*# sourceMappingURL=tabs.css.map */
+/*# sourceMappingURL=component.css.map */
