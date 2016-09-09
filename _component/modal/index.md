@@ -31,6 +31,12 @@ iframe_height: medium
 {% include_relative component.js %}
 ```
 
+<h3>JS <a href="component.hash.click.js" target="_blank">Download JS</a></h3>
+
+```javascript
+{% include_relative component.hash.click.js %}
+```
+
 <h3>Browser Compatibility</h3>
 
 {% include_relative _support.md %}
