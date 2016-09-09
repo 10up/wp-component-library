@@ -1,0 +1,7 @@
+.code-tab + div[class*="language-"] {
+	display: none;
+}
+
+.code-tab.show + div[class*="language-"] {
+	display: block;
+}

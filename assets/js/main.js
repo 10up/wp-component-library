@@ -15,6 +15,9 @@
 	  // Add the UI buttons
 	  App.add_rwd_buttons();
 
+	  // Add the tabs, if necessary
+	  App.tabs();
+
 	};
 
   	// UI Buttons
@@ -139,6 +142,13 @@
 		}
 
 	};
+
+	App.tabs = function() {
+		// Bail out if you're not on a component page
+		if ( ! document.getElementsByTagName( 'body' )[0].classList.contains( 'page-component' ) ) {
+			return;
+		}
+	}
 
     // Start the application
     App.init();

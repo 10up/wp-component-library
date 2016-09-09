@@ -15,10 +15,23 @@ iframe_height: medium
 <iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML <a href="component.html" target="_blank">View Generated HTML</a></h3>
+<div class="tab-control">
+	<ul class="tab-list">
+		<li class="tab-item"><a href="#templated">Templated</a></li>
+		<li class="tab-item"><a href="#text">Text</a></li>
+	</ul>
+</div><!-- //.tab-control -->
 
+<div id="templated" class="code-tab show"></div>
 ```html
-{% include_relative component.html %}
+{% include_relative component-templated.html %}
 ```
+
+<div id="text" class="code-tab"></div>
+```html
+{% include_relative component-text.html %}
+```
+
 <h3>SCSS <a href="scss/component.scss" target="_blank">Download SCSS</a></h3>
 ```scss
 {% include_relative scss/component.scss %}
