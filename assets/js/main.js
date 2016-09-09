@@ -148,6 +148,33 @@
 		if ( ! document.getElementsByTagName( 'body' )[0].classList.contains( 'page-component' ) ) {
 			return;
 		}
+
+		var tabList = document.querySelectorAll( '.code-tab-list a' );
+
+		for ( var i = 0; i < tabList.length; i++ ) {
+			tabList[i].addEventListener( 'click', function(e) {
+				e.preventDefault();
+
+				var templated     = document.getElementById( 'templated' ),
+					templatedLink = document.getElementById( 'js-templated-link' ),
+					text          = document.getElementById( 'text' ),
+					textLink      = document.getElementById( 'js-text-link' );
+
+				if ( '#text' === this.getAttribute( 'href' ) ) {
+					text.classList.add( 'show' );
+					textLink.classList.add( 'show' );
+
+					templated.classList.remove( 'show' );
+					templatedLink.classList.remove( 'show' );
+				} else {
+					templated.classList.add( 'show' );
+					templatedLink.classList.add( 'show' );
+
+					text.classList.remove( 'show' );
+					textLink.classList.remove( 'show' );
+				}
+			});
+		}
 	}
 
     // Start the application

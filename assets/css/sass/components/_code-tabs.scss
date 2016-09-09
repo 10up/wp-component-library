@@ -5,3 +5,35 @@
 .code-tab.show + div[class*="language-"] {
 	display: block;
 }
+
+.code-tab-control,
+.code-tab-list {
+	@extend %clearfix;
+}
+
+.code-tab-list {
+	padding-left: 1.5em;
+	margin-bottom: 0;
+}
+
+.code-tab-item {
+	list-style: none;
+	float: left;
+	margin-right: 3px;
+
+	a {
+		background-color: $light-grey;
+		color: $grey;
+		display: block;
+		font-size: 14px;
+		font-weight: bold;
+		margin-right: 2px;
+		padding: 8px 15px;
+		text-decoration: none;
+
+		&.show {
+			background-color: $light-mid-grey;
+			color: $party-blue;
+		}
+	}
+}

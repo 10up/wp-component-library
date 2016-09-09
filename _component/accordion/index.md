@@ -15,10 +15,10 @@ iframe_height: medium
 <iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML <a href="component.html" target="_blank">View Generated HTML</a></h3>
-<div class="tab-control">
-	<ul class="tab-list">
-		<li class="tab-item"><a href="#templated">Templated</a></li>
-		<li class="tab-item"><a href="#text">Text</a></li>
+<div class="code-tab-control">
+	<ul class="code-tab-list">
+		<li class="code-tab-item"><a href="#templated" id="js-templated-link" class="show">Templated</a></li>
+		<li class="code-tab-item"><a href="#text" id="js-text-link">Text</a></li>
 	</ul>
 </div><!-- //.tab-control -->
 
