@@ -7,7 +7,7 @@ Each component in this library is built with simplicity and accessibility in min
 
 <a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
 
-**[Start browsing ☞](https://10up.github.io/component-library/)**
+**[Start browsing ☞](https://10up.github.io/wp-component-library/)**
 
 ## Dependencies
 
