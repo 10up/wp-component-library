@@ -23,16 +23,16 @@
 	var TenUp_Accordion = {};
 
 	/*
-	Cross-browser way to deal with class management
-	*/
+	 * Cross-browser way to deal with class management
+	 */
 
 	TenUp_Accordion.hasClass = function ( el, cls ) {
 		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
 	};
 
 	/*
-	Cross-browser way to add a class
-	*/
+	 * Cross-browser way to add a class
+	 */
 
 	TenUp_Accordion.addClass = function ( el, cls ) {
 		if ( el.classList ) {
@@ -42,9 +42,9 @@
 		}
 	};
 
-  /*
-	Cross-browser way to remove a class
-  */
+	/*
+	 * Cross-browser way to remove a class
+	 */
 
 	TenUp_Accordion.removeClass = function ( el, cls ) {
 		if ( el.classList ) {
@@ -56,8 +56,8 @@
 	};
 
 	/*
-	  Start Component
-	*/
+	 * Start Component
+	 */
 
 	var accordion = document.querySelectorAll( '.accordion' );
 	var forEach = function ( array, callback, scope ) {
