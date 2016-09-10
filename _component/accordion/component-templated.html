@@ -1,9 +1,13 @@
 <div class="accordion">
 
-	<button class="accordion-header" type="button">Test!</button>
+	<button class="accordion-header" type="button">
+		<?php esc_html_e( 'Accordion Header', 'tenup' ); ?>
+	</button>
 	<div class="accordion-content">
-		<h2 class="accordion-label">Accordion Heading</h2>
-		<p>here the content of 1st tab <a href="#">link</a></p>
+		<h2 class="accordion-label">
+			<?php esc_html_e( 'Accordion Heading', 'tenup' ); ?>
+		</h2>
+		<p><?php esc_html_e( 'here the content of 1st tab', 'tenup' ); ?> <a href="#">link</a></p>
 	</div> <!-- //.accordion-content -->
 
 	<button class="accordion-header" type="button">Accordion Header</button>
