@@ -1,57 +1,52 @@
-    <header class="site-header-wrap" role="banner">
-      <div class="site-header">
+<header class="site-header-wrap" role="banner">
+	<div class="site-header">
 		<div class="site-heading">
-	        <a class="site-link" href="#" rel="home">
-	          <img class="site-logo" src="http://placehold.it/200x42" height="42" width="140" alt="Blog Title + Description Alt tag">
-	        </a>
+			<a class="site-link" href="#" rel="home">
+				<img class="site-logo" src="http://placehold.it/200x42" height="42" width="140" alt="Blog Title + Description Alt tag">
+			</a>
 		</div>
 
-        <nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" aria-label="Navigation menu with Dropdowns">
-          <a href="#menu" class="site-menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-            <span class="screen-reader-text">Primary Menu</span> ☰
-          </a>
+		<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" aria-label="Navigation menu with Dropdowns">
+			<a href="#menu" class="site-menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="screen-reader-text">Primary Menu</span>
+				<span aria-hidden="true">☰</span>
+			</a>
 
-          <ul role="menubar" id="primary-menu" class="primary-menu dropdown">
+			<ul role="menubar" id="primary-menu" class="primary-menu dropdown">
+				<li role="menuitem" class="menu-item menu-item-has-children">
+					<a href="#" aria-haspopup="true">Menu Item Submenu</a>
 
-            <li role="menuitem" class="menu-item menu-item-has-children">
-              <a href="#" aria-haspopup="true">Menu Item Submenu</a>
+					<ul role="menu" class="sub-menu" aria-hidden="true" aria-label="submenu">
+						<li role="menuitem" class="menu-item menu-level-1">
+							<a href="#">Sub One</a>
+						</li>
+						<li role="menuitem" class="menu-item menu-level-1">
+							<a href="#">Sub Two</a>
+						</li>
+						<li role="menuitem" class="menu-item menu-level-1">
+							<a href="#">Sub Three</a>
+						</li>
+					</ul>
+				</li>
+				<li role="menuitem" class="menu-item">
+					<a href="#">Menu Item</a>
+				</li>
+				<li role="menuitem" class="menu-item menu-item-has-children">
+					<a href="#" aria-haspopup="true">Another Menu Item Submenu</a>
 
-              <ul role="menu" class="sub-menu" aria-hidden="true" aria-label="submenu">
-                <li role="menuitem" class="menu-item menu-level-1">
-                  <a href="#">Sub One</a>
-                </li>
-                <li role="menuitem" class="menu-item menu-level-1">
-                  <a href="#">Sub Two</a>
-                </li>
-                <li role="menuitem" class="menu-item menu-level-1">
-                  <a href="#">Sub Three</a>
-                </li>
-              </ul>
-
-            </li>
-
-            <li role="menuitem" class="menu-item">
-              <a href="#">Menu Item</a>
-            </li>
-
-            <li role="menuitem" class="menu-item menu-item-has-children">
-              <a href="#" aria-haspopup="true">Another Menu Item Submenu</a>
-
-              <ul role="menu" class="sub-menu" aria-hidden="true" aria-label="submenu">
-                <li role="menuitem" class="menu-item menu-level-1">
-                  <a href="#">Sub One 1</a>
-                </li>
-                <li role="menuitem" class="menu-item menu-level-1">
-                  <a href="#">Sub Two 2</a>
-                </li>
-                <li role="menuitem" class="menu-item menu-level-1">
-                  <a href="#">Sub Three 3</a>
-                </li>
-              </ul>
-
-            </li>
-          </ul> <!-- //.primary-menu -->
-
-        </nav> <!-- //.site-navigation -->
-      </div> <!-- //.site-header -->
-    </header> <!-- //.site-header-wrap -->
+					<ul role="menu" class="sub-menu" aria-hidden="true" aria-label="submenu">
+						<li role="menuitem" class="menu-item menu-level-1">
+							<a href="#">Sub One 1</a>
+						</li>
+						<li role="menuitem" class="menu-item menu-level-1">
+							<a href="#">Sub Two 2</a>
+						</li>
+						<li role="menuitem" class="menu-item menu-level-1">
+							<a href="#">Sub Three 3</a>
+						</li>
+					</ul>
+				</li>
+			</ul> <!-- //.primary-menu -->
+		</nav> <!-- //.site-navigation -->
+	</div> <!-- //.site-header -->
+</header> <!-- //.site-header-wrap -->
