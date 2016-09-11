@@ -15,9 +15,7 @@ category: content
 
 <h3>HTML</h3>
 
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-tabs.md %}
 
 <h3>Resources</h3>
 

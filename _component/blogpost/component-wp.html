@@ -26,22 +26,29 @@
 			<h1 itemprop="headline"><?php the_title(); ?></h1>
 
 			<!--Author-->
-			<p><strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
+			<p>
+				<strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
 				<span itemprop="author"><?php the_author_link(); ?></span>
 			</p>
 
 			<!-- publication date -->
-			<p><strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
-			<span itemprop="datePublished">
-				<time datetime="<?php esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate><?php esc_html( the_date() ); ?></time>
-			</span>
+			<p>
+				<strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
+				<span itemprop="datePublished">
+					<time datetime="<?php echo esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate>
+						<?php the_date(); ?>
+					</time>
+				</span>
 			</p>
 
 			<!-- Modified date (this is recommended to have, even if it's the same as publication date)-->
-			<p><strong><?php esc_html_e( 'Last Modified Date', 'tenup' ); ?></strong>:
-			<span itemprop="dateModified">
-				<time datetime="<?php esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate><?php esc_html( the_date() ); ?></time>
-			</span>
+			<p>
+				<strong><?php esc_html_e( 'Last Modified Date', 'tenup' ); ?></strong>:
+				<span itemprop="dateModified">
+					<time datetime="<?php echo esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate>
+						<?php the_modified_date(); ?>
+					</time>
+				</span>
 			</p>
 
 		</header>
@@ -57,12 +64,14 @@
 		</div><!--/.itemprop=publisher-->
 
 		<!-- category -->
-		<p><strong><?php esc_html_e( 'Category', 'tenup' ); ?></strong>:
+		<p>
+			<strong><?php esc_html_e( 'Category', 'tenup' ); ?></strong>:
 			<span itemprop="articleSection"><?php the_category( ', ' ); ?></span>
 		</p>
 
 		<!-- tags -->
-		<p><strong><?php esc_html_e( 'Tags', 'tenup' ); ?></strong>:
+		<p>
+			<strong><?php esc_html_e( 'Tags', 'tenup' ); ?></strong>:
 			<span itemprop="keywords"><?php the_tags(); ?></span>
 		</p>
 
