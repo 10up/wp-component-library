@@ -9,73 +9,72 @@ $white: #fff !default;
 
 // Component Sass
 .tab-list {
-  list-style: none;
-  margin: 0;
-  overflow: auto;
-  padding: 0;
-  position: relative;
-  white-space: nowrap;
+	list-style: none;
+	margin: 0;
+	overflow: auto;
+	padding: 0;
+	position: relative;
+	white-space: nowrap;
 
-  @media ( max-width: $bp-medium ) {
-    &:after {
-      content: "☰";
-      pointer-events: none;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      z-index: 2;
-    }
+	@media ( max-width: $bp-medium ) {
+		&:after {
+			content: "☰";
+			pointer-events: none;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			z-index: 2;
+		}
 
-    &.m-is-active {
-      a {
-        position: relative;
-      }
-    }
-  }
+		&.m-is-active {
+			a {
+				position: relative;
+			}
+		}
+	}
 } // .tab-list
 
 .tab-item {
-  display: block;
+	display: block;
 
-  @media ( min-width: $bp-medium ) {
-    display: inline-block;
-  }
+	@media ( min-width: $bp-medium ) {
+		display: inline-block;
+	}
 
-  > a {
-    border: 1px solid $gray;
-    display: block;
-    height: 100%;
-    left: 0;
-    padding: 10px 15px;
-    position: absolute;
-    text-decoration: none;
-    top: 0;
-    width: 100%;
+	> a {
+		border: 1px solid $gray;
+		display: block;
+		height: 100%;
+		left: 0;
+		padding: 10px 15px;
+		position: absolute;
+		text-decoration: none;
+		top: 0;
+		width: 100%;
 
-    @media ( min-width: $bp-medium ) {
-      position: relative;
-      width: auto;
-    }
-  }
+		@media ( min-width: $bp-medium ) {
+			position: relative;
+			width: auto;
+		}
+	}
 
-  &.is-active {
-    a {
-      background: $white;
-      position: relative;
-      z-index: 1;
+	&.is-active {
+		a {
+			background: $white;
+			position: relative;
+			z-index: 1;
 
-      @media ( min-width: $bp-medium ) {
-        border-bottom-color: $white;
-      }
-    }
-
-  }
+			@media ( min-width: $bp-medium ) {
+				border-bottom-color: $white;
+			}
+		}
+	}
 
 } // .tab-item
 
 .tab-group {
-  border: 1px solid $gray;
-  margin-top: -1px;
+	border: 1px solid $gray;
+	margin-top: -1px;
 }
 
 .tab-content {
@@ -87,7 +86,7 @@ $white: #fff !default;
 		top: -999em;
 	}
 
-  &.is-active {
-    position: static;
-  }
+	&.is-active {
+		position: static;
+	}
 }

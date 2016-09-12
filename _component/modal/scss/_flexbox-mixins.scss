@@ -1,38 +1,38 @@
 /** --------------------------------------------------------------------
 
-  Flexbox Mixins
+	Flexbox Mixins
 
 --------------------------------------------------------------------- */
 
 // Full Flex or Inline Flex
 $flexbox:
-       -ms-flexbox,   // ie 10
-      -webkit-flex,   // chrome 21 - 28, safari 6.1+
-              flex;   // moz 22+, IE 11+, chrome 29+, Opera 17+
+		-ms-flexbox,   // ie 10
+		-webkit-flex,   // chrome 21 - 28, safari 6.1+
+		flex;   // moz 22+, IE 11+, chrome 29+, Opera 17+
 
 
 
 $inline-flexbox:
-     -ms-inline-flexbox,    // ie 10
-    -webkit-inline-flex,    // chrome 21 - 28, safari 6.1+
-            inline-flex;    // moz 22+, IE 11+, chrome 29+, Opera 17+
+		-ms-inline-flexbox,    // ie 10
+		-webkit-inline-flex,    // chrome 21 - 28, safari 6.1+
+		inline-flex;    // moz 22+, IE 11+, chrome 29+, Opera 17+
 
 //------------------------------------------------------------------------
 
 // mixin to auto create the appropriate displays
 // based on either flex or inline-flex
 @mixin flexbox( $display: flex ) {
-  @if $display == flex {
-    @each $v in $flexbox {
-      display: $v;
-    }
-  }
+	@if $display == flex {
+		@each $v in $flexbox {
+			display: $v;
+		}
+	}
 
-  @else {
-    @each $v in $inline-flexbox {
-      display: $v;
-    }
-  }
+	@else {
+		@each $v in $inline-flexbox {
+			display: $v;
+		}
+	}
 }
 
 // example:
@@ -58,14 +58,14 @@ $inline-flexbox:
 // http://w3.org/tr/css3-flexbox/#flex-wrap-property
 
 @mixin flex-wrap( $value... ) {
-  @if $value == nowrap {
-    -ms-flex-wrap: none;
-  }
-  @else {
-    -ms-flex-wrap: $value;
-  }
-   -webkit-flex-wrap: $value;
-           flex-wrap: $value;
+	@if $value == nowrap {
+		-ms-flex-wrap: none;
+	}
+	@else {
+		-ms-flex-wrap: $value;
+	}
+	-webkit-flex-wrap: $value;
+	flex-wrap: $value;
 }
 
 
@@ -82,9 +82,9 @@ $inline-flexbox:
 // http://w3.org/tr/css3-flexbox/#flex-direction-property
 
 @mixin flex-direction( $value... ) {
-      -ms-flex-direction: $value;
-  -webkit-flex-direction: $value;
-          flex-direction: $value;
+	-ms-flex-direction: $value;
+	-webkit-flex-direction: $value;
+	flex-direction: $value;
 }
 
 
@@ -99,9 +99,9 @@ $inline-flexbox:
 // http://w3.org/tr/css3-flexbox/#flex-flow-property
 
 @mixin flex-flow( $value... ) {
-      -ms-flex-flow: $value;
-  -webkit-flex-flow: $value;
-          flex-flow: $value;
+	-ms-flex-flow: $value;
+	-webkit-flex-flow: $value;
+	flex-flow: $value;
 }
 
 
@@ -125,23 +125,23 @@ $inline-flexbox:
 // http://w3.org/tr/css3-flexbox/#justify-content-property
 
 @mixin justify-content( $value: flex-start ) {
-  @if $value == flex-start {
-    -ms-flex-pack: start;
-  }
-  @else if $value == flex-end {
-    -ms-flex-pack: end;
-  }
-  @else if $value == space-between {
-    -ms-flex-pack: justify;
-  }
-  @else if $value == space-around {
-    -ms-flex-pack: distribute;
-  }
-  @else {
-    -ms-flex-pack: $value;
-  }
-  -webkit-justify-content: $value;
-          justify-content: $value;
+	@if $value == flex-start {
+		-ms-flex-pack: start;
+	}
+	@else if $value == flex-end {
+		-ms-flex-pack: end;
+	}
+	@else if $value == space-between {
+		-ms-flex-pack: justify;
+	}
+	@else if $value == space-around {
+		-ms-flex-pack: distribute;
+	}
+	@else {
+		-ms-flex-pack: $value;
+	}
+	-webkit-justify-content: $value;
+	justify-content: $value;
 }
 // flex-start | flex-end | center | space-between | space-around
 
@@ -149,51 +149,51 @@ $inline-flexbox:
 
 // Align Items
 @mixin align-items( $value: stretch ) {
-    @if $value == flex-start {
-      -ms-flex-align: start;
-    }
-    @else if $value == flex-end {
-      -ms-flex-align: end;
-    }
-    @else {
-      -ms-flex-align: $value;
-    }
-  -webkit-align-items: $value;
-          align-items: $value;
+	@if $value == flex-start {
+		-ms-flex-align: start;
+	}
+	@else if $value == flex-end {
+		-ms-flex-align: end;
+	}
+	@else {
+		-ms-flex-align: $value;
+	}
+	-webkit-align-items: $value;
+	align-items: $value;
 }
 // flex-start | flex-end | center | baseline | stretch
 
 
 // Align Self
 @mixin align-self( $value: auto ) {
-  @if $value == flex-start {
-    -ms-flex-item-align: start;
-  }
-  @else if $value == flex-end {
-    -ms-flex-item-align: end;
-  }
-  @else {
-    -ms-flex-item-align: $value;
-  }
-  -webkit-align-self: $value;
-          align-self: $value;
+	@if $value == flex-start {
+		-ms-flex-item-align: start;
+	}
+	@else if $value == flex-end {
+		-ms-flex-item-align: end;
+	}
+	@else {
+		-ms-flex-item-align: $value;
+	}
+	-webkit-align-self: $value;
+					align-self: $value;
 }
 // Values: auto | flex-start | flex-end | center | baseline | stretch
 
 
 // Align Content
 @mixin align-content( $value: stretch ) {
-  @if $value == flex-start {
-    -ms-flex-line-pack: start;
-  }
-  @else if $value == flex-end {
-    -ms-flex-line-pack: end;
-  }
-  @else {
-    -ms-flex-line-pack: $value;
-  }
-  -webkit-align-content: $value;
-          align-content: $value;
+	@if $value == flex-start {
+		-ms-flex-line-pack: start;
+	}
+	@else if $value == flex-end {
+		-ms-flex-line-pack: end;
+	}
+	@else {
+		-ms-flex-line-pack: $value;
+	}
+	-webkit-align-content: $value;
+					align-content: $value;
 }
 // flex-start | flex-end | center | space-between | space-around | stretch
 
@@ -211,9 +211,9 @@ $inline-flexbox:
 // Default: 0
 
 @mixin order( $value: 0 ) { // default value is zero
-    -webkit-order: $value;
-   -ms-flex-order: $value;
-            order: $value;
+	-webkit-order: $value;
+	-ms-flex-order: $value;
+	order: $value;
 }
 
 
@@ -224,9 +224,9 @@ $inline-flexbox:
 //
 // default value is zero
 @mixin flex-grow( $value: 0 ) {
-  -ms-flex-positive: $value;
-  -webkit-flex-grow: $value;
-          flex-grow: $value;
+	-ms-flex-positive: $value;
+	-webkit-flex-grow: $value;
+	flex-grow: $value;
 }
 
 
@@ -237,9 +237,9 @@ $inline-flexbox:
 //
 // default value is one
 @mixin flex-shrink( $value: 1 ) {
-    -ms-flex-negative: $value;
-  -webkit-flex-shrink: $value;
-          flex-shrink: $value;
+	-ms-flex-negative: $value;
+	-webkit-flex-shrink: $value;
+	flex-shrink: $value;
 }
 
 
@@ -249,16 +249,16 @@ $inline-flexbox:
 
 // default value is auto
 @mixin flex-basis( $value: auto ) {
-  -ms-flex-preferred-size: $value;
-       -webkit-flex-basis: $value;
-               flex-basis: $value;
+	-ms-flex-preferred-size: $value;
+	-webkit-flex-basis: $value;
+	flex-basis: $value;
 }
 
 
 // Shorthand for flex-grow, flex-shrink, flex-basis
 // Shrink and basis are optional properties
 @mixin flex($fg: 1, $fs: null, $fb: null) {
-      -ms-flex: $fg $fs $fb;
-  -webkit-flex: $fg $fs $fb;
-          flex: $fg $fs $fb;
+	-ms-flex: $fg $fs $fb;
+	-webkit-flex: $fg $fs $fb;
+	flex: $fg $fs $fb;
 }
