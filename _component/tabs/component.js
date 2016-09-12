@@ -73,10 +73,6 @@
           tabLinks     = tabs[index].querySelectorAll( '.tab-list li > a' ),
           activeTab    = tabs[index].querySelectorAll( '.tab-list li' );
 
-      // Set state for the first .tab-content item
-      tabContent[0].setAttribute( 'aria-hidden', 'false' );
-      TenUp_Tabs.addClass( tabContent[0], 'is-active' );
-
       // Set state for the first .tab-item
       var firstTab = tabs[index].querySelectorAll( '.tab-item' );
       TenUp_Tabs.addClass( firstTab[0], 'is-active' );
@@ -141,6 +137,11 @@
           tabContent[index].querySelector( 'h2' ).focus();
 
         }
+
+        // Set state for the first .tab-content item
+		TenUp_Tabs.addClass( tabContent[0], 'is-active' );
+        tabContent[0].setAttribute( 'aria-hidden', 'false' );
+
       });
     });
 
