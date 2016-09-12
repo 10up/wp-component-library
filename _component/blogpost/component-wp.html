@@ -1,4 +1,4 @@
-<article itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="https://schema.org/BlogPosting">
 
 	<!-- flag this as the main area of the page -->
 	<div itemprop="mainEntityOfPage">
@@ -6,33 +6,49 @@
 		<!-- articles get headers (and footers) -->
 		<header>
 
+		<?php if ( has_post_thumbnail() ) ) : ?>
+
+			<?php
+				$meta    = wp_get_attachment_metadata( get_post_thumbnail_id( $post_id ) );
+				$height  = $meta['width'];
+				$width   = $meta['height'];
+			?>
 			<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-				<img src="https://placekitten.com/g/400/150" srcset="https://placekitten.com/g/400/150 1x, https://placekitten.com/g/800/300 2x" alt="header image" />
-				<meta itemprop="url" content="https://placekitten.com/g/400/150" />
-				<meta itemprop="width" content="400" />
-				<meta itemprop="height" content="150" />
+				<?php the_post_thumbnail(); ?>
+				<meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
+				<meta itemprop="width" content="<?php echo esc_url( $width ); ?>" />
+				<meta itemprop="height" content="<?php echo esc_url( $height ); ?>" />
 			</div><!--/itemprop=image-->
 
+		<?php endif; ?>
+
 			<!-- Name of the article -->
-			<h1 itemprop="headline">Title of this Article!</h1>
+			<h1 itemprop="headline"><?php the_title(); ?></h1>
 
 			<!--Author-->
-			<p><strong>Author</strong>:
-				<span itemprop="author">Jane Doe</span>
+			<p>
+				<strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
+				<span itemprop="author"><?php the_author_link(); ?></span>
 			</p>
 
 			<!-- publication date -->
-			<p><strong>Publish Date</strong>:
-			<span itemprop="datePublished">
-				<time datetime="2016-05-01">May 1, 2016</time>
-			</span>
+			<p>
+				<strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
+				<span itemprop="datePublished">
+					<time datetime="<?php echo esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate>
+						<?php the_date(); ?>
+					</time>
+				</span>
 			</p>
 
 			<!-- Modified date (this is recommended to have, even if it's the same as publication date)-->
-			<p><strong>Last Modified Date</strong>:
-			<span itemprop="dateModified">
-				<time datetime="2016-05-01">May 1, 2016</time>
-			</span>
+			<p>
+				<strong><?php esc_html_e( 'Last Modified Date', 'tenup' ); ?></strong>:
+				<span itemprop="dateModified">
+					<time datetime="<?php echo esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate>
+						<?php the_modified_date(); ?>
+					</time>
+				</span>
 			</p>
 
 		</header>
@@ -44,41 +60,33 @@
 				<meta itemprop="width" content="100" />
 				<meta itemprop="height" content="100" />
 			</div>
-			<meta itemprop="name" content="Jane Corp" />
+			<meta itemprop="name" content="<?php esc_attr_e( 'Client Company', 'tenup' ); ?>" />
 		</div><!--/.itemprop=publisher-->
 
 		<!-- category -->
-		<p><strong>Category</strong>:
-			<span itemprop="articleSection">[the category]</span>
+		<p>
+			<strong><?php esc_html_e( 'Category', 'tenup' ); ?></strong>:
+			<span itemprop="articleSection"><?php the_category( ', ' ); ?></span>
 		</p>
 
 		<!-- tags -->
-		<p><strong>Keywords</strong>:
-			<span itemprop="keywords">This, Is, A, List, of, Tags, or, Keywords</span>
-		</p>
-
-		<!-- word count -->
-		<p><strong>Word Count</strong>:
-			<span itemprop="wordCount">90</span>
-		</p>
-
-		<!-- copyright year -->
-		<p><strong>Copyright Year</strong>:
-			<span itemprop="copyrightYear">2016</span>
+		<p>
+			<strong><?php esc_html_e( 'Tags', 'tenup' ); ?></strong>:
+			<span itemprop="keywords"><?php the_tags(); ?></span>
 		</p>
 
 		<!-- Main body of the article -->
 		<div itemprop="articleBody">
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non justo vestibulum, posuere libero quis, ornare est. Vestibulum vehicula sed justo id condimentum. Fusce lacinia eleifend felis ac tempus. Vestibulum pellentesque et lorem ut tincidunt. Nullam at semper erat, nec molestie augue. Nunc metus augue, luctus condimentum orci eget, consequat rutrum massa.</p>
-			<p>In rhoncus facilisis feugiat. Maecenas facilisis diam nec ex ullamcorper, eu placerat nisi mattis. Nulla aliquet dapibus ante, id consequat nisi placerat et. Aliquam tincidunt scelerisque orci, id consectetur quam. Donec vehicula faucibus tempor. Aliquam tempus tincidunt egestas.</p>
-
+			<?php the_content(); ?>
 		</div><!--/itemprop=articleBody-->
 
 		<footer>
 			<!-- a link to where the comment are with a comment count-->
-			<p><strong>Link to Comments</strong>:
-				<a href="#comments" itemprop="discussionUrl">Comments (<span itemprop="commentCount">5</span>)</a>
+			<p>
+				<strong><?php esc_html_e( 'Link to Comments', 'tenup' ); ?></strong>:
+				<a href="#comments" itemprop="discussionUrl">
+					<?php esc_html_e( 'Comments', 'tenup' ); ?> (<span itemprop="commentCount"><?php comments_number(); ?></span>)
+				</a>
 			</p>
 		</footer>
 

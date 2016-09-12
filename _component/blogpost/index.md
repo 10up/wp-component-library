@@ -16,9 +16,7 @@ iframe_height: large
 
 <h3>HTML <a href="component.html" target="_blank">View Generated HTML</a></h3>
 
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-tabs.md %}
 
 <h3>Resources</h3>
 
