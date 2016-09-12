@@ -4,7 +4,7 @@
 	"use strict";
 
 	var picker = new Pikaday({
-		field: document.getElementById('datepicker'),
+		field: document.getElementById('js-datepicker'),
 		firstDay: 1,
 		minDate: new Date(),
 		maxDate: new Date(2020, 12, 31),
