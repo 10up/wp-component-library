@@ -68,7 +68,6 @@ $white: #fff !default;
 				border-bottom-color: $white;
 			}
 		}
-
 	}
 
 } // .tab-item
@@ -79,10 +78,13 @@ $white: #fff !default;
 }
 
 .tab-content {
-	left: -999em;
 	padding: 15px;
-	position: absolute;
-	top: -999em;
+
+	&[aria-hidden="true"] {
+		left: -999em;
+		position: absolute;
+		top: -999em;
+	}
 
 	&.is-active {
 		position: static;
