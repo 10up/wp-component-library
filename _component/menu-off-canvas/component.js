@@ -95,14 +95,16 @@
 	* @param {String} direction        //The direction that the off canvas menu should fly in from.
 	*/
 	function offCanvas( toggler, primaryMenu, primaryMenuWrap, direction ) {
-		var body   = doc.body,
+		var body       = doc.body,
 			menuToggle = doc.querySelector( toggler ),
 			menu       = doc.querySelector( primaryMenu ),
 			wrap       = doc.querySelector( primaryMenuWrap ),
 			subMenus   = menu.querySelectorAll('[aria-haspopup="true"]'),
 			dir        = direction;
 
-		menuToggle.onclick = function() {
+		menuToggle.onclick = function( e ) {
+
+			e.preventDefault();
 
 			if ( TenUp_Menu_Off_Canvas.hasClass( menu, 'is-active' ) ) {
 				TenUp_Menu_Off_Canvas.removeClass( menu, 'is-active' )

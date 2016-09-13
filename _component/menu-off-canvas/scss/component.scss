@@ -1,5 +1,5 @@
 // Variables
-$dark-gray:  #303030;
+$gray: #999 !default;
 
 // Component Sass
 .is-active-off-canvas {
@@ -8,7 +8,7 @@ $dark-gray:  #303030;
 }
 
 .site-header {
-	background: $dark-gray;
+	background: $gray;
 	padding: .5rem;
 	position: relative;
 
@@ -54,7 +54,7 @@ $dark-gray:  #303030;
 }
 
 .primary-menu {
-	background: $dark-gray;
+	background: $gray;
 	height: 100vh;
 	margin: 0;
 	overflow: hidden;
@@ -90,7 +90,7 @@ $dark-gray:  #303030;
 	}
 
 	.sub-menu {
-		background-color: $dark-gray;
+		background-color: $gray;
 		display: block;
 		min-width: 100%;
 

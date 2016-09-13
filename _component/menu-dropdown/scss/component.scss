@@ -2,12 +2,11 @@
 $bp-medium:         53.125em !default;      // 850px
 
 // Variables
-$blue: #6ab7b7 !default;
-$dark-gray: #303030 !default;
+$gray: #999 !default;
 
 // Component Sass
 .site-header {
-	background: $dark-gray;
+	background: $gray;
 	padding: .5rem;
 	position: relative;
 
@@ -58,7 +57,7 @@ $dark-gray: #303030 !default;
 }
 
 .primary-menu {
-	background: $dark-gray;
+	background: $gray;
 	height: 100vh;
 	margin: 0;
 	overflow: hidden;
@@ -69,6 +68,7 @@ $dark-gray: #303030 !default;
 	width: 0;
 
 	@media ( min-width: $bp-medium ) {
+		background: transparent;
 		display: block;
 		float: right;
 		height: auto;
@@ -95,12 +95,10 @@ $dark-gray: #303030 !default;
 			> a {
 				padding-right: 20px;
 				position: relative;
-				color: $blue;
 
 				&:after {
 				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
 					background-size: cover;
-					color: $blue;
 					content: "";
 					height: 20px;
 					position: absolute;
@@ -125,7 +123,7 @@ $dark-gray: #303030 !default;
 	}
 
 	.sub-menu {
-		background-color: $dark-gray;
+		background-color: $gray;
 		height: 0;
 		min-width: 100%;
 		overflow: hidden;

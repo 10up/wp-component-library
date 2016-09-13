@@ -1,5 +1,5 @@
 .site-header {
-  background: #303030;
+  background: #999;
   padding: .5rem;
   position: relative; }
   .site-header:before, .site-header:after {
@@ -33,7 +33,7 @@
       display: none; } }
 
 .primary-menu {
-  background: #303030;
+  background: #999;
   height: 100vh;
   margin: 0;
   overflow: hidden;
@@ -44,6 +44,7 @@
   width: 0; }
   @media (min-width: 53.125em) {
     .primary-menu {
+      background: transparent;
       display: block;
       float: right;
       height: auto;
@@ -62,12 +63,10 @@
       text-align: left; } }
   .primary-menu .menu-item.menu-item-has-children > a {
     padding-right: 20px;
-    position: relative;
-    color: #6ab7b7; }
+    position: relative; }
     .primary-menu .menu-item.menu-item-has-children > a:after {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
       background-size: cover;
-      color: #6ab7b7;
       content: "";
       height: 20px;
       position: absolute;
@@ -80,7 +79,7 @@
     display: block;
     padding: 10px 15px; }
   .primary-menu .sub-menu {
-    background-color: #303030;
+    background-color: #999;
     height: 0;
     min-width: 100%;
     overflow: hidden; }
