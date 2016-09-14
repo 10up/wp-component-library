@@ -6,7 +6,7 @@
 </div><!-- //.tab-control -->
 
 <div id="templated" class="code-tab show"></div>
-```html
+```php
 {% include_relative component-wp.html %}
 ```
 
