@@ -9,7 +9,7 @@
 		<?php if ( has_post_thumbnail() ) ) : ?>
 
 			<?php
-				$meta    = wp_get_attachment_metadata( get_post_thumbnail_id( $post_id ) );
+				$meta    = wp_get_attachment_metadata( get_post_thumbnail_id( get_the_ID() ) );
 				$height  = $meta['width'];
 				$width   = $meta['height'];
 			?>
@@ -35,7 +35,7 @@
 			<p>
 				<strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
 				<span itemprop="datePublished">
-					<time datetime="<?php echo esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate>
+					<time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
 						<?php the_date(); ?>
 					</time>
 				</span>
@@ -45,7 +45,7 @@
 			<p>
 				<strong><?php esc_html_e( 'Last Modified Date', 'tenup' ); ?></strong>:
 				<span itemprop="dateModified">
-					<time datetime="<?php echo esc_attr( the_time( 'Y-m-d' ) ); ?>" pubdate>
+					<time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
 						<?php the_modified_date(); ?>
 					</time>
 				</span>
