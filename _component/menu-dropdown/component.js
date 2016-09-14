@@ -7,7 +7,7 @@
 
 	var menu = document.querySelector( '.primary-menu' );
 
-	if ( 1 > menu.length ) {
+	if ( ! menu ) {
 		// No menu found
 		return;
 	}
@@ -18,11 +18,7 @@
 
 	menuToggle.onclick = function() {
 
-		if ( menu.className.match( 'is-active' ) ) {
-			menu.className = menu.className.replace( / ?is-active/, '' );
-		} else {
-			menu.className = menu.className.replace( / ?is-active/, '' ) + ' is-active';
-		}
+		menu.classList.toggle( 'is-active' );
 
 		// Update the menu state within the button
 		if( this.getAttribute( 'aria-expanded') === 'false' ) {
