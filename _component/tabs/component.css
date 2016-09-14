@@ -30,8 +30,7 @@
     padding: 10px 15px;
     position: absolute;
     text-decoration: none;
-    top: 0;
-    width: 100%; }
+    top: 0; }
     @media (min-width: 53.125em) {
       .tab-item > a {
         position: relative;

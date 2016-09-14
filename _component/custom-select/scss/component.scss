@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------
 
-  Custom Select Element Pattern
+	Custom Select Element Pattern
 
 --------------------------------------------------------------------- */
 
@@ -35,70 +35,70 @@ $ns: '';
 
 // Drop Down Selection
 .#{$ns}custom-select {
-  background: $select--bg;
-  border: $select--border;
-  border-radius: $select--radius;
-  height: $select--height;
-  overflow: hidden; // ie fix pt1
-  position: relative;
+	background: $select--bg;
+	border: $select--border;
+	border-radius: $select--radius;
+	height: $select--height;
+	overflow: hidden; // ie fix pt1
+	position: relative;
 
-  &:after {
-    background-color: transparent;
-    background-image: $select__arrow--bg-img;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: $select__arrow--bg-size;
-    content: '';
-    height: 100%;
-    pointer-events: none; // don't block mouse clicks
-    position: absolute;
-    right: 0;
-    speak: none;
-    top: 0;
-    width: $select__arrow--width;
-  }
+	&:after {
+		background-color: transparent;
+		background-image: $select__arrow--bg-img;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: $select__arrow--bg-size;
+		content: '';
+		height: 100%;
+		pointer-events: none; // don't block mouse clicks
+		position: absolute;
+		right: 0;
+		speak: none;
+		top: 0;
+		width: $select__arrow--width;
+	}
 
-  select {
-    -webkit-appearance: textarea;
-       -moz-appearance: none;
-    appearance: none;
-    background: none;
-    border: 0;
-    color: $select--color;
-    font-family: $select--font-family;
-    height: 100%;
-    margin: 0;
-    padding: $select--padding;
-    width: 100%;
-    width: 110% \9; // ie fix pt2
-    z-index: 2;
+	select {
+		-webkit-appearance: textarea;
+			 -moz-appearance: none;
+		appearance: none;
+		background: none;
+		border: 0;
+		color: $select--color;
+		font-family: $select--font-family;
+		height: 100%;
+		margin: 0;
+		padding: $select--padding;
+		width: 100%;
+		width: 110% \9; // ie fix pt2
+		z-index: 2;
 
-    &:focus {
-      box-shadow: $select--focus-state;
-      outline: transparent;
-    }
+		&:focus {
+			box-shadow: $select--focus-state;
+			outline: transparent;
+		}
 
-    // Remove the default select down arrow in IE10+
-    &::-ms-expand {
-      display: none;
-    }
-  }
+		// Remove the default select down arrow in IE10+
+		&::-ms-expand {
+			display: none;
+		}
+	}
 
-  // FireFox has their own special focusring because
-  // they really wanted to make styling this element
-  // consistently a huge pain in the...
-  // we're not actually getting rid of it,
-  // but rather by setting the color to transparent,
-  // it'll make the outline transparent too.
-  // the text-shadow then 'refills' the transparent
-  // text to make it look like it never went away.
-  select:-moz-focusring {
-    color: transparent;
-    text-shadow: $select--focus-ring--text-shadow;
-  }
+	// FireFox has their own special focusring because
+	// they really wanted to make styling this element
+	// consistently a huge pain in the...
+	// we're not actually getting rid of it,
+	// but rather by setting the color to transparent,
+	// it'll make the outline transparent too.
+	// the text-shadow then 'refills' the transparent
+	// text to make it look like it never went away.
+	select:-moz-focusring {
+		color: transparent;
+		text-shadow: $select--focus-ring--text-shadow;
+	}
 
-  option {
-    border: 0;
-    padding: $select__option--padding;
-  }
+	option {
+		border: 0;
+		padding: $select__option--padding;
+	}
 }

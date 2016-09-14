@@ -16,9 +16,7 @@ iframe_height: medium
 
 <h3>HTML <a href="component.html" target="_blank">View Generated HTML</a></h3>
 
-```php
-{% include_relative component-wp.html %}
-```
+{% include partials/html-tabs.md %}
 
 <h3>SCSS <a href="scss/component.scss" target="_blank">Download SCSS</a></h3>
 

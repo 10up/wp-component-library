@@ -24,6 +24,7 @@ components/
 │   ├── component.css
 │   ├── component.js
 │   ├── component.html
+│   ├── component-wp.html (optional)
 │   ├── example.html
 │   ├── index.md
 │   ├── scss/
