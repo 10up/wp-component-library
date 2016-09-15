@@ -4,15 +4,15 @@
 			<img class="site-logo"
 				src="<?php echo esc_url( get_template_directory_uri() . '/image/folder/path' ); ?>"
 				height="42" width="140"
-				alt="<?php esc_html( bloginfo( 'name' ) ); ?>">
+				alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>">
 		</h1>
 	<?php else : ?>
 		<div class="site-title">
-			<a href="<?php echo esc_url( site_url() ); ?>" rel="home" class="site-link">
+			<a href="<?php echo esc_url( home_url() ); ?>" rel="home" class="site-link">
 				<img class="site-logo"
 					src="<?php echo esc_url( get_template_directory_uri() . '/image/folder/path' ); ?>"
 					height="42" width="140"
-					alt="<?php esc_html( bloginfo( 'name' ) ); ?>">
+					alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>">
 			</a>
 		</div>
 	<?php endif; ?>
