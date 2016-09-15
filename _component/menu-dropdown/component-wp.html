@@ -1,0 +1,35 @@
+<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<?php if( is_front_page() ) : ?>
+		<h1 class="site-title">
+			<img class="site-logo"
+				src="<?php echo esc_url( get_template_directory_uri() . '/image/folder/path' ); ?>"
+				height="42" width="140"
+				alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>">
+		</h1>
+	<?php else : ?>
+		<div class="site-title">
+			<a href="<?php echo esc_url( home_url() ); ?>" rel="home" class="site-link">
+				<img class="site-logo"
+					src="<?php echo esc_url( get_template_directory_uri() . '/image/folder/path' ); ?>"
+					height="42" width="140"
+					alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>">
+			</a>
+		</div>
+	<?php endif; ?>
+
+	<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		<a href="#primary-menu" class="site-menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="screen-reader-text">
+				<?php esc_html_e( 'Primary Menu', 'tenup' ); ?>
+			</span>
+			<span aria-hidden="true">☰</a>
+		</a>
+
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_class'     => 'primary-menu',
+			 ) );
+		?>
+	</nav>
+</header>
