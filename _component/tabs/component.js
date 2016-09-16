@@ -1,7 +1,8 @@
 ( function() {
+
 	'use strict';
 
-	var tabs = doc.querySelectorAll( '.tabs' );
+	var tabs = document.querySelectorAll( '.tabs' );
 
 	var forEach = function( array, callback, scope ) {
 		for ( var i = 0; i < array.length; i++ ) {
@@ -81,4 +82,5 @@
 
 		} );
 	} );
+
 } )();
