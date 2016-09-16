@@ -5,8 +5,8 @@
 	 * Start Component
 	 */
 
-	var subMenuItem = doc.querySelectorAll( '.sub-menu .menu-item' );
-	var subMenu = doc.querySelectorAll( '.sub-menu' );
+	var subMenuItem = document.querySelectorAll( '.sub-menu .menu-item' );
+	var subMenu = document.querySelectorAll( '.sub-menu' );
 
 
 	function showSubMenu( subMenuToggle, subMenu ) {
