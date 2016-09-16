@@ -7,6 +7,11 @@ $gray: #999 !default;
 	position: relative;
 }
 
+.screen-reader-text {
+	position: absolute;
+	left: -999em;
+}
+
 .site-header {
 	background: $gray;
 	padding: .5rem;
@@ -24,9 +29,10 @@ $gray: #999 !default;
 
 }
 
-.site-heading {
+.site-title {
 	line-height: 0;
-	padding-right: 1rem;
+	margin: 0;
+	padding: 0 1em 0 0;
 	float: left;
 }
 
@@ -50,7 +56,10 @@ $gray: #999 !default;
 
 .site-menu-toggle {
 	float: right;
-	line-height: 42px;
+	line-height: 40px;
+	font-size: 20px;
+	text-decoration: none;
+	margin-right: 10px;
 }
 
 .primary-menu {
@@ -61,6 +70,7 @@ $gray: #999 !default;
 	position: absolute;
 	top: 100%;
 	width: 0;
+	right: 0;
 
 	.left & {
 		left: 0;
@@ -70,7 +80,8 @@ $gray: #999 !default;
 		right: 0;
 	}
 
-	&.is-active {
+	&.is-active,
+	&:target {
 		width: auto;
 	}
 
