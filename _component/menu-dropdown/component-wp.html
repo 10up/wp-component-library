@@ -1,18 +1,30 @@
 <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 	<?php if( is_front_page() ) : ?>
-		<h1 class="site-title">
+		<h1 class="site-title" itemscope itemtype="http://schema.org/Organization">
 			<img class="site-logo"
 				src="<?php echo esc_url( get_template_directory_uri() . '/image/folder/path' ); ?>"
-				height="42" width="140"
-				alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>">
+				height="40" width="140"
+				itemprop="logo"
+				alt="">
+			<!--
+				Visually hide this text.
+				WCAG 2.0: “image alt text cannot be the primary text of a link"
+			-->
+			<span class="screen-reader-text"><?php echo esc_attr( bloginfo( 'name' ) ); ?></span>
 		</h1>
 	<?php else : ?>
-		<div class="site-title">
-			<a href="<?php echo esc_url( home_url() ); ?>" rel="home" class="site-link">
+		<div class="site-title" itemscope itemtype="http://schema.org/Organization">
+			<a href="<?php echo esc_url( home_url() ); ?>" rel="home" class="site-link" itemprop="url">
 				<img class="site-logo"
 					src="<?php echo esc_url( get_template_directory_uri() . '/image/folder/path' ); ?>"
 					height="42" width="140"
-					alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>">
+					itemprop="logo"
+					alt="">
+				<!--
+					Visually hide this text.
+					WCAG 2.0: “image alt text cannot be the primary text of a link"
+				-->
+				<span class="screen-reader-text"><?php echo esc_attr( bloginfo( 'name' ) ); ?></span>
 			</a>
 		</div>
 	<?php endif; ?>

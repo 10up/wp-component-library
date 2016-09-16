@@ -1,7 +1,12 @@
 <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-	<h1 class="site-title">
-		<a class="site-link" href="#" rel="home">
-			<img class="site-logo" src="https://placehold.it/200x42?text=LOGO" height="42" width="140" alt="Blog Title + Description Alt tag">
+	<h1 class="site-title" itemscope itemtype="http://schema.org/Organization">
+		<a  itemprop="url" class="site-link" href="#" rel="home">
+			<img itemprop="logo" class="site-logo" src="https://placehold.it/140x40?text=LOGO" height="42" width="140" alt="">
+			<!--
+				Visually hide this text.
+				WCAG 2.0: “image alt text cannot be the primary text of a link"
+			-->
+			<span class="screen-reader-text">Amazing Company</span>
 		</a>
 	</h1>
 
