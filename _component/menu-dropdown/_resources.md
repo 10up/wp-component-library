@@ -1,1 +1,2 @@
 - [Impementing Off-Canvas Navigation for a Responsive Website](https://www.smashingmagazine.com/2013/01/off-canvas-navigation-for-responsive-website/)
+- [WCAG 2.0 Guidelines, Principle 1: Perceivable](https://www.w3.org/TR/WCAG20/#perceivable)

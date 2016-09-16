@@ -1,3 +1,7 @@
+.screen-reader-text {
+  position: absolute;
+  left: -999em; }
+
 .site-header {
   background: #999;
   padding: .5rem;
@@ -8,9 +12,10 @@
   .site-header:after {
     clear: both; }
 
-.site-heading {
+.site-title {
   line-height: 0;
-  padding-right: 1rem;
+  margin: 0;
+  padding: 0 1em 0 0;
   float: left; }
 
 .site-link {
@@ -27,7 +32,10 @@
 
 .site-menu-toggle {
   float: right;
-  line-height: 40px; }
+  line-height: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 10px; }
   @media (min-width: 53.125em) {
     .site-menu-toggle {
       display: none; } }
