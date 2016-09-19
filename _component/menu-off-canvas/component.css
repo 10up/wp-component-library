@@ -2,6 +2,10 @@
   overflow-x: hidden;
   position: relative; }
 
+.screen-reader-text {
+  position: absolute;
+  left: -999em; }
+
 .site-header {
   background: #999;
   padding: .5rem;
@@ -12,9 +16,10 @@
   .site-header:after {
     clear: both; }
 
-.site-heading {
+.site-title {
   line-height: 0;
-  padding-right: 1rem;
+  margin: 0;
+  padding: 0 1em 0 0;
   float: left; }
 
 .site-link {
@@ -31,7 +36,10 @@
 
 .site-menu-toggle {
   float: right;
-  line-height: 42px; }
+  line-height: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 10px; }
 
 .primary-menu {
   background: #999;
@@ -40,12 +48,13 @@
   overflow: hidden;
   position: absolute;
   top: 100%;
-  width: 0; }
+  width: 0;
+  right: 0; }
   .left .primary-menu {
     left: 0; }
   .right .primary-menu {
     right: 0; }
-  .primary-menu.is-active {
+  .primary-menu.is-active, .primary-menu:target {
     width: auto; }
   .primary-menu .menu-item:hover .sub-menu, .primary-menu .menu-item:focus .sub-menu {
     height: auto; }

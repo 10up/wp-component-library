@@ -48,7 +48,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 ## Running Locally
 
 ```
-gem install bundle
+gem install bundler
 bundle install
 bundle exec jekyll serve
 ```

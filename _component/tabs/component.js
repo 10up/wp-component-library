@@ -1,67 +1,10 @@
-;(function (w, doc) {
+( function() {
 
-	// Polyfill for el.matches
-	if (!Element.prototype.matches) {
-		Element.prototype.matches =
-		Element.prototype.matchesSelector ||
-		Element.prototype.mozMatchesSelector ||
-		Element.prototype.msMatchesSelector ||
-		Element.prototype.oMatchesSelector ||
-		Element.prototype.webkitMatchesSelector ||
-		function(s) {
-			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-			i = matches.length;
-			while (--i >= 0 && matches.item(i) !== this) {}
-			return i > -1;
-		};
-	}
-
-	// Enable strict mode
 	'use strict';
 
-	// Local object for method references
-	var TenUp_Tabs = {};
+	var tabs = document.querySelectorAll( '.tabs' );
 
-	/*
-	 * Cross-browser way to deal with class management
-	 */
-
-	TenUp_Tabs.hasClass = function ( el, cls ) {
-		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
-	};
-
-	/*
-	 * Cross-browser way to add a class
-	 */
-
-	TenUp_Tabs.addClass = function ( el, cls ) {
-		if ( el.classList ) {
-			el.classList.add(cls);
-		} else if (!TenUp_Tabs.hasClass(el, cls)) {
-			el.className += " " + cls;
-		}
-	};
-
-	/*
-	 * Cross-browser way to remove a class
-	 */
-
-	TenUp_Tabs.removeClass = function ( el, cls ) {
-		if ( el.classList ) {
-			el.classList.remove( cls );
-		} else if( TenUp_Tabs.hasClass( el, cls ) ) {
-			var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
-			el.className = el.className.replace( reg, ' ' );
-		}
-	};
-
-	/*
-	 * Start Component
-	 */
-
-	var tabs = doc.querySelectorAll( '.tabs' );
-
-	var forEach = function ( array, callback, scope ) {
+	var forEach = function( array, callback, scope ) {
 		for ( var i = 0; i < array.length; i++ ) {
 			callback.call( scope, i, array[i] ); // passes back stuff we need
 		}
@@ -94,42 +37,37 @@
 				event.preventDefault();
 
 				// Handle opening and closing of the tabs on mobile devices
-				if ( TenUp_Tabs.hasClass( tab.parentNode, 'is-active' ) ) {
-
-					if ( TenUp_Tabs.hasClass( tab.parentNode.parentNode, 'm-is-active' ) ) {
-						TenUp_Tabs.removeClass( tab.parentNode.parentNode, 'm-is-active' );
-					} else {
-						TenUp_Tabs.addClass( tab.parentNode.parentNode, 'm-is-active' );
-					}
-
+				if ( tab.parentNode.classList.contains( 'is-active' ) ) {
+					tab.parentNode.parentNode.classList.toggle( 'm-is-active' );
 				} else {
-					TenUp_Tabs.removeClass( tab.parentNode.parentNode, 'm-is-active' );
+					tab.parentNode.parentNode.classList.remove( 'm-is-active' );
 				}
 
 				// Change state of previously selected activeTab item
 				forEach( activeTab, function( index, value ) {
 
-					if ( TenUp_Tabs.hasClass( value, 'is-active' ) ) {
-						TenUp_Tabs.removeClass( value, 'is-active' );
+					if ( value.classList.contains( 'is-active' ) ) {
+						value.classList.remove( 'is-active' );
 						tabLinks[index].setAttribute( 'aria-selected', 'false' );
 					}
 
-				});
+				} );
 
 				// Set state of newly selected tab list item
 				tab.setAttribute( 'aria-selected', 'true' );
 				TenUp_Tabs.addClass( tab.parentNode, 'is-active' );
+				tab.parentNode.classList.add( 'is-active' );
 
 				// Change state of previously selected tabContent item
 				forEach( tabContent, function( index, value ) {
-					if ( TenUp_Tabs.hasClass( value, 'is-active' ) ) {
-						TenUp_Tabs.removeClass( value, 'is-active' );
+					if ( value.classList.contains( 'is-active' ) ) {
+						value.classList.remove( 'is-active' );
 						tabContent[index].setAttribute( 'aria-hidden', 'true' );
 					}
-				});
+				} );
 
 				// Show newly selected content
-				TenUp_Tabs.addClass( tabContent[index], 'is-active' );
+				tabContent[index].classList.add( 'is-active' );
 				tabContent[index].setAttribute( 'aria-hidden', 'false' );
 
 				// Set focus to the first heading in the newly revealed tab content
@@ -139,10 +77,10 @@
 			}
 
 			// Set state for the first .tab-content item
-			TenUp_Tabs.addClass( tabContent[0], 'is-active' );
+			tabContent[0].classList.add( 'is-active' );
 			tabContent[0].setAttribute( 'aria-hidden', 'false' );
 
-		});
-	});
+		} );
+	} );
 
-} )( this, this.document );
+} )();
