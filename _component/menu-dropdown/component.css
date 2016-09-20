@@ -69,6 +69,8 @@
       display: inline-block;
       position: relative;
       text-align: left; } }
+  .primary-menu .menu-item button {
+    display: none; }
   .primary-menu .menu-item.menu-item-has-children > a {
     padding-right: 20px;
     position: relative; }

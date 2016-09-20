@@ -99,6 +99,10 @@ $gray: #999 !default;
 			text-align: left;
 		}
 
+		button {
+			display: none;
+		}
+
 		&.menu-item-has-children {
 			> a {
 				padding-right: 20px;
