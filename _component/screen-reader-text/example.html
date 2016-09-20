@@ -16,13 +16,38 @@
   </head>
   <body>
 
-      <p>
-	      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-	      Ut aliquet suscipit rhoncus. Donec ornare, dolor a
-	      dignissim pretium, arcu sapien pretium neque, non pharetra arcu magna
-	      nec turpis. <a href="#!">Read more <span class="screen-reader-text">about
-		  an interesting article to read</span></a>
-	   </p>
+    <!-- Read more link -->
+    <h3>Case 1: Read More Link</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut aliquet suscipit rhoncus. Donec ornare, dolor a
+      dignissim pretium, arcu sapien pretium neque, non pharetra arcu magna
+      nec turpis. <a href="#!">Read more <span class="screen-reader-text">about
+      an interesting article to read</span></a>
+    </p>
+
+    <!-- Icon font usage -->
+    <h3>Case 2: Icon Font Usage</h3>
+    <button type="button">
+      <span class="screen-reader-text">
+        Site Menu
+      </span>
+      <span aria-hidden="true">☰</a>
+    </button>
+
+    <!-- Download buttons -->
+    <h3>Case 3: Download Buttons</h3>
+    <button type="submit">
+      Download <span class="screen-reader-text">XYZ file in another window.</span>
+    </button>
+
+    <!-- Links that warn about opening in new windows or tabs -->
+    <h3>Case 4: External Links</h3>
+    <a href="www.example.com" target="_blank">External Site <span class="screen-reader-text"> will open in a new window or tab.</span></a>
+
+    <!-- Case 5: Skip Navigation Links that come into view on :focus -->
+    <h3>Case 5: Skip Links</h3>
+    <a href="#main" class="skip-link screen-reader-text">Skip to main content</a>
 
   </body>
 </html>
