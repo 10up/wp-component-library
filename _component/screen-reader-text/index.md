@@ -1,6 +1,6 @@
 ---
-title: Read More
-path_slug: readmore
+title: Screen Reader Text
+path_slug: screen-reader-text
 layout: component
 category: content
 ---
