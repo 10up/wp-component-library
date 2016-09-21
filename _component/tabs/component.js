@@ -18,7 +18,7 @@
 
 		// Set state for the first .tab-item
 		var firstTab = tabs[index].querySelectorAll( '.tab-item' );
-		TenUp_Tabs.addClass( firstTab[0], 'is-active' );
+		firstTab[0].classList.add( 'is-active' );
 
 		forEach( tabLinks, function( index, value ) {
 			var tab = value;
@@ -55,7 +55,6 @@
 
 				// Set state of newly selected tab list item
 				tab.setAttribute( 'aria-selected', 'true' );
-				TenUp_Tabs.addClass( tab.parentNode, 'is-active' );
 				tab.parentNode.classList.add( 'is-active' );
 
 				// Change state of previously selected tabContent item
