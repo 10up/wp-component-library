@@ -39,7 +39,7 @@
 				nextPanel.querySelector( '.accordion-label' ).setAttribute( 'tabindex', -1 );
 				nextPanel.querySelector( '.accordion-label' ).focus();
 
-				if ( ! nextPanel.classList.contains( 'visually-hidden' ) ) {
+				if ( nextPanel.classList.contains( 'is-active' ) ) {
 
 					head.setAttribute( 'aria-selected', 'true' );
 					head.setAttribute( 'aria-expanded', 'true' );
