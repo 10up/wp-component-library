@@ -13,7 +13,10 @@
 	App.init = function() {
 
 	  // Add the UI buttons
-	  App.add_rwd_buttons();
+	  // Only run on desktop
+	  if ( window.innerWidth > 767 ) {
+	  	App.add_rwd_buttons();
+	  }
 
 	  // Add the tabs, if necessary
 	  App.tabs();
