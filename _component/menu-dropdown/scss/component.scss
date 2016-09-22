@@ -1,5 +1,7 @@
 // Breakpoints
+$bp-small:          40.625em !default;      // 650px
 $bp-medium:         53.125em !default;      // 850px
+$bp-large:          62.5em !default;        // 1000px
 
 // Variables
 $gray: #999 !default;
@@ -7,6 +9,23 @@ $gray: #999 !default;
 .screen-reader-text {
 	position: absolute;
 	left: -999em;
+}
+
+// adding the named breakpoint into the DOM for JS hooks
+body:before {
+	content: "small";
+	position: absolute;
+	top: -999em;
+	left: -999em;
+
+	@media ( min-width: $bp-medium ) {
+		content: "medium";
+	}
+
+	@media ( min-width: $bp-large ) {
+		content: "large";
+	}
+
 }
 
 // Component Sass
@@ -72,8 +91,18 @@ $gray: #999 !default;
 	position: absolute;
 	right: 0;
 	top: 100%;
-	transform: translateX(100%);
-	width: 0;
+	width: auto;
+	transform: translateX(0);
+	display: none;
+
+	&[aria-hidden="true"] {
+		transform: translateX(100%);
+		width: 0;
+	}
+
+	&[aria-hidden="false"] {
+		display: block;
+	}
 
 	@media ( min-width: $bp-medium ) {
 		background: transparent;
@@ -87,9 +116,9 @@ $gray: #999 !default;
 		width: auto;
 	}
 
-	&.is-active {
-		width: auto;
-		transform: translateX(0);
+	&.is-active,
+	&:target {
+
 	}
 
 	.menu-item {

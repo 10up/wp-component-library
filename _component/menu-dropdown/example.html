@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" class="no-js">
 <head>
     <meta charset="UTF-8">
     <title>Menu - Dropdown</title>
+
+    <script>
+	    // remove no-js and add js to the HTML (do it the cross-brower way)
+	    document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+	    document.documentElement.className += ' js ';
+    </script>
+
     <link rel="stylesheet" href="component.css">
 </head>
 <body>
@@ -19,12 +26,13 @@
         </h1>
 
         <nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-            <a href="#menu" class="site-menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+
+            <a href="#!" id="js-menu-toggle" class="site-menu-toggle" data-submenu="click">
                 <span class="screen-reader-text">Primary Menu</span>
                 <span aria-hidden="true">☰</span>
             </a>
 
-            <ul id="some-menu" class="primary-menu">
+            <ul id="menu-main-nav" class="primary-menu">
                 <li id="menu-item-1912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1912">
                     <a href="#">Item 1</a>
                 </li>
