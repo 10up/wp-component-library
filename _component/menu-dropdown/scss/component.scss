@@ -63,7 +63,9 @@ body:before {
 }
 
 .site-navigation {
-	float: right;
+	@media ( min-width: $bp-medium ) {
+		float: right;
+	}
 
 	ul {
 		list-style: none;
@@ -85,13 +87,14 @@ body:before {
 
 .primary-menu {
 	background: $gray;
-	height: 100vh;
+	// height: 100vh;
 	margin: 0;
 	overflow: hidden;
-	position: absolute;
-	right: 0;
-	top: 100%;
-	width: auto;
+	// position: absolute;
+	//right: 0;
+	//top: 100%;
+	//width: auto;
+	clear: both;
 	transform: translateX(0);
 	display: none;
 

@@ -36,11 +36,12 @@ body:before {
   .site-link img {
     max-height: 48px; }
 
-.site-navigation {
-  float: right; }
-  .site-navigation ul {
-    list-style: none;
-    padding: 0; }
+@media (min-width: 53.125em) {
+  .site-navigation {
+    float: right; } }
+.site-navigation ul {
+  list-style: none;
+  padding: 0; }
 
 .site-menu-toggle {
   float: right;
@@ -54,13 +55,9 @@ body:before {
 
 .primary-menu {
   background: #999;
-  height: 100vh;
   margin: 0;
   overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  width: auto;
+  clear: both;
   transform: translateX(0);
   display: none; }
   .primary-menu[aria-hidden="true"] {
