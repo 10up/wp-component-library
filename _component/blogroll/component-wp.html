@@ -7,22 +7,21 @@
 		 * Customize w/ get_the_post_thumbnail() to add schema
 		 * @link https://developer.wordpress.org/reference/functions/get_the_post_thumbnail
 		 */
-		if ( has_post_thumbnail() ) :
+		if ( has_post_thumbnail() ) {
 			the_post_thumbnail();
-		endif;
-		?>
+		} ?>
 
 		<header class="entry-header">
 			<?php
 			the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="url" rel="bookmark">', '</a></h2>' );
 			?>
 
-			Published on:
+			<?php esc_html_e( 'Published on:', 'tenup' ); ?>
 			<time itemprop="datePublished">
 				<?php echo esc_html( get_the_date() ); ?>
 			</time>
 
-			Written by:
+			<?php esc_html_e( 'Written by:', 'tenup' ); ?>
 			<div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
 				<?php echo esc_html( the_author() ); ?>
 			</div>
