@@ -4,7 +4,7 @@
 	var accordion = document.getElementsByClassName( 'accordion' );
 
 	var forEach = function( array, callback, scope ) {
-		for ( var i = 0; i < array.length; i++ ) {
+		for ( var i = 0, imax = array.length; i < imax; i++ ) {
 			callback.call( scope, i, array[i] ); // passes back stuff we need
 		}
 	};
