@@ -1,7 +1,7 @@
 ( function() {
 	'use strict';
 
-	var accordion = document.querySelectorAll( '.accordion' );
+	var accordion = document.getElementsByClassName( 'accordion' );
 
 	var forEach = function( array, callback, scope ) {
 		for ( var i = 0; i < array.length; i++ ) {
@@ -11,8 +11,8 @@
 
 	// Loop through each accordion
 	forEach( accordion, function( index, value ) {
-		var accordionContent = accordion[index].querySelectorAll( '.accordion-content' ),
-			accordionHeader  = accordion[index].querySelectorAll( '.accordion-header' ),
+		var accordionContent = accordion[index].getElementsByClassName( 'accordion-content' ),
+			accordionHeader  = accordion[index].getElementsByClassName( 'accordion-header' ),
 			topIndex         = index + 1;
 
 		forEach( accordionHeader, function( index, value ) {
@@ -26,18 +26,19 @@
 			head.setAttribute( 'aria-controls', 'panel' + topIndex + '-' + index );
 			head.setAttribute( 'role', 'tab' );
 
-			head.onclick = accordionHandle;
+			head.addEventListener( 'click', accordionHandle );
 
 			function accordionHandle() {
 
-				var nextPanel = value.nextElementSibling;
+				var nextPanel = value.nextElementSibling,
+				nextPanelLabel = nextPanel.getElementsByClassName( 'accordion-label' )[0];
 
 				value.classList.toggle( 'is-active' );
 
 				nextPanel.classList.toggle( 'is-active' );
 
-				nextPanel.querySelector( '.accordion-label' ).setAttribute( 'tabindex', -1 );
-				nextPanel.querySelector( '.accordion-label' ).focus();
+				nextPanelLabel.setAttribute( 'tabindex', -1 );
+				nextPanelLabel.focus();
 
 				if ( nextPanel.classList.contains( 'is-active' ) ) {
 
