@@ -2,6 +2,9 @@
   position: absolute;
   left: -999em; }
 
+/*
+	REQUIRED: Adding the named breakpoint into the DOM for JS hooks
+*/
 body:before {
   content: "small";
   position: absolute;
@@ -58,10 +61,8 @@ body:before {
   margin: 0;
   overflow: hidden;
   clear: both;
-  transform: translateX(0);
   display: none; }
   .primary-menu[aria-hidden="true"] {
-    transform: translateX(100%);
     width: 0; }
   .primary-menu[aria-hidden="false"] {
     display: block; }
@@ -95,22 +96,24 @@ body:before {
       right: 0;
       top: calc(50% - 10px);
       width: 20px; }
-  .primary-menu .menu-item:hover .sub-menu, .primary-menu .menu-item:focus .sub-menu {
-    height: auto; }
+  .primary-menu .menu-item:hover > .sub-menu, .primary-menu .menu-item:focus > .sub-menu {
+    display: block; }
   .primary-menu .menu-item a {
     display: block;
     padding: 10px 15px; }
   .primary-menu .sub-menu {
     background-color: #999;
-    height: 0;
-    min-width: 100%;
-    overflow: hidden; }
+    display: none;
+    min-width: 200px;
+    background: #777; }
+    .primary-menu .sub-menu .sub-menu {
+      background: #555; }
     @media (min-width: 53.125em) {
       .primary-menu .sub-menu {
         position: absolute; }
         .primary-menu .sub-menu .menu-item {
           display: block; } }
-    .primary-menu .sub-menu.hover {
-      height: auto; }
+  .primary-menu .child-has-focus > .sub-menu {
+    display: block; }
 
 /*# sourceMappingURL=component.css.map */

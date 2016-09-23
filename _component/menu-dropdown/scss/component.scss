@@ -11,7 +11,10 @@ $gray: #999 !default;
 	left: -999em;
 }
 
-// adding the named breakpoint into the DOM for JS hooks
+/*
+	REQUIRED: Adding the named breakpoint into the DOM for JS hooks
+*/
+
 body:before {
 	content: "small";
 	position: absolute;
@@ -87,19 +90,12 @@ body:before {
 
 .primary-menu {
 	background: $gray;
-	// height: 100vh;
 	margin: 0;
 	overflow: hidden;
-	// position: absolute;
-	//right: 0;
-	//top: 100%;
-	//width: auto;
 	clear: both;
-	transform: translateX(0);
 	display: none;
 
 	&[aria-hidden="true"] {
-		transform: translateX(100%);
 		width: 0;
 	}
 
@@ -155,8 +151,8 @@ body:before {
 
 		&:hover,
 		&:focus {
-			.sub-menu {
-				height: auto;
+			> .sub-menu {
+				display: block;
 			}
 		}
 
@@ -168,9 +164,13 @@ body:before {
 
 	.sub-menu {
 		background-color: $gray;
-		height: 0;
-		min-width: 100%;
-		overflow: hidden;
+		display: none;
+		min-width: 200px;
+		background: #777;
+
+		.sub-menu {
+			background: #555;
+		}
 
 		@media ( min-width: $bp-medium ) {
 			position: absolute;
@@ -180,8 +180,9 @@ body:before {
 			}
 		}
 
-		&.hover {
-			height: auto;
-		}
+	} // .sub-menu
+
+	.child-has-focus > .sub-menu {
+		display: block;
 	}
 }
