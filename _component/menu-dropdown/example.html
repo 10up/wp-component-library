@@ -12,6 +12,8 @@
 
 	<link rel="stylesheet" href="component.css" />
 
+	<style>body { min-height: 500px;background: #ddd;margin: 0; padding: 0; }</style>
+
 </head>
 <body>
 	<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
@@ -29,7 +31,10 @@
 
 			<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-				<a href="#menu-main-nav" id="js-menu-toggle" class="site-menu-toggle">
+				<!--
+					API: data-submenu="click" on this anchor to use click instead of hover on submenus
+				-->
+				<a href="#menu-main-nav" id="js-menu-toggle" class="site-menu-toggle" data-submenu="click">
 					<span class="screen-reader-text">Primary Menu</span>
 					<span aria-hidden="true">☰</span>
 				</a>

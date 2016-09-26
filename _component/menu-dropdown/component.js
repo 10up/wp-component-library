@@ -1,7 +1,6 @@
 /********************************
 	TO DO:
 		- Large screen: Keep menus open on child focus when "click" is off
-		- Large screen: Clicking outside the menu should close it, if it's open
 		- Large screen: when click is off and menu is open on small screen it should close on large screen (when resized)
 		- (Line 124) Open only one menu at a time, if click is active on large screen
 ********************************/
@@ -150,6 +149,15 @@
 
 	}, 100 );
 
+	// close the menu if you click somewhere else
+	var listener_mouseup = function( e ) {
+
+		if ( !menu.contains( e.target ) && menu.querySelector('.submenu-is-open') && sub_menu_acion === 'click' ) {
+			menu.querySelector('.submenu-is-open').click();
+		}
+
+	};
+
 	// Method to create the small screen menu
 	var menu_create = function() {
 
@@ -232,6 +240,9 @@
 
 	// Debounced resize event to create and destroy the small screen menu options
 	window.addEventListener( 'resize', listener_window );
+
+	// Close the menu when you click off of it
+	document.addEventListener('mouseup', listener_mouseup );
 
 	/*
 		Hiding and showing submenus (click, focus, hover)
