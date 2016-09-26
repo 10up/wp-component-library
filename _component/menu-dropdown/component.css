@@ -96,8 +96,11 @@ body:before {
       right: 0;
       top: calc(50% - 10px);
       width: 20px; }
-  .primary-menu .menu-item:hover > .sub-menu, .primary-menu .menu-item:focus > .sub-menu {
+  .primary-menu .menu-item:hover > .sub-menu .no-js, .primary-menu .menu-item:focus > .sub-menu .no-js {
     display: block; }
+  @media (min-width: 53.125em) {
+    .primary-menu .menu-item:hover > .sub-menu, .primary-menu .menu-item:focus > .sub-menu {
+      display: block; } }
   .primary-menu .menu-item a {
     display: block;
     padding: 10px 15px; }

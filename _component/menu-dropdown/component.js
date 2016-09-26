@@ -101,10 +101,31 @@
 	var listener_submenu_click = function( e ) {
 
 		e.preventDefault();
+		e.stopPropagation();
 
-		console.log( 'sub menu' );
+		currentTarget = e.currentTarget;
+		target = e.target;
 
-	};
+		var first_link = e.currentTarget.querySelector('a');
+		var parent_menu = target.parentNode;
+		var sub_menu = parent_menu.querySelector('.sub-menu');
+
+		if( e.srcElement.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
+
+			sub_menu.setAttribute( 'aria-hidden', 'true' );
+			parent_menu.classList.remove( 'child-has-focus' );
+			target.classList.remove( 'submenu-is-open' );
+
+		} else {
+			// open it
+			sub_menu.setAttribute( 'aria-hidden', 'false' );
+			parent_menu.classList.add( 'child-has-focus' );
+			target.classList.add( 'submenu-is-open' );
+			sub_menu.querySelectorAll('a')[0].focus();
+
+		}
+
+	}; // listener_submenu_click()
 
 	// Listener for the window resize
 	var listener_window = debounce( function( e ) {
@@ -137,35 +158,6 @@
 			document.body.classList.add( 'menu-created' );
 			document.body.classList.remove( 'menu-destroyed' );
 
-		}
-
-	};
-
-	// Method to fire when a user is tabbing through a menu
-	var listener_focusin = function( e ) {
-
-		var first_link = e.currentTarget.querySelector('a');
-		currentTarget = e.currentTarget;
-		target = e.target;
-
-		if( currentTarget.contains( target ) ) {
-
-			currentTarget.classList.add( 'child-has-focus' );
-			currentTarget.querySelector('.sub-menu').setAttribute( 'aria-hidden', 'false' );
-
-		}
-
-	};
-
-	// Method to fire when a user tabs out of a menu
-	var listener_focusout = function( e ) {
-
-		currentTarget = e.currentTarget;
-		target = e.target;
-
-		if( !currentTarget.contains( target ) ) {
-			currentTarget.classList.remove( 'child-has-focus' );
-			currentTarget.querySelector('.sub-menu').setAttribute( 'aria-hidden', 'true' );
 		}
 
 	};
@@ -211,6 +203,10 @@
 	// Debounced resize event to create and destroy the small screen menu options
 	window.addEventListener( 'resize', listener_window );
 
+	/*
+		Hiding and showing submenus (click, focus, hover)
+	*/
+
 	// Loop through all items with sub menus and bind focus to them for tabbing
 	for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
 
@@ -221,13 +217,10 @@
 		menu_items_with_children[i].querySelector('.sub-menu').setAttribute( 'aria-hidden', 'true' );
 		menu_items_with_children[i].querySelector('.sub-menu').setAttribute( 'aria-label', 'Submenu' );
 
-		// Bind events, using focusin and focusout for greater browser support with focus event delegation
-		menu_items_with_children[i].addEventListener( 'focusin', listener_focusin );
-		menu_items_with_children[i].addEventListener( 'focusout', listener_focusout );
-
 		// If the screen is small or the action is set to click
 		if( get_screen_size( 'small' ) || sub_menu_acion === 'click' ) {
 			menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
+			menu_items_with_children[i].classList.add('event--listener_submenu_click');
 		}
 
 		// Unbind the click action for submenus on large screen if the action should be hover
@@ -236,6 +229,7 @@
 
 			if( sub_menu_acion !== 'click' ) {
 				menu_items_with_children[i].removeEventListener( 'click', listener_submenu_click );
+				menu_items_with_children[i].classList.remove('event--listener_submenu_click');
 			}
 
 		} );

@@ -152,7 +152,12 @@ body:before {
 		&:hover,
 		&:focus {
 			> .sub-menu {
-				display: block;
+				.no-js {
+					display: block;
+				}
+				@media ( min-width: $bp-medium ) {
+					display: block;
+				}
 			}
 		}
 
