@@ -31,6 +31,11 @@ body:before {
 
 }
 
+.container {
+	max-width: 1000px;
+	margin: auto;
+}
+
 // Component Sass
 .site-header {
 	background: $gray;
@@ -115,11 +120,6 @@ body:before {
 		width: auto;
 	}
 
-	&.is-active,
-	&:target {
-
-	}
-
 	.menu-item {
 		@media ( min-width: $bp-medium ) {
 			display: inline-block;
@@ -133,11 +133,11 @@ body:before {
 
 		&.menu-item-has-children {
 			> a {
-				padding-right: 20px;
+				padding-right: 25px;
 				position: relative;
 
 				&:after {
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
 					background-size: cover;
 					content: "";
 					height: 20px;
@@ -152,9 +152,10 @@ body:before {
 		&:hover,
 		&:focus {
 			> .sub-menu {
-				.no-js {
+				.no-js & {
 					display: block;
 				}
+
 				@media ( min-width: $bp-medium ) {
 					display: block;
 				}
@@ -164,6 +165,22 @@ body:before {
 		a {
 			display: block;
 			padding: 10px 15px;
+		}
+
+	} // .menu-item
+
+	&.uses-click {
+		.menu-item {
+			&:hover {
+				.sub-menu {
+					display: none;
+
+					&[aria-hidden="false"] {
+						display: block;
+					}
+
+				}
+			}
 		}
 	}
 

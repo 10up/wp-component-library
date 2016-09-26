@@ -1,8 +1,9 @@
 /********************************
 	TO DO:
-		- Large screen: keep menus open on child focus
-		- Large screen: Install click to open option if attribute is set
-		- Small screen: Install click to open option globally
+		- Large screen: Keep menus open on child focus when "click" is off
+		- Large screen: Clicking outside the menu should close it, if it's open
+		- Large screen: when click is off and menu is open on small screen it should close on large screen (when resized)
+		- (Line 124) Open only one menu at a time, if click is active on large screen
 ********************************/
 
 ( function() {
@@ -23,17 +24,12 @@
 	var menu_items_with_children = menu.querySelectorAll('.menu-item-has-children');
 	var menu_items_with_children_count = menu_items_with_children.length;
 	var currentTarget;
-	var target
+	var target;
 	var i;
 
 	/*
 		Helper functions
 	*/
-
-	// Check if an element is hidden
-	var is_hidden = function( el ) {
-		return ( el.offsetParent === null );
-	};
 
 	// Get screen size from getComputedStyle (so we don't have to define it twice)
 	var get_screen_size = function( sizeString ) {
@@ -95,34 +91,50 @@
 
 		}
 
-	};
+	}; // listener_menu()
 
 	// Listener for submenu on click
 	var listener_submenu_click = function( e ) {
 
-		e.preventDefault();
-		e.stopPropagation();
-
 		currentTarget = e.currentTarget;
 		target = e.target;
 
-		var first_link = e.currentTarget.querySelector('a');
-		var parent_menu = target.parentNode;
-		var sub_menu = parent_menu.querySelector('.sub-menu');
+		if( target.getAttribute('aria-haspopup') ) {
 
-		if( e.srcElement.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
+			e.preventDefault();
+			e.stopPropagation();
 
-			sub_menu.setAttribute( 'aria-hidden', 'true' );
-			parent_menu.classList.remove( 'child-has-focus' );
-			target.classList.remove( 'submenu-is-open' );
+			var parent_menu = target.parentNode;
+			var sub_menu = parent_menu.querySelector('.sub-menu');
+			var all_open_menus = menu.querySelectorAll('.child-has-focus');
+			var all_open_menu_triggers = menu.querySelectorAll( 'a.submenu-is-open' );
+			var all_open_menus_count = all_open_menus.length;
+			var all_open_menu_triggers_count = all_open_menu_triggers.length;
 
-		} else {
-			// open it
-			sub_menu.setAttribute( 'aria-hidden', 'false' );
-			parent_menu.classList.add( 'child-has-focus' );
-			target.classList.add( 'submenu-is-open' );
-			sub_menu.querySelectorAll('a')[0].focus();
+			if( get_screen_size( 'medium' ) || get_screen_size( 'large' ) ) {
+				if( sub_menu_acion === 'click' ) {
 
+					console.log('make sure only 1 menu item can be opened at a time');
+
+				}
+			}
+
+			if( e.srcElement.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
+
+				//  close it
+				sub_menu.setAttribute( 'aria-hidden', 'true' );
+				parent_menu.classList.remove( 'child-has-focus' );
+				target.classList.remove( 'submenu-is-open' );
+
+			} else {
+
+				// open it
+				sub_menu.setAttribute( 'aria-hidden', 'false' );
+				parent_menu.classList.add( 'child-has-focus' );
+				target.classList.add( 'submenu-is-open' );
+				sub_menu.querySelectorAll('a')[0].focus();
+
+			}
 		}
 
 	}; // listener_submenu_click()
@@ -151,6 +163,15 @@
 				menu_toggle.setAttribute( 'aria-expanded', 'true' );
 			}
 
+			// Loop through all submenus and bind events when needed
+			for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
+				if( sub_menu_acion !== 'click' ) {
+					menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
+					menu_items_with_children[i].classList.add('event--listener_submenu_click');
+					menu.classList.add('uses-click');
+				}
+			}
+
 			// Bind the event
 			menu_toggle.addEventListener( 'click', listener_menu );
 
@@ -169,6 +190,15 @@
 
 			// Remove aria-hidden, because we don't need it.
 			menu.removeAttribute( 'aria-hidden' );
+
+			// Loop through all submenus and bind events when needed
+			for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
+				if( sub_menu_acion !== 'click' ) {
+					menu_items_with_children[i].removeEventListener( 'click', listener_submenu_click );
+					menu_items_with_children[i].classList.remove('event--listener_submenu_click');
+					menu.classList.remove('uses-click');
+				}
+			}
 
 			// Unbind the event
 			menu_toggle.removeEventListener( 'click', listener_menu );
@@ -221,18 +251,8 @@
 		if( get_screen_size( 'small' ) || sub_menu_acion === 'click' ) {
 			menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
 			menu_items_with_children[i].classList.add('event--listener_submenu_click');
+			menu.classList.add('uses-click');
 		}
-
-		// Unbind the click action for submenus on large screen if the action should be hover
-		// Make sure this doesn't permanently live in the loop
-		window.addEventListener( 'resize', function() {
-
-			if( sub_menu_acion !== 'click' ) {
-				menu_items_with_children[i].removeEventListener( 'click', listener_submenu_click );
-				menu_items_with_children[i].classList.remove('event--listener_submenu_click');
-			}
-
-		} );
 
 	} // for()
 

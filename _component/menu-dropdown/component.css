@@ -17,6 +17,10 @@ body:before {
     body:before {
       content: "large"; } }
 
+.container {
+  max-width: 1000px;
+  margin: auto; }
+
 .site-header {
   background: #999;
   padding: .5rem;
@@ -85,7 +89,7 @@ body:before {
   .primary-menu .menu-item button {
     display: none; }
   .primary-menu .menu-item.menu-item-has-children > a {
-    padding-right: 20px;
+    padding-right: 25px;
     position: relative; }
     .primary-menu .menu-item.menu-item-has-children > a:after {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
@@ -96,7 +100,7 @@ body:before {
       right: 0;
       top: calc(50% - 10px);
       width: 20px; }
-  .primary-menu .menu-item:hover > .sub-menu .no-js, .primary-menu .menu-item:focus > .sub-menu .no-js {
+  .no-js .primary-menu .menu-item:hover > .sub-menu, .no-js .primary-menu .menu-item:focus > .sub-menu {
     display: block; }
   @media (min-width: 53.125em) {
     .primary-menu .menu-item:hover > .sub-menu, .primary-menu .menu-item:focus > .sub-menu {
@@ -104,6 +108,10 @@ body:before {
   .primary-menu .menu-item a {
     display: block;
     padding: 10px 15px; }
+  .primary-menu.uses-click .menu-item:hover .sub-menu {
+    display: none; }
+    .primary-menu.uses-click .menu-item:hover .sub-menu[aria-hidden="false"] {
+      display: block; }
   .primary-menu .sub-menu {
     background-color: #999;
     display: none;
