@@ -1,6 +1,6 @@
 ---
-title: Read More
-path_slug: readmore
+title: Screen Reader Text
+path_slug: screen-reader-text
 layout: component
 category: content
 ---
@@ -15,9 +15,8 @@ category: content
 
 <h3>HTML</h3>
 
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-tabs.md %}
+
 <h3>SCSS <a href="scss/component.scss" target="_blank">Download SCSS</a></h3>
 
 ```scss
