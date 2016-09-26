@@ -2,7 +2,7 @@
 	TO DO:
 		- Large screen: Keep menus open on child focus when "click" is off
 		- Large screen: when click is off and menu is open on small screen it should close on large screen (when resized)
-		- (Line 124) Open only one menu at a time, if click is active on large screen
+		- (Line 116) Open only one menu at a time, if click is active on large screen
 ********************************/
 
 ( function() {
@@ -150,13 +150,35 @@
 	}, 100 );
 
 	// close the menu if you click somewhere else
-	var listener_mouseup = function( e ) {
+	var listener_close_open_menus = function( e ) {
 
-		if ( !menu.contains( e.target ) && menu.querySelector('.submenu-is-open') && sub_menu_acion === 'click' ) {
-			menu.querySelector('.submenu-is-open').click();
+		var open_menus = menu.querySelectorAll('.submenu-is-open');
+		var opn;
+
+		if( e.type === 'keyup' ) {
+
+			if ( menu.querySelector('.submenu-is-open') && sub_menu_acion === 'click' ) {
+
+				for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
+					open_menus[opn].click();
+				}
+
+			}
+
+
+		} else if( e.type === 'mouseup' ) {
+
+			if ( !menu.contains( e.target ) && menu.querySelector('.submenu-is-open') && sub_menu_acion === 'click' ) {
+
+				for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
+					open_menus[opn].click();
+				}
+
+			}
+
 		}
 
-	};
+	}; // listener_close_open_menus()
 
 	// Method to create the small screen menu
 	var menu_create = function() {
@@ -241,8 +263,9 @@
 	// Debounced resize event to create and destroy the small screen menu options
 	window.addEventListener( 'resize', listener_window );
 
-	// Close the menu when you click off of it
-	document.addEventListener('mouseup', listener_mouseup );
+	// Close the submenus by clicking off of them or hitting ESC
+	document.addEventListener('mouseup', listener_close_open_menus );
+	document.addEventListener('keyup', listener_close_open_menus );
 
 	/*
 		Hiding and showing submenus (click, focus, hover)
