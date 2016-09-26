@@ -115,7 +115,7 @@ body:before {
   .primary-menu .sub-menu {
     background-color: #999;
     display: none;
-    min-width: 200px;
+    min-width: 125px;
     background: #777; }
     .primary-menu .sub-menu .sub-menu {
       background: #555; }
