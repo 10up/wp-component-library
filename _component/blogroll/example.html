@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <title>Blogroll - Schema Markup</title>
+
+    <!-- meta cluster -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+
+  </head>
+  <body>
+
+  <!-- flagging this as the blogroll page (should wrap everything, can go on the <body> as well) -->
+  <div itemscope itemtype="https://schema.org/Blog">
+
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+
+      <!-- if you need an image, this is what that would look like-->
+      <img itemprop="image" src="https://www.fillmurray.com/100/100" srcset="https://www.fillmurray.com/100/100 1x, https://www.fillmurray.com/200/200 2x" alt="Awesome image"/>
+
+      <header>
+        <h2 itemprop="headline">
+          <a href="http://www.example.com/" itemprop="url">Post Title</a>
+        </h2>
+        Published on: <time itemprop="datePublished">Sept. 20, 2016</time>
+        Written by: <div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">Blog Post Author</div>
+      </header>
+
+      <!-- A description of the post content - the excerpt -->
+      <div itemprop="description">
+        <p>This would be the "description" or the excerpt of the blog post content.</p>
+        <a href="http://www.example.com/" itemprop="url">Read More... <span class="screen-reader-text">Post Title<span></a>
+      </div>
+
+    </article>
+
+    <!--
+      Add more blogroll items here
+    -->
+
+  </div>
+
+  </body>
+</html>

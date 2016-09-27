@@ -1,0 +1,50 @@
+<div itemscope itemtype="https://schema.org/Blog">
+
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting" >
+
+		<?php
+		/*
+		 * Customize w/ get_the_post_thumbnail() to add schema
+		 * @link https://developer.wordpress.org/reference/functions/get_the_post_thumbnail
+		 */
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail();
+		} ?>
+
+		<header class="entry-header">
+			<?php
+			the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="url" rel="bookmark">', '</a></h2>' );
+			?>
+
+			<?php esc_html_e( 'Published on:', 'tenup' ); ?>
+			<time itemprop="datePublished">
+				<?php echo esc_html( get_the_date() ); ?>
+			</time>
+
+			<?php esc_html_e( 'Written by:', 'tenup' ); ?>
+			<div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
+				<?php echo esc_html( the_author() ); ?>
+			</div>
+		</header>
+
+		<!-- A description of the post content - the excerpt -->
+		<div itemprop="description">
+			<?php
+			/**
+			 * Customize the Read More link by using the "excerpt_more" filter
+			 *
+			 * @link https://developer.wordpress.org/reference/functions/the_excerpt/
+			 * @link https://codex.wordpress.org/Customizing_the_Read_More
+			 */
+
+			the_excerpt();
+			?>
+		</div>
+
+	</article>
+
+	<!--
+		Add more blogroll items here
+	-->
+
+</div>
