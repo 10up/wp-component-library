@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
 
-    <title>Search Results - Schema Markup</title>
+	<title>Search Results - Schema Markup</title>
 
-    <!-- meta cluster -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="cleartype" content="on" />
+	<!-- meta cluster -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="cleartype" content="on" />
 
-  </head>
-  <body>
+</head>
+<body>
 
-<!-- flagging this as the search results page (should wrap everything, can go on the <body> as well) -->
-<div itemscope itemtype="https://schema.org/SearchResultsPage">
+	<!-- flagging this as the search results page (should wrap everything, can go on the <body> as well) -->
+	<div itemscope itemtype="https://schema.org/SearchResultsPage">
 
-  <!-- using OL instead of UL because the list has an implied order (best match -> worst match) -->
-  <ol>
+		<!-- using OL instead of UL because the list has an implied order (best match -> worst match) -->
+		<ol>
 
-    <li itemscope itemtype="https://schema.org/Thing">
+			<li itemscope itemtype="https://schema.org/Thing">
 
-      <!-- if you need an image, this is what that would look like-->
-      <img itemprop="image" src="https://www.fillmurray.com/100/100" srcset="https://www.fillmurray.com/100/100 1x, https://www.fillmurray.com/200/200 2x" alt="Awesome image"/>
+				<!-- if you need an image, this is what that would look like-->
+				<img itemprop="image" src="https://www.fillmurray.com/100/100" srcset="https://www.fillmurray.com/100/100 1x, https://www.fillmurray.com/200/200 2x" alt="Awesome image"/>
 
-      <!-- Standard URL itemprop -->
-      <a itemprop="url" href="http://www.example.com/">
-        <!-- Standard name itemprop -->
-        <span itemprop="name">The Title of the Search Result</span>
-      </a>
+				<!-- Standard URL itemprop -->
+				<a itemprop="url" href="http://www.example.com/">
+					<!-- Standard name itemprop -->
+					<span itemprop="name">The Title of the Search Result</span>
+				</a>
 
-      <!-- A description of the search item -->
-      <div itemprop="description">
-        <p>This is a description of the search result item</p>
-      </div>
+				<!-- A description of the search item -->
+				<div itemprop="description">
+					<p>This is a description of the search result item</p>
+				</div>
 
-    </li>
+			</li>
 
-    <!--
-      Add more search items here
-    -->
+			<!--
+				Add more search items here
+			-->
 
-  </ol>
+		</ol>
 
-</div>
+	</div>
 
-  </body>
+</body>
 </html>
