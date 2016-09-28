@@ -116,7 +116,8 @@ body:before {
 		width: 0;
 	}
 
-	&[aria-hidden="false"] {
+	&[aria-hidden="false"],
+	&:target {
 		display: block;
 	}
 

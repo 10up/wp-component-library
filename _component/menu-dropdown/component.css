@@ -68,7 +68,7 @@ body:before {
   display: none; }
   .primary-menu[aria-hidden="true"] {
     width: 0; }
-  .primary-menu[aria-hidden="false"] {
+  .primary-menu[aria-hidden="false"], .primary-menu:target {
     display: block; }
   @media (min-width: 53.125em) {
     .primary-menu {
