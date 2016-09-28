@@ -134,7 +134,7 @@
 
 			} // if
 
-			if( e.srcElement.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
+			if( e.target.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
 
 				// The menu is already open, so this should be a close action
 				menu_sub_close( target );

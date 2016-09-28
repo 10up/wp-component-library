@@ -6,6 +6,9 @@ $bp-large:          62.5em !default;        // 1000px
 // Variables
 $color-gray: #999 !default;
 
+// Use this flag to toggle the CSS & JS for traditional "large screen" horizontal navigation
+$use-large-screen: true !default;
+
 .screen-reader-text {
 	position: absolute;
 	left: -999em;
@@ -21,12 +24,16 @@ body:before {
 	top: -999em;
 	left: -999em;
 
-	@media ( min-width: $bp-medium ) {
-		content: "medium";
-	}
+	@if $use-large-screen == true {
 
-	@media ( min-width: $bp-large ) {
-		content: "large";
+		@media ( min-width: $bp-medium ) {
+			content: "medium";
+		}
+
+		@media ( min-width: $bp-large ) {
+			content: "large";
+		}
+
 	}
 
 }
@@ -71,8 +78,11 @@ body:before {
 }
 
 .site-navigation {
-	@media ( min-width: $bp-medium ) {
-		float: right;
+
+	@if $use-large-screen == true {
+		@media ( min-width: $bp-medium ) {
+			float: right;
+		}
 	}
 
 	ul {
@@ -88,8 +98,10 @@ body:before {
 	text-decoration: none;
 	margin-right: 10px;
 
-	@media ( min-width: $bp-medium ) {
-		display: none;
+	@if $use-large-screen == true {
+		@media ( min-width: $bp-medium ) {
+			display: none;
+		}
 	}
 }
 
@@ -108,23 +120,27 @@ body:before {
 		display: block;
 	}
 
-	@media ( min-width: $bp-medium ) {
-		background: transparent;
-		display: block;
-		float: right;
-		height: auto;
-		overflow: visible;
-		position: relative;
-		top: 0;
-		transform: translateX(0);
-		width: auto;
+	@if $use-large-screen == true {
+		@media ( min-width: $bp-medium ) {
+			background: transparent;
+			display: block;
+			float: right;
+			height: auto;
+			overflow: visible;
+			position: relative;
+			top: 0;
+			transform: translateX(0);
+			width: auto;
+		}
 	}
 
 	.menu-item {
-		@media ( min-width: $bp-medium ) {
-			display: inline-block;
-			position: relative;
-			text-align: left;
+		@if $use-large-screen == true {
+			@media ( min-width: $bp-medium ) {
+				display: inline-block;
+				position: relative;
+				text-align: left;
+			}
 		}
 
 		button {
@@ -156,8 +172,10 @@ body:before {
 					display: block;
 				}
 
-				@media ( min-width: $bp-medium ) {
-					display: block;
+				@if $use-large-screen == true {
+					@media ( min-width: $bp-medium ) {
+						display: block;
+					}
 				}
 			}
 		}
@@ -194,11 +212,13 @@ body:before {
 			background: #555;
 		}
 
-		@media ( min-width: $bp-medium ) {
-			position: absolute;
+		@if $use-large-screen == true {
+			@media ( min-width: $bp-medium ) {
+				position: absolute;
 
-			.menu-item {
-				display: block;
+				.menu-item {
+					display: block;
+				}
 			}
 		}
 
