@@ -4,7 +4,7 @@ $bp-medium:         53.125em !default;      // 850px
 $bp-large:          62.5em !default;        // 1000px
 
 // Variables
-$gray: #999 !default;
+$color-gray: #999 !default;
 
 .screen-reader-text {
 	position: absolute;
@@ -38,7 +38,7 @@ body:before {
 
 // Component Sass
 .site-header {
-	background: $gray;
+	background: $color-gray;
 	padding: .5rem;
 	position: relative;
 
@@ -94,7 +94,7 @@ body:before {
 }
 
 .primary-menu {
-	background: $gray;
+	background: $color-gray;
 	margin: 0;
 	overflow: hidden;
 	clear: both;
@@ -185,7 +185,7 @@ body:before {
 	}
 
 	.sub-menu {
-		background-color: $gray;
+		background-color: $color-gray;
 		display: none;
 		min-width: 125px;
 		background: #777;

@@ -155,9 +155,13 @@
 	var listener_window = debounce( function( e ) {
 
 		if( get_screen_size( 'small' ) ) {
+
 			menu_create();
+
 		} else {
+
 			menu_destroy();
+
 		}
 
 	}, 100 );
@@ -166,37 +170,59 @@
 	var listener_close_open_menus = function( e ) {
 
 		var open_menus = menu.querySelectorAll('.submenu-is-open');
+		var open_menus_count = open_menus.length;
 		var opn;
 
 		// if the event is keyup and it was the ESC key
 		if( e.type === 'keyup' && e.keyCode == 27 ) {
 
-			if ( menu.querySelector('.submenu-is-open') && sub_menu_acion === 'click' ) {
+			if ( open_menus_count ) {
 
 				// Loop through all the open menus and close them
 				for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
-					open_menus[opn].click();
-				}
+
+					menu_sub_close( open_menus[opn] );
+
+				} // for
 
 				// return focus to the first open menu
-				open_menus[0].focus();
+				if( sub_menu_acion === 'click' ) {
+					open_menus[0].focus();
+				}
 
-			}
+			} // if
 
 		// If the event was a mouseup
 		} else if( e.type === 'mouseup' ) {
 
-			if ( !menu.contains( e.target ) && menu.querySelector('.submenu-is-open') && sub_menu_acion === 'click' ) {
+			if ( !menu.contains( e.target ) && menu.querySelector('.submenu-is-open') ) {
 
-				for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
-					open_menus[opn].click();
+				if ( open_menus_count ) {
+
+					for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
+
+						menu_sub_close( open_menus[opn] );
+
+					} // for
+
 				}
 
-			}
+			} // if
 
 		}
 
 	}; // listener_close_open_menus()
+
+	var menu_sub_close = function( open_item ) {
+
+		open_item.classList.remove('submenu-is-open');
+		open_item.parentNode.classList.remove('child-has-focus');
+
+		if( open_item.parentNode.querySelector('.sub-menu') ) {
+			open_item.parentNode.querySelector('.sub-menu').setAttribute( 'aria-hidden', 'true');
+		}
+
+	};
 
 	// Method to create the small screen menu
 	var menu_create = function() {
@@ -213,11 +239,13 @@
 
 			// Loop through all submenus and bind events when needed
 			for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
+
 				if( sub_menu_acion !== 'click' ) {
 					menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
 					menu.classList.add('uses-click');
 				}
-			}
+
+			} // for
 
 			// Bind the event
 			menu_toggle.addEventListener( 'click', listener_menu );
