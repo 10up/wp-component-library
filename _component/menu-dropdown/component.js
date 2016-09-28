@@ -1,6 +1,9 @@
 /********************************
-	TO DO:
-		- Large Screen on focus & click... only 1 menu should be open at a time
+
+	Name: WordPress Accessible Responsive Navigation Menu
+	API: Use data-submenu="click" in the HTML to use a click event for
+		 opening/closing sub menus on large screen (small screen is always click)
+
 ********************************/
 
 ( function() {
@@ -28,7 +31,7 @@
 		Helper functions
 	*/
 
-	// Get screen size from getComputedStyle (so we don't have to define each breakpoint twice)
+	// Get screen size from getComputedStyle (so we don't have to define each breakpoint twice) -- Values are set in CSS --
 	var get_screen_size = function( sizeString ) {
 
 		var size = window.getComputedStyle( document.body,':before' ).getPropertyValue( 'content' );
@@ -63,6 +66,7 @@
 	// Listener for the menu open/close action
 	var listener_menu = function( e ) {
 
+		// Stop links from firing
 		e.preventDefault();
 
 		if( document.body.classList.contains('menu-is-open') ) {
@@ -98,38 +102,49 @@
 
 		if( target.getAttribute('aria-haspopup') ) {
 
+			// Stop links from firing
 			e.preventDefault();
+
+			// Stop events from bubbling up to parent elements
 			e.stopPropagation();
 
 			var parent_menu = target.parentNode;
 			var sub_menu = parent_menu.querySelector('.sub-menu');
 			var all_open_menus = menu.querySelectorAll('.child-has-focus');
-			var all_open_menu_triggers = menu.querySelectorAll( '.child-has-focus > a.submenu-is-open' );
 			var all_open_menus_count = all_open_menus.length;
+			var all_open_menu_triggers = menu.querySelectorAll( '.child-has-focus > a.submenu-is-open' );
 			var all_open_menu_triggers_count = all_open_menu_triggers.length;
 			var t;
 
 			if( get_screen_size( 'medium' ) || get_screen_size( 'large' ) ) {
-				if( sub_menu_acion === 'click' && all_open_menus_count > 0 ) {
 
-					console.log('make sure only 1 menu item can be opened at a time');
+				if( all_open_menu_triggers_count > 0 ) {
 
-				}
-			}
+					// Make sure only 1 menu item can be opened at a time
+					for( t = 0; t < all_open_menu_triggers_count; t = t + 1 ) {
+
+						// Check if the open menu is top-level, if so, close it
+						if( parent_menu.parentNode === menu ) {
+							menu_sub_close( all_open_menu_triggers[t] );
+						}
+
+					} // for
+
+				} // if
+
+			} // if
 
 			if( e.srcElement.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
 
-				//  close it
-				sub_menu.setAttribute( 'aria-hidden', 'true' );
-				parent_menu.classList.remove( 'child-has-focus' );
-				target.classList.remove( 'submenu-is-open' );
+				// The menu is already open, so this should be a close action
+				menu_sub_close( target );
 
 			} else {
 
-				// open it
-				sub_menu.setAttribute( 'aria-hidden', 'false' );
-				parent_menu.classList.add( 'child-has-focus' );
-				target.classList.add( 'submenu-is-open' );
+				// The menu is close, so this click should open it
+				menu_sub_open( target );
+
+				// Reset the focus
 				sub_menu.querySelectorAll('a')[0].focus();
 
 			}
@@ -143,11 +158,29 @@
 		var currentTarget = e.currentTarget;
 		var target = e.target;
 		var parent_menu = target.parentNode;
-		var sub_menu = currentTarget.querySelector('.sub-menu');
+		var sub_menu = parent_menu.querySelector('.sub-menu');
+		var all_open_menu_triggers = menu.querySelectorAll( '.child-has-focus > a.submenu-is-open' );
+		var all_open_menu_triggers_count = all_open_menu_triggers.length;
+		var t;
 
-		sub_menu.setAttribute( 'aria-hidden', 'false' );
-		parent_menu.classList.add( 'child-has-focus' );
-		target.classList.add( 'submenu-is-open' );
+		if( get_screen_size( 'medium' ) || get_screen_size( 'large' ) ) {
+
+			if( all_open_menu_triggers_count > 0 ) {
+
+				// Make sure only 1 menu item can be opened at a time
+				for( t = 0; t < all_open_menu_triggers_count; t = t + 1 ) {
+
+					// Check if the open menu is top-level, if so, close it
+					if( parent_menu.parentNode === menu ) {
+						menu_sub_close( all_open_menu_triggers[t] );
+					}
+
+				}
+			}
+
+		}
+
+		menu_sub_open( target );
 
 	};
 
@@ -164,7 +197,7 @@
 
 		}
 
-	}, 100 );
+	}, 100 ); // listener_window()
 
 	// Close the menu if you click somewhere else
 	var listener_close_open_menus = function( e ) {
@@ -176,16 +209,17 @@
 		// if the event is keyup and it was the ESC key
 		if( e.type === 'keyup' && e.keyCode == 27 ) {
 
+			// We were getting some errors, so let's add in a checkpoint
 			if ( open_menus_count ) {
 
 				// Loop through all the open menus and close them
-				for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
+				for( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
 
 					menu_sub_close( open_menus[opn] );
 
 				} // for
 
-				// return focus to the first open menu
+				// Return focus to the first open menu
 				if( sub_menu_acion === 'click' ) {
 					open_menus[0].focus();
 				}
@@ -197,9 +231,10 @@
 
 			if ( !menu.contains( e.target ) && menu.querySelector('.submenu-is-open') ) {
 
+				// We were getting some error, so let's add in a second checkpoint
 				if ( open_menus_count ) {
 
-					for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
+					for( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
 
 						menu_sub_close( open_menus[opn] );
 
@@ -222,7 +257,18 @@
 			open_item.parentNode.querySelector('.sub-menu').setAttribute( 'aria-hidden', 'true');
 		}
 
-	};
+	}; // menu_sub_close()
+
+	var menu_sub_open = function( closed_item ) {
+
+		closed_item.classList.add('submenu-is-open');
+		closed_item.parentNode.classList.add('child-has-focus');
+
+		if( closed_item.parentNode.querySelector('.sub-menu') ) {
+			closed_item.parentNode.querySelector('.sub-menu').setAttribute( 'aria-hidden', 'false');
+		}
+
+	}; // menu_sub_open()
 
 	// Method to create the small screen menu
 	var menu_create = function() {
@@ -230,19 +276,26 @@
 		if( !document.body.classList.contains( 'menu-created' ) ) {
 
 			if( !document.body.classList.contains( 'menu-is-open' ) ) {
+
 				menu.setAttribute( 'aria-hidden', 'true' );
 				menu_toggle.setAttribute( 'aria-expanded', 'false' );
+
 			} else {
+
 				menu.setAttribute( 'aria-hidden', 'false' );
 				menu_toggle.setAttribute( 'aria-expanded', 'true' );
+
 			}
 
 			// Loop through all submenus and bind events when needed
-			for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
+			for( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
 
 				if( sub_menu_acion !== 'click' ) {
+
 					menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
+					menu_items_with_children[i].removeEventListener( 'focusin', listener_submenu_focus );
 					menu.classList.add('uses-click');
+
 				}
 
 			} // for
@@ -256,7 +309,7 @@
 
 		}
 
-	};
+	}; // menu_create()
 
 	// Method to destroy the small screen menu
 	var menu_destroy = function() {
@@ -271,20 +324,21 @@
 			menu.removeAttribute( 'aria-hidden' );
 
 			// Loop through all submenus and bind events when needed
-			for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
+			for( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
 				if( sub_menu_acion !== 'click' ) {
 					menu_items_with_children[i].removeEventListener( 'click', listener_submenu_click );
+					menu_items_with_children[i].addEventListener( 'focusin', listener_submenu_focus );
 					menu.classList.remove('uses-click');
 				}
 			}
 
-			// if we're not using click, the open menus need to be reset
+			// If we're not using click, the open menus need to be reset
 			if( sub_menu_acion !== 'click' ) {
 
 				tmp_open = document.querySelectorAll('.child-has-focus');
 				tmp_open_count = tmp_open.length;
 
-				for ( t = 0; t < tmp_open_count; t = t + 1 ) {
+				for( t = 0; t < tmp_open_count; t = t + 1 ) {
 					tmp_open[t].classList.remove( 'child-has-focus' );
 					tmp_open[t].querySelector('.submenu-is-open').classList.remove('submenu-is-open');
 					tmp_open[t].querySelector('.sub-menu').setAttribute( 'aria-hidden', 'true');
@@ -334,7 +388,7 @@
 	*/
 
 	// Loop through all items with sub menus and bind focus to them for tabbing
-	for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
+	for( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
 
 		// Let a screen reader know this menu has a submenu by hooking into the first link
 		menu_items_with_children[i].querySelector('a').setAttribute( 'aria-haspopup', 'true' );
@@ -355,10 +409,10 @@
 
 				menu_items_with_children[i].addEventListener( 'focusin', listener_submenu_focus );
 
-			}
+			} // if
 
-		}
+		} // if
 
-	} // for()
+	} // for
 
 } )();
