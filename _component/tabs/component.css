@@ -2,7 +2,7 @@
 .tab-list {
   list-style: none;
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
   padding: 0;
   position: relative;
   white-space: nowrap; }
