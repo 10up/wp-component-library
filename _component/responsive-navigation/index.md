@@ -1,6 +1,6 @@
 ---
-title: Off Canvas Menu
-path_slug: menu-off-canvas
+title: Responsive Navigation
+path_slug: responsive-navigation
 layout: component
 category: navigation
 iframe_height: large
@@ -16,9 +16,7 @@ iframe_height: large
 
 <h3>HTML</h3>
 
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-tabs.md %}
 
 <h3>SCSS <a href="scss/component.scss" target="_blank">Download SCSS</a></h3>
 
