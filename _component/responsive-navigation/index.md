@@ -27,7 +27,7 @@ iframe_height: large
 <h3>JS <a href="component.js" target="_blank">Download JS</a></h3>
 
 ```javascript
-{% include_relative component.js %}
+{% include_relative component-usage.js %}
 ```
 
 <h3>Browser Compatibility</h3>
