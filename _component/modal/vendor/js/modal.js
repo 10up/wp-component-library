@@ -5,7 +5,7 @@
  * Converted from a jQuery plugin originally written by @scottohara: https://github.com/scottaohara/accessible-components
  */
 
-;(function (w, doc) {
+//;(function (w, doc) {
 
 	// Polyfill for el.matches
 	if (!Element.prototype.matches) {
@@ -74,9 +74,9 @@
 	var modalTitle = '[data-modal-title]';
 	var modalClose = '[data-modal-close]';
 	var bodyElements = 'a11y-hide-if-modal-open';
-	var genModalClose = doc.createElement( 'button' );
-	var html = doc.body;
-	var modallisting = doc.querySelectorAll( modal );
+	var genModalClose = document.createElement( 'button' );
+	var html = document.body;
+	var modallisting = document.querySelectorAll( modal );
 	var modallistingCount = modallisting.length;
 	var i;
 
@@ -93,10 +93,25 @@
 	genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
 
 	// initialize all the modals
-	a11y_modal.init = function ( el, callback ) {
+	a11y_modal.init = function ( options, callback ) {
 
+		// Define the default values
+		var defaults = {
+			'el': '.a11y-modal'
+		};
+		var defaults_count = defaults.length;
+		var opt;
+
+		// Map all default settings to user defined options
+		for ( opt = 0; opt < defaults_count; opt = opt + 1) {
+			if( typeof options[opt] === "undefined" ) {
+				options[opt] = defaults[opt];
+			}
+		}
+
+		var el = options.el;
 		var id = el.id;
-		var self = doc.getElementById( id );
+		var self = document.getElementById( id );
 
 		// setup modals properly
 		var setup_a11y_modal = function () {
@@ -224,7 +239,7 @@
 
 			var setup_a11y_modal_triggers = function () {
 
-				var modalTriggerEl = doc.querySelectorAll( modalTrigger );
+				var modalTriggerEl = document.querySelectorAll( modalTrigger );
 				var modalTriggerCount = modalTriggerEl.length;
 				var grabTarget;
 				var modalTarget;
@@ -289,7 +304,7 @@
 					// now that the aria-controls is set, point to the modal's target
 					// so we can run the next if
 
-					modalTarget = doc.querySelector( '#' + modalObj.getAttribute( 'aria-controls' ) );
+					modalTarget = document.querySelector( '#' + modalObj.getAttribute( 'aria-controls' ) );
 
 					// finally a last check to see if the trigger is meant to launch
 					// an alert dialog modal. If the alertdialog role wasn't set during
@@ -310,8 +325,8 @@
 
 			var organize_dom = function () {
 
-				var body = doc.body;
-				var modalEl = doc.querySelectorAll( modal );
+				var body = document.body;
+				var modalEl = document.querySelectorAll( modal );
 				var modalElCount = modalEl.length;
 				var k;
 
@@ -336,7 +351,7 @@
 				// setup vars
 
 				var openTarget = e.target;
-				var modalTarget = doc.getElementById( openTarget.getAttribute( 'aria-controls' ) );
+				var modalTarget = document.getElementById( openTarget.getAttribute( 'aria-controls' ) );
 
 				// Check to see if the modal has either an aria-label or labelledby attribute
 				// if not, that means that the modal didn't have a manually set aria-label,
@@ -384,7 +399,7 @@
 				// applying an aria-hidden attribute to all direct
 				// siblings of the modal windows. (var bodyElements)
 
-				doc.querySelector( '.' + bodyElements ).setAttribute( 'aria-hidden', 'true' );
+				document.querySelector( '.' + bodyElements ).setAttribute( 'aria-hidden', 'true' );
 
 				// finally, apply focus to the newly opened modal window
 
@@ -399,7 +414,7 @@
 
 				e.preventDefault();
 
-				var returnFocus = doc.querySelectorAll( '[aria-controls="' + self.getAttribute( 'id' ) + '"]');
+				var returnFocus = document.querySelectorAll( '[aria-controls="' + self.getAttribute( 'id' ) + '"]');
 				var returnFocusCount = returnFocus.length;
 
 				returnFocus = returnFocus[returnFocusCount - 1];
@@ -409,7 +424,7 @@
 
 				// remove the aria-hidden that was applied during modal open
 
-				doc.querySelector( '.' + bodyElements ).removeAttribute( 'aria-hidden' );
+				document.querySelector( '.' + bodyElements ).removeAttribute( 'aria-hidden' );
 
 				returnFocus.focus();
 
@@ -442,7 +457,7 @@
 			var trap_focus = function () {
 
 				// I'm open to better solutions for trapping focus within the modal with it's open
-				var all_nodes = doc.querySelectorAll( "*" );
+				var all_nodes = document.querySelectorAll( "*" );
 				var trapArea = self.querySelector( modalDoc );
 				var nodeCount =  all_nodes.length;
 				var j;
@@ -501,7 +516,7 @@
 
 			// open the modal when the trigger is clicked
 
-			doc.addEventListener( "click", function( e ) {
+			document.addEventListener( "click", function( e ) {
 
 				if ( e.target.matches( modalTrigger ) ) {
 					e.stopPropagation();
@@ -512,7 +527,7 @@
 
 			// making sure the modal triggers open with <enter> and <space> (making it act like a button, if it's a link)
 
-			doc.addEventListener( "keydown", function( e ) {
+			document.addEventListener( "keydown", function( e ) {
 				if (e.target.matches( modalTrigger )) {
 					e.stopPropagation();
 					keytrolls_a11y_modal_trigger( e );
@@ -528,7 +543,7 @@
 	}; // end: a11y_modal: function
 
 	// execute the function on all modal instances
-
+/*
 	for ( i = 0; i < modallistingCount; i = i + 1 ) {
 
 		a11y_modal.init( modallisting[i], function() {
@@ -536,5 +551,5 @@
 		});
 
 	}
-
-} )( this, this.document );
+*/
+//} )( this, this.document );
