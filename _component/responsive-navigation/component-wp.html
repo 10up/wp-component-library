@@ -30,7 +30,8 @@
 	<?php endif; ?>
 
 	<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-		<a href="#primary-menu" class="site-menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+
+		<a href="#primary-menu" id="js-menu-toggle" class="site-menu-toggle">
 			<span class="screen-reader-text">
 				<?php esc_html_e( 'Primary Menu', 'tenup' ); ?>
 			</span>
@@ -41,6 +42,7 @@
 			wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'menu_class'     => 'primary-menu',
+				'menu_id'        => 'primary-menu',
 			) );
 		?>
 	</nav>

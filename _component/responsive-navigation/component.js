@@ -1,70 +1,68 @@
 /********************************
 
 	Name: WordPress Accessible Responsive Navigation Menu
-	API: Use data-submenu="click" in the HTML to use a click event for
-		 opening/closing sub menus on large screen (small screen is always click)
+	Usage:
+
+	TenUp_Nav.build_menu({
+
+		'target'		:	'#primary-nav',      // the selector of the nav menu <ul>
+		'toggle'		:	'#js-menu-toggle',   // the ID of the link you're using to open/close the small screen menu
+		'sub_menu_open'	:	'hover'              // "click" is the other option
+
+	}, function() {
+
+		console.log('Amazing callback function!');
+
+	});
 
 ********************************/
 
-( function() {
+// Expose local object to prevent scope bleeding
+var TenUp_Nav = {};
 
-	'use strict';
+/*
+	Cache and define some variables
+*/
 
-	/*
-		Cache and define some variables
-	*/
+// init function
 
-	var menu = document.getElementById( 'menu-main-nav' );
+TenUp_Nav.build_menu = function( options, callback ) {
+
+	var defaults = {
+		'target'		:	'#primary-nav',
+		'toggle'		:	'#js-menu-toggle',
+		'sub_menu_open'	:	'hover'
+	};
+	var opt;
+
+	// Map all default settings to user defined options if they exist
+	for ( opt = 0; opt < defaults.length; opt = opt + 1 ) {
+
+		if( typeof options[opt] === "undefined" ) {
+			options[opt] = defaults[opt];
+		}
+
+	}
+
+	var menu = document.querySelector( options.target );
+
+	// Bail out if there's no menu
+	if( !menu ) { return; }
+
 	var menu_id = menu.getAttribute( 'id' );
-	var menu_toggle = document.getElementById( 'js-menu-toggle' );
+	var menu_toggle = document.querySelector( options.toggle );
 	var menu_toggle_href = menu_toggle.getAttribute( 'href' );
 	var aria_controls = menu_toggle.getAttribute('aria-controls');
 	var menu_toggle_target = menu_toggle_href.split('#')[1];
-	var sub_menu_acion = menu_toggle.getAttribute( 'data-submenu' );
+	var sub_menu_acion = options.sub_menu_open;
 	var menu_items_with_children = menu.querySelectorAll('.menu-item-has-children');
 	var menu_items_with_children_count = menu_items_with_children.length;
 	var currentTarget;
 	var target;
 	var i;
 
-	/*
-		Helper functions
-	*/
-
-	// Get screen size from getComputedStyle (so we don't have to define each breakpoint twice) -- Values are set in CSS --
-	var get_screen_size = function( sizeString ) {
-
-		var size = window.getComputedStyle( document.body,':before' ).getPropertyValue( 'content' );
-
-		if( size && size.indexOf( sizeString ) !==-1 ) {
-			return true;
-		}
-
-	};
-
-	// Debounce
-	var debounce = function( func, wait, immediate ) {
-
-		var timeout;
-		return function() {
-			var context = this, args = arguments;
-
-			var later = function() {
-				timeout = null;
-				if (!immediate) func.apply(context, args);
-			};
-
-			var callNow = immediate && !timeout;
-
-			clearTimeout( timeout );
-			timeout = setTimeout( later, wait );
-			if (callNow) func.apply(context, args);
-		};
-
-	};
-
 	// Listener for the menu open/close action
-	var listener_menu = function( e ) {
+	TenUp_Nav.listener_menu = function( e ) {
 
 		// Stop links from firing
 		e.preventDefault();
@@ -95,7 +93,7 @@
 	}; // listener_menu()
 
 	// Listener for submenu on click
-	var listener_submenu_click = function( e ) {
+	TenUp_Nav.listener_submenu_click = function( e ) {
 
 		currentTarget = e.currentTarget;
 		target = e.target;
@@ -116,7 +114,7 @@
 			var all_open_menu_triggers_count = all_open_menu_triggers.length;
 			var t;
 
-			if( get_screen_size( 'medium' ) || get_screen_size( 'large' ) ) {
+			if( TenUp_Nav.get_screen_size( 'medium' ) || TenUp_Nav.get_screen_size( 'large' ) ) {
 
 				if( all_open_menu_triggers_count > 0 ) {
 
@@ -125,7 +123,7 @@
 
 						// Check if the open menu is top-level, if so, close it
 						if( parent_menu.parentNode === menu ) {
-							menu_sub_close( all_open_menu_triggers[t] );
+							TenUp_Nav.menu_sub_close( all_open_menu_triggers[t] );
 						}
 
 					} // for
@@ -137,12 +135,12 @@
 			if( e.target.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
 
 				// The menu is already open, so this should be a close action
-				menu_sub_close( target );
+				TenUp_Nav.menu_sub_close( target );
 
 			} else {
 
 				// The menu is close, so this click should open it
-				menu_sub_open( target );
+				TenUp_Nav.menu_sub_open( target );
 
 				// Reset the focus
 				sub_menu.querySelectorAll('a')[0].focus();
@@ -153,7 +151,7 @@
 	}; // listener_submenu_click()
 
 	// When "hover", this is how focus should act
-	var listener_submenu_focus = function( e ) {
+	TenUp_Nav.listener_submenu_focus = function( e ) {
 
 		var currentTarget = e.currentTarget;
 		var target = e.target;
@@ -163,7 +161,7 @@
 		var all_open_menu_triggers_count = all_open_menu_triggers.length;
 		var t;
 
-		if( get_screen_size( 'medium' ) || get_screen_size( 'large' ) ) {
+		if( TenUp_Nav.get_screen_size( 'medium' ) || TenUp_Nav.get_screen_size( 'large' ) ) {
 
 			if( all_open_menu_triggers_count > 0 ) {
 
@@ -172,7 +170,7 @@
 
 					// Check if the open menu is top-level, if so, close it
 					if( parent_menu.parentNode === menu ) {
-						menu_sub_close( all_open_menu_triggers[t] );
+						TenUp_Nav.menu_sub_close( all_open_menu_triggers[t] );
 					}
 
 				}
@@ -180,27 +178,27 @@
 
 		}
 
-		menu_sub_open( target );
+		TenUp_Nav.menu_sub_open( target );
 
 	};
 
 	// Listener for the window resize
-	var listener_window = debounce( function( e ) {
+	TenUp_Nav.listener_window = TenUp_Nav.debounce( function( e ) {
 
-		if( get_screen_size( 'small' ) ) {
+		if( TenUp_Nav.get_screen_size( 'small' ) ) {
 
-			menu_create();
+			TenUp_Nav.menu_create();
 
 		} else {
 
-			menu_destroy();
+			TenUp_Nav.menu_destroy();
 
 		}
 
 	}, 100 ); // listener_window()
 
 	// Close the menu if you click somewhere else
-	var listener_close_open_menus = function( e ) {
+	TenUp_Nav.listener_close_open_menus = function( e ) {
 
 		var open_menus = menu.querySelectorAll('.submenu-is-open');
 		var open_menus_count = open_menus.length;
@@ -215,7 +213,7 @@
 				// Loop through all the open menus and close them
 				for( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
 
-					menu_sub_close( open_menus[opn] );
+					TenUp_Nav.menu_sub_close( open_menus[opn] );
 
 				} // for
 
@@ -236,7 +234,7 @@
 
 					for( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
 
-						menu_sub_close( open_menus[opn] );
+						TenUp_Nav.menu_sub_close( open_menus[opn] );
 
 					} // for
 
@@ -248,7 +246,7 @@
 
 	}; // listener_close_open_menus()
 
-	var menu_sub_close = function( open_item ) {
+	TenUp_Nav.menu_sub_close = function( open_item ) {
 
 		open_item.classList.remove('submenu-is-open');
 		open_item.parentNode.classList.remove('child-has-focus');
@@ -259,7 +257,7 @@
 
 	}; // menu_sub_close()
 
-	var menu_sub_open = function( closed_item ) {
+	TenUp_Nav.menu_sub_open = function( closed_item ) {
 
 		closed_item.classList.add('submenu-is-open');
 		closed_item.parentNode.classList.add('child-has-focus');
@@ -271,7 +269,7 @@
 	}; // menu_sub_open()
 
 	// Method to create the small screen menu
-	var menu_create = function() {
+	TenUp_Nav.menu_create = function() {
 
 		if( !document.body.classList.contains( 'menu-created' ) ) {
 
@@ -292,8 +290,8 @@
 
 				if( sub_menu_acion !== 'click' ) {
 
-					menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
-					menu_items_with_children[i].removeEventListener( 'focusin', listener_submenu_focus );
+					menu_items_with_children[i].addEventListener( 'click', TenUp_Nav.listener_submenu_click );
+					menu_items_with_children[i].removeEventListener( 'focusin', TenUp_Nav.listener_submenu_focus );
 					menu.classList.add('uses-click');
 
 				}
@@ -301,7 +299,7 @@
 			} // for
 
 			// Bind the event
-			menu_toggle.addEventListener( 'click', listener_menu );
+			menu_toggle.addEventListener( 'click', TenUp_Nav.listener_menu );
 
 			// Add the body class to prevent this from running again
 			document.body.classList.add( 'menu-created' );
@@ -312,7 +310,7 @@
 	}; // menu_create()
 
 	// Method to destroy the small screen menu
-	var menu_destroy = function() {
+	TenUp_Nav.menu_destroy = function() {
 
 		var tmp_open
 		var tmp_open_count
@@ -326,8 +324,8 @@
 			// Loop through all submenus and bind events when needed
 			for( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
 				if( sub_menu_acion !== 'click' ) {
-					menu_items_with_children[i].removeEventListener( 'click', listener_submenu_click );
-					menu_items_with_children[i].addEventListener( 'focusin', listener_submenu_focus );
+					menu_items_with_children[i].removeEventListener( 'click', TenUp_Nav.listener_submenu_click );
+					menu_items_with_children[i].addEventListener( 'focusin', TenUp_Nav.listener_submenu_focus );
 					menu.classList.remove('uses-click');
 				}
 			}
@@ -347,7 +345,7 @@
 			}
 
 			// Unbind the event
-			menu_toggle.removeEventListener( 'click', listener_menu );
+			menu_toggle.removeEventListener( 'click', TenUp_Nav.listener_menu );
 
 			// Add the body class to prevent this from running again
 			document.body.classList.add( 'menu-destroyed' );
@@ -358,8 +356,8 @@
 	};
 
 	// Check init menu state
-	if( get_screen_size( 'small' ) ) {
-		menu_create();
+	if( TenUp_Nav.get_screen_size( 'small' ) ) {
+		TenUp_Nav.menu_create();
 	}
 
 	// If aria-controls isn't set, set it
@@ -377,11 +375,11 @@
 	*/
 
 	// Debounced resize event to create and destroy the small screen menu options
-	window.addEventListener( 'resize', listener_window );
+	window.addEventListener( 'resize', TenUp_Nav.listener_window );
 
 	// Close the submenus by clicking off of them or hitting ESC
-	document.addEventListener('mouseup', listener_close_open_menus );
-	document.addEventListener('keyup', listener_close_open_menus );
+	document.addEventListener('mouseup', TenUp_Nav.listener_close_open_menus );
+	document.addEventListener('keyup', TenUp_Nav.listener_close_open_menus );
 
 	/*
 		Hiding and showing submenus (click, focus, hover)
@@ -398,16 +396,16 @@
 		menu_items_with_children[i].querySelector('.sub-menu').setAttribute( 'aria-label', 'Submenu' );
 
 		// If the screen is small or the action is set to click
-		if( get_screen_size( 'small' ) || sub_menu_acion === 'click' ) {
+		if( TenUp_Nav.get_screen_size( 'small' ) || sub_menu_acion === 'click' ) {
 
-			menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
+			menu_items_with_children[i].addEventListener( 'click', TenUp_Nav.listener_submenu_click );
 			menu.classList.add('uses-click');
 
 		} else if ( sub_menu_acion !== 'click' ) {
 
-			if( get_screen_size( 'medium' ) || get_screen_size( 'large' ) ) {
+			if( TenUp_Nav.get_screen_size( 'medium' ) || TenUp_Nav.get_screen_size( 'large' ) ) {
 
-				menu_items_with_children[i].addEventListener( 'focusin', listener_submenu_focus );
+				menu_items_with_children[i].addEventListener( 'focusin', TenUp_Nav.listener_submenu_focus );
 
 			} // if
 
@@ -415,4 +413,45 @@
 
 	} // for
 
-} )();
+	// Execute the callback function
+	if( typeof callback === 'function' ) {
+		callback.call();
+	}
+
+}; // build_menu()
+
+/*
+	Helper functions
+*/
+
+// Get screen size from getComputedStyle (so we don't have to define each breakpoint twice) -- Values are set in CSS --
+TenUp_Nav.get_screen_size = function( sizeString ) {
+
+	var size = window.getComputedStyle( document.body,':before' ).getPropertyValue( 'content' );
+
+	if( size && size.indexOf( sizeString ) !==-1 ) {
+		return true;
+	}
+
+};
+
+// Debounce
+TenUp_Nav.debounce = function( func, wait, immediate ) {
+
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+
+		var callNow = immediate && !timeout;
+
+		clearTimeout( timeout );
+		timeout = setTimeout( later, wait );
+		if (callNow) func.apply(context, args);
+	};
+
+};
