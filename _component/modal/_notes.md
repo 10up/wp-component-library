@@ -1,3 +1,1 @@
 The modal dialog component is a standard and accessible JavaScript plugin that was converted from a jQuery plugin by Scott Ohara, you can [view the plugin on Github](https://github.com/scottaohara/accessible_modal_window). This component is keyboard accessible, reusable, and properly traps focus while the dialog is open. It also exposes a small API via a callback function you can hook into if you need to extend the functionality. No jQuery is required.
-
-The converted plugin we're using is also hosted on Github, you can [download the plugin](https://github.com/timwright12/a11y-modal) itself and the [hash.click helper](https://github.com/timwright12/a11y-modal/blob/master/assets/js/vendor/hash-click.js).
