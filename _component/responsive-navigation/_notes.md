@@ -2,7 +2,7 @@ The responsive navigation component is a normal horizontal navigation on large s
 
 ### JavaScript API
 
-#### TenUp_Nav.build_menu({ options });
+#### TenUp.navigation({ options });
 
 This is the main method to call the plugin. It currently takes 3 options: target, toggle, sub_menu_open. To request more options, please [file an issue](https://github.com/10up/wp-component-library/issues).
 

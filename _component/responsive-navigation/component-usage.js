@@ -1,7 +1,7 @@
-TenUp_Nav.build_menu({
-	'target'        : '#menu-main-nav', // ID of the nav UL
-	'toggle'        : '#js-menu-toggle', // ID of the toggle link
-	'sub_menu_open' : 'click' // "hover" is the default
+TenUp.navigation({
+	'target'        : '#menu-main-nav',
+	'toggle'        : '#js-menu-toggle',
+	'sub_menu_open' : 'click'
 }, function() {
 	console.log('Amazing callback function!');
 });
