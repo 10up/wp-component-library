@@ -1,19 +1,32 @@
 ( function() {
 	'use strict';
 
-	var accordion = document.getElementsByClassName( 'accordion' );
+	// Define global TenUp object if it doesn't exist
+	if ( 'object' !== typeof window.TenUp ) {
+		window.TenUp = {};
+	}
 
-	var forEach = function( array, callback, scope ) {
-		for ( var i = 0, imax = array.length; i < imax; i++ ) {
-			callback.call( scope, i, array[i] ); // passes back stuff we need
+	// This is our global accordion index to keep unique ids
+	var topIndex = 0;
+
+	window.TenUp.accordion = function( options, callback ) {
+		if ( 'undefined' === typeof options.target ) {
+			return false;
 		}
-	};
 
-	// Loop through each accordion
-	forEach( accordion, function( index, value ) {
-		var accordionContent = accordion[index].getElementsByClassName( 'accordion-content' ),
-			accordionHeader  = accordion[index].getElementsByClassName( 'accordion-header' ),
-			topIndex         = index + 1;
+		var accordion = document.querySelector( options.target );
+
+		// Simple iterator for reuse
+		var forEach = function( array, callback, scope ) {
+			for ( var i = 0, imax = array.length; i < imax; i++ ) {
+				callback.call( scope, i, array[i] ); // passes back stuff we need
+			}
+		};
+
+		var accordionContent = accordion.getElementsByClassName( 'accordion-content' ),
+			accordionHeader  = accordion.getElementsByClassName( 'accordion-header' );
+
+		topIndex++;
 
 		forEach( accordionHeader, function( index, value ) {
 			var head  = value,
@@ -67,5 +80,10 @@
 			content.setAttribute( 'role', 'tabpanel' );
 			//content.setAttribute( 'tabindex', '-1' );
 		});
-	});
+
+		// Execute the callback function
+		if ( typeof callback === 'function' ) {
+			callback.call();
+		}
+	}
 } )();
