@@ -1,9 +1,8 @@
 ---
-title: Tooltip
-path_slug: tooltips
+title: Social Sharing Links
+path_slug: social-links
 layout: component
 category: ui
-iframe_height: medium
 ---
 
 {% include_relative _notes.md %}
@@ -14,20 +13,21 @@ iframe_height: medium
 
 <iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
-<h3>HTML <span class="link"><a href="https://github.com/timwright12/a11y-tooltips" target="_blank">Download the plugin</a></span></h3>
+<h3>HTML</h3>
 
-```html
-{% include_relative component.html %}
+{% include partials/html-tabs.md %}
+
+<h3>SCSS <a href="scss/component.scss" target="_blank">Download SCSS</a></h3>
+
+```scss
+{% include_relative scss/component.scss %}
 ```
 
 <h3>JS <a href="component.js" target="_blank">Download JS</a></h3>
+
 ```javascript
 {% include_relative component-usage.js %}
 ```
-
-<h3>Browser Compatibility</h3>
-
-{% include_relative _support.md %}
 
 <h3>Resources</h3>
 
