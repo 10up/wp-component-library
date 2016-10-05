@@ -10,7 +10,7 @@
 		position: relative;
 		transition: width linear .2s, transform linear .2s;
 
-		@include breakpoint($breakpoint-charlie) {
+		@include breakpoint( $breakpoint-charlie ) {
 			max-width: none;
 		}
 
@@ -35,7 +35,7 @@
 		}
 
 		&.w-iframe__large {
-			@include breakpoint($breakpoint-charlie) {
+			@include breakpoint( $breakpoint-charlie ) {
 				width: 1000px;
 				transform: translateX(-93px);
 			}
@@ -48,7 +48,6 @@
 		border-bottom: 0;
 		font-size: 14px;
 		font-weight: 700;
-		margin-bottom: 10px;
 
 		&:hover,
 		&:focus {
@@ -58,7 +57,7 @@
 
 	h3 {
 		margin-top: 60px;
-
+/*
 		> a {
 			font-size: 14px;
 			float: right;
@@ -69,6 +68,22 @@
 				text-decoration: underline;
 			}
 
+		}
+*/
+		> .link {
+			font-size: 14px;
+			float: right;
+			line-height: 2.5;
+
+			a {
+				float: none;
+
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+				}
+
+			}
 		}
 
 	}

@@ -14,7 +14,7 @@ iframe_height: large
 
 <iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
-<h3>HTML <a href="component.html" target="_blank">View Generated HTML</a></h3>
+<h3>HTML <span class="link"><a href="component.html" target="_blank">View Generated HTML</a></span></h3>
 
 {% include partials/html-tabs.md %}
 

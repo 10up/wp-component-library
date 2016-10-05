@@ -20,7 +20,7 @@ iframe_height: medium
 {% include_relative component.html %}
 ```
 
- <h3>JS <a href="vendor/js/modal.js" target="_blank">Download JS</a></h3>
+ <h3>JS <span class="link"><a href="component-usage.js">Usage</a> | <a href="vendor/js/modal.js" target="_blank">Plugin</a> | <a href="vendor/js/modal.hash.click.js">Extension</a></span></h3>
   
 ```javascript
 {% include_relative component-usage.js %}
