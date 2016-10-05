@@ -22,8 +22,8 @@
 	'use strict';
 
 	// Define global TenUp object if it doesn't exist
-	if ( 'object' !== typeof TenUp ) {
-		TenUp = {};
+	if ( 'object' !== typeof window.TenUp ) {
+		window.TenUp = {};
 	}
 
 	/*
