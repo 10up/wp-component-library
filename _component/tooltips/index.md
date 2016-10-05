@@ -20,7 +20,7 @@ iframe_height: medium
 {% include_relative component.html %}
 ```
 
-<h3>JS <a href="component.js" target="_blank">Download JS</a></h3>
+<h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
 ```javascript
 {% include_relative component-usage.js %}
 ```
