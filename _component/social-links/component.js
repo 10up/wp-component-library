@@ -1,87 +1,108 @@
-// Local object for method references
-var TenUp_share = {};
+/********************************
 
-// Namespace
-TenUp_share.ns = "Social Sharing Links";
+	Name: WordPress Accessible Responsive Navigation Menu
+	Usage:
 
-// Start defining methods here
-TenUp_share.build_links = function( options, callback ) {
-
-	// Default variables
-	var defaults = {
+	TenUp.socialLinks( {
 		'el'            : '.social-links',
 		'window_height' : 450,
 		'window_width'  : 625
+	}, function() {
+		console.log( 'Amazing callback function!' );
+	} );
+
+********************************/
+
+( function() {
+
+	'use strict';
+
+	// Define global TenUp object if it doesn't exist
+	if ( 'object' !== typeof window.TenUp ) {
+		window.TenUp = {};
 	}
-	var defaults_count = defaults.length;
-	var el = document.querySelectorAll( options.el );
 
-	// If there's no element to target, bail
-	if( !el ) { return; }
 
-	var el_count = el.length;
-	var obj;
-	var i;
-	var j;
+	// Start defining methods here
+	TenUp.socialLinks = function( options, callback ) {
 
-	// Loop throuhg all options
-	for ( i = 0; i < defaults_count; i = i + 1 ) {
+		// Default variables
+		var defaults = {
+			'el'            : '.social-links',
+			'window_height' : 450,
+			'window_width'  : 625
+		}
+		var defaults_count = defaults.length;
+		var el = document.querySelectorAll( options.el );
 
-		// Map all default settings to user defined options
-		if( typeof options[i] === "undefined" ) {
-			options[i] = defaults[i];
+		// If there's no element to target, bail
+		if( !el ) {
+			return;
 		}
 
-	}
+		var el_count = el.length;
+		var obj;
+		var i;
+		var j;
+
+		// Loop throuhg all options
+		for ( i = 0; i < defaults_count; i = i + 1 ) {
+
+			// Map all default settings to user defined options
+			if ( typeof options[i] === "undefined" ) {
+				options[i] = defaults[i];
+			}
+
+		}
 
 
-	// Loop through all the potential menus on the page (there may be more than one)
-	for ( j = 0; j < el_count; j = j + 1 ) {
+		// Loop through all the potential menus on the page (there may be more than one)
+		for ( j = 0; j < el_count; j = j + 1 ) {
 
-		obj = el[j];
-		obj.addEventListener( 'click', function( e ) {
-			TenUp_share.listener_click( options, e );
-		} );
+			obj = el[j];
+			obj.addEventListener( 'click', function( event ) {
+				listenerClick( options, event );
+			} );
 
-	}
+		}
 
-	// Accept a callback function
-	if ( typeof callback === 'function' ) {
-		callback.call( this );
-	}
+		// Accept a callback function
+		if ( typeof callback === 'function' ) {
+			callback.call( this );
+		}
 
-}; // build_links
+	}; // build_links
 
-TenUp_share.listener_click = function( options, e ) {
+	function listenerClick( options, event ) {
+		// Stop links from firing
+		event.preventDefault();
 
-	// Stop links from firing
-	e.preventDefault();
+		// Stop events from bubbling up the DOM
+		event.stopPropagation();
 
-	// Stop events from bubbling up the DOM
-	e.stopPropagation();
+		var currentTarget = event.currentTarget;
+		var target = event.target;
+		var location = target.getAttribute('href');
+		var random_number = Math.random() * (9999 - 1) + 1;
+		var social_window;
 
-	var currentTarget = e.currentTarget;
-	var target = e.target;
-	var location = target.getAttribute('href');
-	var random_number = Math.random() * (9999 - 1) + 1;
-	var social_window;
+		// if you're clicking something that isn't a link, try the parent
+		if( !location ) {
+			location = target.parentNode.getAttribute('href');
+		}
 
-	// if you're clicking something that isn't a link, try the parent
-	if( !location ) {
-		location = target.parentNode.getAttribute('href');
-	}
+		// If still no location set, bail out
+		if( !location ) { return; }
 
-	// If still no location set, bail out
-	if( !location ) { return; }
+		// if the target OR its parent is a link, run it.
+		if( target.nodeName === 'A' || target.parentNode.nodeName === 'A') {
 
-	// if the target OR its parent is a link, run it.
-	if( target.nodeName === 'A' || target.parentNode.nodeName === 'A') {
+			// Open the window
+			social_window = window.open( location, 'share-window-' + random_number, 'width='+ options.window_width + ',height=' +  options.window_height +'menubar=no,location=no,resizable=no,scrollbars=no,status=no' );
 
-		// Open the window
-		social_window = window.open( location, 'share-window-' + random_number, 'width='+ options.window_width + ',height=' +  options.window_height +'menubar=no,location=no,resizable=no,scrollbars=no,status=no' );
+			// Reset the opener
+			social_window.opener = null;
+		}
 
-		// Reset the opener
-		social_window.opener = null;
-	}
-
-};
+	};
+} )();
