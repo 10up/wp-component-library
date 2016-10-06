@@ -5,229 +5,234 @@
  * Converted from a jQuery plugin originally written by @scottohara: https://github.com/scottaohara/accessible-components
  */
 
-// Polyfill for el.matches
-if (!Element.prototype.matches) {
-	Element.prototype.matches =
-	Element.prototype.matchesSelector ||
-	Element.prototype.mozMatchesSelector ||
-	Element.prototype.msMatchesSelector ||
-	Element.prototype.oMatchesSelector ||
-	Element.prototype.webkitMatchesSelector ||
-	function(s) {
-		var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-		i = matches.length;
-		while (--i >= 0 && matches.item(i) !== this) {}
-		return i > -1;
+( function() {
+
+	'use strict';
+
+	// Define global TenUp object if it doesn't exist
+	if ( 'object' !== typeof window.TenUp ) {
+		window.TenUp = {};
+	}
+
+
+	// Polyfill for el.matches
+	if (!Element.prototype.matches) {
+		Element.prototype.matches =
+		Element.prototype.matchesSelector ||
+		Element.prototype.mozMatchesSelector ||
+		Element.prototype.msMatchesSelector ||
+		Element.prototype.oMatchesSelector ||
+		Element.prototype.webkitMatchesSelector ||
+		function(s) {
+			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+			i = matches.length;
+			while (--i >= 0 && matches.item(i) !== this) {}
+			return i > -1;
+		};
+	}
+
+	/*
+	 * Cross-browser way to deal with class management
+	 */
+
+	TenUp.hasClass = function ( el, cls ) {
+		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
 	};
-}
 
-	// Enable strict mode
-	"use strict";
+	/*
+	 * Cross-browser way to add a class
+	 */
 
-	// Local object for method references
-	var a11y_modal = {};
+	TenUp.addClass = function ( el, cls ) {
 
-	// Namespace
-	a11y_modal.ns = "Accessible Modal Dialog";
-
-/*
- * Cross-browser way to deal with class management
- */
-
-a11y_modal.hasClass = function ( el, cls ) {
-	return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
-};
-
-/*
- * Cross-browser way to add a class
- */
-
-a11y_modal.addClass = function ( el, cls ) {
-
-	if ( el.classList ) {
-		el.classList.add(cls);
-	} else if (!a11y_modal.hasClass(el, cls)) {
-		el.className += " " + cls;
-	}
-
-};
-
-/*
- * Cross-browser way to remove a class
- */
-
-a11y_modal.removeClass = function ( el, cls ) {
-	if ( el.classList ) {
-		el.classList.remove( cls );
-	} else if( a11y_modal.hasClass( el, cls ) ) {
-		var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
-		el.className = el.className.replace( reg, ' ' );
-	}
-};
-
-// Caching and setting up some variables
-var modalTrigger = '[data-action="modal-open"]';
-var modal = '.a11y-modal';
-var modalDoc = '.modal';
-var modalTitle = '[data-modal-title]';
-var modalClose = '[data-modal-close]';
-var bodyElements = 'a11y-hide-if-modal-open';
-var genModalClose = document.createElement( 'button' );
-var html = document.body;
-var modallisting = document.querySelectorAll( modal );
-var modallistingCount = modallisting.length;
-var i;
-
-// use this defualt title if the attr isn't set
-var safetyModalTitle  = "Dialog Window";
-
-// build out the fallback button
-genModalClose.setAttribute( 'type', 'button' );
-genModalClose.setAttribute( 'data-modal-close', 'true' );
-
-
-a11y_modal.addClass( genModalClose, 'modal__outro__close' );
-
-genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
-
-// initialize all the modals
-a11y_modal.init = function ( options, callback ) {
-
-	// Define the default values
-	var defaults = {
-		'el': '.a11y-modal'
-	};
-	var defaults_count = defaults.length;
-	var opt;
-
-	// Map all default settings to user defined options
-	for ( opt = 0; opt < defaults_count; opt = opt + 1) {
-		if( typeof options[opt] === "undefined" ) {
-			options[opt] = defaults[opt];
-		}
-	}
-
-	var el = options.el;
-	var id = el.id;
-	var self = document.getElementById( id );
-
-	// setup modals properly
-	var setup_a11y_modal = function () {
-
-		// setup each modal instance to have the
-		// appropriate attributes. These attributes
-		// are applied to what would be considered the
-		// modal container, or 'overlay'
-
-		var findTitle = self.querySelector( modalTitle );
-		var findHeading = self.querySelector( '[data-modal-title]' );
-		var modalDocVar = self.querySelectorAll( modalDoc );
-		var modalDocVarCount = modalDocVar.length;
-		var modalObj;
-		var thisLabel;
-		var j;
-
-		// first check to see what sort of dialog this should be
-		// if a data-modal-alert attribute is set to true, then
-		// this is meant to be an alert dialog, so set the role
-		// to 'alertdialog'. If it's not set, it's mean to be
-		// a normal dialog. So set the role to just 'dialog'
-
-		if ( self.getAttribute( 'data-modal-alert' ) === 'true' ) {
-			self.setAttribute( 'role', 'alertdialog' );
-		} else {
-			self.setAttribute( 'role', 'dialog' );
+		if ( el.classList ) {
+			el.classList.add(cls);
+		} else if (!TenUp.hasClass(el, cls)) {
+			el.className += " " + cls;
 		}
 
-		// we will need to set focus to the modal content
-		// container for focus trapping reasons, so we
-		// need this to have a tabindex
+	};
 
-		self.setAttribute( 'tabindex', '-1' );
-		self.querySelector( modalDoc ).setAttribute( 'tabindex', '-1' );
+	/*
+	 * Cross-browser way to remove a class
+	 */
 
-		// check to see if an aria-label was set on the modal
-		// if not, then start running checks to apply an aria-labelledby
+	TenUp.removeClass = function ( el, cls ) {
+		if ( el.classList ) {
+			el.classList.remove( cls );
+		} else if( TenUp.hasClass( el, cls ) ) {
+			var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
+			el.className = el.className.replace( reg, ' ' );
+		}
+	};
 
-		if ( !self.getAttribute( 'aria-label' ) ) {
+	// Caching and setting up some variables
 
-			// if the modal window has a child modalTitle set,
-			// then add an aria-labelledby attribute to the dialog,
-			// pointing to that element.
+	var i;
 
-			if ( findTitle ) {
+	// use this defualt title if the attr isn't set
+	var safetyModalTitle  = "Dialog Window";
 
-				thisLabel = findTitle.getAttribute( 'id' );
 
-			} //if
 
-			// in the event that a modalTitle wasn't manually set,
-			// then we should look to see if there's a heading element
-			// present at all, and then make THAT the source for the
-			// aria-labelledby
 
-			else if ( findHeading ) {
 
-				// does the heading we found have an id already?
-				// let's check
 
-				if ( findHeading.setAttribute( 'id' ) ) {
+	// initialize all the modals
+	TenUp.modal = function ( options, callback ) {
 
-					thisLabel = findHeading.setAttribute( 'id' );
+		// Define the default values
+		var defaults = {
+			'target': '.a11y-modal'
+		};
+		var defaults_count = defaults.length;
+		var opt;
 
-				} else { // if it doesn't, then generate one
+		// Map all default settings to user defined options
+		for ( opt = 0; opt < defaults_count; opt = opt + 1) {
+			if( typeof options[opt] === "undefined" ) {
+				options[opt] = defaults[opt];
+			}
+		}
 
-					thisLabel = self.setAttribute( 'id' ) + '_title';
+		var el = document.querySelector( options.target );
+		var id = el.id;
+		var self = document.getElementById( id );
 
-					findHeading.setAttribute( 'id', thisLabel );
+		var modalTrigger = options.trigger;
+		var modal = '.a11y-modal';
+		var modalDoc = '.modal';
+		var modalTitle = '[data-modal-title]';
+		var modalClose = '[data-modal-close]';
+		var bodyElements = 'a11y-hide-if-modal-open';
+		var genModalClose = document.createElement( 'button' );
+		var html = document.body;
+		var modallisting = document.querySelectorAll( modal );
+		var modallistingCount = modallisting.length;
 
-				} // else
+		// build out the fallback button
+		genModalClose.setAttribute( 'type', 'button' );
+		genModalClose.setAttribute( 'data-modal-close', 'true' );
+		TenUp.addClass( genModalClose, 'modal__outro__close' );
 
-			} // else/if
+		genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
+		// setup modals properly
+		var setup_a11y_modal = function () {
 
-			self.setAttribute( 'aria-labelledby', thisLabel );
+			// setup each modal instance to have the
+			// appropriate attributes. These attributes
+			// are applied to what would be considered the
+			// modal container, or 'overlay'
 
-		} // if
+			var findTitle = self.querySelector( modalTitle );
+			var findHeading = self.querySelector( '[data-modal-title]' );
+			var modalDocVar = self.querySelectorAll( modalDoc );
+			var modalDocVarCount = modalDocVar.length;
+			var modalObj;
+			var thisLabel;
+			var j;
 
-		// setup each modal content area (the component that
-		// contains the actual content)
+			// first check to see what sort of dialog this should be
+			// if a data-modal-alert attribute is set to true, then
+			// this is meant to be an alert dialog, so set the role
+			// to 'alertdialog'. If it's not set, it's mean to be
+			// a normal dialog. So set the role to just 'dialog'
 
-		for ( j = 0; j < modalDocVarCount; j = j + 1 ) {
+			if ( self.getAttribute( 'data-modal-alert' ) === 'true' ) {
+				self.setAttribute( 'role', 'alertdialog' );
+			} else {
+				self.setAttribute( 'role', 'dialog' );
+			}
 
-			modalObj = modalDocVar[j];
+			// we will need to set focus to the modal content
+			// container for focus trapping reasons, so we
+			// need this to have a tabindex
 
-			// important for older versions of NVDA to accurately
-			// understand a modal's content
+			self.setAttribute( 'tabindex', '-1' );
+			self.querySelector( modalDoc ).setAttribute( 'tabindex', '-1' );
 
-			modalObj.setAttribute( 'role', 'document' );
+			// check to see if an aria-label was set on the modal
+			// if not, then start running checks to apply an aria-labelledby
 
-			// Modals need a close button, and it should be the last
-			// element in the modal.
+			if ( !self.getAttribute( 'aria-label' ) ) {
 
-			// If a modal doesn't have a close button, create it.
+				// if the modal window has a child modalTitle set,
+				// then add an aria-labelledby attribute to the dialog,
+				// pointing to that element.
 
-			if ( typeof modalObj.querySelector( modalClose ) === 'undefined' ) {
+				if ( findTitle ) {
 
-				if ( typeof modalObj.querySelector( '.modal__outro' ) === 'undefined' ) {
+					thisLabel = findTitle.getAttribute( 'id' );
 
-					modalObj.querySelector( '.modal__outro' ).appendChild( genModalClose );
+				} //if
 
-				} else {
+				// in the event that a modalTitle wasn't manually set,
+				// then we should look to see if there's a heading element
+				// present at all, and then make THAT the source for the
+				// aria-labelledby
 
-					modalObj.appendChild( genModalClose );
+				else if ( findHeading ) {
 
-				} // if/else
+					// does the heading we found have an id already?
+					// let's check
+
+					if ( findHeading.setAttribute( 'id' ) ) {
+
+						thisLabel = findHeading.setAttribute( 'id' );
+
+					} else { // if it doesn't, then generate one
+
+						thisLabel = self.setAttribute( 'id' ) + '_title';
+
+						findHeading.setAttribute( 'id', thisLabel );
+
+					} // else
+
+				} // else/if
+
+				self.setAttribute( 'aria-labelledby', thisLabel );
 
 			} // if
 
-			// Set aria-label and control attributes to the close trigger.
+			// setup each modal content area (the component that
+			// contains the actual content)
 
-			modalObj.querySelector( modalClose ).setAttribute( 'aria-label', 'Close Modal' );
-			modalObj.querySelector( modalClose ).setAttribute( 'aria-controls', modalObj.parentNode.getAttribute( 'id' ) );
+			for ( j = 0; j < modalDocVarCount; j = j + 1 ) {
 
-		} // end for loop
+				modalObj = modalDocVar[j];
 
-	};
+				// important for older versions of NVDA to accurately
+				// understand a modal's content
+
+				modalObj.setAttribute( 'role', 'document' );
+
+				// Modals need a close button, and it should be the last
+				// element in the modal.
+
+				// If a modal doesn't have a close button, create it.
+
+				if ( typeof modalObj.querySelector( modalClose ) === 'undefined' ) {
+
+					if ( typeof modalObj.querySelector( '.modal__outro' ) === 'undefined' ) {
+
+						modalObj.querySelector( '.modal__outro' ).appendChild( genModalClose );
+
+					} else {
+
+						modalObj.appendChild( genModalClose );
+
+					} // if/else
+
+				} // if
+
+				// Set aria-label and control attributes to the close trigger.
+
+				modalObj.querySelector( modalClose ).setAttribute( 'aria-label', 'Close Modal' );
+				modalObj.querySelector( modalClose ).setAttribute( 'aria-controls', modalObj.parentNode.getAttribute( 'id' ) );
+
+			} // end for loop
+
+		};
 
 		// setup modal triggers
 		// the following applies needed aria-attributes
@@ -340,7 +345,7 @@ a11y_modal.init = function ( options, callback ) {
 
 			// for all direct children of the BODY element, add a class
 			// to target during open/close
-			a11y_modal.addClass( body.querySelector( '*:not(.a11y-modal)' ), bodyElements );
+			TenUp.addClass( body.querySelector( '*:not(.a11y-modal)' ), bodyElements );
 
 		};
 
@@ -391,7 +396,7 @@ a11y_modal.init = function ( options, callback ) {
 			// to help restrict document scroll while the modal
 			// is open
 
-			a11y_modal.addClass( html, 'modal-is-open' );
+			TenUp.addClass( html, 'modal-is-open' );
 
 			// Hide main document content from screen readers by
 			// applying an aria-hidden attribute to all direct
@@ -417,7 +422,7 @@ a11y_modal.init = function ( options, callback ) {
 
 			returnFocus = returnFocus[returnFocusCount - 1];
 
-			a11y_modal.removeClass( html, 'modal-is-open' );
+			TenUp.removeClass( html, 'modal-is-open' );
 			self.setAttribute( 'aria-hidden', 'true' );
 
 			// remove the aria-hidden that was applied during modal open
@@ -464,7 +469,7 @@ a11y_modal.init = function ( options, callback ) {
 			for ( j = 0; j < nodeCount; j = j + 1 ) {
 				all_nodes.item( j ).addEventListener( "focus", function( e ) {
 
-					if ( a11y_modal.hasClass( html, 'modal-is-open' ) && !trapArea.contains( e.target ) ) {
+					if ( TenUp.hasClass( html, 'modal-is-open' ) && !trapArea.contains( e.target ) ) {
 
 						e.stopPropagation();
 						trapArea.focus();
@@ -501,7 +506,7 @@ a11y_modal.init = function ( options, callback ) {
 
 		self.addEventListener("keydown", function( e ) {
 
-			if( e.keyCode == 27 && a11y_modal.hasClass( html, 'modal-is-open' ) ) {
+			if( e.keyCode == 27 && TenUp.hasClass( html, 'modal-is-open' ) ) {
 				close_a11y_modal( e );
 			}
 		}, false);
@@ -538,4 +543,6 @@ a11y_modal.init = function ( options, callback ) {
 			callback.call();
 		}
 
-}; // end: a11y_modal: function
+	}; // end: a11y_modal: function
+
+} )();

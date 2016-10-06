@@ -28,7 +28,8 @@
 			<a data-action="modal-open"
 				 data-modal-open="primary_modal"
 				 data-set-modal-title="Test Title"
-				 href="#primary_modal">
+				 href="#primary_modal"
+				 id="modal_opener">
 				 Open Modal with a Link
 			</a>
 		</p>
@@ -63,11 +64,11 @@
 	</div>
 
 
-	<button type="button" data-modal-alert="true" data-action="modal-open" aria-controls="normal_modal_b" data-set-modal-title="Test Title" data-href="#normal_modal_b">
+	<button type="button" data-modal-alert="true" data-action="modal-open" aria-controls="normal_modal_b" data-modal-open="normal_modal_b" data-set-modal-title="Test Title" data-href="#normal_modal_b" id="modal_b_opener">
 	 Open Modal with a Button
 	</button>
 
-	<button type="button" data-modal-alert="true" data-action="modal-open" aria-controls="normal_modal_1" data-set-modal-title="Test Title" data-href="#normal_modal_1">
+	<button type="button" data-modal-alert="true" data-action="modal-open" aria-controls="normal_modal_1" data-modal-open="normal_modal_1" data-set-modal-title="Test Title" data-href="#normal_modal_1" id="modal_1_opener">
 	 Open Modal {{this}} with a Button
 	</button>
 
