@@ -28,8 +28,10 @@ iframe_height: medium
 <h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
 
 ```javascript
-{% include_relative component.js %}
+{% include_relative component-usage.js %}
 ```
+
+{% include_relative _apis.md %}
 
 <h3>Browser Compatibility</h3>
 

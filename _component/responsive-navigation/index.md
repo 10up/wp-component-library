@@ -30,6 +30,8 @@ iframe_height: large
 {% include_relative component-usage.js %}
 ```
 
+{% include_relative _apis.md %}
+
 <h3>Browser Compatibility</h3>
 
 {% include_relative _support.md %}
