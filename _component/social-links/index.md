@@ -29,6 +29,8 @@ category: ui
 {% include_relative component-usage.js %}
 ```
 
+{% include_relative _apis.md %}
+
 <h3>Resources</h3>
 
 {% include_relative _resources.md %}

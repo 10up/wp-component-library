@@ -4,7 +4,7 @@
 	Usage:
 
 	TenUp.socialLinks( {
-		'el'            : '.social-links',
+		'target'            : '.social-links',
 		'window_height' : 450,
 		'window_width'  : 625
 	}, function() {
@@ -28,12 +28,12 @@
 
 		// Default variables
 		var defaults = {
-			'el'            : '.social-links',
+			'target'            : '.social-links',
 			'window_height' : 450,
 			'window_width'  : 625
 		}
 		var defaults_count = defaults.length;
-		var el = document.querySelectorAll( options.el );
+		var el = document.querySelectorAll( options.target );
 
 		// If there's no element to target, bail
 		if( !el ) {
