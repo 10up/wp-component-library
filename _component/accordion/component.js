@@ -1,3 +1,16 @@
+/********************************
+
+	Name: WordPress Accessible Accordion
+	Usage:
+
+	TenUp.accordion( {
+		target: '.accordion', // ID (or class) of accordion container
+	}, function() {
+		console.log( 'Amazing callback function!' );
+	} );
+
+********************************/
+
 ( function() {
 	'use strict';
 
