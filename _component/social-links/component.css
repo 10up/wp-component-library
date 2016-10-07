@@ -1,7 +1,9 @@
-.sr-text {
-  left: -999em;
-  position: absolute;
-  top: -999em; }
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
 
 .social-links__list {
   list-style: none;

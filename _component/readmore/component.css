@@ -5,9 +5,9 @@
 */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
   height: 1px;
-  width: 1px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px; }
 
-/*# sourceMappingURL=readmore.css.map */
+/*# sourceMappingURL=component.css.map */
