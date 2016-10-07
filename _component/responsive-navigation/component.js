@@ -145,7 +145,7 @@
 
 				} else {
 
-					// The menu is close, so this click should open it
+					// The menu is closed, so this click should open it
 					menu_sub_open( target );
 
 					// Reset the focus
@@ -263,7 +263,7 @@
 
 		}; // menu_sub_close()
 
-		function menu_sub_close( closed_item ) {
+		function menu_sub_open( closed_item ) {
 
 			closed_item.classList.add('submenu-is-open');
 			closed_item.parentNode.classList.add('child-has-focus');
