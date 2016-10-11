@@ -16,14 +16,14 @@
 	'use strict';
 
 	// Define global TenUp object if it doesn't exist
-	if ( 'object' !== typeof window.TenUp ) {
+	if ( typeof window.TenUp !== 'object'  ) {
 		window.TenUp = {};
 	}
 
 	window.TenUp.tabs = function( options, callback ) {
 
-		if ( 'undefined' === typeof options.target ) {
-			return false;
+		if ( typeof options.target === 'undefined'  ) {
+			return;
 		}
 
 		var tabs = document.querySelectorAll( options.target );
@@ -36,6 +36,7 @@
 		};
 
 		forEach( tabs, function( index, value ) {
+
 			var tabContent   = tabs[index].querySelectorAll( '.tab-content' ),
 				tabsList     = tabs[index].querySelectorAll( '.tab-list' ),
 				tabLinks     = tabs[index].querySelectorAll( '.tab-list li > a' ),
@@ -46,6 +47,7 @@
 			firstTab[0].classList.add( 'is-active' );
 
 			forEach( tabLinks, function( index, value ) {
+
 				var tab = value;
 				var tabId = 'tab-' + tab.getAttribute( 'href' ).slice( 1 );
 
@@ -59,6 +61,7 @@
 				tab.onclick = tabHandle;
 
 				function tabHandle( event ) {
+
 					event.preventDefault();
 
 					// Handle opening and closing of the tabs on mobile devices
@@ -84,10 +87,12 @@
 
 					// Change state of previously selected tabContent item
 					forEach( tabContent, function( index, value ) {
+
 						if ( value.classList.contains( 'is-active' ) ) {
 							value.classList.remove( 'is-active' );
 							tabContent[index].setAttribute( 'aria-hidden', 'true' );
 						}
+
 					} );
 
 					// Show newly selected content
@@ -105,6 +110,7 @@
 				tabContent[0].setAttribute( 'aria-hidden', 'false' );
 
 			} );
+
 		} );
 
 		// Execute the callback function
