@@ -2,27 +2,44 @@
 
 	<article itemscope itemtype="http://schema.org/BlogPosting">
 
-		<!-- if you need an image, this is what that would look like-->
-		<img itemprop="image" src="https://www.fillmurray.com/100/100" srcset="https://www.fillmurray.com/100/100 1x, https://www.fillmurray.com/200/200 2x" alt="Awesome image"/>
+		<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+		    <img src="https://www.fillmurray.com/100/100" srcset="https://www.fillmurray.com/100/100 1x, https://www.fillmurray.com/200/200 2x" alt="header image" />
+		    <meta itemprop="url" content="https://www.fillmurray.com/100/100" />
+		    <meta itemprop="width" content="100" />
+		    <meta itemprop="height" content="100" />
+		</div><!--/itemprop=image-->
 
 		<header>
+
+			<!-- Name of the article -->
 			<h2 itemprop="headline">
-				<a href="http://www.example.com/" itemprop="url">Blogroll Post Title</a>
+			    <a href="http://www.example.com/" itemprop="url">Post Title</a>
 			</h2>
-			Published on: <time itemprop="datePublished">Sept. 20, 2016</time>
-			Written by: <div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">Blog Post Author</div>
+			
+			<!-- publication date -->
+			<p><strong>Publish Date</strong>:
+			<span itemprop="datePublished">
+			    <time datetime="2016-05-01">May 1, 2016</time>
+			</span>
+			</p>
+
+			<!--Author-->
+			<p><strong>Author</strong>:
+			    <span itemprop="author">Jane Doe</span>
+			</p>
+
 		</header>
 
 		<!-- A description of the post content - the excerpt -->
 		<div itemprop="description">
 			<p>This would be the "description" or the excerpt of the blog post content.</p>
 			<a href="http://www.example.com/" itemprop="url">Read More... <span class="screen-reader-text">Post Title<span></a>
-		</div>
+		</div><!--/itemprop=description-->
 
-	</article>
+	</article><!--/itemtype=BlogPosting-->
 
 	<!--
 		Add more blogroll items here
 	-->
 
-</div>
+</div><!--/itemtype=Blog-->

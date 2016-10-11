@@ -12,19 +12,28 @@
 		} ?>
 
 		<header class="entry-header">
+			
+			<!-- Name of the article -->
 			<?php
 			the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="url" rel="bookmark">', '</a></h2>' );
 			?>
 
-			<?php esc_html_e( 'Published on:', 'tenup' ); ?>
-			<time itemprop="datePublished">
-				<?php echo esc_html( get_the_date() ); ?>
-			</time>
+			<!-- publication date -->
+			<p>
+				<strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
+				<span itemprop="datePublished">
+					<time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
+						<?php the_date(); ?>
+					</time>
+				</span>
+			</p>
 
-			<?php esc_html_e( 'Written by:', 'tenup' ); ?>
-			<div itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
-				<?php echo esc_html( the_author() ); ?>
-			</div>
+			<!--Author-->
+			<p>
+				<strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
+				<span itemprop="author"><?php the_author_link(); ?></span>
+			</p>
+
 		</header>
 
 		<!-- A description of the post content - the excerpt -->
@@ -39,12 +48,12 @@
 
 			the_excerpt();
 			?>
-		</div>
+		</div><!--/itemprop=description-->
 
-	</article>
+	</article><!--/itemtype=BlogPosting-->
 
 	<!--
 		Add more blogroll items here
 	-->
 
-</div>
+</div><!--/itemtype=Blog-->
