@@ -4,77 +4,55 @@ $bp-medium:         53.125em !default;      // 850px
 $bp-large:          62.5em !default;        // 1000px
 
 // Variables
-$gray: #999 !default;
-$white: #fff !default;
+$color-gray: #777 !default;
+$color-gray-light: #ccc !default;
+$color-white: #fff !default;
 
 // Component Sass
 .tab-list {
 	list-style: none;
 	margin: 0;
-	overflow: hidden;
+	overflow: auto;
 	padding: 0;
 	position: relative;
 	white-space: nowrap;
-
-	@media ( max-width: $bp-medium ) {
-		&:after {
-			content: "☰";
-			pointer-events: none;
-			position: absolute;
-			right: 10px;
-			top: 10px;
-			z-index: 2;
-		}
-
-		&.m-is-active {
-			a {
-				position: relative;
-			}
-		}
-	}
 } // .tab-list
 
 .tab-item {
-	display: block;
-
-	@media ( min-width: $bp-medium ) {
-		display: inline-block;
-	}
+	display: inline-block;
 
 	> a {
-		border: 1px solid $gray;
-		display: block;
-		height: 100%;
-		left: 0;
+		border: 1px solid $color-gray;
+		display: inline-block;
 		padding: 10px 15px;
-		position: absolute;
 		text-decoration: none;
-		top: 0;
+		padding: 5px 8px;
 
-		@media ( min-width: $bp-medium ) {
-			position: relative;
-			width: auto;
+		@media ( min-width: $bp-small ) {
+			padding: 10px 15px;
+		}
+
+		&:hover,
+		&:focus {
+			background: $color-gray-light;
 		}
 	}
 
 	&.is-active {
 		a {
-			background: $white;
+			background: $color-white;
 			position: relative;
 			z-index: 1;
-
-			@media ( min-width: $bp-medium ) {
-				border-bottom-color: $white;
-			}
+			border-bottom-color: $color-white;
 		}
 	}
 
 } // .tab-item
 
 .tab-group {
-	border: 1px solid $gray;
+	border: 1px solid $color-gray;
 	margin-top: -1px;
-}
+} // .tab-group
 
 .tab-content {
 	padding: 15px;
@@ -88,4 +66,4 @@ $white: #fff !default;
 	&.is-active {
 		position: static;
 	}
-}
+} // .tab-content
