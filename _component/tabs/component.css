@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .tab-list {
   list-style: none;
   margin: 0;
@@ -6,45 +5,28 @@
   padding: 0;
   position: relative;
   white-space: nowrap; }
-  @media (max-width: 53.125em) {
-    .tab-list:after {
-      content: "☰";
-      pointer-events: none;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      z-index: 2; }
-    .tab-list.m-is-active a {
-      position: relative; } }
 
 .tab-item {
-  display: block; }
-  @media (min-width: 53.125em) {
-    .tab-item {
-      display: inline-block; } }
+  display: inline-block; }
   .tab-item > a {
-    border: 1px solid #999;
-    display: block;
-    height: 100%;
-    left: 0;
+    border: 1px solid #777;
+    display: inline-block;
     padding: 10px 15px;
-    position: absolute;
     text-decoration: none;
-    top: 0; }
-    @media (min-width: 53.125em) {
+    padding: 5px 8px; }
+    @media (min-width: 40.625em) {
       .tab-item > a {
-        position: relative;
-        width: auto; } }
+        padding: 10px 15px; } }
+    .tab-item > a:hover, .tab-item > a:focus {
+      background: #ccc; }
   .tab-item.is-active a {
     background: #fff;
     position: relative;
-    z-index: 1; }
-    @media (min-width: 53.125em) {
-      .tab-item.is-active a {
-        border-bottom-color: #fff; } }
+    z-index: 1;
+    border-bottom-color: #fff; }
 
 .tab-group {
-  border: 1px solid #999;
+  border: 1px solid #777;
   margin-top: -1px; }
 
 .tab-content {

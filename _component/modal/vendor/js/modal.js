@@ -5,7 +5,15 @@
  * Converted from a jQuery plugin originally written by @scottohara: https://github.com/scottaohara/accessible-components
  */
 
-;(function (w, doc) {
+( function() {
+
+	'use strict';
+
+	// Define global TenUp object if it doesn't exist
+	if ( 'object' !== typeof window.TenUp ) {
+		window.TenUp = {};
+	}
+
 
 	// Polyfill for el.matches
 	if (!Element.prototype.matches) {
@@ -23,20 +31,11 @@
 		};
 	}
 
-		// Enable strict mode
-		"use strict";
-
-		// Local object for method references
-		var a11y_modal = {};
-
-		// Namespace
-		a11y_modal.ns = "Accessible Modal Dialog";
-
 	/*
 	 * Cross-browser way to deal with class management
 	 */
 
-	a11y_modal.hasClass = function ( el, cls ) {
+	TenUp.hasClass = function ( el, cls ) {
 		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
 	};
 
@@ -44,11 +43,11 @@
 	 * Cross-browser way to add a class
 	 */
 
-	a11y_modal.addClass = function ( el, cls ) {
+	TenUp.addClass = function ( el, cls ) {
 
 		if ( el.classList ) {
 			el.classList.add(cls);
-		} else if (!a11y_modal.hasClass(el, cls)) {
+		} else if (!TenUp.hasClass(el, cls)) {
 			el.className += " " + cls;
 		}
 
@@ -58,46 +57,65 @@
 	 * Cross-browser way to remove a class
 	 */
 
-	a11y_modal.removeClass = function ( el, cls ) {
+	TenUp.removeClass = function ( el, cls ) {
 		if ( el.classList ) {
 			el.classList.remove( cls );
-		} else if( a11y_modal.hasClass( el, cls ) ) {
+		} else if( TenUp.hasClass( el, cls ) ) {
 			var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
 			el.className = el.className.replace( reg, ' ' );
 		}
 	};
 
 	// Caching and setting up some variables
-	var modalTrigger = '[data-action="modal-open"]';
-	var modal = '.a11y-modal';
-	var modalDoc = '.modal';
-	var modalTitle = '[data-modal-title]';
-	var modalClose = '[data-modal-close]';
-	var bodyElements = 'a11y-hide-if-modal-open';
-	var genModalClose = doc.createElement( 'button' );
-	var html = doc.body;
-	var modallisting = doc.querySelectorAll( modal );
-	var modallistingCount = modallisting.length;
+
 	var i;
 
 	// use this defualt title if the attr isn't set
 	var safetyModalTitle  = "Dialog Window";
 
-	// build out the fallback button
-	genModalClose.setAttribute( 'type', 'button' );
-	genModalClose.setAttribute( 'data-modal-close', 'true' );
 
 
-	a11y_modal.addClass( genModalClose, 'modal__outro__close' );
 
-	genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
+
 
 	// initialize all the modals
-	a11y_modal.init = function ( el, callback ) {
+	TenUp.modal = function ( options, callback ) {
 
+		// Define the default values
+		var defaults = {
+			'target': '.a11y-modal'
+		};
+		var defaults_count = defaults.length;
+		var opt;
+
+		// Map all default settings to user defined options
+		for ( opt = 0; opt < defaults_count; opt = opt + 1) {
+			if( typeof options[opt] === "undefined" ) {
+				options[opt] = defaults[opt];
+			}
+		}
+
+		var el = document.querySelector( options.target );
 		var id = el.id;
-		var self = doc.getElementById( id );
+		var self = document.getElementById( id );
 
+		var modalTrigger = options.trigger;
+		var modal = '.a11y-modal';
+		var modalDoc = '.modal';
+		var modalTitle = '[data-modal-title]';
+		var modalClose = '[data-modal-close]';
+		var bodyElements = 'a11y-hide-if-modal-open';
+		var genModalClose = document.createElement( 'button' );
+		var html = document.body;
+		var modallisting = document.querySelectorAll( modal );
+		var modallistingCount = modallisting.length;
+
+		// build out the fallback button
+		genModalClose.setAttribute( 'type', 'button' );
+		genModalClose.setAttribute( 'data-modal-close', 'true' );
+		TenUp.addClass( genModalClose, 'modal__outro__close' );
+
+		genModalClose.innerHTML = '<span aria-hidden="true">x</span>';
 		// setup modals properly
 		var setup_a11y_modal = function () {
 
@@ -216,325 +234,315 @@
 
 		};
 
-			// setup modal triggers
-			// the following applies needed aria-attributes
-			// to the modal triggers, as well as doing a
-			// final check to ensure that the modal window
-			// has appropriate labeling
+		// setup modal triggers
+		// the following applies needed aria-attributes
+		// to the modal triggers, as well as doing a
+		// final check to ensure that the modal window
+		// has appropriate labeling
 
-			var setup_a11y_modal_triggers = function () {
+		var setup_a11y_modal_triggers = function () {
 
-				var modalTriggerEl = doc.querySelectorAll( modalTrigger );
-				var modalTriggerCount = modalTriggerEl.length;
-				var grabTarget;
-				var modalTarget;
-				var modalObj;
-				var m;
+			var modalTriggerEl = document.querySelectorAll( modalTrigger );
+			var modalTriggerCount = modalTriggerEl.length;
+			var grabTarget;
+			var modalTarget;
+			var modalObj;
+			var m;
 
-				for ( m = 0; m < modalTriggerCount; m = m + 1 ) {
+			for ( m = 0; m < modalTriggerCount; m = m + 1 ) {
 
-					modalObj = modalTriggerEl[m];
+				modalObj = modalTriggerEl[m];
 
-					// if the trigger is a link, we need to give it a
-					// button role.
+				// if the trigger is a link, we need to give it a
+				// button role.
 
-					if ( modalObj.getAttribute( 'href' ) ) {
+				if ( modalObj.getAttribute( 'href' ) ) {
 
-						modalObj.setAttribute( 'role', 'button' );
+					modalObj.setAttribute( 'role', 'button' );
+
+				}
+
+				// The triggers need to point to the modals they control via
+				// the aria-controls attribute. So run a check to see if the
+				// attribute exists on the button.
+				//
+				// It's likely that it WON'T exist, as the optimal method for
+				// the minimum mark-up is to use a data-modal-open attribute
+				// instead. The reason for this is that in situations without
+				// JavaScript, we don't want partial ARIA hooks, as that can
+				// create confusion for ATs that would expect certain
+				// functionality that wouldn't be available due to lack of JS.
+
+				if ( !modalObj.getAttribute( 'aria-controls' ) ) {
+
+					// make sure that the trigger actually triggers something.
+					// if it there's no data-modal-open attribute set, then
+					// pull the target from the href
+
+					if ( modalObj.getAttribute( 'data-modal-open' ) ) {
+
+						grabTarget = modalObj.getAttribute( 'data-modal-open' );
+						modalObj.setAttribute( 'aria-controls', grabTarget );
+
+					}
+					// if there's no data-modal-open, pull the target from
+					// from the href
+
+					else if ( modalObj.getAttribute( 'href' ) ) {
+
+						grabTarget = modalObj.getAttribute( 'href' ).split( '#' )[1];
+						modalObj.setAttribute( 'aria-controls', grabTarget );
 
 					}
 
-					// The triggers need to point to the modals they control via
-					// the aria-controls attribute. So run a check to see if the
-					// attribute exists on the button.
-					//
-					// It's likely that it WON'T exist, as the optimal method for
-					// the minimum mark-up is to use a data-modal-open attribute
-					// instead. The reason for this is that in situations without
-					// JavaScript, we don't want partial ARIA hooks, as that can
-					// create confusion for ATs that would expect certain
-					// functionality that wouldn't be available due to lack of JS.
+					// if neither of the above are set, then this just won't work
 
-					if ( !modalObj.getAttribute( 'aria-controls' ) ) {
-
-						// make sure that the trigger actually triggers something.
-						// if it there's no data-modal-open attribute set, then
-						// pull the target from the href
-
-						if ( modalObj.getAttribute( 'data-modal-open' ) ) {
-
-							grabTarget = modalObj.getAttribute( 'data-modal-open' );
-							modalObj.setAttribute( 'aria-controls', grabTarget );
-
-						}
-						// if there's no data-modal-open, pull the target from
-						// from the href
-
-						else if ( modalObj.getAttribute( 'href' ) ) {
-
-							grabTarget = modalObj.getAttribute( 'href' ).split( '#' )[1];
-							modalObj.setAttribute( 'aria-controls', grabTarget );
-
-						}
-
-						// if neither of the above are set, then this just won't work
-
-						else {
-							// No target set. A target is set by setting the value of an aria-controls attribute, which if absent, can be generated by the trigger's href URI, or a data-modal-open attribute to the value of the modal window ID you are attempting to open.
-							return false;
-						}
-
-					} // end if aria-controls
-
-					// now that the aria-controls is set, point to the modal's target
-					// so we can run the next if
-
-					modalTarget = doc.querySelector( '#' + modalObj.getAttribute( 'aria-controls' ) );
-
-					// finally a last check to see if the trigger is meant to launch
-					// an alert dialog modal. If the alertdialog role wasn't set during
-					// the initial setup function, then look to see if the 'data-modal-alert'
-					// attribute is present on the trigger, and if so, apply the alertdialog
-					// role to the modal on trigger activation.
-
-					if ( modalObj.getAttribute( 'data-modal-alert' ) === 'true' && modalTarget.getAttribute( 'role' ) !== 'alertdialog' ) {
-						modalTarget.setAttribute( 'role', 'alertdialog' );
+					else {
+						// No target set. A target is set by setting the value of an aria-controls attribute, which if absent, can be generated by the trigger's href URI, or a data-modal-open attribute to the value of the modal window ID you are attempting to open.
+						return false;
 					}
 
-				} // for loop
-			};
+				} // end if aria-controls
 
-			// Place modal window(s) as the first child(ren)
-			// of the body element so tabbing backwards can
-			// move focus into the browser's address bar
+				// now that the aria-controls is set, point to the modal's target
+				// so we can run the next if
 
-			var organize_dom = function () {
+				modalTarget = document.querySelector( '#' + modalObj.getAttribute( 'aria-controls' ) );
 
-				var body = doc.body;
-				var modalEl = doc.querySelectorAll( modal );
-				var modalElCount = modalEl.length;
-				var k;
+				// finally a last check to see if the trigger is meant to launch
+				// an alert dialog modal. If the alertdialog role wasn't set during
+				// the initial setup function, then look to see if the 'data-modal-alert'
+				// attribute is present on the trigger, and if so, apply the alertdialog
+				// role to the modal on trigger activation.
 
-				// place all the modal dialogs at the top of the DOM, as the
-				// first children of BODY. This will allow for backwards tabbing
-				// into the browser's address bar, where as if the modals were
-				// not located at the top of the DOM, keyboard focus would be
-				// completely trapped within the modal window.
-
-				for( k = 0; k < modalElCount; k = k + 1 ) {
-					body.insertBefore( modalEl[k], body.firstChild );
+				if ( modalObj.getAttribute( 'data-modal-alert' ) === 'true' && modalTarget.getAttribute( 'role' ) !== 'alertdialog' ) {
+					modalTarget.setAttribute( 'role', 'alertdialog' );
 				}
 
-				// for all direct children of the BODY element, add a class
-				// to target during open/close
-				a11y_modal.addClass( body.querySelector( '*:not(.a11y-modal)' ), bodyElements );
-
-			};
-
-			var open_a11y_modal = function ( e ) {
-
-				// setup vars
-
-				var openTarget = e.target;
-				var modalTarget = doc.getElementById( openTarget.getAttribute( 'aria-controls' ) );
-
-				// Check to see if the modal has either an aria-label or labelledby attribute
-				// if not, that means that the modal didn't have a manually set aria-label,
-				// nor does the modal have any sort of heading element to draw a title from.
-				// In this instance, pull the safetyModalTitle var in as an aria-label
-
-				if ( !modalTarget.getAttribute( 'aria-labelledby' ) && !modalTarget.getAttribute( 'aria-label' ) ) {
-
-					// Last ditch effort to allow control over what the aria-label will be.
-					// If the data-set-modal-title attribute is set to the modal trigger,
-					// its value will be set as the modal's aria-label
-
-					if ( openTarget.getAttribute( 'data-set-modal-title' ) ) {
-						safetyModalTitle = openTarget.getAttribute( 'data-set-modal-title' );
-					}
-
-					// set an aria-label to the modal
-					modalTarget.setAttribute( 'aria-label', safetyModalTitle );
-
-				} // if
-
-				// traps focus while the modal is open
-
-				trap_focus();
-
-				// if modal trigger is an <a>, make sure that URI isn't
-				// updated and more importantly that the document doesn't
-				// auto-jump to the DOM location of the modal window.
-
-				e.preventDefault();
-
-				// set that modal be visible, controlled by the
-				// aria-hidden attribute and CSS
-				// then shift focus to it
-
-				modalTarget.setAttribute( 'aria-hidden', 'false' );
-
-				// add a class to the HTML, to allow for a CSS hook
-				// to help restrict document scroll while the modal
-				// is open
-
-				a11y_modal.addClass( html, 'modal-is-open' );
-
-				// Hide main document content from screen readers by
-				// applying an aria-hidden attribute to all direct
-				// siblings of the modal windows. (var bodyElements)
-
-				doc.querySelector( '.' + bodyElements ).setAttribute( 'aria-hidden', 'true' );
-
-				// finally, apply focus to the newly opened modal window
-
-				modalTarget.querySelector( modalDoc ).focus();
-
-			};
-
-			// Bind to both the button click and the escape key to
-			// close the modal window  but only if isModalOpen is set to true
-
-			var close_a11y_modal = function ( e ) {
-
-				e.preventDefault();
-
-				var returnFocus = doc.querySelectorAll( '[aria-controls="' + self.getAttribute( 'id' ) + '"]');
-				var returnFocusCount = returnFocus.length;
-
-				returnFocus = returnFocus[returnFocusCount - 1];
-
-				a11y_modal.removeClass( html, 'modal-is-open' );
-				self.setAttribute( 'aria-hidden', 'true' );
-
-				// remove the aria-hidden that was applied during modal open
-
-				doc.querySelector( '.' + bodyElements ).removeAttribute( 'aria-hidden' );
-
-				returnFocus.focus();
-
-			};
-
-			// keyboard controls specific to the modal dialog windows
-
-			var keytrolls_a11y_modal_trigger = function ( e ) {
-
-				var keyCode = e.keyCode || e.which;
-
-				switch ( keyCode ) {
-
-					// space & enter
-
-					case 32:
-					case 13:
-						e.stopPropagation();
-						e.target.click();
-						break;
-
-				} // switch
-
-			};
-
-			// trap focus within the modal window, because otherwise
-			// users can tab to obscured elements, and that's just
-			// bad UX.
-
-			var trap_focus = function () {
-
-				// I'm open to better solutions for trapping focus within the modal with it's open
-				var all_nodes = doc.querySelectorAll( "*" );
-				var trapArea = self.querySelector( modalDoc );
-				var nodeCount =  all_nodes.length;
-				var j;
-
-
-				for ( j = 0; j < nodeCount; j = j + 1 ) {
-					all_nodes.item( j ).addEventListener( "focus", function( e ) {
-
-						if ( a11y_modal.hasClass( html, 'modal-is-open' ) && !trapArea.contains( e.target ) ) {
-
-							e.stopPropagation();
-							trapArea.focus();
-
-						}
-					}, false );
-				}
-
-			}; // end trap_focus
-
-			/*
-			 * SETUP FUNCTIONS
-			 */
-
-			organize_dom();
-			setup_a11y_modal();
-			setup_a11y_modal_triggers();
-
-			/*
-			 * EVENT BINDINGS
-			 */
-
-			// close the modal is the overlay is clicked
-
-			self.addEventListener( "click", function( e ) {
-
-				if ( e.target === self.querySelector( modalDoc ).parentNode ) {
-					e.stopPropagation();
-					close_a11y_modal( e );
-				}
-			}, false );
-
-			// close the modal on ESC
-
-			self.addEventListener("keydown", function( e ) {
-
-				if( e.keyCode == 27 && a11y_modal.hasClass( html, 'modal-is-open' ) ) {
-					close_a11y_modal( e );
-				}
-			}, false);
-
-			// close the modal if you click the close button
-
-			self.querySelector( modalClose ).addEventListener('click', function( e ) {
-				close_a11y_modal( e );
-			}, false );
-
-			// open the modal when the trigger is clicked
-
-			doc.addEventListener( "click", function( e ) {
-
-				if ( e.target.matches( modalTrigger ) ) {
-					e.stopPropagation();
-					open_a11y_modal( e );
-				}
-
-			}, false );
-
-			// making sure the modal triggers open with <enter> and <space> (making it act like a button, if it's a link)
-
-			doc.addEventListener( "keydown", function( e ) {
-				if (e.target.matches( modalTrigger )) {
-					e.stopPropagation();
-					keytrolls_a11y_modal_trigger( e );
-				}
-			}, false );
-
-			// accept callback functions, because why not?
-
-			if ( typeof callback === 'function' ) {
-				callback.call();
+			} // for loop
+		};
+
+		// Place modal window(s) as the first child(ren)
+		// of the body element so tabbing backwards can
+		// move focus into the browser's address bar
+
+		var organize_dom = function () {
+
+			var body = document.body;
+			var modalEl = document.querySelectorAll( modal );
+			var modalElCount = modalEl.length;
+			var k;
+
+			// place all the modal dialogs at the top of the DOM, as the
+			// first children of BODY. This will allow for backwards tabbing
+			// into the browser's address bar, where as if the modals were
+			// not located at the top of the DOM, keyboard focus would be
+			// completely trapped within the modal window.
+
+			for( k = 0; k < modalElCount; k = k + 1 ) {
+				body.insertBefore( modalEl[k], body.firstChild );
 			}
+
+			// for all direct children of the BODY element, add a class
+			// to target during open/close
+			TenUp.addClass( body.querySelector( '*:not(.a11y-modal)' ), bodyElements );
+
+		};
+
+		var open_a11y_modal = function ( e ) {
+
+			// setup vars
+
+			var openTarget = e.target;
+			var modalTarget = document.getElementById( openTarget.getAttribute( 'aria-controls' ) );
+
+			// Check to see if the modal has either an aria-label or labelledby attribute
+			// if not, that means that the modal didn't have a manually set aria-label,
+			// nor does the modal have any sort of heading element to draw a title from.
+			// In this instance, pull the safetyModalTitle var in as an aria-label
+
+			if ( !modalTarget.getAttribute( 'aria-labelledby' ) && !modalTarget.getAttribute( 'aria-label' ) ) {
+
+				// Last ditch effort to allow control over what the aria-label will be.
+				// If the data-set-modal-title attribute is set to the modal trigger,
+				// its value will be set as the modal's aria-label
+
+				if ( openTarget.getAttribute( 'data-set-modal-title' ) ) {
+					safetyModalTitle = openTarget.getAttribute( 'data-set-modal-title' );
+				}
+
+				// set an aria-label to the modal
+				modalTarget.setAttribute( 'aria-label', safetyModalTitle );
+
+			} // if
+
+			// traps focus while the modal is open
+
+			trap_focus();
+
+			// if modal trigger is an <a>, make sure that URI isn't
+			// updated and more importantly that the document doesn't
+			// auto-jump to the DOM location of the modal window.
+
+			e.preventDefault();
+
+			// set that modal be visible, controlled by the
+			// aria-hidden attribute and CSS
+			// then shift focus to it
+
+			modalTarget.setAttribute( 'aria-hidden', 'false' );
+
+			// add a class to the HTML, to allow for a CSS hook
+			// to help restrict document scroll while the modal
+			// is open
+
+			TenUp.addClass( html, 'modal-is-open' );
+
+			// Hide main document content from screen readers by
+			// applying an aria-hidden attribute to all direct
+			// siblings of the modal windows. (var bodyElements)
+
+			document.querySelector( '.' + bodyElements ).setAttribute( 'aria-hidden', 'true' );
+
+			// finally, apply focus to the newly opened modal window
+
+			modalTarget.querySelector( modalDoc ).focus();
+
+		};
+
+		// Bind to both the button click and the escape key to
+		// close the modal window  but only if isModalOpen is set to true
+
+		var close_a11y_modal = function ( e ) {
+
+			e.preventDefault();
+
+			var returnFocus = document.querySelectorAll( '[aria-controls="' + self.getAttribute( 'id' ) + '"]');
+			var returnFocusCount = returnFocus.length;
+
+			returnFocus = returnFocus[returnFocusCount - 1];
+
+			TenUp.removeClass( html, 'modal-is-open' );
+			self.setAttribute( 'aria-hidden', 'true' );
+
+			// remove the aria-hidden that was applied during modal open
+
+			document.querySelector( '.' + bodyElements ).removeAttribute( 'aria-hidden' );
+
+			returnFocus.focus();
+
+		};
+
+		// keyboard controls specific to the modal dialog windows
+
+		var keytrolls_a11y_modal_trigger = function ( e ) {
+
+			var keyCode = e.keyCode || e.which;
+
+			switch ( keyCode ) {
+
+				// space & enter
+
+				case 32:
+				case 13:
+					e.stopPropagation();
+					e.target.click();
+					break;
+
+			} // switch
+
+		};
+
+		// trap focus within the modal window, because otherwise
+		// users can tab to obscured elements, and that's just
+		// bad UX.
+
+		var trap_focus = function () {
+
+			// I'm open to better solutions for trapping focus within the modal with it's open
+			var all_nodes = document.querySelectorAll( "*" );
+			var trapArea = self.querySelector( modalDoc );
+			var nodeCount =  all_nodes.length;
+			var j;
+
+
+			for ( j = 0; j < nodeCount; j = j + 1 ) {
+				all_nodes.item( j ).addEventListener( "focus", function( e ) {
+
+					if ( TenUp.hasClass( html, 'modal-is-open' ) && !trapArea.contains( e.target ) ) {
+
+						e.stopPropagation();
+						trapArea.focus();
+
+					}
+				}, false );
+			}
+
+		}; // end trap_focus
+
+		/*
+		 * SETUP FUNCTIONS
+		 */
+
+		organize_dom();
+		setup_a11y_modal();
+		setup_a11y_modal_triggers();
+
+		/*
+		 * EVENT BINDINGS
+		 */
+
+		// close the modal is the overlay is clicked
+
+		self.addEventListener( "click", function( e ) {
+
+			if ( e.target === self.querySelector( modalDoc ).parentNode ) {
+				e.stopPropagation();
+				close_a11y_modal( e );
+			}
+		}, false );
+
+		// close the modal on ESC
+
+		self.addEventListener("keydown", function( e ) {
+
+			if( e.keyCode == 27 && TenUp.hasClass( html, 'modal-is-open' ) ) {
+				close_a11y_modal( e );
+			}
+		}, false);
+
+		// close the modal if you click the close button
+
+		self.querySelector( modalClose ).addEventListener('click', function( e ) {
+			close_a11y_modal( e );
+		}, false );
+
+		// open the modal when the trigger is clicked
+
+		document.addEventListener( "click", function( e ) {
+
+			if ( e.target.matches( modalTrigger ) ) {
+				e.stopPropagation();
+				open_a11y_modal( e );
+			}
+
+		}, false );
+
+		// making sure the modal triggers open with <enter> and <space> (making it act like a button, if it's a link)
+
+		document.addEventListener( "keydown", function( e ) {
+			if (e.target.matches( modalTrigger )) {
+				e.stopPropagation();
+				keytrolls_a11y_modal_trigger( e );
+			}
+		}, false );
+
+		// accept callback functions, because why not?
+
+		if ( typeof callback === 'function' ) {
+			callback.call();
+		}
 
 	}; // end: a11y_modal: function
 
-	// execute the function on all modal instances
-
-	for ( i = 0; i < modallistingCount; i = i + 1 ) {
-
-		a11y_modal.init( modallisting[i], function() {
-			// This is your callback function, if you want it.
-		});
-
-	}
-
-} )( this, this.document );
+} )();

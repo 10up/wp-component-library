@@ -1,0 +1,2 @@
+- [Responsive JavaScript](http://csskarma.com/blog/responsive-javascript/)
+- [WCAG 2.0 Guidelines, Principle 1: Perceivable](https://www.w3.org/TR/WCAG20/#perceivable)

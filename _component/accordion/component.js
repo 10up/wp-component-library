@@ -1,19 +1,45 @@
+/********************************
+
+	Name: WordPress Accessible Accordion
+	Usage:
+
+	TenUp.accordion( {
+		target: '.accordion', // ID (or class) of accordion container
+	}, function() {
+		console.log( 'Amazing callback function!' );
+	} );
+
+********************************/
+
 ( function() {
 	'use strict';
 
-	var accordion = document.querySelectorAll( '.accordion' );
+	// Define global TenUp object if it doesn't exist
+	if ( 'object' !== typeof window.TenUp ) {
+		window.TenUp = {};
+	}
 
-	var forEach = function( array, callback, scope ) {
-		for ( var i = 0; i < array.length; i++ ) {
-			callback.call( scope, i, array[i] ); // passes back stuff we need
+	// This is our global accordion index to keep unique ids
+	var topIndex = 0;
+
+	window.TenUp.accordion = function( options, callback ) {
+		if ( 'undefined' === typeof options.target ) {
+			return false;
 		}
-	};
 
-	// Loop through each accordion
-	forEach( accordion, function( index, value ) {
-		var accordionContent = accordion[index].querySelectorAll( '.accordion-content' ),
-			accordionHeader  = accordion[index].querySelectorAll( '.accordion-header' ),
-			topIndex         = index + 1;
+		var accordion = document.querySelector( options.target );
+
+		// Simple iterator for reuse
+		var forEach = function( array, callback, scope ) {
+			for ( var i = 0, imax = array.length; i < imax; i++ ) {
+				callback.call( scope, i, array[i] ); // passes back stuff we need
+			}
+		};
+
+		var accordionContent = accordion.getElementsByClassName( 'accordion-content' ),
+			accordionHeader  = accordion.getElementsByClassName( 'accordion-header' );
+
+		topIndex++;
 
 		forEach( accordionHeader, function( index, value ) {
 			var head  = value,
@@ -26,18 +52,19 @@
 			head.setAttribute( 'aria-controls', 'panel' + topIndex + '-' + index );
 			head.setAttribute( 'role', 'tab' );
 
-			head.onclick = accordionHandle;
+			head.addEventListener( 'click', accordionHandle );
 
 			function accordionHandle() {
 
-				var nextPanel = value.nextElementSibling;
+				var nextPanel = value.nextElementSibling,
+				nextPanelLabel = nextPanel.getElementsByClassName( 'accordion-label' )[0];
 
 				value.classList.toggle( 'is-active' );
 
 				nextPanel.classList.toggle( 'is-active' );
 
-				nextPanel.querySelector( '.accordion-label' ).setAttribute( 'tabindex', -1 );
-				nextPanel.querySelector( '.accordion-label' ).focus();
+				nextPanelLabel.setAttribute( 'tabindex', -1 );
+				nextPanelLabel.focus();
 
 				if ( nextPanel.classList.contains( 'is-active' ) ) {
 
@@ -66,5 +93,10 @@
 			content.setAttribute( 'role', 'tabpanel' );
 			//content.setAttribute( 'tabindex', '-1' );
 		});
-	});
+
+		// Execute the callback function
+		if ( typeof callback === 'function' ) {
+			callback.call();
+		}
+	}
 } )();

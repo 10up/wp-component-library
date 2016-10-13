@@ -1,0 +1,68 @@
+// Variables
+$color-white: #fff;
+
+$color-facebook: #3b5998;
+$color-twitter: #1da1f2;
+$color-linkedin: #0077B5;
+$color-pinterest: #c92228;
+
+// Mixins
+@mixin social_link( $service, $color ) {
+
+	&[href*="#{$service}"] {
+		background-color: $color;
+		border-radius: 2px;
+		color: $color-white;
+		transition: background-color linear .2s;
+
+		&:hover {
+			background-color: darken( $color, 15 );
+		}
+
+	}
+
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.social-links {
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		display: inline-block;
+	}
+
+	&__link {
+		display: block;
+		padding: 6px 12px;
+		text-decoration: none;
+
+		// If you want to add an icon with CSS
+		&:before {
+			// content: "";
+		}
+
+		// Style hooks into each link
+		@include social_link( facebook, $color-facebook );
+		@include social_link( twitter, $color-twitter );
+		@include social_link( linkedin, $color-linkedin );
+		@include social_link( pinterest, $color-pinterest );
+
+	}
+
+	&__text {
+		// Style hook into the text
+	}
+
+} // .social-links

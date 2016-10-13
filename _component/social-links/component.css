@@ -1,0 +1,47 @@
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.social-links__list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+.social-links__item {
+  display: inline-block; }
+.social-links__link {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none; }
+  .social-links__link[href*="facebook"] {
+    background-color: #3b5998;
+    border-radius: 2px;
+    color: #fff;
+    transition: background-color linear .2s; }
+    .social-links__link[href*="facebook"]:hover {
+      background-color: #263961; }
+  .social-links__link[href*="twitter"] {
+    background-color: #1da1f2;
+    border-radius: 2px;
+    color: #fff;
+    transition: background-color linear .2s; }
+    .social-links__link[href*="twitter"]:hover {
+      background-color: #0b76b8; }
+  .social-links__link[href*="linkedin"] {
+    background-color: #0077B5;
+    border-radius: 2px;
+    color: #fff;
+    transition: background-color linear .2s; }
+    .social-links__link[href*="linkedin"]:hover {
+      background-color: #004569; }
+  .social-links__link[href*="pinterest"] {
+    background-color: #c92228;
+    border-radius: 2px;
+    color: #fff;
+    transition: background-color linear .2s; }
+    .social-links__link[href*="pinterest"]:hover {
+      background-color: #88171b; }
+
+/*# sourceMappingURL=component.css.map */

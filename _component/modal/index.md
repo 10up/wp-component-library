@@ -20,6 +20,20 @@ iframe_height: medium
 {% include_relative component.html %}
 ```
 
+<h3>SCSS <span class="link"><a href="vendor/css/scss/modal.scss" target="_blank">Plugin</a> | <a href="vendor/css/scss/_flexbox-mixins.scss">Mixins</a></span></h3>
+
+```scss
+{% include_relative vendor/css/scss/modal.scss %}
+```
+
+ <h3>JS <span class="link"><a href="component-usage.js">Usage</a> | <a href="vendor/js/modal.js" target="_blank">Plugin</a> | <a href="vendor/js/modal.hash.click.js">Extension</a></span></h3>
+  
+```javascript
+{% include_relative component-usage.js %}
+```
+
+{% include_relative _apis.md %}
+
 <h3>Browser Compatibility</h3>
 
 {% include_relative _support.md %}

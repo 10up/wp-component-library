@@ -1,0 +1,234 @@
+// Breakpoints
+$bp-small:          40.625em !default;      // 650px
+$bp-medium:         53.125em !default;      // 850px
+$bp-large:          62.5em !default;        // 1000px
+
+// Variables
+$color-gray: #999 !default;
+
+// Use this flag to toggle the CSS & JS for traditional "large screen" horizontal navigation
+$use-large-screen: true !default;
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+/*
+	REQUIRED: Adding the named breakpoint into the DOM for JS hooks
+*/
+
+body:before {
+	content: "small";
+	position: absolute;
+	top: -999em;
+	left: -999em;
+
+	@if $use-large-screen == true {
+
+		@media ( min-width: $bp-medium ) {
+			content: "medium";
+		}
+
+		@media ( min-width: $bp-large ) {
+			content: "large";
+		}
+
+	}
+
+}
+
+.container {
+	max-width: 1000px;
+	margin: auto;
+}
+
+// Component Sass
+.site-header {
+	background: $color-gray;
+	padding: .5rem;
+	position: relative;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+}
+
+.site-title {
+	line-height: 0;
+	margin: 0;
+	padding: 0 1em 0 0;
+	float: left;
+}
+
+.site-link {
+	display: inline-block;
+	line-height: 0;
+
+	img {
+		max-height: 48px;
+	}
+}
+
+.site-navigation {
+
+	@if $use-large-screen == true {
+		@media ( min-width: $bp-medium ) {
+			float: right;
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+}
+
+.site-menu-toggle {
+	float: right;
+	line-height: 40px;
+	font-size: 20px;
+	text-decoration: none;
+	margin-right: 10px;
+
+	@if $use-large-screen == true {
+		@media ( min-width: $bp-medium ) {
+			display: none;
+		}
+	}
+}
+
+.primary-menu {
+	background: $color-gray;
+	margin: 0;
+	overflow: hidden;
+	clear: both;
+	display: none;
+
+	&[aria-hidden="true"] {
+		width: 0;
+	}
+
+	&[aria-hidden="false"],
+	&:target {
+		display: block;
+	}
+
+	@if $use-large-screen == true {
+		@media ( min-width: $bp-medium ) {
+			background: transparent;
+			display: block;
+			float: right;
+			height: auto;
+			overflow: visible;
+			position: relative;
+			top: 0;
+			transform: translateX(0);
+			width: auto;
+		}
+	}
+
+	.menu-item {
+		@if $use-large-screen == true {
+			@media ( min-width: $bp-medium ) {
+				display: inline-block;
+				position: relative;
+				text-align: left;
+			}
+		}
+
+		button {
+			display: none;
+		}
+
+		&.menu-item-has-children {
+			> a {
+				padding-right: 25px;
+				position: relative;
+
+				&:after {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
+					background-size: cover;
+					content: "";
+					height: 20px;
+					position: absolute;
+					right: 0;
+					top: calc(50% - 10px);
+					width: 20px;
+				}
+			}
+		}
+
+		&:hover,
+		&:focus {
+			> .sub-menu {
+				.no-js & {
+					display: block;
+				}
+
+				@if $use-large-screen == true {
+					@media ( min-width: $bp-medium ) {
+						display: block;
+					}
+				}
+			}
+		}
+
+		a {
+			display: block;
+			padding: 10px 15px;
+		}
+
+	} // .menu-item
+
+	&.uses-click {
+		.menu-item {
+			&:hover {
+				.sub-menu {
+					display: none;
+
+					&[aria-hidden="false"] {
+						display: block;
+					}
+
+				}
+			}
+		}
+	}
+
+	.sub-menu {
+		background-color: $color-gray;
+		display: none;
+		min-width: 125px;
+		background: #777;
+
+		.sub-menu {
+			background: #555;
+		}
+
+		@if $use-large-screen == true {
+			@media ( min-width: $bp-medium ) {
+				position: absolute;
+
+				.menu-item {
+					display: block;
+				}
+			}
+		}
+
+	} // .sub-menu
+
+	.child-has-focus > .sub-menu {
+		display: block;
+	}
+}

@@ -14,19 +14,21 @@ iframe_height: medium
 
 <iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html"></iframe>
 
-<h3>HTML <a href="component.html" target="_blank">View Generated HTML</a></h3>
+<h3>HTML <span class="link"><a href="component.html" target="_blank">View Generated HTML</a></span></h3>
 
 {% include partials/html-tabs.md %}
 
-<h3>SCSS <a href="scss/component.scss" target="_blank">Download SCSS</a></h3>
+<h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
 ```scss
 {% include_relative scss/component.scss %}
 ```
 
-<h3>JS <a href="component.js" target="_blank">Download JS</a></h3>
+<h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
 ```javascript
-{% include_relative component.js %}
+{% include_relative component-usage.js %}
 ```
+
+{% include_relative _apis.md %}
 
 <h3>Browser Compatibility</h3>
 
