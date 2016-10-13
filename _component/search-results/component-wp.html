@@ -2,11 +2,27 @@
 
 <?php if ( have_posts() ) : ?>
 
-	<h1><?php printf( esc_html__( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?>
+	<!-- Title for search results containing search term -->
+	<h1>
+	<?php
+	/**
+	 * Structure assumes we're using a search.php template
+	 *
+	 * @link https://codex.wordpress.org/Creating_a_Search_Page
+	 */
+	printf( __( 'Search Results for: %s', 'tenup' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
+	?>
 	</h1>
 
 	<ol>
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+	/**
+	 * We recommend taking inner loop contents, and moving it into a template
+	 * part using get_template_part for organizational purposes.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/get_template_part/
+	 */
+	while ( have_posts() ) : the_post(); ?>
 		<li itemscope itemtype="https://schema.org/Thing">
 			<?php
 			/*
@@ -18,22 +34,20 @@
 			} ?>
 
 			<!-- Standard URL and name itemprops -->
-			<?php
-			the_title( '<span itemprop="name"><a href="' . esc_url( get_permalink() ) . '" itemprop="url">', '</a></span>' );
-			?>
+			<?php the_title( '<span itemprop="name"><a href="' . esc_url( get_permalink() ) . '" itemprop="url">', '</a></span>' ); ?>
 
 			<!-- A description of the post content - the excerpt -->
 			<div itemprop="description">
-				<?php
-				/**
-				 * Customize the Read More link by using the "excerpt_more" filter
-				 *
-				 * @link https://developer.wordpress.org/reference/functions/the_excerpt/
-				 * @link https://codex.wordpress.org/Customizing_the_Read_More
-				 */
+			<?php
+			/**
+			 * Customize the Read More link by using the "excerpt_more" filter
+			 *
+			 * @link https://developer.wordpress.org/reference/functions/the_excerpt/
+			 * @link https://codex.wordpress.org/Customizing_the_Read_More
+			 */
 
-				the_excerpt();
-				?>
+			the_excerpt();
+			?>
 			</div><!--/itemprop=description-->
 		</li>
 	<?php endwhile; ?>
