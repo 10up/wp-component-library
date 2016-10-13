@@ -1,0 +1,18 @@
+<div itemscope itemtype="http://schema.org/WebSite">
+	<?php
+	/**
+	 * This form goes in a searchform.php template
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/get_search_form/#used-by
+	 */
+	?>
+	<form role="search" id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+		<label class="screen-reader-text" for="q">
+			<?php _x( 'Search for:', 'label', 'tenup' ); ?>
+		</label>
+		<input itemprop="query-input" type="search" id="q" value="<?php echo get_search_query(); ?>" name="s" />
+		<button type="submit">
+			<?php echo esc_attr_x( 'Search', 'submit button', 'tenup' ); ?>
+		</button>
+	</form>
+</div>
