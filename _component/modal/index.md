@@ -17,6 +17,17 @@ iframe_height: medium
 <h3>HTML</h3>
 
 ```html
+<script>
+	/* Add to <head> */
+	// Remove no-js and add 'js' to the HTML
+	document.documentElement.className = document.documentElement.className.replace('no-js', ' ');
+	document.documentElement.className += ' js ';
+</script>
+```
+
+This component requires a `js` class to be present on the `html` element to fully function. If you're using a script like [Modernizr](http://modernizr.com), it will handle this for you. If not, you'll need to add the above script to the `head` of the document. Adding it into the `head` will assure there will be no jumpiness in the UI while the JavaScript and CSS are loading.
+
+```html
 {% include_relative component.html %}
 ```
 
