@@ -7,7 +7,7 @@
 	 */
 	?>
 	<form role="search" id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
-		<meta itemprop="target" content="<?php echo esc_url( home_url() ); ?>?s={s}" />
+		<meta itemprop="target" content="<?php echo esc_url( home_url() ); ?>/?s={s}" />
 		<label for="q">
 			<?php echo esc_attr_x( 'Search for:', 'label', 'tenup' ); ?>
 		</label>
