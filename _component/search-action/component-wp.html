@@ -7,12 +7,11 @@
 	 */
 	?>
 	<form role="search" id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
-		<label class="screen-reader-text" for="q">
-			<?php _x( 'Search for:', 'label', 'tenup' ); ?>
+		<meta itemprop="target" content="<?php echo esc_url( home_url() ); ?>?s={s}" />
+		<label for="q">
+			<?php echo esc_attr_x( 'Search for:', 'label', 'tenup' ); ?>
 		</label>
-		<input itemprop="query-input" type="search" id="q" value="<?php echo get_search_query(); ?>" name="s" />
-		<button type="submit">
-			<?php echo esc_attr_x( 'Search', 'submit button', 'tenup' ); ?>
-		</button>
+		<input itemprop="query-input" type="search" id="q" value="<?php echo get_search_query(); ?>" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'tenup' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<input type="submit" value="<?php echo esc_attr_x( 'Submit', 'submit button', 'tenup' ); ?>">
 	</form>
 </div>
