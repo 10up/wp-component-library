@@ -4,7 +4,30 @@
 	<meta charset="UTF-8">
 	<title>Accordion</title>
 	<link rel="stylesheet" href="component.css" />
-
+	<style>
+		* {
+			font-family: sans-serif;
+		}
+		.accordion-header {
+		    font-size: 1.4rem;
+		    font-weight: 500;
+		    color:  #888;
+		    text-transform: uppercase;
+		    border:  none;
+		    border-bottom:  1px solid #aaa;
+		    background:  #eee;
+		    transition:  color 250ms;
+		}
+		.accordion-header:hover {
+			color: #444;
+		}
+		.accordion-header:before {
+		    top: 8px;
+		}
+		.accordion button:last-of-type {
+			border-bottom: none;
+		}
+	</style>
 	<script>
 		/* Add to <head> */
 		// Remove no-js and add 'js' to the HTML
@@ -14,31 +37,30 @@
 
 </head>
 <body>
-
 	<div class="accordion">
 
 		<button class="accordion-header" type="button">Accordion Header</button>
 		<div class="accordion-content">
 			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>here the content of 1st tab <a href="#">link</a></p>
+			<p>here is the content of 1st tab <a href="#">link</a></p>
 		</div> <!-- //.accordion-content -->
 
 		<button class="accordion-header" type="button">Accordion Header</button>
 		<div class="accordion-content">
 			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>here the content of 2nd tab <a href="#">link</a></p>
+			<p>here is the content of 2nd tab <a href="#">link</a></p>
 		</div> <!-- //.accordion-content -->
 
 		<button class="accordion-header" type="button">Accordion Header</button>
 		<div class="accordion-content">
 			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>here the content of 3rd tab <a href="#">link</a></p>
+			<p>here is the content of 3rd tab <a href="#">link</a></p>
 		</div> <!-- //.accordion-content -->
 
 		<button class="accordion-header" type="button">Accordion Header</button>
 		<div class="accordion-content">
 			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>here the content of 4th tab <a href="#">link</a></p>
+			<p>here is the content of 4th tab <a href="#">link</a></p>
 		</div> <!-- //.accordion-content -->
 
 	</div> <!-- //.accordion -->
