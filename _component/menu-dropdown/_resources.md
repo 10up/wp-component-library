@@ -1,1 +1,0 @@
-- [Impementing Off-Canvas Navigation for a Responsive Website](https://www.smashingmagazine.com/2013/01/off-canvas-navigation-for-responsive-website/)

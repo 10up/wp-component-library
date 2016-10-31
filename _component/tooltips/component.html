@@ -1,3 +1,7 @@
+<!--
+	A Tooltip with a span
+-->
+
 <span class="a11y-tip">
 	<span class="a11y-tip__trigger">
 		Tooltip Trigger span
@@ -8,37 +12,23 @@
 	</span>
 </span><!--/.a11y-tip-->
 
-<span class="a11y-tip a11y-tip--toggle">
-	<span class="a11y-tip__trigger">
-		Tooltip Toggle Trigger
-	</span>
-
-	<span class="a11y-tip__help">
-		Tooltip content goes here
-	</span>
-</span><!--/.a11y-tip-->
+<!--
+	A Tooltip with a link
+-->
 
 <span class="a11y-tip a11y-tip--no-delay">
 	<a href="#!" class="a11y-tip__trigger">
-		Link w/top tooltip</a>
+		Link w/top tooltip
+	</a>
 
 	<span class="a11y-tip__help a11y-tip__help--top">
 		Activate this link to go somewhere!
 	</span>
 </span><!--/.a11y-tip-->
 
-<p>
-	Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-
-	<span class="a11y-tip">
-		<span class="a11y-tip__trigger">totam rem aperiam,</span>
-		<span class="a11y-tip__help a11y-tip__help--top">
-			tip to describe this ipsum.
-		</span>
-	</span><!--/.a11y-tip-->
-
-	eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-</p>
+<!--
+	A Tooltip with a button
+-->
 
 <span class="a11y-tip">
 	<button type="button" class="a11y-tip__trigger" aria-describedby="tt_id">
@@ -49,6 +39,10 @@
 		Buttons do things on the page. Activate it to perform an action.
 	</span>
 </span><!--/.a11y-tip-->
+
+<!--
+	A Tooltip with an input
+-->
 
 <label for="test">
 	Input with right tooltip
@@ -61,13 +55,16 @@
 	</span>
 </span><!--/.a11y-tip-->
 
+<!--
+	Click to show/hide tooltip
+-->
 
-<span class="a11y-tip">
-	<button type="button" class="a11y-tip__trigger" aria-describedby="ttx">
-		Button w/left tooltip
-	</button>
+<span class="a11y-tip a11y-tip--toggle">
+	<span class="a11y-tip__trigger">
+		Tooltip Toggle Trigger
+	</span>
 
-	<span id="ttx" role="tooltip" class="a11y-tip__help a11y-tip__help--left">
-		This is another button!
+	<span class="a11y-tip__help">
+		Tooltip content goes here
 	</span>
 </span><!--/.a11y-tip-->

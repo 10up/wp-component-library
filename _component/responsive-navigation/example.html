@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu - Dropdown</title>
+
+
+	<link rel="stylesheet" href="component.css" />
+
+	<style>body { min-height: 500px;background: #ddd;margin: 0; padding: 0; }</style>
+
+</head>
+<body>
+	<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+		<div class="container">
+			<h1 class="site-title" itemscope itemtype="http://schema.org/Organization">
+				<a  itemprop="url" class="site-link" href="#" rel="home">
+					<img itemprop="logo" class="site-logo" src="https://placehold.it/140x40?text=LOGO" height="42" width="140" alt="">
+					<!--
+						Visually hide this text.
+						WCAG 2.0: “image alt text cannot be the primary text of a link"
+					-->
+					<span class="screen-reader-text">Amazing Company</span>
+				</a>
+			</h1>
+
+			<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
+				<!--
+					API: data-submenu="click" on this anchor to use click instead of hover on submenus
+				-->
+				<a href="#menu-main-nav" id="js-menu-toggle" class="site-menu-toggle" data-submenu="click">
+					<span class="screen-reader-text">Primary Menu</span>
+					<span aria-hidden="true">☰</span>
+				</a>
+
+				<ul id="menu-main-nav" class="primary-menu">
+					<li id="menu-item-1912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1912">
+						<a href="#!aboutus">About Us</a>
+					</li>
+					<li id="menu-item-1913" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1913">
+						<a href="#!ourwork">Our Work</a>
+						<ul class="sub-menu">
+							<li id="menu-item-1914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1914">
+								<a href="#!js">JavaScript</a>
+							</li>
+							<li id="menu-item-4494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4494">
+								<a href="#!wp">WordPress</a>
+								<ul class="sub-menu">
+									<li id="menu-item-4495" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4495">
+										<a href="#!plugins">Plugins</a>
+									</li>
+									<li id="menu-item-4496" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4496">
+										<a href="#!themes">Themes</a>
+									</li>
+									<li id="menu-item-4496" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4496">
+										<a href="#!last">Last WP Item</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li id="menu-item-1915" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
+						<a href="#!giving">Giving Back</a>
+					</li>
+					<li id="menu-item-1916" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1916 menu-item-has-children">
+						<a href="#!blog">Blog</a>
+						<ul class="sub-menu">
+							<li class="menu-item"><a href="#!post">Blog Post 1</a></li>
+							<li class="menu-item"><a href="#!post">Blog Post 2</a></li>
+							<li class="menu-item"><a href="#!post">Blog Post 3</a></li>
+						</ul>
+					</li>
+					<li id="menu-item-1916" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1916">
+						<a href="#!contact">Contact</a>
+					</li>
+				</ul>
+
+			</nav>
+		</div><!--/.container-->
+	</header>
+
+	<script src="component.js"></script>
+	<script src="component-usage.js"></script>
+
+</body>
+</html>

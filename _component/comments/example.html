@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en-US">
+<head>
 
-    <title>Comments - Schema Markup</title>
+	<title>Comments - Schema Markup</title>
 
-    <!-- meta cluster -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="cleartype" content="on" />
+	<!-- meta cluster -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="cleartype" content="on" />
 
-  </head>
-  <body>
+</head>
+<body>
 
-    <ol>
-      <li itemscope itemtype="http://schema.org/Comment">
+	<ol>
+		<li itemscope itemtype="http://schema.org/Comment">
 
-        <!-- An optional link to the person's website, or whatever-->
-        <a href="#a-url-for-this-person" itemprop="url">
+			<!-- An optional link to the person's website, or whatever-->
+			<a href="#a-url-for-this-person" itemprop="url">
 
-          <!-- Who is making the comment -->
-          <span itemprop="creator">Name of the person</span>
+				<!-- Who is making the comment -->
+				<span itemprop="creator">Name of the person</span>
 
-        </a>
+			</a>
 
-        <!-- a permalink to this comment -->
-        <a href="#permalink-to-comment" itemprop="discussionUrl">
+			<!-- a permalink to this comment -->
+			<a href="#permalink-to-comment" itemprop="discussionUrl">
 
-          <!-- when this comment was published -->
-          <span itemprop="datePublished">
-              <time datetime="2016-03-15T1:00">March 15, 2016 at 1:00am</time>
-          </span>
+				<!-- when this comment was published -->
+				<span itemprop="datePublished">
+						<time datetime="2016-03-15T1:00">March 15, 2016 at 1:00am</time>
+				</span>
 
-        </a>
+			</a>
 
-        <!-- if there's an image associated with this commenter -->
-        <img itemprop="image" src="https://placekitten.com/g/80/80" srcset="https://placekitten.com/g/80/80 1x https://placekitten.com/g/160/160 2x " alt="Gravatar of [the person's name]" />
+			<!-- if there's an image associated with this commenter -->
+			<img itemprop="image" src="https://placekitten.com/g/80/80" srcset="https://placekitten.com/g/80/80 1x https://placekitten.com/g/160/160 2x " alt="Gravatar of [the person's name]" />
 
-        <!-- the comment itself -->
-        <div itemprop="about">
-          <p>The Content of this comment</p>
-        </div>
+			<!-- the comment itself -->
+			<div itemprop="about">
+				<p>The Content of this comment</p>
+			</div>
 
-      </li>
-    </ol>
+		</li>
+	</ol>
 
-  </body>
+</body>
 </html>

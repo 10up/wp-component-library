@@ -1,75 +1,45 @@
-;( function ( w, doc ) {
+/********************************
 
-	// Polyfill for el.matches
-	if (!Element.prototype.matches) {
-		Element.prototype.matches =
-		Element.prototype.matchesSelector ||
-		Element.prototype.mozMatchesSelector ||
-		Element.prototype.msMatchesSelector ||
-		Element.prototype.oMatchesSelector ||
-		Element.prototype.webkitMatchesSelector ||
-		function(s) {
-			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-			i = matches.length;
-			while (--i >= 0 && matches.item(i) !== this) {}
-			return i > -1;
-		};
-	}
+	Name: WordPress Accessible Accordion
+	Usage:
 
-	// Enable strict mode
+	TenUp.accordion( {
+		target: '.accordion', // ID (or class) of accordion container
+	}, function() {
+		console.log( 'Amazing callback function!' );
+	} );
+
+********************************/
+
+( function() {
 	'use strict';
 
-	// Local object for method references
-	var TenUp_Accordion = {};
+	// Define global TenUp object if it doesn't exist
+	if ( 'object' !== typeof window.TenUp ) {
+		window.TenUp = {};
+	}
 
-	/*
-	 * Cross-browser way to deal with class management
-	 */
+	// This is our global accordion index to keep unique ids
+	var topIndex = 0;
 
-	TenUp_Accordion.hasClass = function ( el, cls ) {
-		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test( el.className );
-	};
-
-	/*
-	 * Cross-browser way to add a class
-	 */
-
-	TenUp_Accordion.addClass = function ( el, cls ) {
-		if ( el.classList ) {
-			el.classList.add(cls);
-		} else if (!TenUp_Accordion.hasClass(el, cls)) {
-			el.className += " " + cls;
+	window.TenUp.accordion = function( options, callback ) {
+		if ( 'undefined' === typeof options.target ) {
+			return false;
 		}
-	};
 
-	/*
-	 * Cross-browser way to remove a class
-	 */
+		var accordion = document.querySelector( options.target );
 
-	TenUp_Accordion.removeClass = function ( el, cls ) {
-		if ( el.classList ) {
-			el.classList.remove( cls );
-		} else if( TenUp_Accordion.hasClass( el, cls ) ) {
-			var reg = new RegExp( '(\\s|^)' + cls + '(\\s|$)' );
-			el.className = el.className.replace( reg, ' ' );
-		}
-	};
+		// Simple iterator for reuse
+		var forEach = function( array, callback, scope ) {
+			for ( var i = 0, imax = array.length; i < imax; i++ ) {
+				callback.call( scope, i, array[i] ); // passes back stuff we need
+			}
+		};
 
-	/*
-	 * Start Component
-	 */
+		var accordionContent = accordion.getElementsByClassName( 'accordion-content' ),
+			accordionHeader  = accordion.getElementsByClassName( 'accordion-header' );
 
-	var accordion = document.querySelectorAll( '.accordion' );
-	var forEach = function ( array, callback, scope ) {
-		for ( var i = 0; i < array.length; i++ ) {
-			callback.call( scope, i, array[i] ); // passes back stuff we need
-		}
-	};
-
-	forEach( accordion, function( index, value ) {
-		var accordionContent = accordion[index].querySelectorAll( '.accordion-content' ),
-			accordionHeader  = accordion[index].querySelectorAll( '.accordion-header' ),
-			topIndex         = index + 1;
+		topIndex++;
 
 		forEach( accordionHeader, function( index, value ) {
 			var head  = value,
@@ -82,28 +52,21 @@
 			head.setAttribute( 'aria-controls', 'panel' + topIndex + '-' + index );
 			head.setAttribute( 'role', 'tab' );
 
-			head.onclick = accordionHandle;
+			head.addEventListener( 'click', accordionHandle );
 
 			function accordionHandle() {
 
-				var nextPanel = value.nextElementSibling;
+				var nextPanel = value.nextElementSibling,
+				nextPanelLabel = nextPanel.getElementsByClassName( 'accordion-label' )[0];
 
-				if( TenUp_Accordion.hasClass( value, 'is-active' ) ) {
-					TenUp_Accordion.removeClass( value, 'is-active' );
-				} else {
-					TenUp_Accordion.addClass( value, 'is-active' );
-				}
+				value.classList.toggle( 'is-active' );
 
-				if( TenUp_Accordion.hasClass( nextPanel, 'is-active' ) ) {
-					TenUp_Accordion.removeClass( nextPanel, 'is-active' );
-				} else {
-					TenUp_Accordion.addClass( nextPanel, 'is-active' );
-				}
+				nextPanel.classList.toggle( 'is-active' );
 
-				nextPanel.querySelector( '.accordion-label' ).setAttribute( 'tabindex', -1 );
-				nextPanel.querySelector( '.accordion-label' ).focus();
+				nextPanelLabel.setAttribute( 'tabindex', -1 );
+				nextPanelLabel.focus();
 
-				if( !TenUp_Accordion.hasClass( nextPanel, 'visually-hidden' ) ) {
+				if ( nextPanel.classList.contains( 'is-active' ) ) {
 
 					head.setAttribute( 'aria-selected', 'true' );
 					head.setAttribute( 'aria-expanded', 'true' );
@@ -131,5 +94,9 @@
 			//content.setAttribute( 'tabindex', '-1' );
 		});
 
-  });
-} )( this, this.document );
+		// Execute the callback function
+		if ( typeof callback === 'function' ) {
+			callback.call();
+		}
+	}
+} )();

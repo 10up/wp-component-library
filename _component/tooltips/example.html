@@ -1,103 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-us" class="no-js">
-  <head>
+<html lang="en-US">
+<head>
 
-    <title>Accessible Tooltips</title>
+	<title>Accessible Tooltips</title>
 
-    <!-- meta cluster -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="cleartype" content="on" />
+	<!-- meta cluster -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="cleartype" content="on" />
 
-    <!-- Embedded CSS for demo purposes only -->
-    <style>
-      body {
-        max-width: 800px;
-        margin: 0 auto;
-        padding-top: 50px;
-      }
-    </style>
+	<!-- Embedded CSS for demo purposes only -->
+	<style>
+		body {
+			max-width: 600px;
+			margin: 0 auto;
+			padding-top: 20px;
+		}
 
-    <link rel="stylesheet" href="component.css" />
+		div {
+			padding: 0 30px 20px;
+		}
+	</style>
+
+	<link rel="stylesheet" href="component.css" />
 
 </head>
 <body>
+	<!--
+		A Tooltip with a span
+	-->
+	<div>
+	<span class="a11y-tip">
+		<span class="a11y-tip__trigger">
+			Tooltip Trigger span
+		</span>
 
-  <span class="a11y-tip">
-    <span class="a11y-tip__trigger">
-      Tooltip Trigger span
-    </span>
+		<span class="a11y-tip__help a11y-tip__help--right">
+			Tooltip content.
+		</span>
+	</span><!--/.a11y-tip-->
+	</div>
+	<!--
+		A Tooltip with a link
+	-->
+	<div>
+	<span class="a11y-tip a11y-tip--no-delay">
+		<a href="#!" class="a11y-tip__trigger">
+			Link w/top tooltip
+		</a>
 
-    <span class="a11y-tip__help">
-      Tooltip content goes here
-    </span>
-  </span><!--/.a11y-tip-->
+		<span class="a11y-tip__help a11y-tip__help--top">
+			Activate this link to go somewhere!
+		</span>
+	</span><!--/.a11y-tip-->
+	</div>
+	<!--
+		A Tooltip with a button
+	-->
 
-  <span class="a11y-tip a11y-tip--toggle">
-    <span class="a11y-tip__trigger">
-      Tooltip Toggle Trigger
-    </span>
+	<div>
+	<span class="a11y-tip">
+		<button type="button" class="a11y-tip__trigger" aria-describedby="tt_id">
+			Button w/bottom tooltip
+		</button>
 
-    <span class="a11y-tip__help">
-      Tooltip content goes here
-    </span>
-  </span><!--/.a11y-tip-->
+		<span id="tt_id" role="tooltip" class="a11y-tip__help a11y-tip__help--bottom">
+			Buttons do things on the page. Activate it to perform an action.
+		</span>
+	</span><!--/.a11y-tip-->
+	</div>
 
-  <span class="a11y-tip a11y-tip--no-delay">
-    <a href="#!" class="a11y-tip__trigger">
-      Link w/top tooltip</a>
+	<!--
+		A Tooltip with an input
+	-->
 
-    <span class="a11y-tip__help a11y-tip__help--top">
-      Activate this link to go somewhere!
-    </span>
-  </span><!--/.a11y-tip-->
+	<div>
+	<label for="test">
+		Input with right tooltip
+	</label>
+	<span class="a11y-tip">
+		<input id="test" placeholder="enter text" class="a11y-tip__trigger" aria-describedby="test_desc" type="text">
 
-  <p>
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+		<span id="test_desc" role="tooltip" class="a11y-tip__help a11y-tip__help--right">
+			Enter something here. Text would be fine.
+		</span>
+	</span><!--/.a11y-tip-->
+	</div>
 
-  <span class="a11y-tip">
-    <span class="a11y-tip__trigger">totam rem aperiam,</span>
-    <span class="a11y-tip__help a11y-tip__help--top">
-      tip to describe this ipsum.
-    </span>
-  </span><!--/.a11y-tip-->
+	<!--
+		Click to show/hide tooltip
+	-->
 
-  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-  </p>
+	<div>
+	<span class="a11y-tip a11y-tip--toggle">
+		<span class="a11y-tip__trigger">
+			Tooltip Toggle Trigger
+		</span>
 
-  <span class="a11y-tip">
-    <button type="button" class="a11y-tip__trigger" aria-describedby="tt_id">
-      Button w/bottom tooltip
-    </button>
+		<span class="a11y-tip__help">
+			Tooltip content goes here
+		</span>
+	</span><!--/.a11y-tip-->
+	</div>
 
-    <span id="tt_id" role="tooltip" class="a11y-tip__help a11y-tip__help--bottom">
-      Buttons do things on the page. Activate it to perform an action.
-    </span>
-  </span><!--/.a11y-tip-->
+	<script src="component.js"></script>
+	<script src="component-usage.js"></script>
 
-  <label for="test">
-    Input with right tooltip
-  </label>
-  <span class="a11y-tip">
-    <input id="test" placeholder="enter text" class="a11y-tip__trigger" aria-describedby="test_desc" type="text">
-
-    <span id="test_desc" role="tooltip" class="a11y-tip__help a11y-tip__help--right">
-      Enter something here. Text would be fine.
-    </span>
-  </span><!--/.a11y-tip-->
-
-
-  <span class="a11y-tip">
-    <button type="button" class="a11y-tip__trigger" aria-describedby="ttx">
-      Button w/left tooltip
-    </button>
-
-    <span id="ttx" role="tooltip" class="a11y-tip__help a11y-tip__help--left">
-      This is another button!
-    </span>
-  </span><!--/.a11y-tip-->
-
-  <script src="component.js"></script>
-
-  </body>
+</body>
 </html>
