@@ -3,6 +3,7 @@ title: Organization
 path_slug: organization
 layout: component
 category: content
+iframe_height: large
 ---
 
 {% include_relative _notes.md %}
