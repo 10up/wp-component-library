@@ -31,7 +31,7 @@ This component requires a `js` class to be present on the `html` element to full
 {% include_relative component.html %}
 ```
 
-<h3>SCSS <span class="link"><a href="vendor/css/scss/modal.scss" target="_blank">Plugin</a> | <a href="vendor/css/scss/_flexbox-mixins.scss">Mixins</a></span></h3>
+<h3>SCSS <span class="link"><a href="vendor/css/scss/modal.scss" target="_blank">Plugin</a> | <a href="vendor/css/scss/flexbox-mixins.scss">Mixins</a></span></h3>
 
 ```scss
 {% include_relative vendor/css/scss/modal.scss %}
