@@ -29,6 +29,10 @@
 
 		var accordion = document.querySelector( options.target );
 
+		if ( ! accordion ) {
+			return;
+		}
+
 		// Simple iterator for reuse
 		var forEach = function( array, callback, scope ) {
 			for ( var i = 0, imax = array.length; i < imax; i++ ) {

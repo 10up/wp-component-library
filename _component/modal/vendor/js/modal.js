@@ -96,6 +96,11 @@
 		}
 
 		var el = document.querySelector( options.target );
+
+		if ( ! el ) {
+			return;
+		}
+
 		var id = el.id;
 		var self = document.getElementById( id );
 
