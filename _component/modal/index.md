@@ -31,13 +31,13 @@ This component requires a `js` class to be present on the `html` element to full
 {% include_relative component.html %}
 ```
 
-<h3>SCSS <span class="link"><a href="vendor/css/scss/modal.scss" target="_blank">Plugin</a> | <a href="vendor/css/scss/flexbox-mixins.scss">Mixins</a></span></h3>
+<h3>SCSS <span class="link"><a href="vendor/css/scss/modal.scss" target="_blank">Plugin</a> | <a href="vendor/css/scss/flexbox-mixins.scss" target="_blank">Mixins</a></span></h3>
 
 ```scss
 {% include_relative vendor/css/scss/modal.scss %}
 ```
 
- <h3>JS <span class="link"><a href="component-usage.js">Usage</a> | <a href="vendor/js/modal.js" target="_blank">Plugin</a> | <a href="vendor/js/modal.hash.click.js">Extension</a></span></h3>
+ <h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="vendor/js/modal.js" target="_blank">Plugin</a> | <a href="vendor/js/modal.hash.click.js" target="_blank">Extension</a></span></h3>
   
 ```javascript
 {% include_relative component-usage.js %}
