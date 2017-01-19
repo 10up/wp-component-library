@@ -6,7 +6,7 @@ This is the main method to call the plugin. It currently takes two arguments, an
 
 #### `options`
 
-Currently recognizes the following: target. To request more options, please [file an issue](https://github.com/10up/wp-component-library/issues).
+Currently recognizes the following: target, trigger. To request more options, please [file an issue](https://github.com/10up/wp-component-library/issues).
 
 `target : '#primary_modal'`
 
