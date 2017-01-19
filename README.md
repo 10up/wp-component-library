@@ -7,7 +7,7 @@ Each component in this library is built with simplicity and accessibility in min
 
 All components are tested to be WCAG 2.0 Compliant.
 
-<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
+<a href="http://10up.com/contact/"><img src="https://10updotcom-uploads.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
 
 **[Start browsing ☞](https://10up.github.io/wp-component-library/)**
 
