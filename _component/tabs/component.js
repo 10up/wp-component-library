@@ -100,8 +100,10 @@
 					tabContent[index].setAttribute( 'aria-hidden', 'false' );
 
 					// Set focus to the first heading in the newly revealed tab content
-					tabContent[index].querySelector( 'h2' ).setAttribute( 'tabindex', -1 );
-					tabContent[index].querySelector( 'h2' ).focus();
+					if ( tabContent[index].querySelector( 'h2' ) ) {
+						tabContent[index].querySelector( 'h2' ).setAttribute( 'tabindex', -1 );
+						tabContent[index].querySelector( 'h2' ).focus();
+					}
 
 				}
 
