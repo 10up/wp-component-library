@@ -33,10 +33,16 @@
 			'window_width'  : 625
 		}
 		var defaults_count = defaults.length;
-		var el = document.querySelectorAll( options.target );
+		var el;
+
+		if ( options.target ) {
+			el = document.querySelectorAll( options.target );
+		} else {
+			el = document.querySelectorAll( defaults.target );
+		}
 
 		// If there's no element to target, bail
-		if( !el ) {
+		if( !el || el.length === 0 ) {
 			return;
 		}
 
@@ -45,7 +51,7 @@
 		var i;
 		var j;
 
-		// Loop throuhg all options
+		// Loop through all options
 		for ( i = 0; i < defaults_count; i = i + 1 ) {
 
 			// Map all default settings to user defined options
