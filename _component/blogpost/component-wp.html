@@ -45,7 +45,7 @@
 			<p>
 				<strong><?php esc_html_e( 'Last Modified Date', 'tenup' ); ?></strong>:
 				<span itemprop="dateModified">
-					<time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
+					<time datetime="<?php echo esc_attr( get_the_modified_time( 'Y-m-d' ) ); ?>" pubdate>
 						<?php the_modified_date(); ?>
 					</time>
 				</span>
