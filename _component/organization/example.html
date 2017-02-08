@@ -8,11 +8,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="cleartype" content="on" />
-
+	<style>
+		* { font-family: sans-serif; }
+	</style>
 </head>
 <body>
 
-	<div itemscope itemtype="http://schema.org/Organization">
+	<div class="organization" itemscope itemtype="http://schema.org/Organization">
 
 		<!--same as logo.html-->
 		<a itemprop="url" href="http://www.example.com/">
@@ -21,7 +23,7 @@
 			Visually hide this text.
 			WCAG 2.0: “image alt text cannot be the primary text of a link"
 		 -->
-	<span class="sr-text">Amazing Company</span>
+	<span class="screen-reader-text">Amazing Company</span>
 		</a>
 
 		<!-- the name of the organization -->
