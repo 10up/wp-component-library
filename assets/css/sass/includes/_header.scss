@@ -65,17 +65,12 @@
 
 		.header-nav {
 			background-color: #222;
-			text-align: right;
 
 			@include breakpoint($breakpoint-bravo) {
 				background-color: transparent;
-				text-align: center;
+				text-align: left;
 				display: block;
 				padding-left: 40px;
-
-				li:nth-child(4) {
-					margin-right: 80px;
-				}
 			}
 
 			.subnav li {
@@ -144,12 +139,18 @@
 		padding-top: 0;
 	}
 
+	> li > a {
+		border-bottom: 1px solid #fff;
+		@include breakpoint($breakpoint-bravo) {
+			border-bottom: 0;
+		}
+	}
+
 	li {
 		list-style-type: none;
 		padding: .5em 1em;
 
 			&:hover {
-				background-color: #303030;
 				@include breakpoint($breakpoint-bravo) {
 					background-color: transparent;
 				}
@@ -186,6 +187,16 @@
 		right: 0;
 		top: 0;
 		width: 100%;
+		max-height: calc(100vh - 6rem);
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		@include breakpoint($breakpoint-bravo) {
+			position: relative;
+			right: auto;
+			top: auto;
+			max-height: none;
+			overflow: visible;
+		}
 	}
 }
 
