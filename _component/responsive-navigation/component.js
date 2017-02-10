@@ -61,6 +61,7 @@
 		var aria_controls = menu_toggle.getAttribute('aria-controls');
 		var menu_toggle_target = menu_toggle_href.split('#')[1];
 		var sub_menu_acion = options.sub_menu_open;
+		var current_menu_item = menu.querySelector('.current-menu-item');
 		var menu_items_with_children = menu.querySelectorAll('.menu-item-has-children');
 		var menu_items_with_children_count = menu_items_with_children.length;
 		var currentTarget;
@@ -375,6 +376,11 @@
 		if( menu_toggle_target !== menu_id ) {
 			menu_toggle.setAttribute( 'href', '#' + menu_id );
 		}
+
+		if ( current_menu_item ) {
+			current_menu_item.querySelector( 'a' ).setAttribute( 'aria-current', 'page' );
+		}
+
 
 		/*
 			Events
