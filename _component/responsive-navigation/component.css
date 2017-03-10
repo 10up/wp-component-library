@@ -10,9 +10,7 @@
 */
 body:before {
   content: "small";
-  position: absolute;
-  top: -999em;
-  left: -999em; }
+  display: none; }
   @media (min-width: 53.125em) {
     body:before {
       content: "medium"; } }
