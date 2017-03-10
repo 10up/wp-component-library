@@ -23,9 +23,7 @@ $use-large-screen: true !default;
 
 body:before {
 	content: "small";
-	position: absolute;
-	top: -999em;
-	left: -999em;
+	display: none;
 
 	@if $use-large-screen == true {
 
