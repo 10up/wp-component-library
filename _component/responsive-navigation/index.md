@@ -20,15 +20,11 @@ iframe_height: large
 
 <h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
 
-```scss
-{% include_relative scss/component.scss %}
-```
+{% include partials/scss-component.md %}
 
 <h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
 
-```javascript
-{% include_relative component-usage.js %}
-```
+{% include partials/js-component.md %}
 
 {% include_relative _apis.md %}
 

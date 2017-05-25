@@ -16,20 +16,16 @@ iframe_height: medium
 
 <h3>HTML <span class="link"><a href="https://github.com/timwright12/a11y-tooltips" target="_blank">Download the plugin</a></span></h3>
 
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-component.md %}
 
 <h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
 
-```scss
-{% include_relative scss/component.scss %}
-```
+{% include partials/scss-component.md %}
+
 
 <h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
-```javascript
-{% include_relative component-usage.js %}
-```
+{% include partials/js-component.md %}
+
 
 {% include_relative _apis.md %}
 
