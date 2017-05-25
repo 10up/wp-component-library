@@ -14,14 +14,11 @@ category: ui
 <iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-component.md %}
+
 <h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
 
-```scss
-{% include_relative scss/component.scss %}
-```
+{% include partials/scss-component.md %}
 
 <h3>Browser Compatibility</h3>
 
