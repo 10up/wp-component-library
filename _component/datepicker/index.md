@@ -15,15 +15,12 @@ iframe_height: medium
 <iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
 
 <h3>HTML</h3>
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-component.md %}
 
-<h3>JS <span class="link"><a href="component.js" target="_blank">Usage</a> | <a href="https://github.com/dbushell/Pikaday" target="_blank">Plugin</a></span></h3>
 
-```javascript
-{% include_relative component.js %}
-```
+<h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="https://github.com/dbushell/Pikaday" target="_blank">Plugin</a></span></h3>
+
+{% include partials/js-component.md %}
 
 <h3>Browser Compatibility</h3>
 

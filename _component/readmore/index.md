@@ -15,15 +15,11 @@ category: content
 
 <h3>HTML</h3>
 
-```html
-{% include_relative component.html %}
-```
+{% include partials/html-component.md %}
 
 <h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
 
-```scss
-{% include_relative scss/component.scss %}
-```
+{% include partials/scss-component.md %}
 
 <h3>Resources</h3>
 
