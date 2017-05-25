@@ -1,7 +1,10 @@
+.code-tab,
 .code-tab + div[class*="language-"] {
 	display: none;
+	position: relative;
 }
 
+.code-tab.show,
 .code-tab.show + div[class*="language-"] {
 	display: block;
 }
