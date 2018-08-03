@@ -11,9 +11,8 @@
   .tab-item > a {
     border: 1px solid #777;
     display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none;
-    padding: 5px 8px; }
+    padding: 5px 8px;
+    text-decoration: none; }
     @media (min-width: 40.625em) {
       .tab-item > a {
         padding: 10px 15px; } }
