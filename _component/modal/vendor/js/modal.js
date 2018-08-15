@@ -381,6 +381,13 @@
 
 			} // if
 
+			// if data-modal-return attribute exists, set an attribute in the modal.
+			// this will be used later to reference specific element for returnFocus.focus()
+
+			if ( openTarget.getAttribute( 'data-modal-return' ) ) {
+				modalTarget.setAttribute( 'data-return-focus', openTarget.getAttribute( 'data-modal-return' ) );
+			}
+
 			// traps focus while the modal is open
 
 			trap_focus();
@@ -422,10 +429,22 @@
 
 			e.preventDefault();
 
-			var returnFocus = document.querySelectorAll( '[aria-controls="' + self.getAttribute( 'id' ) + '"]');
-			var returnFocusCount = returnFocus.length;
+			var returnFocus = null;
+			var returnFocusCount = 0;
 
-			returnFocus = returnFocus[returnFocusCount - 1];
+			if( ! self.getAttribute( 'data-return-focus' ) ) {
+
+				// data-modal-return was not provided, so obtain last matching element
+				returnFocus = document.querySelectorAll( '[aria-controls="' + self.getAttribute( 'id' ) + '"]');
+				returnFocusCount = returnFocus.length;
+				returnFocus = returnFocus[returnFocusCount - 1];
+
+			} else {
+
+				// obtain element specified in data-modal-return in triggering link
+				returnFocus = document.getElementById( self.getAttribute( 'data-return-focus' ) );
+
+			}
 
 			TenUp.removeClass( html, 'modal-is-open' );
 			self.setAttribute( 'aria-hidden', 'true' );
