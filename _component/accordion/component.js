@@ -104,5 +104,6 @@
 		if ( typeof callback === 'function' ) {
 			callback.call();
 		}
-	}
+	};
+
 } )();
