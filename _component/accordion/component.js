@@ -66,9 +66,11 @@
 				value.classList.toggle( 'is-active' );
 
 				nextPanel.classList.toggle( 'is-active' );
-
-				nextPanelLabel.setAttribute( 'tabindex', -1 );
-				nextPanelLabel.focus();
+				
+				if ( nextPanelLabel ) {
+					nextPanelLabel.setAttribute( 'tabindex', -1 );
+					nextPanelLabel.focus();	
+				}
 
 				if ( nextPanel.classList.contains( 'is-active' ) ) {
 
@@ -102,5 +104,6 @@
 		if ( typeof callback === 'function' ) {
 			callback.call();
 		}
-	}
+	};
+
 } )();
