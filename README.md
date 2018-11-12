@@ -5,7 +5,7 @@ At 10up, we strive to provide websites that yield a top-notch user experience. I
 
 Each component in this library is built with simplicity and accessibility in mind, tailored to fit the often opinionated nature of WordPress core output. These components are intended to be easily adapted to any number of different projects and use cases.
 
-All components are tested to be WCAG 2.0 Compliant.
+All components are tested to be WCAG 2.1 Compliant.
 
 <a href="http://10up.com/contact/"><img src="https://10updotcom-uploads.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
 
@@ -41,7 +41,7 @@ README.md
 
 We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/component-library/pulls).
 
-All contributions to the component library should be tested against version 2 of the Web Accessibility Content Guidelines ([WCAG 2.0](https://www.w3.org/WAI/WCAG20/glance/))
+All contributions to the component library should be tested against version 2 of the Web Accessibility Content Guidelines ([WCAG 2.1](https://www.w3.org/TR/WCAG21/))
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b component/my-new-component`
