@@ -17,7 +17,7 @@
 			<a href="<?php echo esc_url( home_url() ); ?>" rel="home" class="site-link" itemprop="url">
 				<img class="site-logo"
 					src="<?php echo esc_url( get_template_directory_uri() . '/image/folder/path' ); ?>"
-					height="42" width="140"
+					height="40" width="140"
 					itemprop="logo"
 					alt="">
 				<!--
@@ -31,19 +31,18 @@
 
 	<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-		<a href="#primary-menu" id="js-menu-toggle" class="site-menu-toggle">
-			<span class="screen-reader-text">
-				<?php esc_html_e( 'Primary Menu', 'tenup' ); ?>
-			</span>
+		<a href="#primary-nav" aria-controls="primary-nav">
+			<span class="screen-reader-text">Primary Menu</span>
 			<span aria-hidden="true">☰</span>
 		</a>
 
 		<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_class'     => 'primary-menu',
-				'menu_id'        => 'menu-main-nav',
+		wp_nav_menu( array(
+			'theme_location' => 'primary',
+			'menu_class'     => 'primary-menu',
+			'menu_id'        => 'primary-nav',
 			) );
-		?>
-	</nav>
-</header>
+	?>
+
+	</nav><!-- .site-navigation -->
+</header><!-- .site-header -->
