@@ -18,7 +18,7 @@ iframe_height: large
 
 {% include partials/html-tabs.md %}
 
-<h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
+<h3>CSS <span class="link"><a href="scss/component.scss" target="_blank">Download CSS</a></span></h3>
 
 {% include partials/scss-component.md %}
 
