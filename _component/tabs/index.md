@@ -24,7 +24,13 @@ iframe_height: medium
 
 <h3>JavaScript <span class="link"><a href="https://github.com/10up/component-tabs/blob/master/src/tabs.js" target="_blank">Plugin</a></span></h3>
 
+Create a new instance by supplying the selector to use for the tabs and an object containing any necessary callback functions.
+
+<h4>NPM</h4>
+
 {% include partials/js-component.md %}
+
+{% include_relative _standalone-js.md %}
 
 {% include_relative _apis.md %}
 
