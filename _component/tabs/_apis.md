@@ -1,17 +1,16 @@
-### JavaScript API
+#### Installation
 
-#### TenUp.tabs( { options }, callback );
+##### NPM
+`npm install --save @10up/component-tabs`
 
-This is the main method to call the plugin. It currently takes two arguments, an options object and callback function.
+##### Standalone
+Clone this repo and import `tabs.js` and `tabs.css` from the `dist/` directory.
 
-#### `options`
+#### API
 
-Currently recognizes the following: target. To request more options, please [file an issue](https://github.com/10up/wp-component-library/issues).
+This component accepts two arguments, the selector for the tab container and an object containing optional callbacks.
 
-`target : '.tabs'`
+##### Callbacks
 
-The `target` option should contain the ID or class of the tabs wrapper.
-
-#### `callback`
-
-Accepts a function that will be executed upon completion.
+- `onCreate`: Called after the tabs are initialized on page load
+- `onTabChange`: Called after a tab has been changed
