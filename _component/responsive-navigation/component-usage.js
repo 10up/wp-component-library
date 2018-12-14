@@ -1,7 +1,20 @@
-TenUp.navigation({
-	'target'        : '#menu-main-nav',
-	'toggle'        : '#js-menu-toggle',
-	'sub_menu_open' : 'click'
-}, function() {
-	console.log('Amazing callback function!');
-});
+import navigation from '@10up/component-navigation';
+
+navigation( '.navigation', {
+	action: 'click',
+	onCreate: function() {
+		console.log( 'onCreate callback' );
+	},
+	onOpen: function() {
+		console.log( 'onOpen callback' );
+	},
+	onClose: function() {
+		console.log( 'onClose callback' );
+	},
+	onSubmenuOpen: function() {
+		console.log( 'onSubmenuOpen callback' );
+	},
+	onSubmenuClose: function() {
+		console.log( 'onSubmenuClose callback' );
+	}
+} );
