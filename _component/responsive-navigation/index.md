@@ -24,7 +24,17 @@ iframe_height: large
 
 <h3>JavaScript <span class="link"><a href="https://github.com/10up/component-navigation" target="_blank">Plugin</a></span></h3>
 
+<h4>NPM</h4>
+
+`npm install --save @10up/component-navigation`
+
 {% include partials/js-component.md %}
+
+<h4>Standalone</h4>
+
+Clone this repo and import `navigation.js` and `navigation.css` from the `dist/` directory.
+
+{% include_relative _more-js.md %}
 
 {% include_relative _apis.md %}
 
