@@ -1,9 +1,10 @@
-// Variables
-$dark-gray: #303030 !default;
+@custom-media --width-small (width < 30em);
+@custom-media --width-medium (width >=48em);
+@custom-media --width-large (width >=60em);
+@custom-media --width-xlarge (width >=80em);
 
-// Component Sass
 .accordion-header {
-	border-bottom: 1px solid $dark-gray;
+	border-bottom: 1px solid #303030;
 	cursor: pointer;
 	font-size: 2em;
 	padding: 10px 0 10px 30px;
@@ -18,18 +19,18 @@ $dark-gray: #303030 !default;
 		top: 5px;
 	}
 
-	&.is-active {
-		&:before {
-			content: "-";
-		}
+	&.is-active:before {
+		content: "-";
 	}
 }
 
-.js .accordion-content {
-	display: none;
+.accordion-content {
+	@nest .js & {
+		display: none;
 
-	&.is-active {
-		border-bottom: 1px solid $dark-gray;
-		display: block;
+		&.is-active {
+			border-bottom: 1px solid #303030;
+			display: block;
+		}
 	}
 }
