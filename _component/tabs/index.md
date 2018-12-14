@@ -18,7 +18,7 @@ iframe_height: medium
 
 {% include partials/html-component.md %}
 
-<h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
+<h3>PostCSS <span class="link"><a href="scss/component.scss" target="_blank">Download PostCSS</a></span></h3>
 
 {% include partials/scss-component.md %}
 
