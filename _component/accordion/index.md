@@ -22,8 +22,13 @@ iframe_height: medium
 {% include partials/scss-component.md %}
 
 
-<h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
-{% include partials/js-component.md %}
+<h3>JavaScript <span class="link"><a href="https://github.com/10up/component-accordion" target="_blank">Plugin</a></span></h3>
+
+<h4>NPM</h4>
+`npm install --save @10up/component-accordion`
+
+<h4>Standalone</h4>
+Clone this repo and import `accordion.js` and `accordion.css` from the `dist/` directory.
 
 {% include_relative _apis.md %}
 
