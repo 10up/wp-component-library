@@ -16,23 +16,6 @@ iframe_height: medium
 
 <h3>HTML <span class="link"><a href="component.html" target="_blank">View Generated HTML</a></span></h3>
 
-<div class="code-block">
-<button class="copy-clipboard" data-clipboard-action="copy" data-clipboard-target=".copy-html-snippet">Copy to clipboard</button>
-<div class="copy-html-snippet">
-{% highlight html %}
-<script>
-	/* Add to <head> */
-	// Remove no-js and add 'js' to the HTML
-	document.documentElement.className = document.documentElement.className.replace('no-js', ' ');
-	document.documentElement.className += ' js ';
-</script>
-{% endhighlight %}
-</div>
-</div>
-
-This component requires a `js` class to be present on the `html` element to fully function. If you're using a script like [Modernizr](http://modernizr.com), it will handle this for you. If not, you'll need to add the above script to the `head` of the document. Adding it into the `head` will assure there will be no jumpiness in the UI while the JavaScript and CSS are loading.
-
-
 {% include partials/html-tabs.md %}
 
 <h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
