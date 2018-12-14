@@ -22,7 +22,7 @@ iframe_height: large
 
 {% include partials/scss-component.md %}
 
-<h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
+<h3>JavaScript <span class="link"><a href="https://github.com/10up/component-navigation" target="_blank">Plugin</a></span></h3>
 
 {% include partials/js-component.md %}
 
