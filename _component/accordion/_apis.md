@@ -1,8 +1,8 @@
-### JavaScript API
+#### API
 
 This component accepts two arguments, the selector for the accordion container and an object containing optional callbacks.
 
-#### Callbacks
+##### Callbacks
 - `onCreate`: Called after the accordion is initialized on page load
 - `onOpen`: Called when an accordion item is opened
 - `onClose`: Called when an accordion item is closed
