@@ -22,7 +22,7 @@ iframe_height: medium
 
 {% include partials/scss-component.md %}
 
-<h3>JavaScript <span class="link"><a href="https://github.com/10up/component-tabs/blob/master/src/tabs.js" target="_blank">Plugin</a></span></h3>
+<h3>JavaScript <span class="link"><a href="https://github.com/10up/component-tabs/" target="_blank">Plugin</a></span></h3>
 
 Create a new instance by supplying the selector to use for the tabs and an object containing any necessary callback functions.
 
