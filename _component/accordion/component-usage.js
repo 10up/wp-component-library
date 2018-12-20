@@ -1,3 +1,5 @@
+import accordion from '@10up/component-accordion';
+
 accordion( '.accordion', {
 	onCreate: function() {
 		console.log( 'onCreate callback' );
