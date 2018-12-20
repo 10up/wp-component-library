@@ -27,8 +27,12 @@ iframe_height: medium
 <h4>NPM</h4>
 `npm install --save @10up/component-accordion`
 
+{% include partials/js-component.md %}
+
 <h4>Standalone</h4>
 Clone this repo and import `accordion.js` and `accordion.css` from the `dist/` directory.
+
+{% include_relative _more-js.md %}
 
 {% include_relative _apis.md %}
 
