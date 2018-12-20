@@ -28,6 +28,8 @@ Create a new instance by supplying the selector to use for the tabs and an objec
 
 <h4>NPM</h4>
 
+`npm install --save @10up/component-tabs`
+
 {% include partials/js-component.md %}
 
 {% include_relative _standalone-js.md %}
