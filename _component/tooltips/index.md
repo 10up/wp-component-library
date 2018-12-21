@@ -24,8 +24,14 @@ iframe_height: medium
 
 
 <h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
+
+<h4>NPM</h4>
+`npm install --save @10up/component-tooltip`
+
 {% include partials/js-component.md %}
 
+<h4>Standalone</h4>
+Clone this repo and import `tooltip.js` and `tooltip.css` from the `dist/` directory.
 
 {% include_relative _apis.md %}
 
