@@ -1,9 +1,7 @@
-### JavaScript API
+#### API
 
-#### TenUp.tooltips( callback );
+This component accepts one argument, an optional callback.
 
-This is the main method to call the plugin. It currently takes one argument: a callback function. It targets the `.a11y_tip` class automatically.
+##### Callbacks
 
-#### `callback`
-
-Accepts a function that will be executed upon completion.
+* Pass in an optional function to be executed with the tooltip.
