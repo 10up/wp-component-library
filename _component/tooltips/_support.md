@@ -1,5 +1,3 @@
-| Feature       | Chrome | Firefox | Internet Explorer | Safari            |
-|---------------|--------|---------|-------------------|-------------------|
-| Basic Support | Latest | Latest  | 9+                | 6+ <sup>[1]</sup> |
-
-[1] Tooltips triggered by ':hover' work in Safari 5
+| Feature       | Chrome | Firefox | Internet Explorer | Edge  | Safari |
+|---------------|--------|---------|------------------|--------|--------|
+| Basic Support | Latest | Latest  | 11               | Latest | Latest |
