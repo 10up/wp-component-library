@@ -18,9 +18,9 @@ iframe_height: medium
 
 {% include partials/html-component.md %}
 
-<h3>PostCSS <span class="link"><a href="scss/component.scss" target="_blank">Download PostCSS</a></span></h3>
+<h3>PostCSS <span class="link"><a href="css/component.css" target="_blank">Download PostCSS</a></span></h3>
 
-{% include partials/scss-component.md %}
+{% include partials/css-component.md %}
 
 <h3>JavaScript <span class="link"><a href="https://github.com/10up/component-tabs/" target="_blank">Plugin</a></span></h3>
 
