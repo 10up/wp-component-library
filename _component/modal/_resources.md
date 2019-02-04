@@ -1,6 +1,0 @@
-- [A11y Modal on Github](https://github.com/timwright12/a11y-modal)
-- [Using ARIA role=dialog to implement a modal dialog box](https://www.w3.org/WAI/GL/wiki/Using_ARIA_role%3Ddialog_to_implement_a_modal_dialog_box)
-- [Managing Focus for Modal Dialogs](https://www.w3.org/WAI/GL/wiki/Managing_focus_for_modal_dialogs)
-- [Making Modal Windows Better For Everyone](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/)
-- [jQuery Accessible Modal Window](http://a11y.nicolas-hoffmann.net/modal/)
-- [The Incredible Accessible Modal Window](https://github.com/gdkraus/accessible-modal-dialog)
