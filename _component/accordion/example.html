@@ -1,50 +1,89 @@
-<!DOCTYPE html>
-<html lang="en-US" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<title>Accordion</title>
-	<link rel="stylesheet" href="component.css" />
-	<link rel="stylesheet" href="../../assets/css/examples.css" />
+<!doctype html>
+<html>
+	<head>
+		<title>10up Component Library | Accordion</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- It is not recommended to use the JSDelivr CDN for production. -->
+		<!-- Instead please install the components with npm or by including the files directly in your project -->
+		<link href="https://cdn.jsdelivr.net/npm/@10up/component-accordion@latest/dist/accordion.css" rel="stylesheet">
+	</head>
+	<body>
 
-	<script>
-		/* Add to <head> */
-		// Remove no-js and add 'js' to the HTML
-		document.documentElement.className = document.documentElement.className.replace('no-js', ' ');
-		document.documentElement.className += ' js ';
-	</script>
+		<div class="accordion">
 
-</head>
-<body>
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 1st tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
 
-	<div class="accordion">
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 2nd tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
 
-		<button class="accordion-header" type="button">Accordion Header</button>
-		<div class="accordion-content">
-			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>Here is the content of 1st tab <a href="#">link</a></p>
-		</div> <!-- //.accordion-content -->
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 3rd tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
 
-		<button class="accordion-header" type="button">Accordion Header</button>
-		<div class="accordion-content">
-			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>Here is the content of 2nd tab <a href="#">link</a></p>
-		</div> <!-- //.accordion-content -->
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 4th tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
 
-		<button class="accordion-header" type="button">Accordion Header</button>
-		<div class="accordion-content">
-			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>Here is the content of 3rd tab <a href="#">link</a></p>
-		</div> <!-- //.accordion-content -->
+		</div> <!-- //.accordion -->
 
-		<button class="accordion-header" type="button">Accordion Header</button>
-		<div class="accordion-content">
-			<h2 class="accordion-label">Accordion Heading</h2>
-			<p>Here is the content of 4th tab <a href="#">link</a></p>
-		</div> <!-- //.accordion-content -->
+		<div class="accordion">
 
-	</div> <!-- //.accordion -->
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 1st tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
 
-	<script src="component.js"></script>
-	<script src="component-usage.js"></script>
-</body>
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 2nd tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
+
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 3rd tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
+
+			<button class="accordion-header" type="button">Accordion Header</button>
+			<div class="accordion-content">
+				<h2 class="accordion-label">Accordion Heading</h2>
+				<p>here the content of 4th tab <a href="#">link</a></p>
+			</div> <!-- //.accordion-content -->
+
+		</div> <!-- //.accordion -->
+
+		<!-- It is not recommended to use the JSDelivr CDN for production. -->
+		<!-- Instead please install the components with npm or by including the files directly in your project -->
+		<script src="https://cdn.jsdelivr.net/npm/@10up/component-accordion@latest/dist/accordion.js"></script>
+		<script type="text/javascript">
+			let myAccordion = new TenUp.accordion( '.accordion', {
+				onCreate: function() {
+					console.log( 'onCreated' )
+				},
+				onOpen: function() {
+					console.log( 'onOpen' )
+				},
+				onClose: function() {
+					console.log( 'onClose' )
+				},
+				onToggle: function() {
+					console.log( 'onToggle' )
+				}
+			} );
+		</script>
+	</body>
 </html>
