@@ -35,6 +35,26 @@
 	background-color: $color-medium-dark;
 }
 
+.button.naked {
+	background-color: transparent;
+	border: 1px solid $white;
+	color: $white;
+	display: inline-block;
+	font-size: 0.7em;
+	font-weight: 100;
+	letter-spacing: 3px;
+	margin-top: 1em;
+	padding: 0.75em 1em;
+	text-transform: uppercase;
+	transition: .6s background-color ease;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: rgba($white, 0.2);
+	}
+}
+
 %circle-buttons {
 	@extend %caps-text;
 	text-transform: none;
