@@ -9,6 +9,13 @@ layout: default
 	</div>
 </div>
 
+<div class="contributing">
+	<div class="content">
+		<h2>Have an idea for a new component?</h2>
+		<p><a href="https://github.com/10up/component-scaffold/blob/feature/contributing-file/CONTRIBUTING.md" class="button naked">Create a new component</a></p>
+	</div>
+</div><!-- .contributing -->
+
 <div class="content">
 	<div class="grid-layout">
 
