@@ -1,95 +1,149 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Menu - Dropdown</title>
-
-
-	<link rel="stylesheet" href="../../assets/css/examples.css" />
-	<link rel="stylesheet" href="component.css" />
-
+	<title>10up Component Library | Navigation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- It is not recommended to use the JSDelivr CDN for production. -->
+	<!-- Instead please install the components with npm or by including the files directly in your project -->
+	<link href="https://cdn.jsdelivr.net/npm/@10up/component-navigation@latest/dist/navigation.css" rel="stylesheet">
 	<style>
-		body {
-			min-height: 500px;
-			background: #ddd;
-			margin: 0;
-			padding: 0;
-		}
-	</style>
+		*, *:after, *:before {
+				box-sizing: border-box;
+			}
+			body {
+				font-family: sans-serif;
+				margin: 0;
+			}
 
+			a {
+				color: black;
+				padding: 0.5rem;
+				text-decoration: none;
+			}
+			.screen-reader-text {
+				clip: rect(1px, 1px, 1px, 1px);
+				height: 1px;
+				overflow: hidden;
+				position: absolute !important;
+				width: 1px;
+			}
+			.site-navigation {
+				background-color: #999;
+				display: block;
+				padding: 0.5rem;
+				position: relative;
+				width: 100%;
+			}
+			@media (min-width: 48em) {
+				.site-navigation {
+					padding: 0;
+				}
+			}
+			.primary-menu {
+				background-color: #aaa;
+				left: 0;
+				position: absolute;
+				top: 100%;
+				width: 100%;
+			}
+			@media (min-width: 48em) {
+				.primary-menu {
+					background-color: transparent;
+					position: static;
+					width: auto;
+				}
+			}
+			.primary-menu a {
+				display: block;
+			}
+			.menu-item-has-children > a {
+				display: flex;
+				justify-content: space-between;
+			}
+			.menu-item-has-children > a:after {
+				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
+				background-size: cover;
+				content: "";
+				display: inline-block;
+				height: 1em;
+				width: 1em;
+			}
+			.sub-menu {
+				background-color: #777;
+				min-width: 10rem;
+			}
+			.sub-menu .sub-menu {
+				background-color: #555;
+			}
+		</style>
 </head>
+
 <body>
-	<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-		<div class="container">
-			<h1 class="site-title" itemscope itemtype="http://schema.org/Organization">
-				<a  itemprop="url" class="site-link" href="#" rel="home">
-					<img itemprop="logo" class="site-logo" src="https://placehold.it/140x40?text=LOGO" height="42" width="140" alt="">
-					<!--
-						Visually hide this text.
-						WCAG 2.1: “image alt text cannot be the primary text of a link"
-					-->
-					<span class="screen-reader-text">Amazing Company</span>
-				</a>
-			</h1>
+	<div>
 
-			<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-				<!--
-					API: data-submenu="click" on this anchor to use click instead of hover on submenus
-				-->
-				<a href="#menu-main-nav" id="js-menu-toggle" class="site-menu-toggle" data-submenu="click">
-					<span class="screen-reader-text">Primary Menu</span>
-					<span aria-hidden="true">☰</span>
-				</a>
+			<a href="#primary-nav" aria-controls="primary-nav">
+				<span class="screen-reader-text">Primary Menu</span>
+				<span aria-hidden="true">☰</span>
+			</a>
 
-				<ul id="menu-main-nav" class="primary-menu">
-					<li id="menu-item-1912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1912">
-						<a href="#!aboutus">About Us</a>
-					</li>
-					<li id="menu-item-1913" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1913">
-						<a href="#!ourwork">Our Work</a>
-						<ul class="sub-menu">
-							<li id="menu-item-1914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1914">
-								<a href="#!js">JavaScript</a>
-							</li>
-							<li id="menu-item-4494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4494">
-								<a href="#!wp">WordPress</a>
-								<ul class="sub-menu">
-									<li id="menu-item-4495" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4495">
-										<a href="#!plugins">Plugins</a>
-									</li>
-									<li id="menu-item-4496" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4496">
-										<a href="#!themes">Themes</a>
-									</li>
-									<li id="menu-item-4496" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4496">
-										<a href="#!last">Last WP Item</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li id="menu-item-1915" class="current-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
-						<a href="#!giving">Giving Back</a>
-					</li>
-					<li id="menu-item-1916" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1916 menu-item-has-children">
-						<a href="#!blog">Blog</a>
-						<ul class="sub-menu">
-							<li class="menu-item"><a href="#!post">Blog Post 1</a></li>
-							<li class="menu-item"><a href="#!post">Blog Post 2</a></li>
-							<li class="menu-item"><a href="#!post">Blog Post 3</a></li>
-						</ul>
-					</li>
-					<li id="menu-item-1916" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1916">
-						<a href="#!contact">Contact</a>
-					</li>
-				</ul>
+			<ul id="primary-nav" class="primary-menu">
+				<li id="menu-item-1912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1912">
+					<a href="#!aboutus">About Us</a>
+				</li>
+				<li id="menu-item-1913" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1913">
+					<a href="#!ourwork">Our Work</a>
+					<ul class="sub-menu">
+						<li id="menu-item-1914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1914">
+							<a href="#!js">JavaScript</a>
+						</li>
+						<li id="menu-item-4494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4494">
+							<a href="#!wp">WordPress</a>
+							<ul class="sub-menu">
+								<li id="menu-item-4495" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4495">
+									<a href="#!plugins">Plugins</a>
+								</li>
+								<li id="menu-item-4496" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4496">
+									<a href="#!themes">Themes</a>
+								</li>
+								<li id="menu-item-4496" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4496">
+									<a href="#!last">Last WP Item</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li id="menu-item-1915" class="current-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
+					<a href="#!giving">Giving Back</a>
+				</li>
+				<li id="menu-item-1916" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1916 menu-item-has-children">
+					<a href="#!blog">Blog</a>
+					<ul class="sub-menu">
+						<li class="menu-item"><a href="#!post">Blog Post 1</a></li>
+						<li class="menu-item"><a href="#!post">Blog Post 2</a></li>
+						<li class="menu-item"><a href="#!post">Blog Post 3</a></li>
+					</ul>
+				</li>
+				<li id="menu-item-1916" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1916">
+					<a href="#!contact">Contact</a>
+				</li>
+			</ul>
 
-			</nav>
-		</div><!--/.container-->
-	</header>
+		</nav>
 
-	<script src="component.js"></script>
-	<script src="component-usage.js"></script>
+	</div>
 
+	<!-- It is not recommended to use the JSDelivr CDN for production. -->
+	<!-- Instead please install the components with npm or by including the files directly in your project -->
+	<script src="https://cdn.jsdelivr.net/npm/@10up/component-navigation@latest/dist/navigation.js"></script>
+	<script type="text/javascript">
+		let componentInstance = new TenUp.navigation('#primary-nav', {
+			action: 'click'
+		});
+	</script>
 </body>
+
 </html>

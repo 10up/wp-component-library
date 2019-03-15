@@ -18,13 +18,23 @@ iframe_height: large
 
 {% include partials/html-tabs.md %}
 
-<h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
+<h3>PostCSS <span class="link"><a href="scss/component.scss" target="_blank">Download PostCSS</a></span></h3>
 
 {% include partials/scss-component.md %}
 
-<h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
+<h3>JavaScript <span class="link"><a href="https://github.com/10up/component-navigation" target="_blank">Plugin</a></span></h3>
+
+<h4>NPM</h4>
+
+`npm install --save @10up/component-navigation`
 
 {% include partials/js-component.md %}
+
+<h4>Standalone</h4>
+
+Clone this repo and import `navigation.js` and `navigation.css` from the `dist/` directory.
+
+{% include_relative _more-js.md %}
 
 {% include_relative _apis.md %}
 
