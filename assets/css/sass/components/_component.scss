@@ -46,7 +46,7 @@
 	.example-link {
 		float: right;
 		border-bottom: 0;
-		font-size: 14px;
+		font-size: 18px;
 		font-weight: 700;
 
 		&:hover,
@@ -57,19 +57,7 @@
 
 	h3 {
 		margin-top: 60px;
-/*
-		> a {
-			font-size: 14px;
-			float: right;
-			line-height: 2.5;
 
-			&:hover,
-			&:focus {
-				text-decoration: underline;
-			}
-
-		}
-*/
 		> .link {
 			font-size: 14px;
 			float: right;
