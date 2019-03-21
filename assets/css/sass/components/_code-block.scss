@@ -31,11 +31,6 @@ pre code {
 	border: 0;
 }
 
-.highlight {
-	margin: 0;
-	font-size: 1.6rem;
-}
-
 .highlight pre {
 	margin-bottom: 0;
 }
@@ -45,11 +40,13 @@ pre code {
 }
 
 .highlight {
-	background-color: #efefef;
-	margin: 0 0 1rem;
-	padding: 3rem .75rem .75rem .75rem;
+	background-color: #fff;
+	border: 1px solid #ddd;
 	border-left: 20px solid #ddd;
+	font-size: 1.6rem;
+	margin: 0 0 1rem;
 	overflow-x: auto;
+	padding: 3rem .75rem .75rem .75rem;
 }
 
 .code-tab,
@@ -68,13 +65,14 @@ pre code {
 	min-width: 125px;
 	padding: 5px 10px;
 	border-radius: 0;
-	background: $color-accent-alternate;
+	background: #039591;
 	color: $white;
+	font-size: 18px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: all .2s;
 	&:focus,
 	&:hover {
-		background-color: $color-medium-dark;
+		background-color: #202124;
 	}
 }
