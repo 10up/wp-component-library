@@ -33,34 +33,61 @@ img {
 }
 
 a {
-	color: darken($color-accent-alternate, 10%);
+	color: #008481;
 	text-decoration: none;
 
 	&:visited {
-		color: desaturate($color-accent-alternate, 20%);
+		color: #008481;
 	}
 
 	&:hover,
 	&:active {
-		color: saturate( darken($color-accent-alternate, 10%), 10% );
+		color: #202124;
 	}
 }
 
 p a {
-	border-bottom: 1px solid rgba( $color-accent-alternate, .3 );
+	border-bottom: 1px solid rgba( #008481, .3 );
 
 	&:hover {
-		border-bottom-color: rgba( saturate( darken( $color-accent-alternate, 10%), 10% ), .8 );
-	}
-
-	&:visited {
-
+		border-bottom-color: rgba( #008481, .8 );
 	}
 
 }
 // Reusable, toolbox kind of class
 .screen-reader-text {
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+
+	&.focusable {
+		background-color: #a30811;
+		color: #fff;
+	}
+
+	&.focusable:active,
+	&.focusable:focus {
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip-path: none;
+		clip: auto !important;
+		display: block;
+		font-size: 1.8rem;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
 }
