@@ -12,7 +12,7 @@ iframe_height: medium
 	<a href="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html" target="_blank" class="example-link">Open example in new window</a>
 </div><!--/.cf-->
 
-<iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html"></iframe>
+<iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html" title="Tooltip Example"></iframe>
 
 <h3>HTML <span class="link"><a href="https://github.com/timwright12/a11y-tooltips" target="_blank">Download the plugin</a></span></h3>
 
