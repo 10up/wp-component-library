@@ -1,33 +1,36 @@
+<a href="#main-content" class="screen-reader-text focusable">Skip to content</a>
 <header id="page-header" role="banner">
 	<div class="page-header-content">
-		<a href="http://10up.com" class="logo-link">10up</a>
-		<nav class="page-nav top-nav" role="navigation" aria-label="main-navigation">
-			<ul class="header-nav nav-dropdowns js-mobile-expandable">
+		<a href="http://10up.com" class="header-logo-link"><span class="screen-reader-text">10up</span></a>
+		<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
+			<a href="#primary-nav" aria-controls="primary-nav" class="site-menu-toggle toggle-menu-icon">
+				<span class="screen-reader-text">Primary Menu</span>
+			</a>
+
+			<ul id="primary-nav" class="primary-menu">
 				{% for category in site.data.categories %}
 					{% if page.category == category.slug %}
-					<li class="current-menu-item">
+					<li class="menu-item current-menu-item">
 					{% else %}
-					<li>
+					<li class="menu-item menu-item-has-children">
 					{% endif %}
 						<a href="#">{{ category.slug }}</a>
-						<ul class="subnav">
+						<ul class="sub-menu" aria-hidden="true">
 						{% for component in site.component %}
 							{% if component.category == category.slug %}
-								<li><a href="{{ site.baseurl }}{{ component.url }}">{{ component.title }}</a></li>
+								<li class="menu-item"><a href="{{ site.baseurl }}{{ component.url }}">{{ component.title }}</a></li>
 							{% endif %}
 						{% endfor %}
 						</ul>
 					</li>
 				{% endfor %}
 			</ul>
-		</nav>
+
+		</nav><!-- .site-navigation -->
 
 		<a href="https://github.com/10up/component-library/" class="main-nav-supplemental-icon">
 			<span class="screen-reader-text">View on Github</span>
-		</a>
-
-		<a class="toggle-menu-icon js-mobile-expandable-toggle">
-			<span class="screen-reader-text">Toggle Main Navigation</span>
 		</a>
 
 	</div>
