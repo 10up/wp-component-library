@@ -1,6 +1,7 @@
 import tabs from '@10up/component-tabs';
 
 tabs( '.tabs', {
+	orientation: 'horizontal', // default is 'horizontal', can be 'vertical'
 	onCreate: function() {
 		console.log( 'onCreate callback' );
 	},
