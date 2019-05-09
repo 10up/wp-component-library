@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="content">
+<main id="main-content" class="content">
 	<div class="component">
 		{% if page.title %}
 			<h2>{{ page.title }}</h2>
@@ -9,4 +9,4 @@ layout: default
 		
 		{{ content }}
 	</div>
-</div>
+</main>

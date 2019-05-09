@@ -1,0 +1,122 @@
+/**
+ * From https://github.com/10up/component-navigation
+ */
+
+.primary-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+.primary-menu[aria-hidden="true"] {
+	display: none;
+}
+.primary-menu:target,
+.primary-menu[aria-hidden="false"] {
+	display: block;
+}
+.primary-menu > .menu-item {
+	display: block
+}
+@media (min-width: 48em) {
+	.primary-menu > .menu-item {
+		display: inline-block
+	}
+}
+.sub-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+.sub-menu[aria-hidden="true"] {
+	display: none;
+}
+.sub-menu:target,
+.sub-menu[aria-hidden="false"] {
+	display: block;
+}
+@media (min-width: 48em) {
+	.sub-menu {
+		left: 0;
+		position: absolute;
+		top: 100%
+	}
+}
+.sub-menu > .menu-item {
+	display: block;
+}
+@media (min-width: 48em) {
+	.primary-menu[data-action="hover"] .menu-item:hover > .sub-menu,
+	.primary-menu[data-action="hover"] .menu-item:hover > .sub-menu[aria-hidden="true"] {
+		display: block;
+	}
+}
+.site-menu-toggle[aria-hidden="true"] {
+	display: none;
+}
+.site-menu-toggle[aria-hidden="false"] {
+	display: block;
+}
+@media (min-width: 48em) {
+	.site-menu-toggle {
+		display: none
+	}
+}
+@media (min-width: 48em) {
+	.menu-item {
+		position: relative
+	}
+}
+@media (min-width: 48em) {
+	.no-js [data-responsive-nav-control] {
+		display: none
+	}
+}
+.no-js .primary-menu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0
+}
+@media (min-width: 48em) {
+	.no-js .primary-menu {
+		display: block
+	}
+}
+.no-js .primary-menu:target {
+	display: block;
+}
+.no-js .primary-menu ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.no-js .primary-menu li {
+	position: relative
+}
+.no-js .primary-menu li:hover > ul, .no-js .primary-menu li[focus-within] > ul {
+	display: block;
+}
+.no-js .primary-menu li:hover > ul, .no-js .primary-menu li:focus-within > ul {
+	display: block;
+}
+.no-js .primary-menu li > a:focus > ul {
+	display: block;
+}
+.no-js .primary-menu li > ul {
+	display: none
+}
+@media (min-width: 48em) {
+	.no-js .primary-menu li > ul {
+		left: 0;
+		position: absolute;
+		top: 100%
+	}
+}
+.no-js .primary-menu > li {
+	display: block
+}
+@media (min-width: 48em) {
+	.no-js .primary-menu > li {
+		display: inline-block
+	}
+}

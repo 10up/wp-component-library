@@ -1,11 +1,10 @@
-/*{ background: #f0f3f3; }*/
 .c {
-	color: #999;
+	color: #666;
 }
 
 /* Comment */
 .err {
-	color: #AA0000;
+	color: #8c0101;
 	background-color: #FFAAAA
 }
 
@@ -21,23 +20,23 @@
 
 /* Operator */
 .cm {
-	color: #999;
+	color: #666;
 }
 
 /* Comment.Multiline */
 /* Edited to remove italics and make into comment */
 .cp {
-	color: #b8cccc;
+	color: #5e6b6b;
 }
 
 /* Comment.Preproc */
 .c1 {
-	color: #999;
+	color: #666;
 }
 
 /* Comment.Single */
 .cs {
-	color: #999;
+	color: #666;
 }
 
 /* Comment.Special */
@@ -123,17 +122,17 @@
 
 /* Keyword.Type */
 .m {
-	color: #FF6600
+	color: #b94a00
 }
 
 /* Literal.Number */
 .s {
-	color: #d44950
+	color: #bd3f45
 }
 
 /* Literal.String */
 .na {
-	color: #4f9fcf
+	color: #2d7dad
 }
 
 /* Name.Attribute */
@@ -143,7 +142,7 @@
 
 /* Name.Builtin */
 .nc {
-	color: #00AA88;
+	color: #007961;
 }
 
 /* Name.Class */
@@ -153,7 +152,7 @@
 
 /* Name.Constant */
 .nd {
-	color: #9999FF
+	color: #5757f3
 }
 
 /* Name.Decorator */
@@ -168,12 +167,12 @@
 
 /* Name.Exception */
 .nf {
-	color: #CC00FF
+	color: #b801e6
 }
 
 /* Name.Function */
 .nl {
-	color: #9999FF
+	color: #5757f3
 }
 
 /* Name.Label */
@@ -188,7 +187,7 @@
 
 /* Name.Tag */
 .nv {
-	color: #003333
+	color: #007777
 }
 
 /* Name.Variable */
@@ -203,22 +202,22 @@
 
 /* Text.Whitespace */
 .mf {
-	color: #FF6600
+	color: #b94a00
 }
 
 /* Literal.Number.Float */
 .mh {
-	color: #FF6600
+	color: #b94a00
 }
 
 /* Literal.Number.Hex */
 .mi {
-	color: #FF6600
+	color: #b94a00
 }
 
 /* Literal.Number.Integer */
 .mo {
-	color: #FF6600
+	color: #b94a00
 }
 
 /* Literal.Number.Oct */
@@ -284,22 +283,22 @@
 
 /* Name.Builtin.Pseudo */
 .vc {
-	color: #003333
+	color: #007777
 }
 
 /* Name.Variable.Class */
 .vg {
-	color: #003333
+	color: #007777
 }
 
 /* Name.Variable.Global */
 .vi {
-	color: #003333
+	color: #007777
 }
 
 /* Name.Variable.Instance */
 .il {
-	color: #FF6600
+	color: #b94a00
 }
 
 /* Literal.Number.Integer.Long */
@@ -307,5 +306,5 @@
 .css .o,
 .css .o + .nt,
 .css .nt + .nt {
-	color: #999;
+	color: #666;
 }

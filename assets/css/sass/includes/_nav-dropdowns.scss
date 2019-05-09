@@ -1,68 +1,98 @@
-.nav-dropdowns {
+.site-navigation {
+	position: relative;
 
-	li {
-		position: relative;
-	}
+	.sub-menu {
+		background-color: #222;
+		left: -1em;
 
-	.subnav {
-		margin: 0;
-		padding: 0;
 		li {
+			margin: 0;
 			padding: 0;
-			text-transform: none;
 		}
-		@include breakpoint($breakpoint-bravo) {
-			display: none;
-			position: absolute;
-			left: -1em;
-			top: 3.35em;
-			background-color: #222;
-			z-index: 80;
+		a {
+			position: relative;
+			z-index: 90;
+			padding: 1em 1.5em;
+			text-transform: none;
+			letter-spacing: 0;
+			font-weight: normal;
+			font-size: 14px;
+			white-space: nowrap;
+			margin-bottom: 0;
+		}
 
-			li {
-				display: block;
-				margin: 0;
-			}
-
-			a {
-				position: relative;
-				z-index: 90;
-				padding: 1em 1.5em;
-				text-transform: none;
-				letter-spacing: 0;
-				font-weight: normal;
-				font-size: 14px;
-				white-space: nowrap;
-				margin-bottom: 0;
-			}
-
-			a:hover {
-				background-color: #303030;
-
-				&:after {
-					content: none;
-				}
-			}
+		a:hover {
+			background-color: #303030;
 
 			&:after {
-				content: ' ';
-				display: block;
-				position: absolute;
-				z-index: 50;
-				/* border: 1px solid red; /* Uncomment to visualize this buffer zone */
-				top: -10px;
-				background: none !important;
-				width: 150%;
-				left: -25%;
-				height: 140%;
+				content: none;
 			}
 		}
 	}
+}
 
-	/** Only use sub-menus on desktop */
-	@include breakpoint($breakpoint-bravo) {
-		li:hover .subnav {
-			display: block;
+.primary-menu {
+	-webkit-overflow-scrolling: touch;
+	@extend %caps-text;
+	background-color: #222;
+	color: $color-dark-text;
+	height: calc(100vh - 6rem);
+	left: 0;
+	line-height: inherit;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 6rem;
+	width: 100%;
+
+	@media (min-width: 48em) {
+		background-color: transparent;
+		height: auto;
+		left: auto;
+		overflow: visible;
+		position: relative;
+		right: auto;
+		top: auto;
+	}
+
+	> li > a {
+		border-bottom: 1px solid #fff;
+		@include breakpoint($breakpoint-bravo) {
+			border-bottom: 0;
+		}
+	}
+
+	li {
+		list-style-type: none;
+		padding: .5em 1em;
+
+		&:hover {
+			@include breakpoint($breakpoint-bravo) {
+				background-color: transparent;
+			}
+		}
+
+		@include breakpoint($breakpoint-bravo) {
+			padding: 0;
+			margin: 0 0.3em;
+
+			@include breakpoint($breakpoint-charlie) {
+				margin: 0 0.4em;
+			}
+		}
+
+		&.current-menu-item > a,
+		&.current_page_parent > a {
+			&:after {
+				background-color: #585858;
+				bottom: 7px;
+				@include opacity(1);
+			}
+
+			body.home &:after {
+				bottom: 7px;
+				@include opacity(0);
+			}
 		}
 	}
 }

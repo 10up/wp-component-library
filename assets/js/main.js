@@ -152,38 +152,13 @@
 			return;
 		}
 
-		var tabList = document.querySelectorAll( '.code-tab-list a' );
-
-		for ( var i = 0; i < tabList.length; i++ ) {
-			tabList[i].addEventListener( 'click', function(e) {
-				e.preventDefault();
-
-				var templated     = document.getElementById( 'templated' ),
-					templatedLink = document.getElementById( 'js-templated-link' ),
-					text          = document.getElementById( 'text' ),
-					textLink      = document.getElementById( 'js-text-link' );
-
-				if ( '#text' === this.getAttribute( 'href' ) ) {
-					text.classList.add( 'show' );
-					textLink.classList.add( 'show' );
-
-					templated.classList.remove( 'show' );
-					templatedLink.classList.remove( 'show' );
-				} else {
-					templated.classList.add( 'show' );
-					templatedLink.classList.add( 'show' );
-
-					text.classList.remove( 'show' );
-					textLink.classList.remove( 'show' );
-				}
-			});
-		}
+		let codeTabs = new TenUp.tabs( '.tabs', {
+			orientation: 'horizontal'
+		} );
 	}
 
   // Start the application
   App.init();
-
-  document.querySelector('.js-mobile-expandable-toggle').addEventListener('click', toggleMenu);
 
   var clipboard = new Clipboard('.copy-clipboard');
 
@@ -194,32 +169,6 @@
 		}, 3000 );
 	});
 
-  /**
-   * Toggle the menu
-   * Open if closed, close if opened.
-   * Accomplished by adding and removing the class .is-open
-   */
-  function toggleMenu(e) {
-
-  	var el = document.querySelector('.js-mobile-expandable'),
-  			className = 'is-open';
-
-  	if (el.classList) {
-  		el.classList.toggle(className);
-  	} else {
-  		var classes = el.className.split(' ');
-  		var existingIndex = classes.indexOf(className);
-
-  		if (existingIndex >= 0)
-  			classes.splice(existingIndex, 1);
-  		else
-  			classes.push(className);
-
-  		el.className = classes.join(' ');
-  	}
-
-  	return false;
-
-  }
+	let globalNavigation = new TenUp.navigation( '#primary-nav', { action: 'click' } );
 
 } )( this, this.document );

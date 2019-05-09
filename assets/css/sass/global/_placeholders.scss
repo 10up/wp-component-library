@@ -33,11 +33,10 @@
 
 // Used repeatedly for menu icons.
 %menu-icon {
-	font-size: 1.3rem;
 	color: #fff;
 	display: none;
 	position: absolute;
-	top: 15px;
+	top: 12px;
 	right: 0;
 	padding: 7px;
 	cursor: pointer;
@@ -45,7 +44,6 @@
 	z-index: 15; /* override .top-nav */
 
 	@include breakpoint($breakpoint-bravo) {
-		font-size: 1.6rem;
 		height: 2.8rem;
 		width: 2.8rem;
 	}
