@@ -15,7 +15,7 @@
 					<li class="menu-item menu-item-has-children">
 					{% endif %}
 						<a href="#">{{ category.slug }}</a>
-						<ul class="sub-menu" aria-hidden="true">
+						<ul class="sub-menu">
 						{% for component in site.component %}
 							{% if component.category == category.slug %}
 								<li class="menu-item"><a href="{{ site.baseurl }}{{ component.url }}">{{ component.title }}</a></li>
