@@ -7,6 +7,7 @@ Include the `tabs.js` file from the `dist/` directory and access the component f
 <div class="copy-js-snippet">
 {% highlight javascript %}
 let myTabs = new TenUp.tabs( '.tabs', {
+	orientation: 'horizontal', // default is 'horizontal', can be 'vertical'
 	onCreate: function() {
 		console.log( 'onCreate callback' );
 	},
