@@ -4,8 +4,8 @@
 	position: relative;
 }
 
-.code-tab.show,
-.code-tab.show + div[class*="language-"] {
+.code-tab.is-active,
+.code-tab.is-active + div[class*="language-"] {
 	display: block;
 }
 
@@ -34,7 +34,13 @@
 		padding: 8px 15px;
 		text-decoration: none;
 
-		&.show {
+		&:focus,
+		&:hover {
+			color: #fff;
+			background-color: #202124;
+		}
+
+		&[aria-selected="true"] {
 			background-color: $light-mid-grey;
 			color: $very-dark-grey;
 		}
