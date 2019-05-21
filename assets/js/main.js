@@ -49,6 +49,10 @@
 			  	component = components[i];
 			  	iframe = component.querySelector( 'iframe' );
 
+			  	if ( !iframe ) {
+			  		return;
+			  	}
+
 			  	// Create the wrapper
 			  	wrapper = doc.createElement( 'div' );
 			  	wrapper.setAttribute( 'class', 'wrapper-iframe' );
