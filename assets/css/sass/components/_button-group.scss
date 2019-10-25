@@ -1,0 +1,23 @@
+.button-group {
+	display: flex;
+	list-style: none;
+	margin: 1rem 0;
+	max-width: none;
+	padding: 0;
+	position: relative;
+
+	> li + li {
+		margin-left: 1em;
+	}
+
+	@media (min-width: $breakpoint-small) {
+		margin-left: 2em;
+	}
+
+}
+
+.button-group--flush {
+	@media (min-width: $breakpoint-small) {
+		margin-left: 0;
+	}
+}

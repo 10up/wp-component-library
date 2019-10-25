@@ -1,28 +1,35 @@
 ---
-title: Author Card
-layout: component
+title: author card
+layout: default
 path_slug: author-card
-category: content
-iframe_height: medium
+iframe_height: short
+category: components
 ---
 
-{% include_relative _notes.md %}
+<div class="u-align-center--small">
+	<h1>{{page.title}}</h1>
+	<p class="u-lighten u-spacing__bottom--large">
+		A semantic recommendation for marking up an author card.
+	</p>
+</div>
 
-<div class="cf">
-	<a href="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html" target="_blank" class="example-link">Open example in new window</a>
-</div><!--/.cf-->
+{% include_relative content/_notes.md %}
 
-<iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html" title="Author Card Example"></iframe>
+<div class="u-spacing__top--large">
 
-<h3>HTML <span class="link"><a href="component.html" target="_blank">View Generated HTML</a></span></h3>
+	<h2>Examples</h2>
 
-{% include partials/html-tabs.md %}
+	<div class="component-block u-spacing__bottom--large">
+		{% include_relative content/_examples.md %}
+	</div>
+</div>
 
-<h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
+## Usage
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_code.md %}
+</div>
 
-{% include partials/scss-component.md %}
-
-
-<h3>Resources</h3>
-
-{% include_relative _resources.md %}
+## Resources
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_resources.md %}
+</div>

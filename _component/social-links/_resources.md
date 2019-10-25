@@ -1,2 +1,0 @@
-- [Links and Hypertext](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/)
-- [Target="_blank" - the most underestimated vulnerability ever](http://webaim.org/techniques/hypertext/hypertext_links)

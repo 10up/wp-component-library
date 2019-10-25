@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" class="no-js">
   <head>
     <script>
         var host = "10up.github.io";
@@ -18,24 +18,45 @@
       {{ site.name }}
     </title>
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Mono&amp;subset=latin,cyrillic">
+	<script>
+		document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+		document.documentElement.className += ' js ';
 
-    <script type="text/javascript" src="//use.typekit.net/dtp2teh.js?ver=4.0"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <!-- Google Analytics to go here -->
-  </head>
-  <body class="page-{{ page.layout }}">
-    {% include header.html %}
+		WebFontConfig = {
+			google: {
+				families: [ 'IBM+Plex+Mono:500','IBM+Plex+Sans:300,400,500','Playfair+Display:900' ]
+			},
+		};
 
-    {{ content }}
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+			'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
 
-    {% include footer.html %}
+	<noscript>
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500|IBM+Plex+Sans:300,400,500|Playfair+Display:900&display=swap" rel="stylesheet">
+	</noscript>
 
-    <script src="{{ site.baseurl }}/assets/js/clipboard.min.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/navigation.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/tabs.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 
-  </body>
+	</head>
+	<body class="page-{{ page.layout }}">
+
+		{% include header.html %}
+
+		{{ content }}
+
+		{% include footer.html %}
+
+		<script src="{{ site.baseurl }}/assets/js/clipboard.min.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/tabs.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+
+	</body>
 </html>

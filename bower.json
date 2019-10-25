@@ -1,8 +1,0 @@
-{
-  "name": "component-library",
-  "homepage": "https://github.com/10up/component-library",
-  "license": "MIT",
-  "dependencies": {
-    "normalize-css": "~4.2.0"
-  }
-}

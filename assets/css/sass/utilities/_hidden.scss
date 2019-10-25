@@ -1,0 +1,9 @@
+.hidden {
+	position: absolute;
+	left: -999em;
+	top: -999em;
+	&:focus {
+		top: 0;
+		left: 0;
+	}
+}

@@ -1,0 +1,13 @@
+.breadcrumbs > ol {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.breadcrumbs > ol li {
+  margin-right: .5em;
+}
+
+.breadcrumbs > ol li + li:before {
+  content: '>';
+}

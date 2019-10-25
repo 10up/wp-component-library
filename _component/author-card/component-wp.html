@@ -1,38 +1,33 @@
 <!-- Scoping this inside "creative work" so we can use the author schema, which feels better-->
 <section itemscope itemtype="https://schema.org/CreativeWork">
-	<div class="author-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <?php
+      $author_id = get_the_author_meta( 'ID' );
+      $avatar_url_sm = get_avatar_url( $author_id, array( 'size' => 96 ) );
+      $avatar_url_lrg = get_avatar_url( $author_id, array( 'size' => 192 ) );
+    ?>
+    <?php if ( $avatar_url_sm ) : ?>
+    <div class="author-card-pic">
+      <img
+        itemprop="image"
+        src="<?php echo esc_url( $avatar_url_sm ); ?>"
+        alt="Image of <?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>" />
+    </div> <!-- /.author-card-pic -->
+    <?php endif; ?>
 
-		<?php
-			$author_id      = get_the_author_meta( 'ID' );
-			$avatar_url_sm  = get_avatar_url( $author_id, array( 'size' => 96 ) );
-			$avatar_url_lrg = get_avatar_url( $author_id, array( 'size' => 192 ) );
-		?>
-
-		<?php if ( $avatar_url_sm ) : ?>
-		<div class="author-card-pic">
-			<img
-				itemprop="image"
-				src="<?php echo esc_url( $avatar_url_sm ); ?>"
-				srcset="<?php echo esc_url( $avatar_url_sm ); ?> 1x, <?php echo esc_url( $avatar_url_lrg ); ?> 2x"
-				alt="Image of <?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"
-			>
-		</div> <!-- /.author-card-pic -->
-		<?php endif; ?>
-
-		<div class="author-card-info">
-			<h2 class="author-card-author">
-				<a rel="author" href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" itemprop="url">
-					<span itemprop="name">
-						<?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?>
-					</span>
-				</a>
-			</h2>
-			<?php if ( get_the_author_meta( 'description' ) ) : ?>
-				<div class="author-card-bio" itemprop="description">
-					<p><?php echo esc_html( get_the_author_meta( 'description' ) ); ?></p>
-				</div> <!-- /.author-card-bio -->
-			<?php endif; ?>
-		</div> <!-- /.author-card-info -->
-
-	</div> <!-- /.author-card -->
+    <div class="author-card-info">
+      <h2 class="author-card-author">
+        <a rel="author" href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" itemprop="url">
+          <span itemprop="name">
+            <?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?>
+          </span>
+        </a>
+      </h2>
+      <?php if ( get_the_author_meta( 'description' ) ) : ?>
+      <div class="author-card-bio" itemprop="description">
+        <p><?php echo esc_html( get_the_author_meta( 'description' ) ); ?></p>
+      </div> <!-- /.author-card-bio -->
+      <?php endif; ?>
+    </div> <!-- /.author-card-info -->
+  </div> <!-- /.author-card -->
 </section><!--/itemtype=CreativeWork-->

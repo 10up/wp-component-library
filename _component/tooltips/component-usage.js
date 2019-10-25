@@ -1,3 +1,5 @@
-TenUp.tooltips( function() {
-	console.log( 'Amazing callback function!' );
+import Tooltip from '@10up/component-tooltip';
+
+new Tooltip('.tooltip', () => {
+  console.log( 'my awesome callback' );
 } );

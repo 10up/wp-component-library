@@ -1,20 +1,10 @@
-import navigation from '@10up/component-navigation';
+import Navigation from '@10up/component-navigation';
 
-navigation( '.navigation', {
+new Navigation( '.navigation', {
 	action: 'click',
-	onCreate: function() {
-		console.log( 'onCreate callback' );
-	},
-	onOpen: function() {
-		console.log( 'onOpen callback' );
-	},
-	onClose: function() {
-		console.log( 'onClose callback' );
-	},
-	onSubmenuOpen: function() {
-		console.log( 'onSubmenuOpen callback' );
-	},
-	onSubmenuClose: function() {
-		console.log( 'onSubmenuClose callback' );
-	}
+	onCreate: function() { /* Callback content */  },
+	onOpen: function() { /* Callback content */  },
+	onClose: function() { /* Callback content */  },
+	onSubmenuOpen: function() { /* Callback content */  },
+	onSubmenuClose: function() { /* Callback content */ }
 } );

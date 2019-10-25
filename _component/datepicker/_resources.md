@@ -1,2 +1,0 @@
-- [Pikaday](https://dbushell.github.io/Pikaday/)
-- [Pikaday on Github](https://github.com/dbushell/Pikaday)

@@ -1,46 +1,39 @@
-<a href="#main-content" class="screen-reader-text focusable">Skip to content</a>
-<header id="page-header" role="banner">
-	<div class="page-header-content">
-		<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+<a href="#main" class="hidden">Skip to content</a>
 
-			<a href="#primary-nav" aria-controls="primary-nav" class="site-menu-toggle toggle-menu-icon">
-				<span class="screen-reader-text">Primary Menu</span>
-			</a>
+<header class="c-banner" role="banner">
+	<div class="c-branding">
+		<img src="https://10up.com/wp-content/themes/10up-sept2016/assets/img/10up-logo-full.svg" alt="10up" width="30" class="c-branding__logo">
+		<p>Baseline</p>
+		<a href="#nav" class="c-nav__toggle" id="c-nav__toggle">Menu</a>
+	</div>
 
-			<ul id="primary-nav" class="primary-menu">
-				{% for category in site.data.categories %}
-					{% if page.category == category.slug %}
-					<li class="menu-item current-menu-item">
-					{% else %}
-					<li class="menu-item menu-item-has-children">
-					{% endif %}
-						<a href="#">{{ category.slug }}</a>
-						<ul class="sub-menu">
-						{% for component in site.component %}
-							{% if component.category == category.slug %}
-								<li class="menu-item"><a href="{{ site.baseurl }}{{ component.url }}">{{ component.title }}</a></li>
-							{% endif %}
-						{% endfor %}
-						</ul>
-					</li>
-				{% endfor %}
+	<div class="c-banner__wrap" id="nav">
+
+		<nav class="c-nav" role="navigation">
+			<ul>
+				<li><a href="{{ site.baseurl }}/" {% if page.category == 'home' %}aria-current="page"{% endif %}>Home</a></li>
+				<li><a href="{{ site.baseurl }}/components" {% if page.category == 'components' %}aria-current="page"{% endif %}>Components</a>
+					<ul class="subnav">
+						<li><a href="{{ site.baseurl }}/components/#global">Global Site Components</a></li>
+						<li><a href="{{ site.baseurl }}/components/#navigtion">Navigation</a></li>
+						<li><a href="{{ site.baseurl }}/components/#content">Content</a></li>
+						<li><a href="{{ site.baseurl }}/components/#forms">Forms &amp; <abbr title="Calls to action">CTAs</abbr></a></li>
+						<li><a href="{{ site.baseurl }}/components/#utility">Utility</a></li>
+					</ul>
+				</li>
+				<li><a href="https://github.com/10up/wp-component-library#contributing">Contribute</a></li>
+				<li><a href="https://10up.github.io/Engineering-Best-Practices/">Resources</a></li>
 			</ul>
+		</nav>
 
-		</nav><!-- .site-navigation -->
-
-		<a href="http://10up.com" class="header-logo-link"><span class="screen-reader-text">10up</span></a>
-		<a href="https://github.com/10up/component-library/" class="main-nav-supplemental-icon">
-			<span class="screen-reader-text">View on Github</span>
-		</a>
+		<div class="c-meta">
+			<img src="https://10up.com/wp-content/themes/10up-sept2016/assets/img/10up-logo-full.svg" alt="10up" width="30" class="c-meta__logo">
+			<p>Open Source, <a href="https://opensource.org/licenses/MIT">MIT licensed</a></p>
+			<p>Copyright 2019 @ <a href="https://10up.com/">10up</a></p>
+			<p>Already doing all this? <a href="https://10up.com/careers/">Careers at 10up</a></p>
+		</div>
 
 	</div>
 </header>
 
-<header class="template-header header">
-	<div class="grid-inner">
-		<h1>
-			<a href="{{ site.baseurl }}/">{{ site.title }}</a><br>
-			<span class="subhead">10up Engineering</span>
-		</h1>
-	</div>
-</header>
+<main class="main page-{{page.title}}" id="main" role="main">

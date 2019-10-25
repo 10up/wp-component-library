@@ -1,0 +1,26 @@
+.c-component-group {
+	border-bottom: 1px solid $color-accent;
+	color: $color-disabled;
+	font-size: $font-size-small;
+	list-style: none;
+	margin: 0;
+	max-width: $width-content;
+	padding: 0;
+
+	@media (min-width: $breakpoint-small) {
+		font-size: $font-size-medium;
+	}
+
+	@media (min-width: $breakpoint-small) {
+		margin-right: 1em;
+	}
+
+	> li {
+		border-top: 1px solid $color-accent;
+		padding: .2em .5em;
+	}
+
+	a {
+		color: $color-primary;
+	}
+}

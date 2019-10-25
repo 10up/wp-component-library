@@ -1,34 +1,24 @@
-<nav role="navigation">
+<nav role="navigation" class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList" aria-label="breadcrumb navigation">
 
-	<ol itemscope itemtype="http://schema.org/BreadcrumbList" aria-label="breadcrumb navigation">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="#!">
+        <!-- the actual display name of the breadcrumb -->
+        <span itemprop="name">Books</span>
+      </a>
 
-		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-			<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://example.com/books">
+      <!-- the content position should increment by 1 (starting at 1) -->
+      <meta itemprop="position" content="1" />
+    </li>
 
-				<!-- the actual display name of the breadcrumb -->
-				<span itemprop="name">Books</span>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="#!" aria-current="page">
+        <!-- the actual display name of the breadcrumb -->
+        <span itemprop="name">Subtopic or landing page</span>
+      </a>
+        <!-- the content position should increment by 1 (starting at 1) -->
+        <meta itemprop="position" content="2" />
+    </li>
 
-				<!-- if there's an image associated with this link -->
-				<img itemprop="image" src="https://placekitten.com/g/50/50" alt="Books" />
-			</a>
-
-			<!-- the content position should increment by 1 (starting at 1) -->
-			<meta itemprop="position" content="1" />
-		</li>
-
-		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-			<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://example.com/books/the-book" title="You are here">
-
-				<!-- the actual display name of the breadcrumb -->
-				<span itemprop="name">Subtopic or landing page</span>
-
-				<!-- if there's an image associated with this link -->
-				<img itemprop="image" src="https://placekitten.com/g/50/50" alt="Books" />
-			</a>
-
-			<!-- the content position should increment by 1 (starting at 1) -->
-			<meta itemprop="position" content="2" />
-		</li>
-
-	</ol>
+  </ol>
 </nav>

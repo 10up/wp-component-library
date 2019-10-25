@@ -1,147 +1,71 @@
-;(function ( w, doc ) {
+"use strict";
 
-	// Enable strict mode
-	"use strict";
+(function() {
 
-	// Local object for method references
 	var App = {};
 
-	// Namespace
-	App.ns = "10up Component Library";
+	App.navigation = function() {
 
-	// Start defining methods here
-	App.init = function() {
+		var toggle = document.getElementById('c-nav__toggle');
+		var href = toggle.getAttribute('href');
+		var target, state, firstLink;
 
-	  // Add the UI buttons
-	  // Only run on desktop
-	  if ( window.innerWidth > 767 ) {
-	  	App.add_rwd_buttons();
-	  }
+		toggle.setAttribute('aria-expanded', 'false');
 
-	  // Add the tabs, if necessary
-	  App.tabs();
+		toggle.addEventListener( 'click', function( e ) {
+			e.preventDefault();
+
+			target = document.querySelector(href);
+			firstLink = target.querySelector('a');
+			state = window.getComputedStyle(target);
+
+			if ( state.getPropertyValue('display') === 'none' ) {
+				this.setAttribute('aria-expanded', 'true');
+				target.style.display = 'block';
+				target.classList.add('is-open');
+				document.body.style.overflow = 'hidden';
+				firstLink.focus();
+			} else {
+				this.setAttribute('aria-expanded', 'false');
+				target.style.display = 'none';
+				document.body.style.overflow = 'auto';
+				target.classList.remove('is-open');
+			}
+
+		}, false );
+
+		window.addEventListener('resize', function() {
+			var width = document.documentElement.clientWidth;
+
+			if ( width >= 700 && document.getElementById('nav').classList.contains('is-open')) {
+				document.getElementById('c-nav__toggle').setAttribute('aria-expanded', 'false');
+				document.body.removeAttribute('style');
+				document.getElementById('nav').removeAttribute('style');
+				document.getElementById('c-nav__toggle').focus();
+			}
+
+		}, false);
+
+		document.addEventListener('keyup', function( e ) {
+			if ( e.keyCode === 27 && document.getElementById('nav').classList.contains('is-open')) {
+				document.getElementById('c-nav__toggle').click();
+				document.getElementById('c-nav__toggle').focus();
+			}
+		}, false);
 
 	};
 
-  	// UI Buttons
-	App.add_rwd_buttons = function() {
+	App.resize_iframe = function( e ) {
 
-		// Caching and initializing some variables
-		var components = doc.querySelectorAll('.component');
-		var components_count = components.length;
-		var component;
-		var wrapper;
-		var iframe;
-		var button_sm;
-		var button_md;
-		var button_lrg;
-		var button_reset;
-		var menu;
-		var i;
-
-		// Are there components on this page?
-		if( components_count ) {
-
-		  	// Loop through all the components (there's probably just one, but better safe than sorry, right?)
-		  	for ( i = 0; i < components_count; i = i + 1 ) {
-
-		  		// Get the elements we need to work with
-			  	component = components[i];
-			  	iframe = component.querySelector( 'iframe' );
-
-			  	if ( !iframe ) {
-			  		return;
-			  	}
-
-			  	// Create the wrapper
-			  	wrapper = doc.createElement( 'div' );
-			  	wrapper.setAttribute( 'class', 'wrapper-iframe' );
-			  	wrapper.setAttribute( 'aria-hidden', 'true' );
-
-			  	// Create the menu container
-			  	menu = doc.createElement( 'div' );
-			  	menu.setAttribute( 'class', 'menu-rwd' );
-
-			  	// Create a button
-			  	button_sm = doc.createElement( 'button' );
-			  	button_md = doc.createElement( 'button' );
-			  	button_lrg = doc.createElement( 'button' );
-			  	button_reset = doc.createElement( 'button' );
-
-			  	// Make it a real button
-			  	button_sm.setAttribute( 'type', 'button' );
-			  	button_md.setAttribute( 'type', 'button' );
-			  	button_lrg.setAttribute( 'type', 'button' );
-			  	button_reset.setAttribute( 'type', 'button' );
-
-			  	// Store on data
-			  	button_sm.setAttribute( 'data-width', 'small' );
-			  	button_md.setAttribute( 'data-width', 'medium' );
-			  	button_lrg.setAttribute( 'data-width', 'large' );
-			  	button_reset.setAttribute( 'data-width', 'reset' );
-
-			  	// Set the text
-			  	button_sm.innerHTML = "Small";
-			  	button_md.innerHTML = "Medium";
-			  	button_lrg.innerHTML = "Large";
-			  	button_reset.innerHTML = "Reset";
-
-			  	// Add them to the menu
-			  	menu.appendChild( button_sm );
-			  	menu.appendChild( button_md );
-			  	menu.appendChild( button_lrg );
-			  	menu.appendChild( button_reset );
-
-			  	// Insert the menu into the wrapping element
-			  	wrapper.appendChild( menu );
-
-			  	// Build the UI
-			  	component.insertBefore( wrapper, iframe.nextSibling );
-
-			  	// Listeners
-			  	App.bind_all_events( button_sm, button_md, button_lrg, button_reset, iframe );
-
-		  	} // for
-
-		} // if
-
-	}; // add_rwd_buttons
-
-	App.bind_all_events = function( button_sm, button_md, button_lrg, button_reset, iframe ) {
-
-		var btn;
-
-		button_sm.addEventListener( 'click', function() {
-			btn = this;
-			App.resize_iframe( btn, iframe );
-		}, false );
-
-		button_md.addEventListener( 'click', function() {
-			btn = this;
-			App.resize_iframe( btn, iframe );
-		}, false );
-
-		button_lrg.addEventListener( 'click', function() {
-			btn = this;
-			App.resize_iframe( btn, iframe );
-		}, false );
-
-		button_reset.addEventListener( 'click', function() {
-			btn = this;
-			App.resize_iframe( btn, iframe );
-		}, false );
-
-	};
-
-	App.resize_iframe = function( btn, iframe ) {
-
-		var width = btn.getAttribute('data-width');
-		var width_class = 'w-iframe__' + width;
+		var width = e.target.getAttribute('data-width');
+		var iframeSelector = e.target.getAttribute('aria-controls');
+		var iframe = document.getElementById(iframeSelector);
+		var width_class = 'c-iframe--' + width;
 
 		// Remove all the potential classes so we don't need to check
-		iframe.classList.remove( 'w-iframe__small' );
-		iframe.classList.remove( 'w-iframe__medium' );
-		iframe.classList.remove( 'w-iframe__large' );
+		iframe.classList.remove( 'c-iframe--small' );
+		iframe.classList.remove( 'c-iframe--medium' );
+		iframe.classList.remove( 'c-iframe--large' );
 
 		// Add the correct one back on
 		if( width !== 'reset' ) {
@@ -150,21 +74,29 @@
 
 	};
 
-	App.tabs = function() {
-		// Bail out if you're not on a component page
-		if ( ! document.getElementsByTagName( 'body' )[0].classList.contains( 'page-component' ) ) {
-			return;
-		}
+	App.rwdButtons = function() {
 
-		let codeTabs = new TenUp.tabs( '.tabs', {
-			orientation: 'horizontal'
-		} );
+		var buttons = document.querySelectorAll('.rwd-button');
+		var buttonCount = buttons.length;
+		var i;
+		console.log(buttons);
+		for ( i = 0; i < buttonCount; i = i + 1 ) {
+			buttons[i].addEventListener('click', App.resize_iframe );
+		}
+	};
+
+	App.navigation();
+
+	if ( document.querySelectorAll('.rwd-button').length ) {
+
+		App.rwdButtons();
 	}
 
-  // Start the application
-  App.init();
+	if ( document.querySelector('.tabs') ) {
+		var tabs = new TenUp.tabs( '.tabs' );
+	}
 
-  var clipboard = new Clipboard('.copy-clipboard');
+	var clipboard = new Clipboard('.copy-clipboard');
 
 	clipboard.on('success', function(e) {
 		e.trigger.innerText = 'Copied!';
@@ -173,6 +105,4 @@
 		}, 3000 );
 	});
 
-	let globalNavigation = new TenUp.navigation( '#primary-nav', { action: 'click' } );
-
-} )( this, this.document );
+})();

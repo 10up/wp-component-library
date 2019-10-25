@@ -8,29 +8,15 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="cleartype" content="on" />
-	<link rel="stylesheet" href="../../assets/css/examples.css" />
-
-	<!-- Embedded CSS for demo purposes only -->
-	<style>
-		body {
-			max-width: 600px;
-			margin: 0 auto;
-			padding-top: 20px;
-		}
-
-		div {
-			padding: 0 30px 20px;
-		}
-	</style>
-
-	<link rel="stylesheet" href="component.css" />
+	<style>body {margin: 0;padding: 0;}</style>
+	<link href="https://cdn.jsdelivr.net/npm/@10up/component-tooltip@latest/dist/tooltip.css" rel="stylesheet">
 
 </head>
 <body>
 	<!--
 		A Tooltip with a span
 	-->
-	<div>
+	<p>
 	<span class="a11y-tip">
 		<span class="a11y-tip__trigger">
 			Tooltip Trigger span
@@ -40,11 +26,11 @@
 			Tooltip content.
 		</span>
 	</span><!--/.a11y-tip-->
-	</div>
+</p>
 	<!--
 		A Tooltip with a link
 	-->
-	<div>
+	<p>
 	<span class="a11y-tip a11y-tip--no-delay">
 		<a href="#!" class="a11y-tip__trigger">
 			Link w/top tooltip
@@ -54,12 +40,12 @@
 			Activate this link to go somewhere!
 		</span>
 	</span><!--/.a11y-tip-->
-	</div>
+</p>
 	<!--
 		A Tooltip with a button
 	-->
 
-	<div>
+	<p>
 	<span class="a11y-tip">
 		<button type="button" class="a11y-tip__trigger" aria-describedby="tt_id">
 			Button w/bottom tooltip
@@ -69,13 +55,13 @@
 			Buttons do things on the page. Activate it to perform an action.
 		</span>
 	</span><!--/.a11y-tip-->
-	</div>
+</p>
 
 	<!--
 		A Tooltip with an input
 	-->
 
-	<div>
+	<p>
 	<label for="test">
 		Input with right tooltip
 	</label>
@@ -86,13 +72,13 @@
 			Enter something here. Text would be fine.
 		</span>
 	</span><!--/.a11y-tip-->
-	</div>
+</p>
 
 	<!--
 		Click to show/hide tooltip
 	-->
 
-	<div>
+	<p>
 	<span class="a11y-tip a11y-tip--toggle">
 		<span class="a11y-tip__trigger">
 			Tooltip Toggle Trigger
@@ -102,10 +88,12 @@
 			Tooltip content goes here
 		</span>
 	</span><!--/.a11y-tip-->
-	</div>
+</p>
 
-	<script src="component.js"></script>
-	<script src="component-usage.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@10up/component-tooltip@latest/dist/tooltip.js"></script>
+	<script type="text/javascript">
+		let myTooltips = new TenUp.tooltip('.a11y-tip');
+	</script>
 
 </body>
 </html>

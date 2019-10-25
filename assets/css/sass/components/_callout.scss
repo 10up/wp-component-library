@@ -1,0 +1,10 @@
+.c-callout {
+	background: $color-secondary;
+	color: $color-base;
+	padding: 3em;
+	margin: 3em 0 0 0;
+
+	@media (min-width: $breakpoint-medium) {
+		margin-left: -140px;
+	}
+}

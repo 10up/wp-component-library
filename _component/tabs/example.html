@@ -6,61 +6,45 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- It is not recommended to use the JSDelivr CDN for production. -->
 		<!-- Instead please install the components with npm or by including the files directly in your project -->
+		<style>body {margin: 0; padding: 0;}</style>
 		<link href="https://cdn.jsdelivr.net/npm/@10up/component-tabs@latest/dist/tabs.css" rel="stylesheet">
 	</head>
 	<body>
 
 		<div class="tabs">
-			<div class="tab-control">
-				<ul class="tab-list" role="tablist">
-					<li class="tab-item">
-						<a href="#js-tab1" role="tab" aria-controls="js-tab1">View Tab 1</a>
-					</li>
-					<li class="tab-item">
-						<a href="#js-tab2" role="tab" aria-controls="js-tab2">View Tab 2</a>
-					</li>
-					<li class="tab-item">
-						<a href="#js-tab3" role="tab" aria-controls="js-tab3">View Tab 3</a>
-					</li>
-					<li class="tab-item">
-						<a href="#js-tab4" role="tab" aria-controls="js-tab4">View Tab 4</a>
-					</li>
-					<li class="tab-item">
-						<a href="#js-tab5" role="tab" aria-controls="js-tab5">View Tab 5</a>
-					</li>
-				</ul>
-			</div><!-- //.tab-control -->
+		  <div class="tab-control">
+		    <ul class="tab-list" role="tablist">
+		      <li class="tab-item">
+		        <a href="#js-tab1" role="tab" aria-controls="js-tab1">Lorem Ipsum</a>
+		        <!-- This can be a link or button: <button role="tab" aria-controls="js-tab1">View Tab 1</button> -->
+		      </li>
+		      <li class="tab-item">
+		        <a href="#js-tab2" role="tab" aria-controls="js-tab2">Dolor sit</a>
+		      </li>
+		      <li class="tab-item">
+		        <a href="#js-tab3" role="tab" aria-controls="js-tab3">Consectetur</a>
+		      </li>
+		    </ul>
+		  </div><!-- /.tab-control -->
 
-			<div class="tab-group">
+		  <div class="tab-group">
+		    <div class="tab-content" id="js-tab1" role="tabpanel">
+		      <h2>Lorem Ipsum</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		    </div><!-- /.tab-content -->
 
-				<div class="tab-content" id="js-tab1" role="tabpanel">
-					<h2>Tab 1 Content</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-				</div><!-- //.tab-content -->
+		    <div class="tab-content" id="js-tab2" role="tabpanel">
+		      <h2>Dolor sit amet</h2>
+		      <p>In tincidunt tempor risus gravida tincidunt.</p>
+		    </div><!-- /.tab-content -->
 
-				<div class="tab-content" id="js-tab2" role="tabpanel">
-					<h2>Tab 2 Content</h2>
-					<p>In tincidunt tempor risus gravida tincidunt.</p>
-				</div><!-- //.tab-content -->
+		    <div class="tab-content" id="js-tab3" role="tabpanel">
+		      <h2>Consectetur adipiscing</h2>
+		      <p>Suspendisse eget commodo erat. Donec a metus fringilla, pharetra ipsum nec, aliquet felis. </p>
+		    </div><!-- /.tab-content -->
 
-				<div class="tab-content" id="js-tab3" role="tabpanel">
-					<h2>Tab 3 Content</h2>
-					<p>Suspendisse eget commodo erat. Donec a metus fringilla, pharetra ipsum nec, aliquet felis. </p>
-				</div><!-- //.tab-content -->
-
-				<div class="tab-content" id="js-tab4" role="tabpanel">
-					<h2>Tab 4 Content</h2>
-					<p>Aenean eu nibh nisl. Nulla ornare condimentum erat, et rhoncus urna euismod a.</p>
-				</div><!-- //.tab-content -->
-
-				<div class="tab-content" id="js-tab5" role="tabpanel">
-					<h2>Tab 5 Content</h2>
-					<p>Duis sollicitudin consequat lorem eu sagittis.</p>
-				</div><!-- //.tab-content -->
-
-			</div><!-- //.tab-group -->
-
-		</div><!-- //.tabs -->
+		  </div><!-- /.tab-group -->
+		</div><!-- /.tabs -->
 
 		<!-- It is not recommended to use the JSDelivr CDN for production. -->
 		<!-- Instead please install the components with npm or by including the files directly in your project -->

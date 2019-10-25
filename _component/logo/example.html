@@ -8,19 +8,21 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="cleartype" content="on" />
-		<link rel="stylesheet" href="../../assets/css/examples.css" />
+
+		<style>
+		.logo {
+			align-items: center;
+			display: flex;
+		}
+		</style>
 
 	</head>
 	<body>
 
 		<div itemscope itemtype="http://schema.org/Organization">
-			<a itemprop="url" href="http://www.example.com/">
-				<img itemprop="logo" src="https://placekitten.com/g/80/80" srcset="https://placekitten.com/g/80/80 1x, https://placekitten.com/g/160/160 2x" alt="" />
-				<!--
-					Visually hide this text.
-					WCAG 2.1: “image alt text cannot be the primary text of a link"
-				-->
-				<span class="screen-reader-text">Amazing Company</span>
+			<a itemprop="url" href="http://www.example.com/" class="logo">
+				<img itemprop="logo" src="https://via.placeholder.com/50" alt="" />
+				<span>Amazing Company</span>
 			</a>
 		</div>
 
