@@ -1,6 +1,6 @@
 import Navigation from '@10up/component-navigation';
 
-new Navigation( '.navigation', {
+new Navigation( '.primary-menu', {
 	action: 'click',
 	onCreate: function() { /* Callback content */  },
 	onOpen: function() { /* Callback content */  },
