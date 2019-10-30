@@ -1,0 +1,40 @@
+<div itemscope itemtype="http://schema.org/Person">
+
+  <h3 itemprop="name"><?php echo esc_html('Bill Murray'); ?></h3>
+  <img src="<?php echo esc_url( 'https://via.placeholder.com/50' ); ?>" itemprop="image" alt="Placeholder image" />
+
+  <p><strong>Title</strong>:
+    <span itemprop="jobTitle"><?php echo esc_html('Professor'); ?></span>
+  </p>
+
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <p><strong>Address</strong>:
+      <span itemprop="streetAddress"><?php echo esc_html('35 Broad St'); ?></span>,
+      <span itemprop="addressLocality"><?php echo esc_html('Red Bank'); ?></span>,
+      <span itemprop="addressRegion"><abbr title="<?php echo esc_attr( 'New Jersey' ); ?>"><?php echo esc_html('NJ'); ?></abbr></span>
+      <span itemprop="postalCode"><?php echo esc_html('07701'); ?></span>
+    </p>
+  </div><!--/itemtype=PostalAddress-->
+
+  <p>
+    <strong>Phone</strong>:
+    <a href="<?php echo esc_url( 'tel:+14251235678' ); ?>" itemprop="telephone"><?php echo esc_html('(425) 123-4567'); ?></a>
+  </p>
+
+  <p>
+    <strong>Email</strong>:
+    <a href="<?php echo esc_url( 'mailto:jane-doe@xyz.edu' ); ?>" itemprop="email"><?php echo esc_html('jane-doe@xyz.edu'); ?></a>
+  </p>
+
+  <p>
+    <strong>Website</strong>:
+    <a href="<?php echo esc_url( 'http://www.example.com' ); ?>" itemprop="url"><?php echo esc_html('janedoe.com'); ?></a>
+  </p>
+
+  <p>
+    <strong>Colleagues</strong>:
+    <a href="<?php echo esc_url( 'http://www.xyz.edu/students/alicejones.html' ); ?>" itemprop="colleague"><?php echo esc_html('Alice Jones'); ?></a>,
+    <a href="<?php echo esc_url( 'http://www.xyz.edu/students/bobsmith.html' ); ?>" itemprop="colleague"><?php echo esc_html('Bob Smith'); ?></a>
+  </p>
+
+</div><!--/itemtype=Person-->

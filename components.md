@@ -26,21 +26,19 @@ category: components
 </ul>
 
 <h2 class="txt-h4 u-spacing__none" id="content">Content</h2>
-<p class="u-lighten">Components for presenting various content items.</p>
+<p class="u-lighten">HTML schema patterns for presenting various content items.</p>
 <ul class="c-component-group u-spacing__bottom--large">
 	<li><a href="{{ site.baseurl }}/component/author-card/">Author card</a></li>
 	<li><a href="{{ site.baseurl }}/component/blogpost/">Blog post</a></li>
 	<li><a href="{{ site.baseurl }}/component/blogroll/">Blogroll / article listing</a></li>
-	<li><a href="{{ site.baseurl }}/component/comments/">Comments</a></li>
 	<li><a href="{{ site.baseurl }}/component/organization/">Organization</a></li>
-	<li><a href="{{ site.baseurl }}/component/person/">Person bio</a></li>
+	<li><a href="{{ site.baseurl }}/component/person/">Person</a></li>
 </ul>
 
 <h2 class="txt-h4 u-spacing__none" id="forms">Forms &amp; CTAs</h2>
 <p class="u-lighten">Form elements and call-to-action items.</p>
 <ul class="c-component-group u-spacing__bottom--large">
-	<li><a href="{{ site.baseurl }}/component/">Custom select / Dropdown</a></li>
-	<li><a href="{{ site.baseurl }}/component/">Read more <abbr>CTA</abbr></a></li>
+	<li><a href="{{ site.baseurl }}/component/custom-select/">Custom select / Dropdown</a></li>
 </ul>
 
 <h2 class="txt-h4 u-spacing__none" id="utility">Utility</h2>

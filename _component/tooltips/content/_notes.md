@@ -6,3 +6,5 @@ The Tooltip component can be used in three forms:
 3. A togglable tooltip (click to hide/show).
 
 There are also delay and timing options available, however the default timing of 1 second mimics the title attribute timing (which was the previous WCAG standard; timing requirements have since been removed).
+
+[View this repository on GitHub](https://github.com/10up/component-tabs).

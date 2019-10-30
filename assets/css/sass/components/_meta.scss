@@ -24,7 +24,9 @@
 	}
 
 	&__logo {
-	  margin-bottom: .5em;
+		display: block;
+		margin-bottom: .5em;
+		width: 30px;
 	}
 
 }

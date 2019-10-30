@@ -44,3 +44,10 @@ figure {
 	background: $color-primary; /* Firefox */
 	color: $color-base;
 }
+
+header,
+main,
+footer,
+nav {
+	display: block;
+}
