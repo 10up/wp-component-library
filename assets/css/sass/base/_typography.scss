@@ -1,10 +1,14 @@
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
 	line-height: $line-height-medium;
 	margin-top: $spacing-none;
 	padding-top: $spacing-none;
 }
 
-h1, .txt-h1 {
+h1,
+.txt-h1 {
 	color: $color-secondary;
 	font-family: $font-secondary;
 	font-size: $font-size-large;
@@ -17,20 +21,20 @@ h1, .txt-h1 {
 		font-size: $font-size-xlarge;
 		line-height: $line-height-medium;
 	}
-
 }
 
-h2, .txt-h2 {
+h2,
+.txt-h2 {
 	font-size: $font-size-medium;
 	font-weight: $font-weight-light;
 
 	@media (min-width: $breakpoint-small) {
 		font-size: $font-size-large;
 	}
-
 }
 
-h3, .txt-h3 {
+h3,
+.txt-h3 {
 	font-size: $font-size-small;
 	font-weight: $font-weight-medium;
 	margin-bottom: 1rem;
@@ -38,10 +42,10 @@ h3, .txt-h3 {
 	@media (min-width: $breakpoint-small) {
 		font-size: $font-size-medium;
 	}
-
 }
 
-h4, .txt-h4 {
+h4,
+.txt-h4 {
 	color: $color-secondary;
 	font-size: $font-size-xsmall;
 	font-weight: $font-weight-regular;
@@ -50,10 +54,12 @@ h4, .txt-h4 {
 	@media (min-width: $breakpoint-small) {
 		font-size: $font-size-small;
 	}
-
 }
 
-p, ul, ol, dl {
+p,
+ul,
+ol,
+dl {
 	font-size: $font-size-tiny;
 	max-width: $width-content;
 	margin: $spacing-none $spacing-none $spacing-small;
@@ -69,10 +75,11 @@ p, ul, ol, dl {
 	&.u-lighten {
 		font-weight: $font-weight-light;
 	}
-
 }
 
-ul, ol, dl {
+ul,
+ol,
+dl {
 	line-height: $line-height-large;
 	padding-left: $spacing-medium;
 }
@@ -87,6 +94,9 @@ a {
 		text-decoration: underline;
 	}
 
+	abbr {
+		text-decoration: none;
+	}
 }
 
 sup {
@@ -96,7 +106,8 @@ sup {
 	text-transform: uppercase;
 }
 
-pre, code {
+pre,
+code {
 	font-family: $font-tertiary;
 	font-size: $font-size-fine;
 	margin: $spacing-none;

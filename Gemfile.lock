@@ -192,7 +192,6 @@ GEM
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (~> 3.0)
-    json (2.2.0)
     kramdown (1.17.0)
     liquid (4.0.0)
     listen (3.1.5)
@@ -245,7 +244,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (= 202)
-  json
 
 BUNDLED WITH
-   2.0.1
+   2.0.2

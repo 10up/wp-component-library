@@ -14,7 +14,7 @@ category: home
 </div>
 
 <p>
-	At 10up, we strive to provide a websites that yield a top-notch user
+	At 10up, we strive to provide websites that yield a top-notch user
 	experience. In order to improve both our efficiency and consistency, we
 	need to standardize what we use and how we use it. Standardizing our
 	approach to commonly-used front-end components allows us to understand
@@ -57,8 +57,8 @@ category: home
 <div class="u-spacing__top--large u-spacing__bottom--large">
 	<h2>About 10up</h2>
 
-	<p>We make the internet better with consultative creative and engineering services, innovative tools, and dependable products that take the pain out of content creation and management, in service of digital experiences that advance business and marketing objectives. We’re a group of people built to solve problems, made to create, wired to delight.</p>
+    <p>We make the internet better with consultative creative and engineering services, innovative tools, and dependable products that take the pain out of content creation and management, in service of digital experiences that advance business and marketing objectives. We’re a group of people built to solve problems, made to create, wired to delight.</p>
 
-	<p>A customer-centric service model that covers every base, unrivaled leadership and investment in open platforms and tools for digital makers and content creators, and a forward-looking remote work culture make for a refreshing agency experience.</p>
+    <p>A customer-centric service model that covers every base, unrivaled leadership and investment in open platforms and tools for digital makers and content creators, and a forward-looking remote work culture make for a refreshing agency experience.</p>
 
 </div>
