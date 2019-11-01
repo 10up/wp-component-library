@@ -2,7 +2,7 @@
 title: Blog Post
 layout: default
 path_slug: blogpost
-category: components
+category: content
 iframe_height: tall
 ---
 

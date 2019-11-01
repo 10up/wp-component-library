@@ -3,7 +3,7 @@ title: tooltips
 layout: default
 path_slug: tooltips
 iframe_height: short
-category: components
+category: global
 ---
 
 <div class="u-align-center--small">

@@ -2,7 +2,7 @@
 title: Blogroll
 path_slug: blogroll
 layout: default
-category: components
+category: content
 iframe_height: medium
 ---
 

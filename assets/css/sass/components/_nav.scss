@@ -22,7 +22,8 @@
 	a {
 		color: $color-base;
 
-		&[aria-current="page"] {
+		&[aria-current="page"],
+		&[aria-current="true"] {
 			color: $color-tertiary;
 		}
 

@@ -15,11 +15,11 @@
 				<li><a href="{{ site.baseurl }}/getting-started" {% if page.category == 'documentation' %}aria-current="page"{% endif %}>Getting Started</a></li>
 				<li><a href="{{ site.baseurl }}/components" {% if page.category == 'components' %}aria-current="page"{% endif %}>Components</a>
 					<ul class="subnav">
-						<li><a href="{{ site.baseurl }}/components/#global">Global Site Components</a></li>
-						<li><a href="{{ site.baseurl }}/components/#navigtion">Navigation</a></li>
-						<li><a href="{{ site.baseurl }}/components/#content">Content</a></li>
-						<li><a href="{{ site.baseurl }}/components/#forms">Forms &amp; <abbr title="Calls to action">CTAs</abbr></a></li>
-						<li><a href="{{ site.baseurl }}/components/#utility">Utility</a></li>
+						<li><a href="{{ site.baseurl }}/components/#global" {% if page.category == 'global' %}aria-current="true"{% endif %}>Global Site Components</a></li>
+						<li><a href="{{ site.baseurl }}/components/#navigtion" {% if page.category == 'navigation' %}aria-current="true"{% endif %}>Navigation</a></li>
+						<li><a href="{{ site.baseurl }}/components/#content" {% if page.category == 'content' %}aria-current="true"{% endif %}>Content</a></li>
+						<li><a href="{{ site.baseurl }}/components/#forms" {% if page.category == 'forms' %}aria-current="true"{% endif %}>Forms &amp; <abbr title="Calls to action">CTAs</abbr></a></li>
+						<li><a href="{{ site.baseurl }}/components/#utility" {% if page.category == 'utility' %}aria-current="true"{% endif %}>Utility</a></li>
 					</ul>
 				</li>
 				<li><a href="{{ site.baseurl }}/contributing/" {% if page.category == 'contributing' %}aria-current="page"{% endif %}>Contribute</a></li>

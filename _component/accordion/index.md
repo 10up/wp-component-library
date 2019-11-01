@@ -3,7 +3,7 @@ title: accordion
 layout: default
 path_slug: accordion
 iframe_height: short
-category: components
+category: global
 ---
 
 <div class="u-align-center--small">

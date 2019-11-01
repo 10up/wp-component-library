@@ -3,7 +3,7 @@ title: author card
 layout: default
 path_slug: author-card
 iframe_height: short
-category: components
+category: content
 ---
 
 <div class="u-align-center--small">

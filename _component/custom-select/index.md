@@ -3,7 +3,7 @@ layout: default
 title: Custom Select Dropdown
 path_slug: custom-select
 iframe_height: short
-category: components
+category: forms
 ---
 
 <div class="u-align-center--small">

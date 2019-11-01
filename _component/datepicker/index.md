@@ -2,7 +2,7 @@
 title: date picker
 layout: default
 path_slug: datepicker
-category: components
+category: global
 iframe_height: short
 ---
 
