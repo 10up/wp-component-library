@@ -4,7 +4,7 @@
 "use strict";
 
 {% include_relative vendor/clipboard.min.js %}
-{% include_relative vendor/tabs.js %}
+{% include_relative vendor/tabs.min.js %}
 
 (function() {
 
