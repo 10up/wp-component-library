@@ -14,9 +14,13 @@ All components are tested to be WCAG 2.1 Compliant.
 
 **[Start browsing ☞](https://10up.github.io/wp-component-library/)**
 
+## How to Use
+
+To use a component, navigate to the component’s detail page to see demos, usage examples, and to learn how to install it.
+
 ## Support Level
 
-**Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress.  Bug reports, feature requests, questions, and pull requests are welcome.
+**Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress. Bug reports, feature requests, questions, and pull requests are welcome.
 
 ## Like what you see?
 
