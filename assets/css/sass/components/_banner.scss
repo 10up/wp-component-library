@@ -21,6 +21,7 @@
 		height: calc(100% - 52px);
 		left: 0;
 		overflow: auto;
+		-ms-overflow-style: none;
 		position: fixed;
 		top: 52px;
 		z-index: $elevation-high;
@@ -33,5 +34,4 @@
 			position: static;
 		}
 	}
-
 }
