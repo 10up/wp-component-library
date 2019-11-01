@@ -57,6 +57,6 @@
   	</tr>
  	<tr>
   		<th>.sub-menu</th>
-  		<td>A nest menu</td>
+  		<td>A nested menu</td>
   	</tr>
   </table>
