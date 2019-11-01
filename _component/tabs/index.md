@@ -3,7 +3,7 @@ title: tabs
 layout: default
 path_slug: tabs
 iframe_height: medium
-category: components
+category: global
 ---
 
 <div class="u-align-center--small">

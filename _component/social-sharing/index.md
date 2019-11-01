@@ -3,7 +3,7 @@ title: Social Sharing Links
 layout: default
 path_slug: social-sharing
 iframe_height: short
-category: components
+category: navigation
 ---
 
 <div class="u-align-center--small">

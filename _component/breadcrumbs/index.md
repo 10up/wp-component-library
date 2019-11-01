@@ -3,7 +3,7 @@ title: breadcrumbs
 layout: default
 path_slug: breadcrumbs
 iframe_height: tiny
-category: components
+category: navigation
 ---
 
 <div class="u-align-center--small">

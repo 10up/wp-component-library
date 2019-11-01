@@ -2,7 +2,7 @@
 title: modal
 layout: default
 path_slug: modal
-category: components
+category: global
 iframe_height: short
 ---
 

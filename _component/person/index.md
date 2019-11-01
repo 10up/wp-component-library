@@ -2,7 +2,7 @@
 title: Person
 path_slug: person
 layout: default
-category: components
+category: content
 iframe_height: medium
 ---
 

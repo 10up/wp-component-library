@@ -2,7 +2,7 @@
 title: Organization
 path_slug: organization
 layout: default
-category: components
+category: content
 iframe_height: medium
 ---
 
