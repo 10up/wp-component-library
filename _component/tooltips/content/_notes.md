@@ -7,4 +7,7 @@ The Tooltip component can be used in three forms:
 
 There are also delay and timing options available, however the default timing of 1 second mimics the title attribute timing (which was the previous WCAG standard; timing requirements have since been removed).
 
-[View this repository on GitHub](https://github.com/10up/component-tabs).
+<ul class="button-group button-group--flush">
+	<li><a href="https://github.com/10up/component-tooltip">View this repository on GitHub</a></li>
+	<li><a href="https://github.com/10up/component-tooltip/issues/new/choose">File an issue</a></li>
+</ul>

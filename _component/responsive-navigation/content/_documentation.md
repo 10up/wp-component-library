@@ -13,10 +13,6 @@
  		<th class="th">action</th>
  		<td class="td">The action to use to open menu items <em>(default) hover</em></td>
  	</tr>
- 	<tr>
- 		<th>breakpoint</th>
- 		<td>Viewport breakpoint to switch to small screen menu <em>(default) (min-width: 48em)</em></td>
- 	</tr>
  </table>
 
 <h3>Callbacks</h3>
@@ -43,3 +39,24 @@
  		<td>Called when a submenu item is closed</td>
  	</tr>
  </table>
+
+ <h3>Classes</h3>
+
+  <table class="table--code u-spacing__bottom--large">
+  	<tr>
+  		<th class="th">.site-navigation</th>
+  		<td class="td">Wrapping class for the component.</td>
+  	</tr>
+  	<tr>
+  		<th>.primary-menu</th>
+  		<td>The navigation menu itself, also the target for the method call.</td>
+  	</tr>
+  	<tr>
+  		<th>.menu-item</th>
+  		<td>An individual menu item.</td>
+  	</tr>
+ 	<tr>
+  		<th>.sub-menu</th>
+  		<td>A nest menu</td>
+  	</tr>
+  </table>

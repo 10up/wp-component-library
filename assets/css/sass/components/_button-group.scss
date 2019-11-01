@@ -7,7 +7,7 @@
 	position: relative;
 
 	> li + li {
-		margin-left: $spacing-small;
+		margin-left: $spacing-medium;
 	}
 
 	@media (min-width: $breakpoint-small) {
