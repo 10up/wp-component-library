@@ -1,3 +1,4 @@
+// Typography
 $font-primary: "IBM Plex Sans", sans-serif;
 $font-secondary: "Playfair Display", serif;
 $font-tertiary: "IBM Plex Mono", monospace;
@@ -10,6 +11,11 @@ $font-size-xsmall: 1rem; // 16px
 $font-size-tiny: 0.875rem; // 14px
 $font-size-fine: 0.8125rem; // 13px
 
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-black: 900;
+
 $line-height-small: 1;
 $line-height-medium: 1.3;
 $line-height-large: 1.5;
@@ -18,11 +24,7 @@ $line-height-xlarge: 2;
 $letter-spacing-medium: .03em;
 $letter-spacing-large: .05em;
 
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-black: 900;
-
+// Colors
 $color-base: #fff;
 $color-primary: #232323;
 $color-secondary: #e31e41;
@@ -33,14 +35,22 @@ $color-accent-dark: #333;
 $color-accent-light: #eee;
 $color-disabled: $color-accent-secondary;
 
-$width-content: 40rem; // 640px
-
-$breakpoint-small: 43.75rem; // 600px
-$breakpoint-medium: 62.5rem; // 1000px
-$breakpoint-large: 75rem; // 1200px
-
+// Layout and spacing
 $spacing-none: 0;
 $spacing-tiny: .5em;
 $spacing-small: 1em;
 $spacing-medium: 2em;
 $spacing-large: 3em;
+
+$width-content: 40rem; // 640px
+
+// Stacking
+$elevation-under: -1;
+$elevation-low: 1;
+$elevation-mid: 50;
+$elevation-high: 100;
+
+// Breakpoints
+$breakpoint-small: 43.75rem; // 600px
+$breakpoint-medium: 62.5rem; // 1000px
+$breakpoint-large: 75rem; // 1200px

@@ -43,7 +43,7 @@
 			background: $color-primary;
 			color: $color-base;
 			position: relative;
-			z-index: 1;
+			z-index: $elevation-mid;
 		}
 	}
 }

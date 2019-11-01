@@ -30,8 +30,8 @@ body {
 	font-weight: $font-weight-regular;
 	line-height: $line-height-xlarge;
 	min-height: 100%;
-	margin: 0;
-	padding: 0;
+	margin: $spacing-none;
+	padding: $spacing-none;
 }
 
 iframe {
@@ -44,7 +44,7 @@ iframe {
 
 figure {
 	display: block;
-	margin: 0;
+	margin: $spacing-none;
 }
 
 header,

@@ -3,9 +3,9 @@
 	color: $color-disabled;
 	font-size: $font-size-small;
 	list-style: none;
-	margin: 0;
+	margin: $spacing-none;
 	max-width: $width-content;
-	padding: 0;
+	padding: $spacing-none;
 
 	@media (min-width: $breakpoint-small) {
 		font-size: $font-size-medium;

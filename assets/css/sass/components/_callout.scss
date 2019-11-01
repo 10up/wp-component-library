@@ -2,7 +2,7 @@
 	background: $color-secondary;
 	color: $color-base;
 	padding: $spacing-large;
-	margin: $spacing-large 0 0 0;
+	margin: $spacing-large $spacing-none $spacing-none;
 
 	@media (min-width: $breakpoint-medium) {
 		margin-left: -140px;

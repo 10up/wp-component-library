@@ -5,7 +5,7 @@
 	transition: all linear .2s;
 
 	@media (min-width: $breakpoint-medium) {
-		margin-left: -2em;
+		margin-left: -$spacing-medium;
 	}
 }
 
@@ -33,10 +33,10 @@
 
 .c-iframe--clean {
 	border: 0;
-	padding: 0;
+	padding: $spacing-none;
 
 	@media (min-width: $breakpoint-medium) {
-		margin-left: 0;
+		margin-left: $spacing-none;
 	}
 
 }

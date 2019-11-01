@@ -23,6 +23,7 @@
 		overflow: auto;
 		position: fixed;
 		top: 52px;
+		z-index: $elevation-high;
 
 		&:target {
 			display: block;

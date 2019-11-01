@@ -21,6 +21,8 @@ table {
 th {
 	background: $color-accent-light;
 	border-top: 2px solid $color-primary;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	width: 40%;
 }
 
