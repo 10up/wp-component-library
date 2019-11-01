@@ -2,25 +2,20 @@ table {
 	border-collapse: collapse;
 	border-bottom: 2px solid $color-primary;
 	border-top: 2px solid $color-primary;
-	line-height: 1.5;
+	line-height: $line-height-large;
 	max-width: $width-content;
 	width: 100%;
 
 	@media (min-width: $breakpoint-small) {
-		margin-right: 1em;
+		margin-right: $spacing-small;
 	}
 }
 
  td, th {
 	border-bottom: 2px solid $color-accent-secondary;
-	padding: .5em .75em;
+	padding: $spacing-tiny $spacing-small;
 	text-align: left;
 	vertical-align: top;
-
-	@media (min-width: $breakpoint-small) {
-		padding: .5em 1em;
-	}
-
 }
 
 th {

@@ -4,8 +4,8 @@
 	cursor: pointer;
 	display: block;
 	font-size: $font-size-xsmall;
-	letter-spacing: .025em;
-	padding: .5em 1em;
+	letter-spacing: $letter-spacing-medium;
+	padding: $spacing-tiny $spacing-small;
 	text-align: center;
 	text-transform: uppercase;
 	white-space: nowrap;

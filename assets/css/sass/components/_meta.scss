@@ -1,5 +1,5 @@
 .c-meta {
-	padding: 0 1em 2.5em 2.5em;
+	padding: $spacing-none $spacing-small $spacing-medium $spacing-medium;
 
 	a {
 		color: $color-accent;
@@ -16,16 +16,16 @@
 		color: $color-accent;
 		margin: 0;
 		font-size: $font-size-fine;
-		line-height:1.4;
+		line-height: $line-height-medium;
 	}
 
 	p:last-child{
-		margin-top: 2em;
+		margin-top: $spacing-medium;
 	}
 
 	&__logo {
 		display: block;
-		margin-bottom: .5em;
+		margin-bottom: $spacing-tiny;
 		width: 30px;
 	}
 

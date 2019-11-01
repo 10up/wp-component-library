@@ -1,9 +1,9 @@
 .main {
-	padding: 2em 1em 0;
+	padding: $spacing-medium $spacing-small $spacing-none;
 
 	@media (min-width: $breakpoint-small) {
 		margin-left: 260px;
-		padding: 3em 2em;
+		padding: $spacing-large $spacing-medium;
 		width: calc(100% - 260px);
 	}
 

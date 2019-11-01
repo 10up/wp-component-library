@@ -1,7 +1,7 @@
 .c-iframe {
 	border-bottom: 4px solid $color-primary;
 	border-top: 4px solid $color-primary;
-	padding: 1em 0;
+	padding: $spacing-small 0;
 	transition: all linear .2s;
 
 	@media (min-width: $breakpoint-medium) {

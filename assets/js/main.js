@@ -79,7 +79,7 @@
 		var buttons = document.querySelectorAll('.rwd-button');
 		var buttonCount = buttons.length;
 		var i;
-		console.log(buttons);
+
 		for ( i = 0; i < buttonCount; i = i + 1 ) {
 			buttons[i].addEventListener('click', App.resize_iframe );
 		}

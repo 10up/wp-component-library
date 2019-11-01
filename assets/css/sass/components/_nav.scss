@@ -1,21 +1,21 @@
 .c-nav {
-	padding: 2.5em 1em 8em 2.5em;
+	padding: $spacing-large $spacing-small 8em $spacing-medium;
 
 	> ul {
 		font-size: $font-size-tiny;
-		letter-spacing: .03em;
-		line-height: 1.5;
+		letter-spacing: $letter-spacing-medium;
+		line-height: $line-height-large;
 		list-style: none;
-		margin: 0;
-		padding: 0;
+		margin: $spacing-none;
+		padding: $spacing-none;
 		text-transform: uppercase;
 	}
 
 	li {
-		margin-bottom: 1.2em;
+		margin-bottom: $spacing-small;
 
 		&:last-child {
-		  margin:0;
+		  margin: $spacing-none;
 		}
 	}
 
@@ -66,7 +66,7 @@
 
 			&:after {
 				top: 50%;
-				margin-top: 0;
+				margin-top: $spacing-none;
 				transform: rotate(-45deg);
 			}
 		}
@@ -78,9 +78,9 @@
 	border-left: 1px solid $color-accent-dark;
 	font-size: $font-size-tiny;
 	font-weight: $font-weight-regular;
-	line-height: .85;
+	line-height: $line-height-small;
 	list-style: none;
-	margin: 1em 0 0 .5em;
-	padding: 5px 10px;
+	margin: $spacing-small $spacing-none $spacing-none $spacing-tiny;
+	padding: $spacing-tiny $spacing-small;
 	text-transform: none;
 }

@@ -1,5 +1,5 @@
 h1, h2, h3, h4 {
-	line-height: 1.3;
+	line-height: $line-height-medium;
 	margin-top: 0;
 	padding-top: 0;
 }
@@ -9,13 +9,13 @@ h1, .txt-h1 {
 	font-family: $font-secondary;
 	font-size: $font-size-large;
 	font-weight: $font-weight-black;
-	line-height: 1.85;
-	margin: 0;
+	line-height: $line-height-medium;
+	margin: $spacing-none;
 	text-transform: capitalize;
 
 	@media (min-width: $breakpoint-small) {
 		font-size: $font-size-xlarge;
-		line-height: 1.28;
+		line-height: $line-height-medium;
 	}
 
 }
@@ -56,14 +56,14 @@ h4, .txt-h4 {
 p, ul, ol, dl {
 	font-size: $font-size-tiny;
 	max-width: $width-content;
-	margin: 0 0 1em;
+	margin: 0 0 $spacing-small;
 
 	@media (min-width: $breakpoint-small) {
 		font-size: $font-size-xsmall;
 	}
 
 	@media (min-width: $breakpoint-medium) {
-		margin-right: 2em;
+		margin-right: $spacing-medium;
 	}
 
 	&.u-lighten {
@@ -73,7 +73,7 @@ p, ul, ol, dl {
 }
 
 ul, ol, dl {
-	padding-left: 1.5em;
+	padding-left: $spacing-medium;
 }
 
 a {
@@ -98,24 +98,24 @@ sup {
 pre, code {
 	font-family: $font-tertiary;
 	font-size: $font-size-fine;
-	margin: 0;
+	margin: $spacing-none;
 }
 
 pre code {
 	background: $color-base;
 	color: $color-primary;
 	display: block;
-	padding: 0;
+	padding: $spacing-none;
 }
 
 code {
 	background: $color-primary;
 	color: $color-base;
 	display: inline-block;
-	padding: .5em 1em;
+	padding: $spacing-tiny $spacing-small;
 }
 
 p > code,
 li > code {
-	padding: 0 .5em;
+	padding: $spacing-none $spacing-tiny;
 }

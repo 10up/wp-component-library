@@ -1,19 +1,19 @@
 .tabs {
 	@media (min-width: $breakpoint-medium) {
-		margin-left: -2em;
+		margin-left: -$spacing-medium;
 	}
 }
 
 .tab-list {
 	list-style: none;
-	margin: 0;
+	margin: $spacing-none;
 	overflow: auto;
-	padding: 0;
+	padding: $spacing-none;
 	position: relative;
 	white-space: nowrap;
 
 	@media (min-width: $breakpoint-small) {
-		padding: 0 2em;
+		padding: $spacing-none $spacing-medium;
 	}
 }
 
@@ -24,12 +24,12 @@
 		background: $color-tertiary;
 		color: $color-primary;
 		display: inline-block;
-		padding: .5em 1.25em;
+		padding: $spacing-tiny $spacing-small;
 		text-decoration: none;
 		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: 500;
-		letter-spacing: .05em;
+		font-size: $font-size-tiny;
+		font-weight: $font-weight-medium;
+		letter-spacing: $letter-spacing-large;
 
 		&:hover,
 		&:focus {
@@ -69,9 +69,9 @@
 	border-bottom: 4px solid $color-primary;
 	max-height: 500px;
 	overflow: auto;
-	padding: 1em 0 0;
+	padding: $spacing-small $spacing-none $spacing-none;
 
 	@media (min-width: $breakpoint-small) {
-		padding: 1em 2em 0;
+		padding: $spacing-small $spacing-medium $spacing-none;
 	}
 }

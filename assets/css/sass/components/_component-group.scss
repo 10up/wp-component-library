@@ -12,12 +12,12 @@
 	}
 
 	@media (min-width: $breakpoint-small) {
-		margin-right: 1em;
+		margin-right: $spacing-small;
 	}
 
 	> li {
 		border-top: 1px solid $color-accent;
-		padding: .2em .5em;
+		padding: .2em $spacing-tiny;
 	}
 
 	a {
