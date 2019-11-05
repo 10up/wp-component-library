@@ -1,0 +1,15 @@
+.main {
+	padding: $spacing-medium $spacing-small $spacing-none;
+
+	@media (min-width: $breakpoint-small) {
+		margin-left: 260px;
+		padding: $spacing-large $spacing-medium;
+		width: calc(100% - 260px);
+	}
+
+	@media (min-width: $breakpoint-medium) {
+		margin-left: 310px;
+		padding: 3.75em 0 3.75em 8.75em;
+		width: calc(100% - 310px);
+	}
+}

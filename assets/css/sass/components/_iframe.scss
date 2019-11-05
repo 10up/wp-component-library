@@ -1,0 +1,42 @@
+.c-iframe {
+	border-bottom: 4px solid $color-primary;
+	border-top: 4px solid $color-primary;
+	padding: $spacing-small 0;
+	transition: all linear .2s;
+
+	@media (min-width: $breakpoint-medium) {
+		margin-left: -$spacing-medium;
+	}
+}
+
+.c-iframe--small {
+	transition: all linear .2s;
+	width: 400px;
+}
+
+.c-iframe--large {
+	transition: all linear .2s;
+	width: 900px;
+}
+
+.c-iframe--tiny {
+	height: 150px;
+}
+
+.c-iframe--short {
+	height: 300px;
+}
+
+.c-iframe--tall {
+	height: 600px;
+}
+
+.c-iframe--clean {
+	border: 0;
+	padding: $spacing-none;
+
+	@media (min-width: $breakpoint-medium) {
+		margin-left: $spacing-none;
+	}
+
+}

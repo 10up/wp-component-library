@@ -1,22 +1,35 @@
 ---
 title: Person
 path_slug: person
-layout: component
+layout: default
 category: content
-iframe_height: large
+iframe_height: medium
 ---
 
-{% include_relative _notes.md %}
+<div class="u-align-center--small">
+	<h1>{{page.title}}</h1>
+	<p class="u-lighten u-spacing__bottom--large">
+		A semantic recommendation for HTML used when representing a person.
+	</p>
+</div>
 
-<div class="cf">
-	<a href="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html" target="_blank" class="example-link">Open example in new window</a>
-</div><!--/.cf-->
+{% include_relative content/_notes.md %}
 
-<iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html" title="Person Example"></iframe>
+<div class="u-spacing__top--large">
 
-<h3>HTML</h3>
-{% include partials/html-component.md %}
+	<h2>Examples</h2>
 
-<h3>Resources</h3>
+	<div class="component-block u-spacing__bottom--large">
+		{% include_relative content/_examples.md %}
+	</div>
+</div>
 
-{% include_relative _resources.md %}
+## Usage
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_code.md %}
+</div>
+
+## Resources
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_resources.md %}
+</div>

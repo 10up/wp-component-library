@@ -1,0 +1,37 @@
+.c-banner {
+	background: $color-primary;
+	color: $color-base;
+
+	@media (min-width: $breakpoint-small) {
+		width: 260px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		overflow: auto;
+	}
+
+	@media (min-width: $breakpoint-medium) {
+		width: 310px;
+	}
+
+	&__wrap {
+		background: $color-primary;
+		display: none;
+		height: calc(100% - 52px);
+		left: 0;
+		overflow: auto;
+		-ms-overflow-style: none;
+		position: fixed;
+		top: 52px;
+		z-index: $elevation-high;
+
+		&:target {
+			display: block;
+		}
+		@media (min-width: $breakpoint-small) {
+			display: block !important;
+			position: static;
+		}
+	}
+}

@@ -1,0 +1,77 @@
+.tabs {
+	@media (min-width: $breakpoint-medium) {
+		margin-left: -$spacing-medium;
+	}
+}
+
+.tab-list {
+	list-style: none;
+	margin: $spacing-none;
+	overflow: auto;
+	padding: $spacing-none;
+	position: relative;
+	white-space: nowrap;
+
+	@media (min-width: $breakpoint-small) {
+		padding: $spacing-none $spacing-medium;
+	}
+}
+
+.tab-item {
+	display: inline-block;
+
+	& > [role="tab"] {
+		background: $color-tertiary;
+		color: $color-primary;
+		display: inline-block;
+		padding: $spacing-tiny $spacing-small;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: $font-size-tiny;
+		font-weight: $font-weight-medium;
+		letter-spacing: $letter-spacing-large;
+
+		&:hover,
+		&:focus {
+			background: $color-accent;
+		}
+	}
+
+	&.is-active {
+
+		[role="tab"] {
+			background: $color-primary;
+			color: $color-base;
+			position: relative;
+			z-index: $elevation-mid;
+		}
+	}
+}
+
+.tab-group {
+	border-top: 4px solid $color-primary;
+}
+
+.tab-content {
+
+	&[aria-hidden=true] {
+		left: -999em;
+		position: absolute;
+		top: -999em;
+	}
+
+	&.is-active {
+		position: static;
+	}
+}
+
+.tab__body {
+	border-bottom: 4px solid $color-primary;
+	max-height: 500px;
+	overflow: auto;
+	padding: $spacing-small $spacing-none $spacing-none;
+
+	@media (min-width: $breakpoint-small) {
+		padding: $spacing-small $spacing-medium $spacing-none;
+	}
+}

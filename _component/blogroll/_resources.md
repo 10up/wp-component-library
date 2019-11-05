@@ -1,5 +1,0 @@
-- [How to use schema.org on your WordPress site](http://keithdevon.com/schema-on-your-wordpress-website/)
-- [Test your schema markup](https://search.google.com/structured-data/testing-tool)
-- [CreativeWork Schema](https://schema.org/CreativeWork)
-- [BlogPosting Schema](https://schema.org/BlogPosting)
-- [Read the full list of schema options](https://schema.org/docs/full.html)

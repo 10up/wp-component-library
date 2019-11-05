@@ -1,27 +1,11 @@
 .author-card {
-  max-width: 650px;
-  padding: .5em;
-  overflow: hidden;
-  margin: auto; }
-  @media screen and (min-width: 40.625em) {
-    .author-card {
-      padding: 1em; } }
-  .author-card-author {
-    margin: 0; }
-  @media screen and (min-width: 40.625em) {
-    .author-card-info {
-      display: inline-block;
-      width: calc(100% - 120px);
-      float: right; } }
-  .author-card-pic {
-    padding-bottom: .5em;
-    text-align: center; }
-    @media screen and (min-width: 40.625em) {
-      .author-card-pic {
-        display: inline-block;
-        max-width: 100px;
-        padding-bottom: 1em; } }
-    .author-card-pic img {
-      border-radius: 50%; }
+  display: flex;
+}
 
-/*# sourceMappingURL=author-card.css.map */
+.author-card-info {
+  margin-left: 1em;
+}
+
+.author-card-author {
+  margin: 0 0 .5em;
+}

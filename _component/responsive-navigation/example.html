@@ -8,76 +8,7 @@
 	<!-- It is not recommended to use the JSDelivr CDN for production. -->
 	<!-- Instead please install the components with npm or by including the files directly in your project -->
 	<link href="https://cdn.jsdelivr.net/npm/@10up/component-navigation@latest/dist/navigation.css" rel="stylesheet">
-	<style>
-		*, *:after, *:before {
-				box-sizing: border-box;
-			}
-			body {
-				font-family: sans-serif;
-				margin: 0;
-			}
 
-			a {
-				color: black;
-				padding: 0.5rem;
-				text-decoration: none;
-			}
-			.screen-reader-text {
-				clip: rect(1px, 1px, 1px, 1px);
-				height: 1px;
-				overflow: hidden;
-				position: absolute !important;
-				width: 1px;
-			}
-			.site-navigation {
-				background-color: #999;
-				display: block;
-				padding: 0.5rem;
-				position: relative;
-				width: 100%;
-			}
-			@media (min-width: 48em) {
-				.site-navigation {
-					padding: 0;
-				}
-			}
-			.primary-menu {
-				background-color: #aaa;
-				left: 0;
-				position: absolute;
-				top: 100%;
-				width: 100%;
-			}
-			@media (min-width: 48em) {
-				.primary-menu {
-					background-color: transparent;
-					position: static;
-					width: auto;
-				}
-			}
-			.primary-menu a {
-				display: block;
-			}
-			.menu-item-has-children > a {
-				display: flex;
-				justify-content: space-between;
-			}
-			.menu-item-has-children > a:after {
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 352L96 198.406 141.72 160 256 275.188 370.28 160 416 198.406 256 352z'/%3E%3C/svg%3E ");
-				background-size: cover;
-				content: "";
-				display: inline-block;
-				height: 1em;
-				width: 1em;
-			}
-			.sub-menu {
-				background-color: #777;
-				min-width: 10rem;
-			}
-			.sub-menu .sub-menu {
-				background-color: #555;
-			}
-		</style>
 </head>
 
 <body>
@@ -139,7 +70,7 @@
 	<!-- It is not recommended to use the JSDelivr CDN for production. -->
 	<!-- Instead please install the components with npm or by including the files directly in your project -->
 	<script src="https://cdn.jsdelivr.net/npm/@10up/component-navigation@latest/dist/navigation.js"></script>
-	<script type="text/javascript">
+	<script>
 		let componentInstance = new TenUp.navigation('#primary-nav', {
 			action: 'click'
 		});

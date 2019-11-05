@@ -1,0 +1,33 @@
+.u-spacing {
+	margin: $spacing-small;
+
+	&__none {
+		margin: $spacing-none;
+	}
+
+	&__bottom {
+		margin-bottom: $spacing-small;
+
+		&--medium {
+			margin-bottom: $spacing-medium;
+		}
+
+		&--large {
+			margin-bottom: $spacing-large;
+		}
+	}
+
+	&__top {
+		margin-top: $spacing-small;
+
+		&--medium {
+			margin-top: $spacing-medium;
+		}
+
+		&--large {
+			margin-top: $spacing-large;
+		}
+
+	}
+
+}

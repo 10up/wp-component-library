@@ -1,46 +1,42 @@
-<a href="#main-content" class="screen-reader-text focusable">Skip to content</a>
-<header id="page-header" role="banner">
-	<div class="page-header-content">
-		<nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+<a href="#main" class="hidden">Skip to content</a>
 
-			<a href="#primary-nav" aria-controls="primary-nav" class="site-menu-toggle toggle-menu-icon">
-				<span class="screen-reader-text">Primary Menu</span>
-			</a>
+<header class="c-banner" role="banner">
+	<div class="c-branding">
+		<img src="https://10up.com/wp-content/themes/10up-sept2016/assets/img/10up-logo-full.svg" alt="10up" width="30" class="c-branding__logo">
+		<p>Baseline</p>
+		<a href="#nav" class="c-nav__toggle" id="c-nav__toggle">Menu</a>
+	</div>
 
-			<ul id="primary-nav" class="primary-menu">
-				{% for category in site.data.categories %}
-					{% if page.category == category.slug %}
-					<li class="menu-item current-menu-item">
-					{% else %}
-					<li class="menu-item menu-item-has-children">
-					{% endif %}
-						<a href="#">{{ category.slug }}</a>
-						<ul class="sub-menu">
-						{% for component in site.component %}
-							{% if component.category == category.slug %}
-								<li class="menu-item"><a href="{{ site.baseurl }}{{ component.url }}">{{ component.title }}</a></li>
-							{% endif %}
-						{% endfor %}
-						</ul>
-					</li>
-				{% endfor %}
+	<div class="c-banner__wrap" id="nav">
+
+		<nav class="c-nav" role="navigation">
+			<ul>
+				<li><a href="{{ site.baseurl }}/" {% if page.category == 'home' %}aria-current="page"{% endif %}>Home</a></li>
+				<li><a href="{{ site.baseurl }}/getting-started" {% if page.category == 'documentation' %}aria-current="page"{% endif %}>Getting Started</a></li>
+				<li><a href="{{ site.baseurl }}/components" {% if page.category == 'components' %}aria-current="page"{% endif %}>Components</a>
+					<ul class="subnav">
+						<li><a href="{{ site.baseurl }}/components/#global" {% if page.category == 'global' %}aria-current="true"{% endif %}>Global Site Components</a></li>
+						<li><a href="{{ site.baseurl }}/components/#navigtion" {% if page.category == 'navigation' %}aria-current="true"{% endif %}>Navigation</a></li>
+						<li><a href="{{ site.baseurl }}/components/#content" {% if page.category == 'content' %}aria-current="true"{% endif %}>Content</a></li>
+						<li><a href="{{ site.baseurl }}/components/#forms" {% if page.category == 'forms' %}aria-current="true"{% endif %}>Forms &amp; <abbr title="Calls to action">CTAs</abbr></a></li>
+						<li><a href="{{ site.baseurl }}/components/#utility" {% if page.category == 'utility' %}aria-current="true"{% endif %}>Utility</a></li>
+					</ul>
+				</li>
+				<li><a href="{{ site.baseurl }}/contributing/" {% if page.category == 'contributing' %}aria-current="page"{% endif %}>Contribute</a></li>
+				<li><a href="https://10up.github.io/Engineering-Best-Practices/">Resources</a></li>
 			</ul>
+		</nav>
 
-		</nav><!-- .site-navigation -->
+		<div class="c-meta">
 
-		<a href="http://10up.com" class="header-logo-link"><span class="screen-reader-text">10up</span></a>
-		<a href="https://github.com/10up/component-library/" class="main-nav-supplemental-icon">
-			<span class="screen-reader-text">View on Github</span>
-		</a>
+			<svg aria-label="10up" class="c-meta__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 35"><defs/><title>10up</title><g fill="none" fill-rule="evenodd"><path fill="#DF2B26" d="M7.746 0.572L0 4.385 1.536 6.219 1.536 23.661 7.746 17.449z"/><path fill="#FFF" fill-rule="nonzero" d="M14.9361864,27.4322034 C14.9361864,28.3890254 14.2888983,28.7989831 13.569661,28.7989831 C12.6152542,28.7989831 12.392161,28.2172881 12.392161,27.5857627 L12.392161,22.1035169 L12.3516102,22.1035169 L9.28372881,25.1712712 L9.28372881,28.3025847 C9.28372881,30.0280932 10.2061017,31.5476695 12.3413136,31.5476695 C13.2807203,31.5476695 14.2376695,31.1553814 14.9361864,30.5063136 L14.9361864,31.3430085 L18.0446186,31.3430085 L18.0446186,22.1035169 L14.9361864,22.1035169 L14.9361864,27.4322034 Z M25.6461864,21.9158898 C24.5876695,21.9158898 23.7177966,22.2908898 23.0162288,22.9744068 L23.0162288,22.1033898 L19.8919068,22.1033898 L19.8919068,34.3145339 L23.0162288,34.3145339 L23.0162288,30.5061864 C23.7179237,31.1552542 24.5876695,31.5475424 25.6461864,31.5475424 C28.2251695,31.5475424 29.8319492,29.4816102 29.8319492,26.7316525 C29.8319492,24.0165254 28.2251695,21.9158898 25.6461864,21.9158898 Z M24.8097458,28.8835169 C23.6150847,28.8835169 23.0162288,27.8926271 23.0162288,26.7147458 C23.0162288,25.5367373 23.5976695,24.5627542 24.8097458,24.5627542 C25.9891525,24.5627542 26.5346186,25.5523729 26.5346186,26.7147458 C26.5346186,27.8590678 25.9891525,28.8835169 24.8097458,28.8835169 Z"/><path fill="#DF2B26" d="M19.9694492,0 C14.4408051,0.00063559322 9.96050847,4.48105932 9.96050847,10.0088136 C9.96050847,11.5352542 10.3127542,12.9774153 10.9227966,14.2708475 L11.0276695,14.3792797 L17.2112288,8.19597458 L15.2666949,6.25144068 L23.7279661,6.25144068 L23.7279661,14.7120763 L21.7835593,12.7675424 L15.564661,18.9865678 C16.895339,19.6402119 18.3870763,20.0183898 19.9700847,20.0183898 C25.4977119,20.0183898 29.9794068,15.5374576 29.9794068,10.0088136 C29.9794068,4.48105932 25.4977119,0 19.9694492,0 Z"/></g></svg>
+
+			<p>Open Source, <a href="https://opensource.org/licenses/MIT">MIT licensed</a></p>
+			<p>Copyright 2019 @ <a href="https://10up.com/">10up</a></p>
+			<p>Already doing all this? <a href="https://10up.com/careers/">Careers at 10up</a></p>
+		</div>
 
 	</div>
 </header>
 
-<header class="template-header header">
-	<div class="grid-inner">
-		<h1>
-			<a href="{{ site.baseurl }}/">{{ site.title }}</a><br>
-			<span class="subhead">10up Engineering</span>
-		</h1>
-	</div>
-</header>
+<main class="main page-{{page.title}}" id="main" role="main">

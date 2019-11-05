@@ -1,85 +1,136 @@
-h1, h2, h3, h4, h5, h6 {
-	-ms-word-wrap: break-word;
-	word-wrap: break-word;
-}
-
-em {
-	font-style: normal;
-	font-weight: 600;
-}
-
-blockquote {
-	margin-bottom: 25px;
-	margin-top: 25px;
-	font-size: 32px;
-	line-height: 50px;
-	text-align: left;
-	text-indent: 16px;
-	color: rgba(140, 138, 138, 1.00);
-}
-
-h1 {
-	font-size: 3.4rem;
-	line-height: 1.4;
-	// font-family: $font-family-serif;
-	font-family: $font-family-sans;
-	font-weight: 300;
-	font-style: normal;
-	margin: 0px 0px 12px 0px;
-
-	@include breakpoint($breakpoint-alpha) {
-		font-size: 4.9rem;
-	}
-
-	@include breakpoint($breakpoint-bravo) {
-		font-size: 6.4rem;
-	}
-}
-
-h2 {
-	font-size: 2.2rem;
-	font-weight: 300;
-	line-height: 1.4;
-	text-transform: none;
-	margin: 36px 0px 12px 0px;
-
-	@include breakpoint($breakpoint-alpha) {
-		font-size: 2.8rem;
-	}
-}
-
-h3 {
-	font-size: 2.4rem;
-	font-weight: 300;
-	line-height: 1.5;
-}
-
+h1,
+h2,
+h3,
 h4 {
-	font-size: 2rem;
-	font-weight: 300;
+	line-height: $line-height-medium;
+	margin-top: $spacing-none;
+	padding-top: $spacing-none;
 }
 
-h5 {
-	font-size: 1.5rem;
-	font-weight: 300;
-}
+h1,
+.txt-h1 {
+	color: $color-secondary;
+	font-family: $font-secondary;
+	font-size: $font-size-large;
+	font-weight: $font-weight-black;
+	line-height: $line-height-medium;
+	margin: $spacing-none;
+	text-transform: capitalize;
 
-p, ul, ol {
-	text-indent: 0em;
-	font-size: 1.6rem;
-	font-weight: 300;
-	line-height: 1.7;
-	margin: 14px 0px 18px 0px;
-
-	@include breakpoint($breakpoint-bravo) {
-		font-size: 1.8rem;
+	@media (min-width: $breakpoint-small) {
+		font-size: $font-size-xlarge;
+		line-height: $line-height-medium;
 	}
 }
 
-.subhead {
-	text-align: center;
-	font-size: 24px;
-	line-height: 36px;
-	letter-spacing: 1px;
+h2,
+.txt-h2 {
+	font-size: $font-size-medium;
+	font-weight: $font-weight-light;
+
+	@media (min-width: $breakpoint-small) {
+		font-size: $font-size-large;
+	}
 }
 
+h3,
+.txt-h3 {
+	font-size: $font-size-small;
+	font-weight: $font-weight-medium;
+	margin-bottom: 1rem;
+
+	@media (min-width: $breakpoint-small) {
+		font-size: $font-size-medium;
+	}
+}
+
+h4,
+.txt-h4 {
+	color: $color-secondary;
+	font-size: $font-size-xsmall;
+	font-weight: $font-weight-regular;
+	text-transform: uppercase;
+
+	@media (min-width: $breakpoint-small) {
+		font-size: $font-size-small;
+	}
+}
+
+p,
+ul,
+ol,
+dl {
+	font-size: $font-size-tiny;
+	max-width: $width-content;
+	margin: $spacing-none $spacing-none $spacing-small;
+
+	@media (min-width: $breakpoint-small) {
+		font-size: $font-size-xsmall;
+	}
+
+	@media (min-width: $breakpoint-medium) {
+		margin-right: $spacing-medium;
+	}
+
+	&.u-lighten {
+		font-weight: $font-weight-light;
+	}
+}
+
+ul,
+ol,
+dl {
+	padding-left: $spacing-medium;
+}
+
+a {
+	color: $color-secondary;
+	font-weight: $font-weight-medium;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+
+	abbr {
+		text-decoration: none;
+	}
+}
+
+sup {
+	color: $color-accent-secondary;
+	font-size: $font-size-fine;
+	font-weight: $font-weight-medium;
+	text-transform: uppercase;
+
+	a {
+		color: $color-secondary;
+	}
+}
+
+pre,
+code {
+	font-family: $font-tertiary;
+	font-size: $font-size-fine;
+	margin: $spacing-none;
+}
+
+pre code {
+	background: $color-base;
+	color: $color-primary;
+	display: block;
+	padding: $spacing-none;
+}
+
+code {
+	background: $color-primary;
+	color: $color-base;
+	display: inline-block;
+	padding: $spacing-tiny $spacing-small;
+}
+
+p > code,
+li > code {
+	padding: $spacing-none $spacing-tiny;
+}

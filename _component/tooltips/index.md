@@ -1,38 +1,46 @@
 ---
-title: Tooltip
+title: tooltips
+layout: default
 path_slug: tooltips
-layout: component
-category: ui
-iframe_height: medium
+iframe_height: short
+category: global
 ---
 
-{% include_relative _notes.md %}
+<div class="u-align-center--small">
+	<h1>{{page.title}}</h1>
+	<p class="u-lighten u-spacing__bottom--large">
+		An accessible tooltip component to help structure large amounts of
+		content on a page.
+	</p>
+</div>
 
-<div class="cf">
-	<a href="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html" target="_blank" class="example-link">Open example in new window</a>
-</div><!--/.cf-->
+{% include_relative content/_notes.md %}
 
-<iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html" title="Tooltip Example"></iframe>
+<div class="u-spacing__top--large">
 
-<h3>HTML <span class="link"><a href="https://github.com/timwright12/a11y-tooltips" target="_blank">Download the plugin</a></span></h3>
+	<h2>Examples</h2>
 
-{% include partials/html-component.md %}
+	<div class="component-block u-spacing__bottom--large">
+		{% include_relative content/_examples.md %}
+	</div>
+</div>
 
-<h3>SCSS <span class="link"><a href="scss/component.scss" target="_blank">Download SCSS</a></span></h3>
+## Usage
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_code.md %}
+</div>
 
-{% include partials/scss-component.md %}
+## Documentation
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_documentation.md %}
+</div>
 
+## Browser Compatibility
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_support.md %}
+</div>
 
-<h3>JS <span class="link"><a href="component-usage.js" target="_blank">Usage</a> | <a href="component.js" target="_blank">Plugin</a></span></h3>
-{% include partials/js-component.md %}
-
-
-{% include_relative _apis.md %}
-
-<h3>Browser Compatibility</h3>
-
-{% include_relative _support.md %}
-
-<h3>Resources</h3>
-
-{% include_relative _resources.md %}
+## Resources
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_resources.md %}
+</div>

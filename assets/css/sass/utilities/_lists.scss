@@ -1,0 +1,11 @@
+.list-clean {
+	list-style: none;
+	margin: $spacing-none;
+	padding: $spacing-none;
+}
+
+.list-inline {
+	> li {
+		display: inline-block;
+	}
+}

@@ -1,18 +1,15 @@
-
-
 <nav class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+  <a href="#primary-nav" aria-controls="primary-nav">
+    <span class="screen-reader-text">Primary Menu</span>
+    <span aria-hidden="true">☰</span>
+  </a>
 
-	<a href="#primary-nav" aria-controls="primary-nav">
-		<span class="screen-reader-text">Primary Menu</span>
-		<span aria-hidden="true">☰</span>
-	</a>
+  <?php
+    wp_nav_menu( array(
+      'theme_location' => 'primary',
+      'menu_class'     => 'primary-menu',
+      'menu_id'        => 'primary-nav',
+    ) );
+  ?>
 
-	<?php
-	wp_nav_menu( array(
-		'theme_location' => 'primary',
-		'menu_class'     => 'primary-menu',
-		'menu_id'        => 'primary-nav',
-		) );
-	?>
-
-</nav><!-- .site-navigation -->
+</nav><!-- /.site-navigation -->

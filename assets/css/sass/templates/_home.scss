@@ -1,0 +1,15 @@
+.page-home {
+	background: $color-base url(../img/rectangles.svg) no-repeat $spacing-medium $spacing-none;
+
+	&:before {
+		content: url(../img/solve.svg);
+		display: block;
+		margin: $spacing-medium auto;
+		max-width: 50%;
+		width: 208px;
+
+		@media (min-width: $breakpoint-small) {
+			margin: $spacing-none $spacing-none $spacing-medium;
+		}
+	}
+}

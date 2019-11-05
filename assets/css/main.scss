@@ -1,33 +1,8 @@
 ---
 ---
 // Global
-@import "global/functions";
-@import "global/variables";
-@import "global/mixins";
-@import "global/placeholders";
-@import "global/grid";
-
-// Base
-{% include bower_components/normalize-css/normalize.css %}
-@import "base/base";
-@import "base/typography";
-@import "base/fonts";
-@import "base/buttons";
-@import "base/tables";
-
-// Components
-@import "components/syntax-highlighter";
-@import "components/template-header";
-@import "components/code-block";
-@import "components/social-networks";
-@import "components/component";
-@import "components/intro-text";
-@import "components/contributing";
-@import "components/code-tabs";
-
-// Includes
-@import "includes/header";
-@import "includes/navigation";
-@import "includes/nav-dropdowns";
-@import "includes/content";
-@import "includes/footer";
+@import "global/index";
+@import "base/index";
+@import "components/index";
+@import "utilities/index";
+@import "templates/index";

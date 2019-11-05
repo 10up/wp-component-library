@@ -1,53 +1,52 @@
-/** --------------------------------------------------------------------
-
-  Custom Select Element Pattern
-
---------------------------------------------------------------------- */
 .custom-select {
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 2px;
   height: 36px;
   overflow: hidden;
-  position: relative; }
-  .custom-select:after {
-    background-color: transparent;
-    background-image: url("icon-arrow-down.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 13px auto;
-    content: '';
-    height: 100%;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    speak: none;
-    top: 0;
-    width: 28px; }
-  .custom-select select {
-    -webkit-appearance: textarea;
-    -moz-appearance: none;
-    appearance: none;
-    background: none;
-    border: 0;
-    color: #000;
-    font-family: sans-serif;
-    height: 100%;
-    margin: 0;
-    padding: 0 28px 0 8px;
-    width: 100%;
-    width: 110% \9;
-    z-index: 2; }
-    .custom-select select:focus {
-      box-shadow: inset 0 0 0 1px blue;
-      outline: transparent; }
-    .custom-select select::-ms-expand {
-      display: none; }
-  .custom-select select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000; }
-  .custom-select option {
-    border: 0;
-    padding: 2px 4px; }
+  position: relative;
+}
 
-/*# sourceMappingURL=component.css.map */
+.custom-select:after {
+  border-color: #000 transparent transparent transparent;
+  border-style: solid;
+  border-width: 9px 7px 0 9px;
+  content: '';
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  speak: none;
+  top: 14px;
+  width: 0;
+}
+
+.custom-select select {
+  -webkit-appearance: textarea;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  color: #000;
+  font-family: inherit;
+  font-size: inherit;
+  height: 100%;
+  margin: 0;
+  padding: 0 28px 0 8px;
+  width: 100%;
+  width: 110% \9;
+  z-index: 2;
+}
+
+.custom-select select:focus {
+  box-shadow: inset 0 0 0 1px blue;
+  outline: transparent;
+}
+
+.custom-select select::-ms-expand {
+  display: none;
+}
+
+.custom-select select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
