@@ -103,6 +103,10 @@ sup {
 	font-size: $font-size-fine;
 	font-weight: $font-weight-medium;
 	text-transform: uppercase;
+
+	a {
+		color: $color-secondary;
+	}
 }
 
 pre,

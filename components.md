@@ -9,7 +9,7 @@ category: components
 <p class="u-lighten">Global components that can generally be used anywhere on a site.</p>
 <ul class="c-component-group u-spacing__bottom--large">
 	<li><a href="{{ site.baseurl }}/component/accordion">Accordion</a></li>
-	<li>Audio Player <sup aria-label="Planned component.">Planned</sup></li>
+	<li>Audio Player <sup aria-label="Planned component."><a href="https://github.com/10up/wp-component-library/issues/202">Planned</a></sup></li>
 	<li><a href="{{ site.baseurl }}/component/datepicker/">Date Picker</a> <sup>Third Party</sup></li>
 	<li><a href="{{ site.baseurl }}/component/modal/">Modal</a> <sup>Third Party</sup></li>
 	<li><a href="{{ site.baseurl }}/component/tabs/">Tabs</a></li>
@@ -44,5 +44,7 @@ category: components
 <h2 class="txt-h4 u-spacing__none" id="utility">Utility</h2>
 <p class="u-lighten">Components that are often combined with other components.</p>
 <ul class="c-component-group u-spacing__bottom--large">
-	<li>Grid <sup aria-label="Planned component.">Planned</sup></li>
+	<li>Countdown Timer <sup aria-label="Planned component."><a href="https://github.com/10up/wp-component-library/issues/206">Planned</a></sup></li>
+	<li>Grid <sup aria-label="Planned component."><a href="https://github.com/10up/wp-component-library/issues/205">Planned</a></sup></li>
+	<li>Reading Position Indicator <sup aria-label="Planned component."><a href="https://github.com/10up/wp-component-library/issues/210">Planned</a></sup></li>
 </ul>
