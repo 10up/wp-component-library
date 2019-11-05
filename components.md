@@ -20,7 +20,6 @@ category: components
 <p class="u-lighten">Components for site level or page level navigation.</p>
 <ul class="c-component-group u-spacing__bottom--large">
 	<li><a href="{{ site.baseurl }}/component/breadcrumbs/">Breadcrumbs</a></li>
-	<li>In-page navigation <sup aria-label="Planned component.">Planned</sup></li>
 	<li><a href="{{ site.baseurl }}/component/logo/">Site logo</a></li>
 	<li><a href="{{ site.baseurl }}/component/responsive-navigation/">Responsive navigation</a></li>
 </ul>
