@@ -35,12 +35,12 @@ category: home
 
 <h2>Usage<h2>
 
-<p>To use a component, navigate to the component’s detail page to see demos, usage examples, and to learn how to install.</p>
+<p>To use a component, navigate to the component’s detail page to see demos, usage examples, and installation instructions.</p>
 
 <h2>Key Highlights</h2>
 <ul>
 	<li>Built with simplicity and accessibility in mind.</li>
-	<li>Out of the box WCAG 2.1 compliance</li>
+	<li>Out of the box WCAG 2.1 compliance.</li>
 	<li>Tailored to within the WordPress ecosystem.</li>
 	<li>Easily adaptable to different use cases.</li>
 	<li>Fully tested in high-traffic production site environments.</li>

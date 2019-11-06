@@ -13,7 +13,7 @@ category: documentation
 </div>
 
 <p>
-This page will walk though through how to set up this documentation site
+This page will walk you through how to set up this documentation site
 locally and contribute to it moving forward. If you'd like to contribute to a component
 please read through our <a href="{{ site.baseurl }}/contributing/">contributing guidelines</a>.
 </p>
