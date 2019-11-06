@@ -50,7 +50,7 @@ category: home
 	<h2>Have an idea for a new component?</h2>
 	<ul class="u-max-width--none list-inline list-clean">
 		<li>
-			<a href="{{ site.baseurl }}/contributing/" class="button button--secondary">
+			<a href="{{ site.baseurl }}/contributing" class="button button--secondary">
 				Contribute
 			</a>
 		</li>
