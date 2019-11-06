@@ -30,7 +30,7 @@ category: home
 </p>
 
 <div class="u-spacing__top--large u-spacing__bottom--large">
-	<a href="{{ site.baseurl }}/components/" class="button">Browse Components</a>
+	<a href="{{ site.baseurl }}/components" class="button">Browse Components</a>
 </div>
 
 <h2>Usage<h2>
