@@ -1,0 +1,1 @@
+The social links component contains easy HTML, CSS, and JavaScript for outputting share buttons into a UI. It has added security and accessibility measures installed as well. This component focuses on the **accessibility** and **security** concerns of opening links in new windows and offers a proper HTML structure to avoid common mistakes.

@@ -1,0 +1,16 @@
+.c-callout {
+	background: $color-secondary;
+	color: $color-base;
+	padding: $spacing-large;
+	margin: $spacing-large $spacing-none $spacing-none;
+
+	@media (min-width: $breakpoint-medium) {
+		margin-left: -140px;
+	}
+}
+
+.c-callout--secondary {
+	background: $color-accent-light;
+	padding: $spacing-small;
+	line-height: $line-height-large;
+}

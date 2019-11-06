@@ -1,47 +1,50 @@
 ---
 title: Responsive Navigation
+layout: default
 path_slug: responsive-navigation
-layout: component
 category: navigation
-iframe_height: large
+iframe_height: short
 ---
 
-{% include_relative _notes.md %}
+<div class="u-align-center--small">
+	<h1>{{page.title}}</h1>
+	<p class="u-lighten u-spacing__bottom--large">
+		An accessible navigation component to help create a masthead.
+	</p>
+</div>
 
-<div class="cf">
-	<a href="{{ site.baseurl }}/component/{{ page.path_slug }}/example.html" target="_blank" class="example-link">Open example in new window</a>
-</div><!--/.cf-->
+{% include_relative content/_notes.md %}
 
-<iframe {% if page.iframe_height %}class="h-{{ page.iframe_height }}"{% endif %} src="{{ site.baseurl}}/component/{{ page.path_slug }}/example.html" title="Responsive Navigation Example"></iframe>
+<div class="u-spacing__top--large">
 
-<h3>HTML</h3>
+	<h2>Examples</h2>
 
-{% include partials/html-tabs.md %}
+	<div class="component-block u-spacing__bottom--large">
+		{% include_relative content/_examples.md %}
+		<ul class="button-group button-group--flush">
+			<li><button data-width="small" id="rwd-button-small" type="button" class="rwd-button button button--tertiary" aria-controls="example-iframe" aria-label="Resize iframe display: small.">Small Screen</button></li>
+			<li><button data-width="large" id="rwd-button-large" type="button" class="rwd-button button button--tertiary" aria-controls="example-iframe" aria-label="Resize iframe display: large.">Large Screen</button></li>
+			<li><button data-width="reset" id="rwd-button-reset" type="button" class="rwd-button button button--tertiary-dark button--tertiary" aria-controls="example-iframe" aria-label="Reset iframe display.">Reset</button></li>
+		</ul>
+	</div>
+</div>
 
-<h3>PostCSS <span class="link"><a href="scss/component.scss" target="_blank">Download PostCSS</a></span></h3>
+## Usage
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_code.md %}
+</div>
 
-{% include partials/scss-component.md %}
+## Documentation
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_documentation.md %}
+</div>
 
-<h3>JavaScript <span class="link"><a href="https://github.com/10up/component-navigation" target="_blank">Plugin</a></span></h3>
+## Browser Compatibility
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_support.md %}
+</div>
 
-<h4>NPM</h4>
-
-`npm install --save @10up/component-navigation`
-
-{% include partials/js-component.md %}
-
-<h4>Standalone</h4>
-
-Clone this repo and import `navigation.js` and `navigation.css` from the `dist/` directory.
-
-{% include_relative _more-js.md %}
-
-{% include_relative _apis.md %}
-
-<h3>Browser Compatibility</h3>
-
-{% include_relative _support.md %}
-
-<h3>Resources</h3>
-
-{% include_relative _resources.md %}
+## Resources
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_resources.md %}
+</div>

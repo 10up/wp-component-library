@@ -1,94 +1,94 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="https://schema.org/BlogPosting">
 
-	<!-- flag this as the main area of the page -->
-	<div itemprop="mainEntityOfPage">
+  <!-- flag this as the main area of the page -->
+  <div itemprop="mainEntityOfPage">
 
-		<!-- articles get headers (and footers) -->
-		<header>
+    <!-- articles get headers (and footers) -->
+    <header>
 
-		<?php if ( has_post_thumbnail() ) : ?>
+    <?php if ( has_post_thumbnail() ) : ?>
 
-			<?php
-				$meta	= wp_get_attachment_metadata( get_post_thumbnail_id( get_the_ID() ) );
-				$width	= $meta['width'];
-				$height	= $meta['height'];
-			?>
-			<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-				<?php the_post_thumbnail(); ?>
-				<meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
-				<meta itemprop="width" content="<?php echo esc_attr( $width ); ?>" />
-				<meta itemprop="height" content="<?php echo esc_attr( $height ); ?>" />
-			</div><!--/itemprop=image-->
+      <?php
+        $meta  = wp_get_attachment_metadata( get_post_thumbnail_id( get_the_ID() ) );
+        $width  = $meta['width'];
+        $height  = $meta['height'];
+      ?>
+      <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <?php the_post_thumbnail(); ?>
+        <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
+        <meta itemprop="width" content="<?php echo esc_attr( $width ); ?>" />
+        <meta itemprop="height" content="<?php echo esc_attr( $height ); ?>" />
+      </div><!--/itemprop=image-->
 
-		<?php endif; ?>
+    <?php endif; ?>
 
-			<!-- Name of the article -->
-			<h1 itemprop="headline"><?php the_title(); ?></h1>
+      <!-- Name of the article -->
+      <h1 itemprop="headline"><?php the_title(); ?></h1>
 
-			<!--Author-->
-			<p>
-				<strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
-				<span itemprop="author"><?php the_author_link(); ?></span>
-			</p>
+      <!--Author-->
+      <p>
+        <strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
+        <span itemprop="author"><?php the_author_link(); ?></span>
+      </p>
 
-			<!-- publication date -->
-			<p>
-				<strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
-				<span itemprop="datePublished">
-					<time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
-						<?php the_date(); ?>
-					</time>
-				</span>
-			</p>
+      <!-- publication date -->
+      <p>
+        <strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
+        <span itemprop="datePublished">
+          <time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
+            <?php the_date(); ?>
+          </time>
+        </span>
+      </p>
 
-			<!-- Modified date (this is recommended to have, even if it's the same as publication date)-->
-			<p>
-				<strong><?php esc_html_e( 'Last Modified Date', 'tenup' ); ?></strong>:
-				<span itemprop="dateModified">
-					<time datetime="<?php echo esc_attr( get_the_modified_time( 'Y-m-d' ) ); ?>" pubdate>
-						<?php the_modified_date(); ?>
-					</time>
-				</span>
-			</p>
+      <!-- Modified date (this is recommended to have, even if it's the same as publication date)-->
+      <p>
+        <strong><?php esc_html_e( 'Last Modified Date', 'tenup' ); ?></strong>:
+        <span itemprop="dateModified">
+          <time datetime="<?php echo esc_attr( get_the_modified_time( 'Y-m-d' ) ); ?>" pubdate>
+            <?php the_modified_date(); ?>
+          </time>
+        </span>
+      </p>
 
-		</header>
+    </header>
 
-		<!-- Publisher are required, weird, but true (this code block doesn't output anything) -->
-		<div itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
-			<div itemprop="logo" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
-				<meta itemprop="url" content="https://placekitten.com/g/100/100" />
-				<meta itemprop="width" content="100" />
-				<meta itemprop="height" content="100" />
-			</div>
-			<meta itemprop="name" content="<?php esc_attr_e( 'Client Company', 'tenup' ); ?>" />
-		</div><!--/.itemprop=publisher-->
+    <!-- Publisher are required, weird, but true (this code block doesn't output anything) -->
+    <div itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
+      <div itemprop="logo" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://placekitten.com/g/100/100" />
+        <meta itemprop="width" content="100" />
+        <meta itemprop="height" content="100" />
+      </div>
+      <meta itemprop="name" content="<?php esc_attr_e( 'Client Company', 'tenup' ); ?>" />
+    </div><!--/.itemprop=publisher-->
 
-		<!-- category -->
-		<p>
-			<strong><?php esc_html_e( 'Category', 'tenup' ); ?></strong>:
-			<span itemprop="articleSection"><?php the_category( ', ' ); ?></span>
-		</p>
+    <!-- category -->
+    <p>
+      <strong><?php esc_html_e( 'Category', 'tenup' ); ?></strong>:
+      <span itemprop="articleSection"><?php the_category( ', ' ); ?></span>
+    </p>
 
-		<!-- tags -->
-		<p>
-			<strong><?php esc_html_e( 'Tags', 'tenup' ); ?></strong>:
-			<span itemprop="keywords"><?php the_tags(); ?></span>
-		</p>
+    <!-- tags -->
+    <p>
+      <strong><?php esc_html_e( 'Tags', 'tenup' ); ?></strong>:
+      <span itemprop="keywords"><?php the_tags(); ?></span>
+    </p>
 
-		<!-- Main body of the article -->
-		<div itemprop="articleBody">
-			<?php the_content(); ?>
-		</div><!--/itemprop=articleBody-->
+    <!-- Main body of the article -->
+    <div itemprop="articleBody">
+      <?php the_content(); ?>
+    </div><!--/itemprop=articleBody-->
 
-		<footer>
-			<!-- a link to where the comment are with a comment count-->
-			<p>
-				<strong><?php esc_html_e( 'Link to Comments', 'tenup' ); ?></strong>:
-				<a href="#comments" itemprop="discussionUrl">
-					<?php esc_html_e( 'Comments', 'tenup' ); ?> (<span itemprop="commentCount"><?php comments_number(); ?></span>)
-				</a>
-			</p>
-		</footer>
+    <footer>
+      <!-- a link to where the comment are with a comment count-->
+      <p>
+        <strong><?php esc_html_e( 'Link to Comments', 'tenup' ); ?></strong>:
+        <a href="#comments" itemprop="discussionUrl">
+          <?php esc_html_e( 'Comments', 'tenup' ); ?> (<span itemprop="commentCount"><?php comments_number(); ?></span>)
+        </a>
+      </p>
+    </footer>
 
-	</div><!--/itemprop=mainEntityOfPage-->
+  </div><!--/itemprop=mainEntityOfPage-->
 </article><!--/itemtype=BlogPosting-->

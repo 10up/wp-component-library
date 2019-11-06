@@ -8,13 +8,27 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="cleartype" content="on" />
+<style>
+body {padding: 0; margin: 0;}
+.breadcrumbs > ol {
+	display: flex;
+	list-style: none;
+	margin: 0;
+}
 
-	<link rel="stylesheet" href="../../assets/css/examples.css" />
+.breadcrumbs > ol li {
+	margin-right: .5em;
+}
+
+.breadcrumbs > ol li + li:before {
+	content: '>';
+}
+</style>
 
 </head>
 <body>
 
-	<nav role="navigation">
+	<nav role="navigation" class="breadcrumbs">
 
 		<ol itemscope itemtype="http://schema.org/BreadcrumbList" aria-label="breadcrumb navigation">
 
@@ -23,9 +37,6 @@
 
 					<!-- the actual display name of the breadcrumb -->
 					<span itemprop="name">Books</span>
-
-					<!-- if there's an image associated with this link -->
-					<img itemprop="image" src="https://placekitten.com/g/50/50" alt="Books" />
 				</a>
 
 				<!-- the content position should increment by 1 (starting at 1) -->
@@ -37,9 +48,6 @@
 
 					<!-- the actual display name of the breadcrumb -->
 					<span itemprop="name">Subtopic or landing page</span>
-
-					<!-- if there's an image associated with this link -->
-					<img itemprop="image" src="https://placekitten.com/g/50/50" alt="Books" />
 				</a>
 
 				<!-- the content position should increment by 1 (starting at 1) -->

@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+::selection {
+	background: $color-primary; /* Webkit */
+	color: $color-base;
+}
+
+::-moz-selection {
+	background: $color-primary; /* Firefox */
+	color: $color-base;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $color-base;
+	color: $color-primary;
+	font-family: $font-primary;
+	font-size: $font-size-xsmall;
+	font-weight: $font-weight-regular;
+	line-height: $line-height-xlarge;
+	min-height: 100%;
+	margin: $spacing-none;
+	padding: $spacing-none;
+}
+
+iframe {
+	border: 0;
+	display: block;
+	margin-right: $spacing-small;
+	height: 300px;
+	width: 100%;
+}
+
+figure {
+	display: block;
+	margin: $spacing-none;
+}
+
+header,
+main,
+footer,
+nav {
+	display: block;
+}

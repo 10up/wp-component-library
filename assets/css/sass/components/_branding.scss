@@ -1,0 +1,22 @@
+.c-branding {
+	align-items: center;
+	display: flex;
+	font-family: $font-secondary;
+	font-size: $font-size-xsmall;
+	justify-content: space-between;
+	padding: $spacing-small;
+
+	> img {
+		display: block;
+		margin-right: $spacing-tiny;
+		width: 20px;
+	}
+
+	> p {
+		margin: 0;
+	}
+
+	@media (min-width: $breakpoint-small) {
+		display: none;
+	}
+}

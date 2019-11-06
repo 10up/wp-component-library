@@ -1,0 +1,38 @@
+table {
+	border-collapse: collapse;
+	border-bottom: 2px solid $color-primary;
+	border-top: 2px solid $color-primary;
+	line-height: $line-height-large;
+	max-width: $width-content;
+	width: 100%;
+
+	@media (min-width: $breakpoint-small) {
+		margin-right: $spacing-small;
+	}
+}
+
+ td, th {
+	border-bottom: 2px solid $color-accent-secondary;
+	padding: $spacing-tiny $spacing-small;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	background: $color-accent-light;
+	border-top: 2px solid $color-primary;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 40%;
+}
+
+tr:last-child th,
+tr:last-child td {
+	border-bottom: 2px solid $color-primary;
+}
+
+.table--code {
+	font-family: $font-tertiary;
+	font-size: $font-size-tiny;
+	table-layout: fixed;
+}

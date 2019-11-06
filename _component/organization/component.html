@@ -1,70 +1,65 @@
 <div itemscope itemtype="http://schema.org/Organization">
 
-	<!--same as logo.html-->
-	<a itemprop="url" href="http://www.example.com/">
-		<img itemprop="logo" src="https://placekitten.com/g/200/100" srcset="https://placekitten.com/g/200/100 1x, https://placekitten.com/g/400/200 2x" alt="" />
-		<!--
-			Visually hide this text.
-			WCAG 2.1: “image alt text cannot be the primary text of a link"
-	     -->
-		<span class="screen-reader-text">Amazing Company</span>
-	</a>
+  <a itemprop="url" href="http://www.example.com/" class="logo">
+    <img itemprop="logo" src="https://via.placeholder.com/50" alt="" />
+    <span>Amazing Company</span>
+  </a>
 
-	<!-- the name of the organization -->
-	<h3 itemprop="name">Amazing Company</h3>
+  <!-- the name of the organization -->
+  <h3 itemprop="name">Amazing Company</h3>
 
-	<!-- address -->
-	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<p><strong>Address</strong>:
-			<span itemprop="streetAddress">35 Broad St</span>,
-			<span itemprop="addressLocality">Red Bank</span>,
-			<span itemprop="addressRegion"><abbr title="New Jersey">NJ</abbr></span>
-			<span itemprop="postalCode">07701</span>
-		</p>
-	</div><!--/itemtype=PostalAddress-->
+  <!-- address -->
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <p><strong>Address</strong>:
+      <span itemprop="streetAddress">35 Broad St</span>,
+      <span itemprop="addressLocality">Red Bank</span>,
+      <span itemprop="addressRegion"><abbr title="New Jersey">NJ</abbr></span>
+      <span itemprop="postalCode">07701</span>
+    </p>
+  </div><!--/itemtype=PostalAddress-->
 
-	<!-- Contact information -->
-	<p><strong>Phone</strong>:
-		<a href="tel:+14251235678" itemprop="telephone">(425) 123-4567</a>
-	</p>
+  <!-- Contact information -->
+  <p><strong>Phone</strong>:
+    <a href="tel:+14251235678" itemprop="telephone">(425) 123-4567</a>
+  </p>
 
-	<p><strong>Fax</strong>:
-		<a href="fax:+14251235678" itemprop="faxNumber">(425) 987-0987</a>
-	</p>
+  <p><strong>Fax</strong>:
+    <a href="fax:+14251235678" itemprop="faxNumber">(425) 987-0987</a>
+  </p>
 
-	<p><strong>Email</strong>:
-		<a href="mailto:hello@example.com" itemprop="email">hello@example.com</a>
-	</p>
+  <p><strong>Email</strong>:
+    <a href="mailto:hello@example.com" itemprop="email">hello@example.com</a>
+  </p>
 
-	<!-- Personel inforamtion -->
-	<p><strong>Founder</strong>:
-		<span itemprop="founder" itemscope itemtype="http://schema.org/Person">
-			<span itemprop="name">Jayne D. Founder</span>
-		</span>
-	</p>
+  <!-- Personel inforamtion -->
+  <p><strong>Founder</strong>:
+    <span itemprop="founder" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">Jayne D. Founder</span>
+    </span>
+  </p>
 
-	<p><strong>Current employees of this company</strong>:
-		<span itemprop="employee" itemscope itemtype="http://schema.org/Person">
-			<a href="mailto:elle.harrison@example.com" itemprop="email">
-				<span itemprop="name">Elle Harrison</span>
-			</a>
-		</span>,
+  <p><strong>Current employees of this company</strong>:
+    <span itemprop="employee" itemscope itemtype="http://schema.org/Person">
+      <a href="mailto:elle.harrison@example.com" itemprop="email">
+        <span itemprop="name">Elle Harrison</span>
+      </a>
+    </span>,
 
-		<span itemprop="employee" itemscope itemtype="http://schema.org/Person">
-			<a href="mailto:james.wormington@example.com" itemprop="email">
-				<span itemprop="name">James Wormington</span>
-			</a>
-		</span>
-	</p>
+    <span itemprop="employee" itemscope itemtype="http://schema.org/Person">
+      <a href="mailto:james.wormington@example.com" itemprop="email">
+        <span itemprop="name">James Wormington</span>
+      </a>
+    </span>
+  </p>
 
-	<p><strong>Former employees (alumni) of this company</strong>:
-		<span itemprop="alumni" itemscope itemtype="http://schema.org/Person">
-			<span itemprop="name">Jack Dan</span>
-		</span>,
+  <p><strong>Former employees (alumni) of this company</strong>:
+    <span itemprop="alumni" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">Jack Dan</span>
+    </span>,
 
-		<span itemprop="alumni" itemscope itemtype="http://schema.org/Person">
-			<span itemprop="name">John Smith</span>
-		</span>
-	</p>
+    <span itemprop="alumni" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">John Smith</span>
+    </span>
+  </p>
 
 </div><!--/itemtype=Organization-->

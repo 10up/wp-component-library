@@ -1,5 +1,0 @@
-- [Create a Custom Dropdown List with CSS](http://www.kevinfremon.com/create-a-custom-drop-down-list-using-just-css/)
-- [Custom Select Box](https://codepen.io/bephf/pen/ogNBYW)
-- [Default Dropdown Styling](https://css-tricks.com/dropdown-default-styling/)
-- [Selectize](http://selectize.github.io/selectize.js/)
-- [Chosen](https://harvesthq.github.io/chosen/)

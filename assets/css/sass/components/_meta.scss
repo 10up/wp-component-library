@@ -1,0 +1,32 @@
+.c-meta {
+	padding: $spacing-none $spacing-small $spacing-medium $spacing-medium;
+
+	a {
+		color: $color-accent;
+		text-decoration: underline;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+
+	}
+
+	p {
+		color: $color-accent;
+		margin: $spacing-none;
+		font-size: $font-size-fine;
+		line-height: $line-height-medium;
+	}
+
+	p:last-child{
+		margin-top: $spacing-medium;
+	}
+
+	&__logo {
+		display: block;
+		margin-bottom: $spacing-tiny;
+		width: 30px;
+	}
+
+}

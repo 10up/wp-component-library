@@ -1,16 +1,8 @@
-import accordion from '@10up/component-accordion';
+import Accordion from '@10up/component-accordion';
 
-accordion( '.accordion', {
-	onCreate: function() {
-		console.log( 'onCreate callback' );
-	},
-	onOpen: function() {
-		console.log( 'onOpen callback' );
-	},
-	onClose: function() {
-		console.log( 'onClose callback' );
-	},
-	onToggle: function() {
-		console.log( 'onToggle callback' );
-	}
+new Accordion( '.accordion', {
+  onCreate: function() { /* callback content */ },
+  onOpen: function() { /* callback content */ },
+  onClose: function() { /* callback content */ },
+  onToggle: function() { /* callback content */ }
 } );

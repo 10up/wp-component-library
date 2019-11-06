@@ -1,59 +1,59 @@
 <div itemscope itemtype="https://schema.org/Blog">
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting" >
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting" >
 
-		<?php
-		/*
-		 * Customize w/ get_the_post_thumbnail() to add schema
-		 * @link https://developer.wordpress.org/reference/functions/get_the_post_thumbnail
-		 */
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
-		} ?>
+    <?php
+    /*
+     * Customize w/ get_the_post_thumbnail() to add schema
+     * @link https://developer.wordpress.org/reference/functions/get_the_post_thumbnail
+     */
+    if ( has_post_thumbnail() ) {
+      the_post_thumbnail();
+    } ?>
 
-		<header class="entry-header">
+    <header class="entry-header">
 
-			<!-- Name of the article -->
-			<?php
-			the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="mainEntityOfPage" rel="bookmark">', '</a></h2>' );
-			?>
+      <!-- Name of the article -->
+      <?php
+      the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" itemprop="mainEntityOfPage" rel="bookmark">', '</a></h2>' );
+      ?>
 
-			<!-- publication date -->
-			<p>
-				<strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
-				<span itemprop="datePublished">
-					<time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
-						<?php the_date(); ?>
-					</time>
-				</span>
-			</p>
+      <!-- publication date -->
+      <p>
+        <strong><?php esc_html_e( 'Publish Date', 'tenup' ); ?></strong>:
+        <span itemprop="datePublished">
+          <time datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>" pubdate>
+            <?php the_date(); ?>
+          </time>
+        </span>
+      </p>
 
-			<!--Author-->
-			<p>
-				<strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
-				<span itemprop="author"><?php the_author_link(); ?></span>
-			</p>
+      <!--Author-->
+      <p>
+        <strong><?php esc_html_e( 'Author', 'tenup' ); ?></strong>:
+        <span itemprop="author"><?php the_author_link(); ?></span>
+      </p>
 
-		</header>
+    </header>
 
-		<!-- A description of the post content - the excerpt -->
-		<div itemprop="description">
-			<?php
-			/**
-			 * Customize the Read More link by using the "excerpt_more" filter
-			 *
-			 * @link https://developer.wordpress.org/reference/functions/the_excerpt/
-			 * @link https://codex.wordpress.org/Customizing_the_Read_More
-			 */
+    <!-- A description of the post content - the excerpt -->
+    <div itemprop="description">
+      <?php
+      /**
+       * Customize the Read More link by using the "excerpt_more" filter
+       *
+       * @link https://developer.wordpress.org/reference/functions/the_excerpt/
+       * @link https://codex.wordpress.org/Customizing_the_Read_More
+       */
 
-			the_excerpt();
-			?>
-		</div><!--/itemprop=description-->
+      the_excerpt();
+      ?>
+    </div><!--/itemprop=description-->
 
-	</article><!--/itemtype=BlogPosting-->
+  </article><!--/itemtype=BlogPosting-->
 
-	<!--
-		Add more blogroll items here
-	-->
+  <!--
+    Add more blogroll items here
+  -->
 
 </div><!--/itemtype=Blog-->

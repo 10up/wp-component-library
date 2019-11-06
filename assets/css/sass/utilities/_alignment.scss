@@ -1,0 +1,15 @@
+.u-align-center {
+	text-align: center;
+
+	* {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+.u-align-center--small {
+	@media (max-width: $breakpoint-small){
+		text-align: center;
+	}
+}

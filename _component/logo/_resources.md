@@ -1,4 +1,0 @@
-- [Google Data Types: Logo](https://developers.google.com/search/docs/data-types/logo)
-- [More information about schema for creative works](http://schema.org/Organization)
-- [Test your schema markup](https://search.google.com/structured-data/testing-tool)
-- [WCAG 2.1 Guidelines, Principle 1: Perceivable](https://www.w3.org/TR/WCAG21/#perceivable)
