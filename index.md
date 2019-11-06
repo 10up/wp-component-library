@@ -33,7 +33,7 @@ category: home
 	<a href="{{ site.baseurl }}/components" class="button">Browse Components</a>
 </div>
 
-<h2>Usage<h2>
+<h2>Usage</h2>
 
 <p>To use a component, navigate to the component’s detail page to see demos, usage examples, and installation instructions.</p>
 
