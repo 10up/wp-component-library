@@ -11,7 +11,7 @@ category: contributing
 	</p>
 </div>
 
-We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/component-library/pulls).
+We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/wp-component-library/pulls).
 
 All contributions to the component library should be tested against version 2.1 of the Web Accessibility Content Guidelines ([WCAG 2.1](https://www.w3.org/TR/WCAG21/))
 
