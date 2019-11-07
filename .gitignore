@@ -58,8 +58,6 @@ wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 wp-content/cache/*
 wp-content/cache/supercache/*
-sitemap.xml
-sitemap.xml.gz
 readme.html
 license.txt
 

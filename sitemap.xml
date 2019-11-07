@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://10up.github.io/wp-component-library/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/getting-started</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/components</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/contributing</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/accordion/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/datepicker/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/modal/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/tabs/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/tooltips/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/breadcrumbs/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/logo/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/responsive-navigation/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/author-card/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/blogpost/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/blogroll/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/organization/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/person/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://10up.github.io/wp-component-library/component/custom-select/</loc>
+  <lastmod>2019-11-07T12:33:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+</urlset>
