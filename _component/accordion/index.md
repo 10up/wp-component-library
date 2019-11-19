@@ -8,10 +8,15 @@ category: global
 
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
-	<p class="u-lighten u-spacing__bottom--large">
+	<p class="u-lighten">
 		An accessible accordion component to help structure large amounts of
 		content on a page.
 	</p>
+	<a href="https://travis-ci.org/10up/component-accordion" class="u-spacing__bottom--large u-inline-block">
+		<img
+			src="https://travis-ci.org/10up/component-accordion.svg?branch=master"
+			alt="Build status.">
+	</a>
 </div>
 
 {% include_relative content/_notes.md %}

@@ -8,9 +8,14 @@ iframe_height: short
 
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
-	<p class="u-lighten u-spacing__bottom--large">
+	<p class="u-lighten">
 		An accessible navigation component to help create a masthead.
 	</p>
+	<a href="https://travis-ci.org/10up/component-navigation" class="u-spacing__bottom--large u-inline-block">
+		<img
+			src="https://travis-ci.org/10up/component-navigation.svg?branch=master"
+			alt="Build status.">
+	</a>
 </div>
 
 {% include_relative content/_notes.md %}
