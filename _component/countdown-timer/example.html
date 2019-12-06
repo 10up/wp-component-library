@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+	<title>Person - Schema Markup</title>
+
+	<!-- meta cluster -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="cleartype" content="on" />
+
+</head>
+<body>
+	<ul>
+		<li>
+			<time class="example-1" datetime="2046-01-01T00:00:00">
+				2046-01-01T00:00:00
+			</time>
+
+			until New Year’s Day, 2046
+		</li>
+
+		<li>
+			<time class="example-2" datetime="2000-01-01T00:00:00Z">
+				2000-01-01T00:00:00Z
+			</time>
+
+			since we partied like it was 1999
+		</li>
+		<li>
+			<time class="example-3" datetime="2020-02-02T18:30:00-04:00">
+				2020-02-02T18:30:00-04:00
+			</time>
+
+			until Super Bowl LIV (2/2/2020 @ 6:30pm EST)
+		</li>
+	</ul>
+
+	<script src="./countdown-timer.js"></script>
+	<script type="text/javascript">
+		new TenUp.CountdownTimer( '.example-1' );
+
+		new TenUp.CountdownTimer( '.example-2', {
+			allowNegative: true,
+			compact: true
+		} );
+
+		new TenUp.CountdownTimer( '.example-3', {
+			separator: ' / ',
+			padValues: true,
+			years: {
+				allowed: true,
+				singular: 'y',
+				plural: 'y'
+			},
+			weeks: {
+				allowed: true,
+				singular: 'w',
+				plural: 'w'
+			},
+			days: {
+				allowed: true,
+				singular: 'd',
+				plural: 'd'
+			},
+			hours: {
+				allowed: true,
+				singular: 'h',
+				plural: 'h'
+			},
+			minutes: {
+				allowed: true,
+				singular: 'm',
+				plural: 'm'
+			},
+			seconds: {
+				allowed: true,
+				singular: 's',
+				plural: 's'
+			}
+		} );
+	</script>
+
+</body>
+</html>
