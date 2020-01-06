@@ -1,0 +1,1 @@
+Sitemap: https://10up.github.io/wp-component-library/sitemap.xml
