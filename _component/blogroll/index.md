@@ -1,7 +1,10 @@
 ---
 title: Blogroll
-path_slug: blogroll
 layout: default
+seo-title: Blogroll
+description: A semantic recommendation for marking up an blogroll/article listing.
+keywords: blogroll, html, wordpress
+path_slug: blogroll
 category: content
 iframe_height: medium
 ---
@@ -9,7 +12,7 @@ iframe_height: medium
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A semantic recommendation for marking up an blogroll/article listing.
+		{{ page.description }}
 	</p>
 </div>
 

@@ -1,6 +1,9 @@
 ---
 title: tooltips
 layout: default
+seo-title: Tooltips
+description: An accessible tooltip component to help structure large amounts of content on a page.
+keywords: tooltips, html, css, javascript
 path_slug: tooltips
 iframe_height: short
 category: global
@@ -9,8 +12,7 @@ category: global
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten">
-		An accessible tooltip component to help structure large amounts of
-		content on a page.
+		{{ page.description }}
 	</p>
 	<a href="https://travis-ci.org/10up/component-tooltip" class="u-spacing__bottom--large u-inline-block">
 		<img

@@ -1,6 +1,9 @@
 ---
 title: author card
 layout: default
+seo-title: Author Card
+description: A semantic recommendation for marking up an author card.
+keywords: author card, html, wordpress, css
 path_slug: author-card
 iframe_height: short
 category: content
@@ -9,7 +12,7 @@ category: content
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A semantic recommendation for marking up an author card.
+		{{page.description}}
 	</p>
 </div>
 

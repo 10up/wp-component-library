@@ -1,7 +1,10 @@
 ---
 title: Person
-path_slug: person
 layout: default
+seo-title: Person
+description: A semantic recommendation for HTML used when representing a person.
+keywords: person, html, wordpress
+path_slug: person
 category: content
 iframe_height: medium
 ---
@@ -9,7 +12,7 @@ iframe_height: medium
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A semantic recommendation for HTML used when representing a person.
+		{{ page.description }}
 	</p>
 </div>
 

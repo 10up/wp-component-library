@@ -1,6 +1,9 @@
 ---
 title: accordion
 layout: default
+seo-title: Accordion
+description: An accessible accordion component to help structure large amounts of content on a page
+keywords: accordion, html, wordpress, css, javascript
 path_slug: accordion
 iframe_height: short
 category: global
@@ -9,8 +12,7 @@ category: global
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten">
-		An accessible accordion component to help structure large amounts of
-		content on a page.
+		{{page.description}}
 	</p>
 	<a href="https://travis-ci.org/10up/component-accordion" class="u-spacing__bottom--large u-inline-block">
 		<img

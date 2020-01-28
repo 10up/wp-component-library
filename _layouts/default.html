@@ -11,11 +11,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="google-site-verification" content="1y3OBnwZEmDD76DYk7YwmOVQ4LrHZ0vpiRJIC-6o5jw" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	{% if page.description %}
+	<meta name="description" content="{{ page.description }}">
+	{% endif %}
+	{% if page.keywords %}
+	<meta name="keywords" content="{{ page.keywords }}">
+	{% endif %}
     <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.ico" type="image/x-icon">
 
     <title>
-      Baseline | A Component Library from 10up
+      Baseline | A Component Library from 10up{% if page.seo-title %} | {{ page.seo-title }}{% endif %}
     </title>
 
 	<!-- Google Tag Manager -->
