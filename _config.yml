@@ -2,7 +2,7 @@ name:          Baseline
 title:         Baseline, A Component Library from 10up
 description:   Front-end components for 10up.
 url:           https://baseline.10up.com/
-baseurl:       /
+baseurl:
 permalink: none
 author:
   name:    10up
