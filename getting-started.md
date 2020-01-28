@@ -3,7 +3,7 @@ title: getting started
 layout: default
 seo-title: Getting Started
 description: Getting up and running locally with this documentation site.
-keywords: jekyll, contributing
+keywords: contributing
 path_slug: getting-started
 category: documentation
 ---
