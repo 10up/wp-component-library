@@ -1,6 +1,9 @@
 ---
-layout: default
 title: Custom Select Dropdown
+layout: default
+seo-title: Custom Select Dropdown
+description: A customizable select element that works cross-browser.
+keywords: custom select dropdown, html, css
 path_slug: custom-select
 iframe_height: short
 category: forms
@@ -9,7 +12,7 @@ category: forms
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A customizable select element that works cross-browser.
+		{{ page.description }}
 	</p>
 </div>
 

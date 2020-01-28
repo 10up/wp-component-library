@@ -1,6 +1,9 @@
 ---
 title: Social Sharing Links
 layout: default
+seo-title: Social Sharing Links
+description: A component to help guide proper HTML usage for creating social sharing links in an interface.
+keywords: social sharing links, html, wordpress, css
 path_slug: social-sharing
 iframe_height: short
 category: navigation
@@ -9,8 +12,7 @@ category: navigation
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A component to help guide proper HTML usage for creating social sharing
-		links in an interface.
+		{{ page.description }}
 	</p>
 </div>
 

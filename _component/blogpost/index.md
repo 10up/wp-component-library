@@ -1,6 +1,9 @@
 ---
 title: Blog Post
 layout: default
+seo-title: Blog Post
+description: A semantic recommendation for marking up an blog post.
+keywords: blog post, html, wordpress
 path_slug: blogpost
 category: content
 iframe_height: tall
@@ -9,7 +12,7 @@ iframe_height: tall
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A semantic recommendation for marking up an blog post.
+		{{ page.description }}
 	</p>
 </div>
 

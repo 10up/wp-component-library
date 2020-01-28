@@ -1,6 +1,9 @@
 ---
 title: breadcrumbs
 layout: default
+seo-title: Breadcrumbs
+description: A semantic recommendation for marking up breadcrumbs.
+keywords: breadcrumbs, html, css
 path_slug: breadcrumbs
 iframe_height: tiny
 category: navigation
@@ -9,7 +12,7 @@ category: navigation
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A semantic recommendation for marking up breadcrumbs.
+		{{ page.description }}
 	</p>
 </div>
 
