@@ -21,7 +21,11 @@
     <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.ico" type="image/x-icon">
 
     <title>
-      Baseline | A Component Library from 10up{% if page.seo-title %} | {{ page.seo-title }}{% endif %}
+		{% if page.seo-title %}
+			{{ page.seo-title }} | Baseline
+		{% else %}
+			Baseline | A Component Library from 10up
+		{% endif %}
     </title>
 
 	<!-- Google Tag Manager -->
