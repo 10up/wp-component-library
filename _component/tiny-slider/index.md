@@ -9,7 +9,7 @@ iframe_height: short
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A third party plugin we use to produce an accessible date picker.
+		A third party plugin we use to produce an accessible carousel.
 	</p>
 </div>
 

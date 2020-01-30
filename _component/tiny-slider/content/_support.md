@@ -1,11 +1,11 @@
 <table class="table--code">
 	<tr>
 		<th>Chrome</th>
-		<td>8+</td>
+		<td>15+</td>
 	</tr>
 	<tr>
 		<th>Firefox</th>
-		<td>3.5+</td>
+		<td>8+</td>
 	</tr>
 	<tr>
 		<th>Edge</th>
@@ -13,10 +13,14 @@
 	</tr>
 	<tr>
 		<th>Safari</th>
-		<td>3+</td>
+		<td>4+</td>
 	</tr>
 	<tr>
 		<th>IE</th>
-		<td>7+</td>
+		<td>8+</td>
+	</tr>
+	<tr>
+		<th>Opera</th>
+		<td>12.1+</td>
 	</tr>
 </table>

@@ -14,6 +14,7 @@ category: components
 	<li><a href="{{ site.baseurl }}/component/modal/">Modal</a> <sup>Third Party</sup></li>
 	<li><a href="{{ site.baseurl }}/component/tabs/">Tabs</a></li>
 	<li><a href="{{ site.baseurl }}/component/tooltips/">Tooltips</a></li>
+	<li><a href="{{ site.baseurl }}/component/tiny-slider/">Tiny Slider</a> <sup>Third Party</sup></li>
 </ul>
 
 <h2 class="txt-h4 u-spacing__none" id="navigtion">Navigation</h2>
