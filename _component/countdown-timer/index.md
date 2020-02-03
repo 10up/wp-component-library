@@ -3,7 +3,7 @@ title: Countdown Timer
 path_slug: countdown-timer
 layout: default
 category: utility
-iframe_height: short
+iframe_height: tiny
 ---
 
 <div class="u-align-center--small">
@@ -27,6 +27,16 @@ iframe_height: short
 ## Usage
 <div class="component-block u-spacing__bottom--large">
 	{% include_relative content/_code.md %}
+</div>
+
+## Documentation
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_documentation.md %}
+</div>
+
+## Browser Compatibility
+<div class="component-block u-spacing__bottom--large">
+	{% include_relative content/_support.md %}
 </div>
 
 ## Resources

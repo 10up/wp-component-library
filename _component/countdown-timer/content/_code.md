@@ -60,13 +60,13 @@
 				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-standalone-snippet" class="copy-clipboard button button--tertiary">Copy Standalone JavaScript to clipboard</button></li>
 			</ul>
 		</div><!--/.code-tab-->
-		
+
 	</div>
 
 	<p id="standalone-desc" class="c-callout--secondary">
 		* <strong>Standalone <abbr title="JavaScript">JS</abbr></strong> is used on projects that are not set up to handle
 		ES6. To use this version you will need to download the compiled
-		JavaScript from the <a href="https://github.com/dkoo/component-countdown-timer/blob/master/dist/countdown-timer.js">component's dist directory</a> and pull it into your
+		JavaScript from the <a href="https://github.com/10up/component-countdown-timer/blob/master/dist/countdown-timer.js">component's dist directory</a> and pull it into your
 		project. The same process should be
 		followed with the CSS if it cannot process through the NPM package.
 	</p>
