@@ -6,92 +6,92 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://10up.github.io/wp-component-library/</loc>
+  <loc>http://baseline.10up.com/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/getting-started</loc>
+  <loc>http://baseline.10up.com/getting-started</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/components</loc>
+  <loc>http://baseline.10up.com/components</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/contributing</loc>
+  <loc>http://baseline.10up.com/contributing</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/accordion/</loc>
+  <loc>http://baseline.10up.com/component/accordion/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/datepicker/</loc>
+  <loc>http://baseline.10up.com/component/datepicker/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/modal/</loc>
+  <loc>http://baseline.10up.com/component/modal/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/tabs/</loc>
+  <loc>http://baseline.10up.com/component/tabs/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/tooltips/</loc>
+  <loc>http://baseline.10up.com/component/tooltips/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/breadcrumbs/</loc>
+  <loc>http://baseline.10up.com/component/breadcrumbs/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/logo/</loc>
+  <loc>http://baseline.10up.com/component/logo/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/responsive-navigation/</loc>
+  <loc>http://baseline.10up.com/component/responsive-navigation/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/author-card/</loc>
+  <loc>http://baseline.10up.com/component/author-card/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/blogpost/</loc>
+  <loc>http://baseline.10up.com/component/blogpost/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/blogroll/</loc>
+  <loc>http://baseline.10up.com/component/blogroll/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/organization/</loc>
+  <loc>http://baseline.10up.com/component/organization/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/person/</loc>
+  <loc>http://baseline.10up.com/component/person/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://10up.github.io/wp-component-library/component/custom-select/</loc>
+  <loc>http://baseline.10up.com/component/custom-select/</loc>
   <lastmod>2019-11-07T12:33:51+00:00</lastmod>
   <priority>0.64</priority>
 </url>

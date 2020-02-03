@@ -1,6 +1,9 @@
 ---
-layout: default
 title: components
+layout: default
+seo-title: Components
+description: An accessible, production ready WordPress Component Library built by 10up Engineering
+keywords: components
 category: components
 ---
 

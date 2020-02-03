@@ -1,6 +1,9 @@
 ---
 title: modal
 layout: default
+seo-title: Modal
+description: A third party plugin we use to produce an accessible modal dialog component.
+keywords: modal, html, css, javascript
 path_slug: modal
 category: global
 iframe_height: short
@@ -9,8 +12,7 @@ iframe_height: short
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A third party plugin we use to produce an accessible modal dialog
-		component.
+		{{ page.description }}
 	</p>
 </div>
 
