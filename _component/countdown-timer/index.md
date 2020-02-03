@@ -9,7 +9,7 @@ iframe_height: tiny
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A timer component that dynamically counts to or from a given time in the past or future.
+		A timer component that dynamically counts to or from a given time in the future or past.
 	</p>
 </div>
 
