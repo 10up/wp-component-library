@@ -1,9 +1,11 @@
 <div id="my-accessible-dialog">
   <div tabindex="-1" data-a11y-dialog-hide></div>
-  <dialog aria-labelledby="dialog-title">
+	<!-- Using <div role="dialog"> instead of <dialog> due to chrome a bug. -->
+	<!-- https://github.com/edenspiekermann/a11y-dialog/issues/89#issuecomment-426983208 -->
+  <div role="dialog" aria-labelledby="dialog-title">
     <button type="button" data-a11y-dialog-hide aria-label="Close this dialog window">
       &times;
     </button>
     <h1 id="dialog-title">Dialog Title</h1>
-  </dialog>
+  </div>
 </div>
