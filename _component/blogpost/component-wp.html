@@ -13,7 +13,7 @@
         $width  = $meta['width'];
         $height  = $meta['height'];
       ?>
-      <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+      <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <?php the_post_thumbnail(); ?>
         <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
         <meta itemprop="width" content="<?php echo esc_attr( $width ); ?>" />
