@@ -128,6 +128,14 @@ code {
 	color: $color-base;
 	display: inline-block;
 	padding: $spacing-tiny $spacing-small;
+
+	&.is-clean {
+		background: $color-base;
+		color: $color-primary;
+		display: inline-block;
+		padding: $spacing-none;
+	}
+
 }
 
 p > code,

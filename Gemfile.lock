@@ -15,7 +15,7 @@ GEM
     colorator (1.1.0)
     commonmarker (0.17.13)
       ruby-enum (~> 0.5)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     dnsruby (1.61.3)
       addressable (~> 2.5)
     em-websocket (0.5.1)
@@ -190,6 +190,7 @@ GEM
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
+    json (2.2.0)
     kramdown (1.17.0)
     liquid (4.0.3)
     listen (3.1.5)
@@ -204,7 +205,7 @@ GEM
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.0)
     multipart-post (2.1.1)
-    nokogiri (1.10.8)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -242,6 +243,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (= 204)
+  json
 
 BUNDLED WITH
    2.1.4
