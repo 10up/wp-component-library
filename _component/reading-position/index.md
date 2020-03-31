@@ -3,7 +3,7 @@ title: reading position indicator
 layout: default
 seo-title: Reading Position Indicator
 description: Visual reading position indicator
-path_slug: reading-position-indicator
+path_slug: reading-position
 iframe_height: short
 category: utility
 ---

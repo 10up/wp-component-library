@@ -38,7 +38,7 @@
 		<div id="wordpress" class="code-tab tab-content" role="tabpanel">
 			<div class="tab__body">
 				<div class="copy-templated">
-					{% highlight php %}
+	
 
 			<ul class="button-group">
 				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-templated" class="copy-clipboard button button--tertiary">Copy WordPress to clipboard</button></li>
@@ -89,7 +89,7 @@
 				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-standalone-snippet" class="copy-clipboard button button--tertiary">Copy Standalone JavaScript to clipboard</button></li>
 			</ul>
 		</div><!--/.code-tab-->
-	</div>
+	</div>  
 
 	<p id="standalone-desc" class="c-callout--secondary">
 		* <strong>Standalone <abbr title="JavaScript">JS</abbr></strong> is used on projects that are not set up to handle

@@ -49,5 +49,5 @@ category: components
 	<li><a href="{{ site.baseurl }}/component/animate/">Animate</a></li>
 	<li>Countdown Timer <sup aria-label="Planned component."><a href="https://github.com/10up/wp-component-library/issues/206">Planned</a></sup></li>
 	<li>Grid <sup aria-label="Planned component."><a href="https://github.com/10up/wp-component-library/issues/205">Planned</a></sup></li>
-	<li>Reading Position Indicator <sup aria-label="Planned component."><a href="https://github.com/10up/wp-component-library/issues/210">Planned</a></sup></li>
+	<li><a href="{{ site.baseurl }}/component/reading-position/">Reading Position Indicator</a></li>
 </ul>
