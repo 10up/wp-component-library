@@ -6,9 +6,8 @@
 <code>npm install @10up/component-accordion --save</code>
 </div>
 
-<h3>API</h3>
-
 <table class="table--code u-spacing__bottom--large">
+	<caption>API</caption>
 	<tr>
 		<th class="th">onCreate</th>
 		<td class="td">Called after the accordion is initialized on page load</td>
@@ -27,9 +26,8 @@
 	</tr>
 </table>
 
-<h3>Classes</h3>
-
 <table class="table--code">
+	<caption>Classes</caption>
 	<tr>
 		<th>.accordion</th>
 		<td>Wrapping class for the component.</td>

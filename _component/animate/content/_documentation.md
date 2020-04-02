@@ -9,9 +9,8 @@
 <h3>Available Classes</h3>
 <p>This is a full list of classes currently available.</p>
 
-<h4>Fade</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Fade</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -30,9 +29,8 @@
 	</tbody>
 </table>
 
-<h4>Rotate</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Rotate</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -59,9 +57,8 @@
 	</tbody>
 </table>
 
-<h4>Scale (Zoom)</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Scale (Zoom)</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -96,9 +93,8 @@
 	</tbody>
 </table>
 
-<h4>Shake</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Shake</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -133,9 +129,8 @@
 	</tbody>
 </table>
 
-<h4>Slide</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Slide</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -178,9 +173,8 @@
 	</tbody>
 </table>
 
-<h4>Delay</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Delay</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -263,9 +257,8 @@
 	</tbody>
 </table>
 
-<h4>Duration</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Duration</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -348,9 +341,8 @@
 	</tbody>
 </table>
 
-<h4>Timing</h4>
-
 <table class="u-spacing__bottom--medium">
+	<caption>Timing</caption>
 	<thead>
 		<tr>
 			<th>Name</th>

@@ -6,18 +6,16 @@
 <code>npm install @10up/component-tabs --save</code>
 </div>
 
-<h3>Options</h3>
-
 <table class="table--code u-spacing__bottom--large">
+	<caption>Options</caption>
 	<tr>
 		<th class="th">orientation</th>
 		<td class="td">Whether the tabs are horizontal or vertical, defaults to horizontal</td>
 	</tr>
 </table>
 
-<h3>Callbacks</h3>
-
 <table class="table--code u-spacing__bottom--large">
+	<caption>Callbacks</caption>
 	<tr>
 		<th class="th">onCreate</th>
 		<td class="td">Called after the tab is initialized on page load</td>
@@ -28,9 +26,8 @@
 	</tr>
 </table>
 
-<h3>Classes</h3>
-
 <table class="table--code">
+	<caption>Classes</caption>
 	<tr>
 		<th>.tabs</th>
 		<td>Wrapping class for the tabs component.</td>

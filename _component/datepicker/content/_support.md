@@ -1,4 +1,5 @@
 <table class="table--code">
+	<caption>Browser Support</caption>
 	<tr>
 		<th>Chrome</th>
 		<td>8+</td>

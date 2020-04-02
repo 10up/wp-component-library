@@ -6,9 +6,8 @@
 <code>npm install @10up/component-tooltip --save</code>
 </div>
 
-<h3>Classes</h3>
-
 <table class="table--code">
+	<caption>Classes</caption>
 	<tr>
 		<th>.a11y-tip</th>
 		<td>Wrapping class for the component.</td>
