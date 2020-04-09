@@ -37,7 +37,7 @@
 				<div class="code-block">
 					<div class="copy-css-snippet">
 						{% highlight css %}
-@import '@10up/animate';
+@import url("@10up/animate");
 						{% endhighlight %}
 					</div>
 				</div><!--/.code-block-->
