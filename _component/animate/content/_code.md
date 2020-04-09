@@ -50,7 +50,7 @@
 		<div id="chaining-css" class="code-tab tab-content" role="tabpanel">
 			<div class="tab__body">
 				<div class="code-block">
-					<div class="copy-css-snippet">
+					<div class="copy-css-chain-snippet">
 						{% highlight css %}
 /*
   Using the animation names from the library you can create
@@ -64,7 +64,7 @@
 				</div><!--/.code-block-->
 			</div><!--/.tab__body-->
 			<ul class="button-group">
-				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-css-snippet" class="copy-clipboard button button--tertiary">Copy CSS to clipboard</button></li>
+				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-css-chain-snippet" class="copy-clipboard button button--tertiary">Copy CSS to clipboard</button></li>
 			</ul>
 		</div><!--/.code-tab-->
 
