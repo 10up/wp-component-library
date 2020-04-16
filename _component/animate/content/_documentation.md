@@ -6,25 +6,28 @@
 <code>npm install @10up/animate --save</code>
 </div>
 
-<h3>Available Classes</h3>
-<p>This is a full list of classes currently available.</p>
+<h3>Available Animation Options</h3>
+<p>This is a full list of options currently available.</p>
 
 <h4>Fade</h4>
 
 <table class="u-spacing__bottom--medium">
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Class</th>
+			<th>Animation Name</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><code class="is-clean">.fade-in</code></td>
+			<td><code class="is-clean">fadeIn</code></td>
 			<td>Update opacity from 0 to 1</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.fade-out</code></td>
+			<td><code class="is-clean">fadeOut</code></td>
 			<td>Update opacity from 1 to 0</td>
 		</tr>
 	</tbody>
@@ -35,25 +38,30 @@
 <table class="u-spacing__bottom--medium">
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Class</th>
+			<th>Animation Name</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><code class="is-clean">.rotate-90</code></td>
+			<td><code class="is-clean">rotate90</code></td>
 			<td>Rotate to 90 degrees</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.rotate-180</code></td>
+			<td><code class="is-clean">rotate180</code></td>
 			<td>Rotate to 180 degrees</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.rotate-270</code></td>
+			<td><code class="is-clean">rotate270</code></td>
 			<td>Rotate to 270 degrees</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.rotate-360</code></td>
+			<td><code class="is-clean">rotate360</code></td>
 			<td>Rotate to 360 degrees</td>
 		</tr>
 	</tbody>
@@ -64,33 +72,40 @@
 <table class="u-spacing__bottom--medium">
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Class</th>
+			<th>Animation Name</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><code class="is-clean">.scale-down</code></td>
+			<td><code class="is-clean">scaleDown</code></td>
 			<td>Scale from 1 to 0.75</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.scale-down-large</code></td>
+			<td><code class="is-clean">scaleDownLarge</code></td>
 			<td>Scale from 1 to 0.5</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.scale-down-small</code></td>
+			<td><code class="is-clean">scaleDownSmall</code></td>
 			<td>Scale from 1 to 0.9</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.scale-up</code></td>
+			<td><code class="is-clean">scaleUp</code></td>
 			<td>Scale from 1 to 1.25</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.scale-up-large</code></td>
+			<td><code class="is-clean">scaleUpLarge</code></td>
 			<td>Scale from 1 to 1.5</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.scale-up-small</code></td>
+			<td><code class="is-clean">scaleUpSmall</code></td>
 			<td>Scale from 1 to 1.1</td>
 		</tr>
 	</tbody>
@@ -101,33 +116,40 @@
 <table class="u-spacing__bottom--medium">
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Class</th>
+			<th>Animation Name</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><code class="is-clean">.shake-horizontal</code></td>
+			<td><code class="is-clean">shakeHorizontal</code></td>
 			<td>Right-to-left movement, 10px</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.shake-horizontal-large</code></td>
+			<td><code class="is-clean">shakeHorizontalLarge</code></td>
 			<td>Right-to-left movement, 15px</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.shake-horizontal-small</code></td>
+			<td><code class="is-clean">shakeHorizontalSmall</code></td>
 			<td>Right-to-left movement, 5px</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.shake-vertical</code></td>
+			<td><code class="is-clean">shakeVertical</code></td>
 			<td>Up-to-down movement, 10px</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.shake-vertical-large</code></td>
+			<td><code class="is-clean">shakeVerticalLarge</code></td>
 			<td>Up-to-down movement, 15px</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.shake-vertical-small</code></td>
+			<td><code class="is-clean">shakeVerticalSmall</code></td>
 			<td>Up-to-down movement, 5px</td>
 		</tr>
 	</tbody>
@@ -138,41 +160,50 @@
 <table class="u-spacing__bottom--medium">
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Class</th>
+			<th>Animation Name</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><code class="is-clean">.slide-in-down</code></td>
+			<td><code class="is-clean">slideInDown</code></td>
 			<td>Move object from 100% down to 0%</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.slide-in-left</code></td>
+			<td><code class="is-clean">slideInLeft</code></td>
 			<td>Move object from 100% left to 0%</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.slide-in-right</code></td>
+			<td><code class="is-clean">slideInRight</code></td>
 			<td>Move object from 100% right 0%</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.slide-in-up</code></td>
+			<td><code class="is-clean">slideInUp</code></td>
 			<td>Move object from 100% up 0%</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.slide-out-down</code></td>
+			<td><code class="is-clean">slideOutDown</code></td>
 			<td>Move object from 0% to down 100%</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.slide-out-left</code></td>
+			<td><code class="is-clean">slideOutLeft</code></td>
 			<td>Move object from 0% to left 100%</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.slide-out-right</code></td>
+			<td><code class="is-clean">slideOutRight</code></td>
 			<td>Move object from 0% to right 100%</td>
 		</tr>
 		<tr>
 			<td><code class="is-clean">.slide-out-up</code></td>
+			<td><code class="is-clean">slideOutUp</code></td>
 			<td>Move object from 0% to up 100%</td>
 		</tr>
 	</tbody>

@@ -4,6 +4,7 @@ table {
 	border-top: 2px solid $color-primary;
 	line-height: $line-height-large;
 	max-width: $width-content;
+	table-layout: fixed;
 	width: 100%;
 
 	@media (min-width: $breakpoint-small) {
