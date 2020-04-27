@@ -13,10 +13,26 @@
 
 		<div class="accordion">
 
-			<button class="accordion-header" type="button">Accordion Header 1</button>
+			<button class="accordion-header" type="button">Accordion Header 1 - with Nested Accordion</button>
 			<div class="accordion-content">
 				<h2 class="accordion-label">Accordion Heading 1</h2>
 				<p>here the content of 1st tab <a href="#">link</a></p>
+
+				<div class="accordion">
+
+					<button class="accordion-header" type="button">Nested Accordion Header 1</button>
+					<div class="accordion-content">
+						<h2 class="accordion-label">Nested Accordion Heading 1</h2>
+						<p>here the content of nested 1st tab <a href="#">link</a></p>
+					</div> <!-- //.accordion-content -->
+
+					<button class="accordion-header" type="button">Nested Accordion Header 2</button>
+					<div class="accordion-content">
+						<h2 class="accordion-label">Nested Accordion Heading 2</h2>
+						<p>here the content of nested 2nd tab <a href="#">link</a></p>
+					</div> <!-- //.accordion-content -->
+
+				</div> <!-- //.accordion -->
 			</div> <!-- / .accordion-content -->
 
 			<button class="accordion-header" type="button">Accordion Header 2</button>

@@ -105,4 +105,6 @@
 		followed with the CSS if it cannot process through the NPM package.
 	</p>
 
+	<p>Since version 1.1, the component supports nested accordions. The markup remains the same.</p>
+
 </div>
