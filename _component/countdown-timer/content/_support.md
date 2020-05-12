@@ -17,6 +17,6 @@
 	</tr>
 	<tr>
 		<th>IE</th>
-		<td>11 (Standalone only)</td>
+		<td>11</td>
 	</tr>
 </table>
