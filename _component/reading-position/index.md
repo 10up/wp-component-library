@@ -14,11 +14,7 @@ category: utility
 	<p class="u-lighten">
 		{{page.description}}
 	</p>
-	<a href="https://travis-ci.org/10up/component-reading-position" class="u-spacing__bottom--large u-inline-block">
-		<img
-			src="https://travis-ci.org/10up/component-reading-position.svg?branch=master"
-			alt="Build status.">
-	</a>
+	<a href="https://github.com/10up/component-reading-position/actions?query=workflow%3A%22Accessibility+Tests%22"><img src="https://github.com/10up/component-reading-position/workflows/Accessibility%20Tests/badge.svg" alt="Build Status"></a>
 </div>
 
 {% include_relative content/_notes.md %}
