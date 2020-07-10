@@ -3,7 +3,7 @@
 <p>This component accepts two arguments, the progress element DOM Node and an object containing optional callbacks.</p>
 
 <div class="u-spacing__bottom--medium">
-<code>npm install @10up/component-reading-position --save</code>
+<code>npm install @10up/reading-position --save</code>
 </div>
 
 <h3>API</h3>
