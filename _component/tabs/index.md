@@ -1,6 +1,9 @@
 ---
 title: tabs
 layout: default
+seo-title: Tabs
+description: An accessible tabs component to help structure large amounts of content on a page.
+keywords: tabs, html, css, javascript
 path_slug: tabs
 iframe_height: medium
 category: global
@@ -9,8 +12,7 @@ category: global
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten">
-		An accessible tabs component to help structure large amounts of
-		content on a page.
+		{{ page.description }}
 	</p>
 	<a href="https://travis-ci.org/10up/component-tabs" class="u-spacing__bottom--large u-inline-block">
 		<img

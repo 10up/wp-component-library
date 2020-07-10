@@ -1,6 +1,9 @@
 ---
 title: getting started
 layout: default
+seo-title: Getting Started
+description: Getting up and running locally with this documentation site.
+keywords: contributing
 path_slug: getting-started
 category: documentation
 ---
@@ -8,7 +11,7 @@ category: documentation
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		Getting up and running locally with this documentation site.
+		{{ page.description }}
 	</p>
 </div>
 

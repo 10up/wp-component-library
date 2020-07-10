@@ -1,6 +1,9 @@
 ---
 title: Responsive Navigation
 layout: default
+seo-title: Responsive Navigation
+description: An accessible navigation component to help create a masthead.
+keywords: responsive navigation, html, wordpress, css, javascript
 path_slug: responsive-navigation
 category: navigation
 iframe_height: short
@@ -9,7 +12,7 @@ iframe_height: short
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten">
-		An accessible navigation component to help create a masthead.
+		{{ page.description }}
 	</p>
 	<a href="https://travis-ci.org/10up/component-navigation" class="u-spacing__bottom--large u-inline-block">
 		<img

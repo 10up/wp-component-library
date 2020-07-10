@@ -1,13 +1,16 @@
 ---
-layout: default
 title: contributing
+layout: default
+seo-title: Contributing
+description: Guidelines on how to give back to this library.
+keywords: contributing
 category: contributing
 ---
 
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		Guidelines on how to give back to this library.
+		{{ page.description }}
 	</p>
 </div>
 

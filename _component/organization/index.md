@@ -1,7 +1,10 @@
 ---
 title: Organization
-path_slug: organization
 layout: default
+seo-title: Organization
+description: A semantic recommendation for marking up an organization.
+keywords: organization, html, wordpress
+path_slug: organization
 category: content
 iframe_height: medium
 ---
@@ -9,7 +12,7 @@ iframe_height: medium
 <div class="u-align-center--small">
 	<h1>{{page.title}}</h1>
 	<p class="u-lighten u-spacing__bottom--large">
-		A semantic recommendation for marking up an organization.
+		{{ page.description }}
 	</p>
 </div>
 
