@@ -1,5 +1,5 @@
 ---
-title: reading-position
+title: Reading Position
 layout: default
 seo-title: Reading Position
 description: A reading position indicator to show how far you are on a page or beween two points
