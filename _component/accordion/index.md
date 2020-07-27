@@ -15,9 +15,7 @@ category: global
 		{{page.description}}
 	</p>
 	<a href="https://travis-ci.org/10up/component-accordion" class="u-spacing__bottom--large u-inline-block">
-		<img
-			src="https://travis-ci.org/10up/component-accordion.svg?branch=master"
-			alt="Build status.">
+		<img src="https://github.com/10up/component-accordion/workflows/Automated%20Tests/badge.svg" alt="Build Status" />
 	</a>
 </div>
 
