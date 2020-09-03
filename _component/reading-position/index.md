@@ -1,12 +1,12 @@
 ---
-title: accordion
+title: Reading Position
 layout: default
-seo-title: Accordion
-description: An accessible accordion component to help structure large amounts of content on a page
-keywords: accordion, html, wordpress, css, javascript
-path_slug: accordion
+seo-title: Reading Position
+description: A reading position indicator to show how far you are on a page or beween two points
+keywords: progress, html, wordpress, css, javascript
+path_slug: reading-position
 iframe_height: short
-category: global
+category: utility
 ---
 
 <div class="u-align-center--small">
@@ -14,9 +14,7 @@ category: global
 	<p class="u-lighten">
 		{{page.description}}
 	</p>
-	<a href="https://travis-ci.org/10up/component-accordion" class="u-spacing__bottom--large u-inline-block">
-		<img src="https://github.com/10up/component-accordion/workflows/Automated%20Tests/badge.svg" alt="Build Status" />
-	</a>
+	<a href="https://github.com/10up/component-reading-position/actions?query=workflow%3A%22Accessibility+Tests%22"><img src="https://github.com/10up/component-reading-position/workflows/Accessibility%20Tests/badge.svg" alt="Build Status"></a>
 </div>
 
 {% include_relative content/_notes.md %}
@@ -48,9 +46,4 @@ category: global
 ## Browser Compatibility
 <div class="component-block u-spacing__bottom--large">
 	{% include_relative content/_support.md %}
-</div>
-
-## Resources
-<div class="component-block u-spacing__bottom--large">
-	{% include_relative content/_resources.md %}
 </div>

@@ -7,6 +7,9 @@
 			<li class="code-tab-item tab-item">
 				<a href="#css" id="js-css-link" role="tab" aria-controls="css">CSS</a>
 			</li>
+			<li class="code-tab-item tab-item">
+				<a href="#chaining-css" id="js-css-link" role="tab" aria-controls="chaining-css">Chaining Animations</a>
+			</li>
 		</ul>
 	</div><!-- //.tab-control -->
 
@@ -41,6 +44,27 @@
 			</div><!--/.tab__body-->
 			<ul class="button-group">
 				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-css-snippet" class="copy-clipboard button button--tertiary">Copy CSS to clipboard</button></li>
+			</ul>
+		</div><!--/.code-tab-->
+
+		<div id="chaining-css" class="code-tab tab-content" role="tabpanel">
+			<div class="tab__body">
+				<div class="code-block">
+					<div class="copy-css-chain-snippet">
+						{% highlight css %}
+/*
+  Using the animation names from the library you can create
+  custom combinations like a fade in, slide up
+*/
+.custom-chained-animation {
+  animation-name: fadeIn, slideInUp;
+}
+						{% endhighlight %}
+					</div>
+				</div><!--/.code-block-->
+			</div><!--/.tab__body-->
+			<ul class="button-group">
+				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-css-chain-snippet" class="copy-clipboard button button--tertiary">Copy CSS to clipboard</button></li>
 			</ul>
 		</div><!--/.code-tab-->
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+	<title>Countdown Timer Demo</title>
+
+	<!-- meta cluster -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="cleartype" content="on" />
+
+	<style>.mb { margin-bottom: 1em; }</style>
+
+</head>
+<body>
+	<div class="mb">
+		<time class="example-1" datetime="2046-01-01T00:00:00">
+			2046-01-01T00:00:00
+		</time>
+
+		until New Year’s Day, 2046
+	</div>
+
+	<div class="mb">
+		<time class="example-2" datetime="2000-01-01T00:00:00Z">
+			2000-01-01T00:00:00Z
+		</time>
+
+		since we partied like it was 1999
+	</div>
+
+	<div class="mb">
+		<time class="example-3" datetime="2021-02-07T18:30:00-04:00">
+			2021-02-07T18:30:00-04:00
+		</time>
+
+		until Super Bowl LV (2/7/2021 @ 6:30pm EST)
+	</div>
+	</ul>
+
+	<script src="https://cdn.jsdelivr.net/npm/@10up/countdown-timer@latest/dist/countdown-timer.js"></script>
+	<script type="text/javascript">
+		new TenUp.CountdownTimer( '.example-1' );
+
+		new TenUp.CountdownTimer( '.example-2', {
+			allowNegative: true,
+			compact: true
+		} );
+
+		new TenUp.CountdownTimer( '.example-3', {
+			separator: ' / ',
+			padValues: true,
+			years: {
+				allowed: true,
+				singular: 'y',
+				plural: 'y'
+			},
+			weeks: {
+				allowed: true,
+				singular: 'w',
+				plural: 'w'
+			},
+			days: {
+				allowed: true,
+				singular: 'd',
+				plural: 'd'
+			},
+			hours: {
+				allowed: true,
+				singular: 'h',
+				plural: 'h'
+			},
+			minutes: {
+				allowed: true,
+				singular: 'm',
+				plural: 'm'
+			},
+			seconds: {
+				allowed: false,
+				singular: 's',
+				plural: 's'
+			}
+		} );
+	</script>
+
+</body>
+</html>

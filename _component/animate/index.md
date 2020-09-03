@@ -14,10 +14,8 @@ category: utility
 	<p class="u-lighten">
 		{{page.description}}
 	</p>
-	<a href="https://travis-ci.org/10up/component-animate" class="u-spacing__bottom--large u-inline-block">
-		<img
-			src="https://travis-ci.org/10up/component-animate.svg?branch=master"
-			alt="Build status.">
+	<a href="https://github.com/10up/component-animate/actions?query=workflow%3A%22Accessibility+Tests%22" class="u-spacing__bottom--large u-inline-block">
+		<img src="https://github.com/10up/component-animate/workflows/Accessibility%20Tests/badge.svg" alt="Build Status">
 	</a>
 </div>
 

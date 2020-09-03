@@ -5,9 +5,6 @@
 				<a href="#text" id="js-text-link" role="tab" aria-controls="text">HTML</a>
 			</li>
 			<li class="code-tab-item tab-item">
-				<a href="#wordpress" id="js-wordpress-link" role="tab" aria-controls="wordpress">WordPress</a>
-			</li>
-			<li class="code-tab-item tab-item">
 				<a href="#css" id="js-css-link" role="tab" aria-controls="css">CSS</a>
 			</li>
 			<li class="code-tab-item tab-item">
@@ -35,19 +32,6 @@
 
 			<ul class="button-group">
 				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-html" class="copy-clipboard button button--tertiary">Copy HTML to clipboard</button></li>
-			</ul>
-		</div>
-
-		<div id="wordpress" class="code-tab tab-content" role="tabpanel">
-			<div class="tab__body">
-				<div class="copy-templated">
-					{% highlight php %}
-{% include_relative component-wp.html %}
-					{% endhighlight %}
-				</div>
-			</div>
-			<ul class="button-group">
-				<li><button data-clipboard-action="copy" data-clipboard-target=".copy-templated" class="copy-clipboard button button--tertiary">Copy WordPress to clipboard</button></li>
 			</ul>
 		</div>
 
@@ -104,7 +88,5 @@
 		project. The same process should be
 		followed with the CSS if it cannot process through the NPM package.
 	</p>
-
-	<p>Since version 1.1, the component supports nested accordions. The markup remains the same.</p>
 
 </div>
