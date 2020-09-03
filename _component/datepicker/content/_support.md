@@ -1,5 +1,5 @@
 <table class="table--code">
-	<caption>Browser Support</caption>
+	<caption>List of Browser Support for this component</caption>
 	<tr>
 		<th>Chrome</th>
 		<td>8+</td>

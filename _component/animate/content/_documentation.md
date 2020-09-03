@@ -9,8 +9,10 @@
 <h3>Available Animation Options</h3>
 <p>This is a full list of options currently available.</p>
 
+<h4>Fade</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Fade</caption>
+	<caption>List of Fade options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -32,8 +34,10 @@
 	</tbody>
 </table>
 
+<h4>Rotate</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Rotate</caption>
+	<caption>List of Rotate options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -65,8 +69,10 @@
 	</tbody>
 </table>
 
+<h4>Scale (Zoom)</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Scale (Zoom)</caption>
+	<caption>List of Scale (Zoom) options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -108,8 +114,10 @@
 	</tbody>
 </table>
 
+<h4>Shake</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Shake</caption>
+	<caption>List of Shake options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -151,8 +159,10 @@
 	</tbody>
 </table>
 
+<h4>Slide</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Slide</caption>
+	<caption>List of Slide options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -204,8 +214,10 @@
 	</tbody>
 </table>
 
+<h4>Delay</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Delay</caption>
+	<caption>List of Delay options</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -288,8 +300,10 @@
 	</tbody>
 </table>
 
+<h4>Duration</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Duration</caption>
+	<caption>List of Duration options</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -372,8 +386,10 @@
 	</tbody>
 </table>
 
+<h4>Timing</h4>
+
 <table class="u-spacing__bottom--medium">
-	<caption>Timing</caption>
+	<caption>List of Timing options</caption>
 	<thead>
 		<tr>
 			<th>Name</th>

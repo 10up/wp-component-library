@@ -10,9 +10,14 @@ table {
 	@media (min-width: $breakpoint-small) {
 		margin-right: $spacing-small;
 	}
+
+	caption {
+		margin-bottom: 0.5rem;
+		text-align: left;
+	}
 }
 
- td, th {
+td, th {
 	border-bottom: 2px solid $color-accent-secondary;
 	padding: $spacing-tiny $spacing-small;
 	text-align: left;
@@ -38,15 +43,4 @@ tr:last-child td {
 	table-layout: fixed;
 }
 
-caption {
-	font-family: $font-primary;
-	font-size: $font-size-small;
-	font-weight: $font-weight-medium;
-	margin-bottom: 1rem;
-	text-align: left;
-
-	@media (min-width: $breakpoint-small) {
-		font-size: $font-size-medium;
-	}
-}
 
