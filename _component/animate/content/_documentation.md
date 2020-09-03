@@ -12,6 +12,7 @@
 <h4>Fade</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Fade options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -36,6 +37,7 @@
 <h4>Rotate</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Rotate options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -70,6 +72,7 @@
 <h4>Scale (Zoom)</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Scale (Zoom) options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -114,6 +117,7 @@
 <h4>Shake</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Shake options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -158,6 +162,7 @@
 <h4>Slide</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Slide options</caption>
 	<thead>
 		<tr>
 			<th>Class</th>
@@ -212,6 +217,7 @@
 <h4>Delay</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Delay options</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -297,6 +303,7 @@
 <h4>Duration</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Duration options</caption>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -382,6 +389,7 @@
 <h4>Timing</h4>
 
 <table class="u-spacing__bottom--medium">
+	<caption>List of Timing options</caption>
 	<thead>
 		<tr>
 			<th>Name</th>

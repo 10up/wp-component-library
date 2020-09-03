@@ -9,6 +9,7 @@
 <h3>Classes</h3>
 
 <table class="table--code">
+	<caption>List of Classes used for this component</caption>
 	<tr>
 		<th>.a11y-tip</th>
 		<td>Wrapping class for the component.</td>

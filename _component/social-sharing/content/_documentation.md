@@ -7,10 +7,10 @@
 <code>TBD</code>
 </div>
 
-
 <h3>Options</h3>
 
 <table class="table--code u-spacing__bottom--large">
+	<caption>List of Options for this component</caption>
 	<tr>
 		<th class="th">target</th>
 		<td class="td">The `target` option should contain the ID or class of the social links wrapper.</td>

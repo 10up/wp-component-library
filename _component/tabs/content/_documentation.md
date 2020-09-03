@@ -9,6 +9,7 @@
 <h3>Options</h3>
 
 <table class="table--code u-spacing__bottom--large">
+	<caption>List of Options for this component</caption>
 	<tr>
 		<th class="th">orientation</th>
 		<td class="td">Whether the tabs are horizontal or vertical, defaults to horizontal</td>
@@ -18,6 +19,7 @@
 <h3>Callbacks</h3>
 
 <table class="table--code u-spacing__bottom--large">
+	<caption>List of Callbacks for this component</caption>
 	<tr>
 		<th class="th">onCreate</th>
 		<td class="td">Called after the tab is initialized on page load</td>
@@ -31,6 +33,7 @@
 <h3>Classes</h3>
 
 <table class="table--code">
+	<caption>List of Classes used for this component</caption>
 	<tr>
 		<th>.tabs</th>
 		<td>Wrapping class for the tabs component.</td>

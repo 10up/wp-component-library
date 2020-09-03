@@ -8,16 +8,19 @@
 
 <h3>Options</h3>
 
- <table class="table--code u-spacing__bottom--large">
- 	<tr>
- 		<th class="th">action</th>
- 		<td class="td">The action to use to open menu items <em>(default) hover</em></td>
- 	</tr>
- </table>
+<table class="table--code u-spacing__bottom--large">
+	<caption>List of Options for this component</caption>
+	<tr>
+		<th class="th">action</th>
+		<td class="td">The action to use to open menu items <em>(default) hover</em></td>
+	</tr>
+</table>
 
 <h3>Callbacks</h3>
 
- <table class="table--code u-spacing__bottom--large">
+<table class="table--code u-spacing__bottom--large">
+	<caption>List of Callbacks for this component</caption>
+
  	<tr>
  		<th class="th">onCreate</th>
  		<td class="td">Called after the component is initialized on page load</td>
@@ -40,9 +43,10 @@
  	</tr>
  </table>
 
- <h3>Classes</h3>
+<h3>Classes</h3>
 
   <table class="table--code u-spacing__bottom--large">
+	<caption>List of Classes used for this component</caption>
   	<tr>
   		<th class="th">.site-navigation</th>
   		<td class="td">Wrapping class for the component.</td>

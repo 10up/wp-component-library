@@ -9,6 +9,7 @@
 <h3>API</h3>
 
 <table class="table--code u-spacing__bottom--large">
+	<caption>List of APIs for this component</caption>
 	<tr>
 		<th class="th">onCreate</th>
 		<td class="td">Called after the accordion is initialized on page load</td>
@@ -30,6 +31,7 @@
 <h3>Classes</h3>
 
 <table class="table--code">
+	<caption>List of Classes used for this component</caption>
 	<tr>
 		<th>.accordion</th>
 		<td>Wrapping class for the component.</td>

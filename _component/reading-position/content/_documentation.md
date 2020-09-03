@@ -27,9 +27,10 @@
 	</tr>
 </table>
 
-<h3>Classes</h3>
+<h3>Class</h3>
 
 <table class="table--code">
+	<caption>Class used for this component</caption>
 	<tr>
 		<th>.reading-position</th>
 		<td>Class for the progress element.</td>
