@@ -86,14 +86,13 @@ dl {
 a {
 	color: $color-secondary;
 	font-weight: $font-weight-medium;
-	text-decoration: none;
-
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-	}
+	text-decoration: underline;
 
 	abbr {
+		text-decoration: none;
+	}
+	
+	.c-nav & {
 		text-decoration: none;
 	}
 }
