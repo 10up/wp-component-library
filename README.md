@@ -24,4 +24,4 @@ To use a component, navigate to the component’s detail page to see demos, usag
 
 ## Like what you see?
 
-<a href="http://10up.com/contact/"><img src="https://10updotcom-uploads.s3.amazonaws.com/uploads/2016/08/10up_github_banner-2.png"></a>
+<a href="http://10up.com/contact/"><img src="https://10up.com/uploads/2016/10/10up-Github-Banner.png"></a>
