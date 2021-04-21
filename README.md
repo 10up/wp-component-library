@@ -1,5 +1,7 @@
 # 10up Component Library
 
+**DEPRECATED.** Please go to https://github.com/10up/component-library
+
 > A library of barebones front-end components built with WordPress and accessibility in mind.
 
 [![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/10up/wp-component-library.svg)](https://github.com/10up/wp-component-library/blob/gh-pages/LICENSE.md)
